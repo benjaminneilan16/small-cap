@@ -1,24 +1,314 @@
-# Bolag att bevaka. En ticker per rad.
-#
-# Suffixet .ST läggs till automatiskt om det saknas.
-# Rader som börjar med # ignoreras — bra för att pausa ett bolag
-# utan att radera det.
-#
-# SÅ HÄR HITTAR DU BOLAG:
-# Öppna Avanza, gå till aktielistan, filtrera på First North och
-# sortera på omsättning. Kopiera in tickers här.
-#
-# Listan nedan är bara en utgångspunkt för att testa att allt fungerar.
-# Kör en gång och kolla rapporten — bolag utan data markeras där, och
-# de ska du byta ut.
+# Auto-genererad av build_universe.py från First North-listan.
+# Kör 'python run_daily.py' för att hämta data och se vilka
+# som faktiskt har tillräcklig historik och omsättning.
 
-ENEA
-PREC
-NEPA
-MTRS
-BIOT
-HTRO
-XVIVO
-SPEC
-MYCR
-CLAV
+2CUREX  # 2cureX
+4C  # 4C Group
+AAC  # AAC Clyde Space
+ABSO  # Absolent Air Care Group
+ACARIX  # Acarix
+ACCON  # Acconeer
+PADEL  # Acenta Group
+ACOU  # AcouSort
+ACROUD  # ACROUD
+ACUVI  # Acuvi
+ADTR  # Adtraction Group
+ADVE  # Advenica AB
+AEC  # AFRICA ENERGY CORP.
+AGES-B  # Ages Industri
+AGTIRA-B  # Agtira
+AIRA  # AI Revenue Assistant Software
+AINO  # Aino Health
+ALCA  # Alcadon Group
+ALM  # ALM Equity
+ALPCOT-B  # Alpcot Holding
+ALZCUR  # AlzeCure Pharma
+ALZ  # Alzinova
+ANNX  # Annexin Pharmaceuticals
+ARCOMA  # Arcoma
+ARCTIC  # Arctic Blue Beverages
+ARFA  # Arctic Falls
+ARCT  # Arctic Minerals
+ARENIT-SDB  # ARENIT Industrie
+AGROUP  # Arlandastad Group
+ATIN  # Athanase Innovation
+AVEN  # Avensia
+AVT-B  # Avtech Sweden
+AXIC-A  # aXichem
+AXOLOT  # Axolot Solutions Holding
+BAHN-B  # Bahnhof
+BUSER  # Bambuser
+BAWAT  # Bawat Water Technologies
+BEAMMW-B  # BeammWave
+BIM  # BIMobject
+BINERO  # Binero Group
+BIOEX  # Bioextrax
+BIOSGN  # Biosergen
+BIOVIC-B  # Biovica International
+BLINC-B  # BlincVision AB
+BOHO  # Boho Group
+BOKUS  # Bokusgruppen
+BOMILL  # BoMill
+BOTX  # Botnia Gold
+BRAIN  # BrainCool
+BRIGHT  # BrightBid Group
+BRILL  # Brilliant Future
+BMC  # Brock Milton Capital
+BYGGP  # ByggPartner Gruppen
+CAG  # CAG Group
+CALVIK  # Calviks
+CANDLE-B  # Candles Scandinavia
+CARE  # Careium
+CASE  # Case Group
+CDON  # CDON
+CEDER  # Cedergrenska
+CI  # Cell Impact
+CRNO-B  # Cereno Scientific
+CHARGE  # ChargePanel
+CHECK  # checkin.com Group
+CHEF  # Cheffelo
+CIRCHE  # CirChem
+CLAV  # Clavister
+CLEMO  # Clean Motion
+CLEM  # Clemondo Group
+CLIME-B  # Climeon
+CLS-B  # Clinical Laserthermia Systems
+CDMIL  # CodeMill
+COFFEE-B  # Coffee Stain Group
+COLLAX  # Collaxio
+CX  # CombinedX
+COMPDM  # Compodium International
+CLBIO  # Corline Biomedical
+CFISH  # Crunchfish
+DSNO  # Desenio Group
+DEVP-B  # DevPort
+DVYSR  # Devyser Diagnostics
+DMYD-B  # Diamyd Medical
+DICOT  # Dicot Pharma
+DIST  # DistIT
+DMXSE-SDB  # District Metals Corp.
+DIVIO-B  # Divio Technologies
+DLAB  # Dlaboratory Sweden
+DONE  # Done.ai Group
+DOXA  # Doxa
+DRIL  # Drillcon
+ALBERT  # eEducation Albert
+EFFH  # Effnetplattformen Holding
+ELIC  # Elicera Therapeutics
+EMB  # EMB Mission Bound
+EMBELL  # Embellence Group
+ENERS  # Enersize
+ERMA  # Enorama Pharma
+ENVAR  # Envar Holding
+ENZY  # Enzymatica
+ESGR-B  # ES Group
+EXPRS2  # ExpreS2ion Biotech Holding
+EXS  # Exsitec Holding
+FERRO  # Ferroamp
+FIRE  # Firefly
+FIRST-B  # First Venture Sweden
+FLEXM  # Flexion Mobile
+FLEXQ  # FlexQube
+FLOWS  # Flowscape Technology
+FLUI  # Fluicell
+FLUO  # FluoGuide
+FRACTL  # Fractal Gaming Group
+FRAG  # Fragbite Group
+FRAM-B  # Fram Skandinavien
+FREEM  # Freemelt Holding
+FREJA  # Freja eID Group
+FSPORT  # FSport
+GABA  # Gabather
+GCOR  # Gaming Corps
+GAPW-B  # Gapwaves
+GPX  # Gasporox
+GENI  # Generic Sweden
+GENO  # Genovis
+GIG-SDB  # GiG Software
+GIGA  # Gigasun
+GSKR-SDB  # Goldsky Resources
+GOMX  # GomSpace Group
+GBK  # Goodbye Kansas Group
+GRANGX  # Grangex
+GREAT  # Greater Than
+GUARD  # Guard Therapeutics International
+GGEO  # Guideline Geo
+GULD  # Guldbrev Holding
+HAYPP  # Haypp Group
+HEGR  # Hedera Group
+HEIM-PREF  # Heimstaden
+HEXI  # Hexicon
+HIGHCO-B  # High Coast Distillery
+HILB-B  # Hilbert Group
+ICO  # Iconovo
+IDLDX  # IDL Diagnostics
+IDUN-B  # Idun Industrier
+IMPC  # Impact Coatings
+IMP-A-SDB  # Implantica
+INCOAX  # InCoax Networks
+INIT  # Initiator Pharma
+INSP  # Insplorion
+INTEG-B  # Integrum
+IVACC  # Intervacc
+IRIS  # Irisity
+IZAFE-B  # iZafe Group
+JLT  # JLT Mobile Computers
+K33  # K33
+KAKEL  # Kakel Max
+KAMBI  # Kambi Group Plc
+KBC  # KB Components
+KEBNI-B  # KebNi
+KENH  # Kentima Holding
+BRAVE  # Kinda Brave Entertainment
+KJELL  # Kjell Group
+KLAR  # Klaria Pharma Holding
+KLIMAT  # Klimator
+LEA  # Lea Bank
+LEMSE  # Leading Edge Materials Corp.
+LCLEAN  # Lifeclean International
+LITI  # Litium
+LOYAL  # Loyal Solutions
+LUC  # Lucara Diamond Corp
+LUMEN  # LumenRadio
+LXB  # Luxbright
+LYKO-A  # Lyko Group
+MOBA  # M.O.B.A. Network
+MAGI  # MAG Interactive
+MAGLE  # Magle Chemoswed Holding
+MANTEX  # Mantex
+MAVEN  # Maven Wireless Sweden
+MAXENT-B  # Maximum Entertainment
+MEDS  # Meds Apotek
+MNTC  # Mentice
+META  # Metacon
+MIDS  # Midsummer
+MINEST  # Minesto
+MODEL  # Modelon
+MODTX  # Modus Therapeutics Holding
+MTI  # MTI Investment
+NANEXA  # Nanexa
+NANOC-B  # NanoCap Group
+NANECH  # NanoEcho
+NANOFS  # Nanoform Finland Oyj
+NAVIGO-PREF  # Navigo Invest
+NEOLA  # Neola Medical
+NEO-B  # Neovici Holding
+NEPA  # Nepa
+BBROOM  # New Bubbleroom Sweden
+NNH  # New Nordic Healthbrands
+NEWBRY  # Newbury Pharmaceuticals
+NEXAM  # Nexam Chemical Holding
+NXTCL  # NextCell Pharma
+NICO  # Nicoccino Holding
+BOAT  # Nimbus Group
+NITRO  # Nitro Games
+NFGAB  # Nordic Flanges Group
+NIO  # Nordic Iron Ore
+LEVEL  # Nordic LEVEL Group
+NOTEK  # Norditek Group
+NREST  # Nordrest Holding
+NOSA  # Nosa Plugs
+NYAB  # NYAB
+OBSE  # Observit
+OGUN-B  # Ogunsen
+ONCOZ  # OncoZenge
+ONEF  # Oneflow
+OBAB  # Online Brands Nordic
+OPTER  # Opter
+OPTI  # OptiCept Technologies
+ORGC  # OrganoClick
+ORTIN  # Ortelius International
+ORTI-B  # Ortivus
+ORT-B  # Ortoma
+OSSD  # OssDsign
+OXE  # OXE Marine
+PAX  # Paxman
+PERP-B  # Perpetua Medical
+PTRK  # Physitrack
+POLYG  # Polygiene Group
+PRCO-B  # Precio Fishbone
+PCOM-B  # Precomp Solutions
+SNX  # Premium Snacks Nordic
+PRO  # Promimic
+PROGEN  # Prostatype Genomics
+QBEN  # Qben Infra
+QBIM  # QBIM
+QIIWI  # Qiiwi Games
+QAIR  # QleanAir
+QLIFE  # QLife Holding
+QCORE  # Qlucore
+QSYS  # Qualisys Holding
+RAKE  # Raketech Group Holding
+RPLAN  # Ranplan Group
+REALFI  # Realfiction Holding
+RUG  # RugVista Group
+S2M  # S2Medical
+SFL  # Safello Group
+SFTR  # Safeture
+SALT-B  # SaltX Technology Holding
+YIELD  # SaveLend Group
+SAXG  # Saxlund Group
+SBOK-B  # ScandBook Holding
+SDOS  # ScandiDos
+SES  # Scandinavian Enviro Systems
+HEART  # Scandinavian Real Heart
+SCIB  # Scibase Holding
+STW  # SeaTwirl
+SENZA  # SenzaGen
+SERT  # Serstech
+SNM-SDB  # ShaMaran Petroleum Ltd
+SIBEK  # SIBEK
+SIVI  # Siljansvik
+SIMRIS-B  # Simris Group
+SKOLON  # Skolon
+SEYE  # Smart Eye
+SOLNA  # Solnaberg Property
+SOLT  # SolTech Energy Sweden
+SONE  # Sonetel
+SPAGO  # Spago Nanomedical
+SPEC  # SpectraCure
+SPEONE  # SpectrumOne
+SPOTR  # Spotr Group
+SPRINT  # Sprint Bioscience
+STIL  # Stille
+SUBGEN  # Subgen AI
+SUMMAS  # Summa Defence Oyj
+SUS  # Surgical Science Sweden
+AERO  # Svenska Aerogel Holding
+BUY  # Sweden BuyersClub
+SECARE  # Swedencare
+TAGM-B  # TagMaster
+TALK  # TalkPool
+TELLUS  # Tellusgruppen
+TSEC  # Tempest Security
+TENEO  # Teneo AI
+TEQ  # Teqnion
+TERNOR  # Terranor Group
+TINGS-A  # Tingsvalvet Fastighets
+TITA-B  # Titania Holding
+TOURN  # Tourn International
+TRAIN-B  # Train Alliance
+TRIBO-B  # Tribox Group
+UNIBAP  # Unibap Space Solutions
+UTG  # Unlimited Travel Group
+UPSALE  # Upsales Technology
+USWE  # USWE Sports
+VERT-B  # Vertiseit
+VER  # Verve Group Media
+VETT  # Vetted Assets
+VSSAB-B  # Viking Supply Ships
+VIMAB  # Vimab Group
+VO2  # VO2 Cap Holding
+VUXEN  # Vuxen Group
+W5  # W5 Solutions
+WAYS  # Waystream Group
+WRV  # WebRock Ventures
+WPAY  # Westpay
+WPTG-B  # White Pearl Technology Group
+WSG  # WS WeSports Group
+WYLD  # Wyld Networks
+XINT  # Xintela
+XMR  # XMReality
+XPC  # XP Chemistries
+ZAPLOX  # Zaplox
+ZZ-B  # Zinzino

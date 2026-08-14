@@ -1,0 +1,21 @@
+# Bolag som inte gick att matcha automatiskt.
+# Slå upp tickern manuellt (t.ex. på Avanza) och lägg
+# till i universe.txt om du vill ha med dem.
+
+Bonäsudden Holding
+Gotlandsbolaget
+Heliospectra
+Hernö Gin
+Hultström Group
+I-Tech
+Kallebäck Property Invest
+Lyckegård Group
+Lärkberget
+Mavshack
+Nordnet Bank
+oodash Group
+Scandinavian ChemoTech
+Skåne-möllan
+Studentbostäder i Norden
+Söder Sportfiske
+Västra Hamnen Corp. Finance
