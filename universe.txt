@@ -1,0 +1,24 @@
+# Bolag att bevaka. En ticker per rad.
+#
+# Suffixet .ST läggs till automatiskt om det saknas.
+# Rader som börjar med # ignoreras — bra för att pausa ett bolag
+# utan att radera det.
+#
+# SÅ HÄR HITTAR DU BOLAG:
+# Öppna Avanza, gå till aktielistan, filtrera på First North och
+# sortera på omsättning. Kopiera in tickers här.
+#
+# Listan nedan är bara en utgångspunkt för att testa att allt fungerar.
+# Kör en gång och kolla rapporten — bolag utan data markeras där, och
+# de ska du byta ut.
+
+ENEA
+PREC
+NEPA
+MTRS
+BIOT
+HTRO
+XVIVO
+SPEC
+MYCR
+CLAV
