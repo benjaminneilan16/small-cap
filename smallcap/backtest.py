@@ -28,9 +28,12 @@ VAD DET FORTFARANDE INTE KAN FÅNGA:
   hade skadat strategin mest.
 
 Läs alltså resultatet som ett OVRE TAK, inte som en prognos.
+
+MARKNADSPARAMETER: samma backtest-motor används för SE och US — bara
+databasen och konfigurationen som läses av bytes ut.
 """
 import logging
-from datetime import date, timedelta
+from datetime import date
 
 from .store import connect, get_bars
 from . import config, screener, paper
@@ -38,8 +41,8 @@ from . import config, screener, paper
 logger = logging.getLogger("backtest")
 
 
-def _bars_until(ticker: str, until: str, limit: int = 400) -> list[dict]:
-    with connect() as c:
+def _bars_until(ticker: str, until: str, limit: int = 400, market: str = "se") -> list[dict]:
+    with connect(market) as c:
         rows = c.execute(
             "SELECT date, open, high, low, close, volume FROM bars "
             "WHERE ticker = ? AND date <= ? ORDER BY date DESC LIMIT ?",
@@ -49,7 +52,7 @@ def _bars_until(ticker: str, until: str, limit: int = 400) -> list[dict]:
 
 
 def run(start_date: str = None, end_date: str = None,
-        capital: float = None) -> dict:
+        capital: float = None, market: str = "se") -> dict:
     """
     Spelar upp historiken. Returnerar resultat med samma mått som live.
 
@@ -59,16 +62,17 @@ def run(start_date: str = None, end_date: str = None,
     from .store import reset_account, init
     from .data import usable_tickers
 
-    capital = capital or config.STARTING_CAPITAL
-    init()
-    reset_account(capital)
+    cfg = config.get_config(market)
+    capital = capital or cfg.starting_capital
+    init(market)
+    reset_account(capital, market)
 
-    tickers = usable_tickers()
+    tickers = usable_tickers(market)
     if not tickers:
         return {"error": "Inga bolag med data"}
 
     # Hitta gemensamt datumintervall
-    with connect() as c:
+    with connect(market) as c:
         row = c.execute("SELECT MIN(date) a, MAX(date) b FROM bars").fetchone()
     first, last = row["a"], row["b"]
     if not first:
@@ -78,7 +82,7 @@ def run(start_date: str = None, end_date: str = None,
     end = end_date or last
 
     # Alla handelsdagar i intervallet
-    with connect() as c:
+    with connect(market) as c:
         days = [r["date"] for r in c.execute(
             "SELECT DISTINCT date FROM bars WHERE date >= ? AND date <= ? "
             "ORDER BY date", (start, end)).fetchall()]
@@ -99,8 +103,11 @@ def run(start_date: str = None, end_date: str = None,
 
     try:
         for i, today in enumerate(days[warmup:], start=warmup):
-            def limited(ticker, limit=400, _d=today):
-                return _bars_until(ticker, _d, limit)
+            def limited(ticker, limit=400, _d=today, _m=market, market=None):
+                # market-kwarg ignoreras avsiktligt här: under backtest
+                # patchar vi bara aktuell marknads get_bars, så anropet
+                # kommer alltid från rätt kontext.
+                return _bars_until(ticker, _d, limit, _m)
 
             paper.get_bars = limited
             screener.get_bars = limited
@@ -108,11 +115,11 @@ def run(start_date: str = None, end_date: str = None,
             # Simulera "idag" för TTL-beräkningar
             paper.datetime = _FakeDatetime(today)
 
-            actions = paper.process()
-            screen = screener.screen_all()
+            actions = paper.process(market)
+            screen = screener.screen_all(market=market)
             placed = []
             if "error" not in screen:
-                placed = paper.place_orders(screen.get("candidates", []))
+                placed = paper.place_orders(screen.get("candidates", []), market)
 
             if actions["fills"] or actions["exits"]:
                 trades_by_day.append({
@@ -123,7 +130,7 @@ def run(start_date: str = None, end_date: str = None,
 
             # Kapitalkurva varje tionde dag för att hålla den läsbar
             if i % 10 == 0 or i == len(days) - 1:
-                pf = paper.portfolio()
+                pf = paper.portfolio(market)
                 equity_curve.append({"date": today, "total": pf["total"]})
     finally:
         paper.get_bars = real_get_bars
@@ -131,10 +138,10 @@ def run(start_date: str = None, end_date: str = None,
         import datetime as _dt
         paper.datetime = _dt.datetime
 
-    perf = paper.performance()
+    perf = paper.performance(market)
 
     # Buy & hold som jämförelse: lika mycket i varje bolag från start
-    bh = _buy_and_hold(tickers, days[warmup], days[-1], capital)
+    bh = _buy_and_hold(tickers, days[warmup], days[-1], capital, market)
 
     perf["backtest"] = {
         "start": days[warmup],
@@ -168,13 +175,13 @@ class _FakeDatetime:
 
 
 def _buy_and_hold(tickers: list[str], start: str, end: str,
-                  capital: float) -> float | None:
+                  capital: float, market: str = "se") -> float | None:
     """Lika mycket i varje bolag från start till slut. Referensen."""
     per = capital / len(tickers)
     total = 0.0
     counted = 0
     for t in tickers:
-        bars = _bars_until(t, end)
+        bars = _bars_until(t, end, market=market)
         entry = next((b for b in bars if b["date"] >= start), None)
         if not entry or not bars:
             continue

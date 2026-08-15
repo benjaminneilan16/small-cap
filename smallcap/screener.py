@@ -16,13 +16,18 @@ DEN VIKTIGASTE INSIKTEN: strategin vill ha det som konventionell analys
 kallar dåligt. Bred spread och spretig kurs är normalt varningstecken.
 Här är de själva råvaran. En aktie som trendar snyggt uppåt är värdelös —
 det finns inga studsar att fånga.
+
+MARKNADSOBEROENDE: mönstret hon beskriver är inte specifikt för svenska
+småbolag — samma logik (spread, oscillation, återkommande nivåer) gäller
+för illikvida amerikanska small caps. Bara valutan och omsättnings-
+tröskeln skiljer, och de kommer från MarketConfig.
 """
 import logging
 import statistics
 
 from .store import get_bars
 from .data import usable_tickers
-from . import config
+from .config import get_config
 
 logger = logging.getLogger("screener")
 
@@ -83,8 +88,9 @@ def find_levels(bars: list[dict], bins: int = 20) -> list[dict]:
     return levels
 
 
-def analyze(ticker: str, lookback: int = 250) -> dict:
-    bars = get_bars(ticker, lookback)
+def analyze(ticker: str, lookback: int = 250, market: str = "se") -> dict:
+    cfg = get_config(market)
+    bars = get_bars(ticker, lookback, market)
     if len(bars) < 100:
         return {"ticker": ticker, "usable": False,
                 "reason": f"för lite data ({len(bars)} staplar)"}
@@ -110,24 +116,24 @@ def analyze(ticker: str, lookback: int = 250) -> dict:
     reasons = []
     usable = True
 
-    if median_range < config.MIN_DAILY_RANGE_PCT:
+    if median_range < cfg.min_daily_range_pct:
         usable = False
         reasons.append(f"dagligt spann {median_range:.1f}% under "
-                       f"{config.MIN_DAILY_RANGE_PCT}%")
+                       f"{cfg.min_daily_range_pct}%")
 
-    if median_turnover < config.MIN_DAILY_TURNOVER_SEK:
+    if median_turnover < cfg.min_daily_turnover:
         usable = False
-        reasons.append(f"omsättning {median_turnover:,.0f} kr/dag för låg")
+        reasons.append(f"omsättning {median_turnover:,.0f} {cfg.currency}/dag för låg")
 
-    if er_60 is not None and er_60 > config.MAX_EFFICIENCY_RATIO:
+    if er_60 is not None and er_60 > cfg.max_efficiency_ratio:
         usable = False
         reasons.append(f"efficiency ratio {er_60:.2f} — trendar, studsar inte")
 
     score = 0.0
     if median_range:
-        score += min(median_range / config.MIN_DAILY_RANGE_PCT, 3.0)
+        score += min(median_range / cfg.min_daily_range_pct, 3.0)
     if er_60 is not None:
-        score += (1 - min(er_60 / config.MAX_EFFICIENCY_RATIO, 1.0)) * 2
+        score += (1 - min(er_60 / cfg.max_efficiency_ratio, 1.0)) * 2
     score += min(revisit / 40, 1.0)
 
     return {
@@ -137,23 +143,28 @@ def analyze(ticker: str, lookback: int = 250) -> dict:
         "bars": len(bars),
         "last_close": round(closes[-1], 4),
         "median_daily_range_pct": round(median_range, 2),
-        "median_turnover_sek": round(median_turnover, 0),
+        "median_turnover": round(median_turnover, 0),
         "efficiency_ratio_60": round(er_60, 3) if er_60 is not None else None,
         "net_change_pct": round(net_change, 1),
         "top_levels": top_levels,
         "revisit_share_pct": round(revisit, 1),
         "reasons": reasons,
-        "warning": _warning(net_change, median_turnover),
+        "warning": _warning(net_change, median_turnover, cfg.currency),
     }
 
 
-def _warning(net_change: float, turnover: float) -> str | None:
+def _warning(net_change: float, turnover: float, currency: str) -> str | None:
     """
     Varningar för fall som passerar filtren men ändå är farliga.
 
     Den viktigaste: en aktie som fallit 60% har också låg efficiency
     ratio — men av fel skäl. Den oscillerar inte, den faller i etapper.
     Att köpa studsar där är att fånga en fallande kniv.
+
+    Tröskeln 300 000 för "tunn omsättning" är i lokal valuta (kr eller
+    dollar). Det är en grov tumregel snarare än ett exakt likvärde
+    mellan marknader — poängen är att flagga bolag nära screenerns
+    egen lägstanivå, inte att jämföra SE och US mot varandra.
     """
     parts = []
     if net_change < -50:
@@ -163,21 +174,21 @@ def _warning(net_change: float, turnover: float) -> str | None:
         )
     if turnover < 300_000:
         parts.append(
-            f"Tunn omsättning ({turnover:,.0f} kr/dag) — risk att bli fylld just "
-            "när någon säljer av ett skäl du inte känner till."
+            f"Tunn omsättning ({turnover:,.0f} {currency}/dag) — risk att bli fylld "
+            "just när någon säljer av ett skäl du inte känner till."
         )
     return " ".join(parts) if parts else None
 
 
-def screen_all(lookback: int = 250) -> dict:
-    tickers = usable_tickers()
+def screen_all(lookback: int = 250, market: str = "se") -> dict:
+    tickers = usable_tickers(market)
     if not tickers:
         return {"error": "Inga validerade tickers. Kör datauppdateringen först."}
 
     results = []
     for t in tickers:
         try:
-            results.append(analyze(t, lookback))
+            results.append(analyze(t, lookback, market))
         except Exception as e:
             logger.error("Analys misslyckades för %s: %s", t, e)
 

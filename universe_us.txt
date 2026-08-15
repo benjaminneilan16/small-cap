@@ -1,0 +1,416 @@
+# Amerikanska small caps (Nasdaq/NYSE), $300M-$2B marknadsvarde.
+# Kalla: stockanalysis.com/list/small-cap-stocks (hamtat 2026-08-14)
+#
+# Detta ar en startlista med redan verifierade tickers - ingen
+# behovs av build_universe.py --market us for denna satsning.
+# Kor run_daily.py --market us for att se vilka som faktiskt
+# har tillrackligt daglig spann/omsattning for strategin.
+
+LIFE  # Ethos Technologies Inc.
+ZD  # Ziff Davis, Inc.
+TMC  # TMC the metals company Inc.
+ALMR  # Alamar Biosciences, Inc.
+LOB  # Live Oak Bancshares, Inc.
+FLOC  # Flowco Holdings Inc.
+INVX  # Innovex International, Inc.
+NBTX  # Nanobiotix S.A.
+FSUN  # FirstSun Capital Bancorp
+TGLS  # Tecnoglass Holdings Inc.
+LPG  # Dorian LPG Ltd.
+SEDG  # SolarEdge Technologies, Inc.
+WB  # Weibo Corporation
+WS  # Worthington Steel, Inc.
+RBCAA  # Republic Bancorp, Inc.
+GNL  # Global Net Lease, Inc.
+ATEN  # A10 Networks, Inc.
+CHA  # Chagee Holdings Limited
+VERX  # Vertex, Inc.
+ATEX  # Anterix Inc.
+AMR  # Alpha Metallurgical Resources, Inc.
+EVCM  # EverCommerce Inc.
+EPAC  # Enerpac Tool Group Corp.
+AGIO  # Agios Pharmaceuticals, Inc.
+PLAB  # Photronics, Inc.
+BRVE  # Braveheart Bio, Inc.
+XHR  # Xenia Hotels & Resorts, Inc.
+ALNT  # Allient Inc.
+OCFC  # OceanFirst Financial Corp.
+NVCR  # NovoCure Limited
+MBC  # MasterBrand, Inc.
+XPRO  # Expro Ltd
+GCT  # GigaCloud Technology Inc.
+SMA  # SmartStop Self Storage REIT, Inc.
+GABC  # German American Bancorp, Inc.
+CTS  # CTS Corporation
+SVV  # Savers Value Village, Inc.
+SNDA  # Sonida Senior Living, Inc.
+SAM  # The Boston Beer Company, Inc.
+FBRX  # Forte Biosciences, Inc.
+VSTS  # Vestis Corporation
+CENTA  # Central Garden & Pet Company
+IMOS  # ChipMOS TECHNOLOGIES INC.
+NEXA  # Nexa Resources S.A.
+STRA  # Strategic Education, Inc.
+WKC  # World Kinect Corporation
+LMAT  # LeMaitre Vascular, Inc.
+WMK  # Weis Markets, Inc.
+PAX  # Patria Investments Limited
+NBHC  # National Bank Holdings Corporation
+GT  # The Goodyear Tire & Rubber Company
+SONO  # Sonos, Inc.
+GEL  # Genesis Energy, L.P.
+BCAX  # Bicara Therapeutics Inc.
+GENB  # Generate Biomedicines, Inc.
+TCBK  # TriCo Bancshares
+CMPS  # COMPASS Pathways plc
+CASH  # Pathward Financial, Inc.
+SNDX  # Syndax Pharmaceuticals, Inc.
+TSLX  # Sixth Street Specialty Lending, Inc.
+TFIN  # Triumph Financial, Inc.
+AEVA  # Aeva Technologies, Inc.
+VIA  # Via Transportation, Inc.
+EYE  # National Vision Holdings, Inc.
+PRCH  # Porch Group, Inc.
+STBA  # S&T Bancorp, Inc.
+HLMN  # Hillman Solutions Corp.
+OPRA  # Opera Limited
+HOPE  # Hope Bancorp, Inc.
+EVTC  # EVERTEC, Inc.
+NEXT  # NextDecade Corporation
+PRGO  # Perrigo Company plc
+DCOM  # Dime Commercial Bancshares, Inc.
+AIN  # Albany International Corp.
+CYD  # China Yuchai International Limited
+PGY  # Pagaya Technologies Ltd.
+HUN  # Huntsman Corporation
+SRPT  # Sarepta Therapeutics, Inc.
+AAT  # American Assets Trust, Inc.
+CMRE  # Costamare Inc.
+ASTH  # Astrana Health, Inc.
+EFC  # Ellington Financial Inc.
+PRGS  # Progress Software Corporation
+BY  # Byline Bancorp, Inc.
+FTRE  # Fortrea Holdings Inc.
+SEPN  # Septerna, Inc.
+CBL  # CBL & Associates Properties, Inc.
+IE  # Ivanhoe Electric Inc.
+TPB  # Turning Point Brands, Inc.
+CPRI  # Capri Holdings Limited
+INSP  # Inspire Medical Systems, Inc.
+ARCO  # Arcos Dorados Holdings Inc.
+APPS  # Digital Turbine, Inc.
+DXC  # DXC Technology Company
+AMPX  # Amprius Technologies, Inc.
+IMCR  # Immunocore Holdings plc
+RXRX  # Recursion Pharmaceuticals, Inc.
+RVLV  # Revolve Group, Inc.
+BL  # BlackLine, Inc.
+GLP  # Global Partners LP
+EZPW  # EZCORP, Inc.
+JJSF  # J&J Snack Foods Corp.
+TRIN  # Trinity Capital Inc.
+WOLF  # Wolfspeed, Inc.
+PRG  # PROG Holdings, Inc.
+ICFI  # ICF International, Inc.
+QCRH  # QCR Holdings, Inc.
+ULCC  # Frontier Group Holdings, Inc.
+USAS  # Americas Gold and Silver Corporation
+BLFS  # BioLife Solutions, Inc.
+LZB  # La-Z-Boy Incorporated
+ZYME  # Zymeworks Inc.
+TRLV  # Trulieve Cannabis Corp.
+KMPR  # Kemper Corporation
+OMCL  # Omnicell, Inc.
+ANAB  # AnaptysBio, Inc.
+NOMD  # Nomad Foods Limited
+RLJ  # RLJ Lodging Trust
+FUN  # Six Flags Entertainment Corporation
+IMKTA  # Ingles Markets, Incorporated
+MLKN  # MillerKnoll, Inc.
+NTLA  # Intellia Therapeutics, Inc.
+FLNG  # FLEX LNG Ltd.
+LILA  # Liberty Latin America Ltd.
+VET  # Vermilion Energy Inc.
+MQ  # Marqeta, Inc.
+OBK  # Origin Bancorp, Inc.
+ANIP  # ANI Pharmaceuticals, Inc.
+ARLO  # Arlo Technologies, Inc.
+CNOB  # ConnectOne Bancorp, Inc.
+PWP  # Perella Weinberg Partners
+TH  # Target Hospitality Corp.
+ARDT  # Ardent Health, Inc.
+FCEL  # FuelCell Energy, Inc.
+SLVM  # Sylvamo Corporation
+IIPR  # Innovative Industrial Properties, Inc.
+IDT  # IDT Corporation
+GLOB  # Globant S.A.
+KRP  # Kimbell Royalty Partners, LP
+DSGR  # Distribution Solutions Group, Inc.
+QFIN  # Qfin Holdings, Inc.
+MRVI  # Maravai LifeSciences Holdings, Inc.
+BAND  # Bandwidth Inc.
+CXM  # Sprinklr, Inc.
+SFL  # SFL Corporation Ltd.
+AGL  # agilon health, inc.
+CSWC  # Capital Southwest Corporation
+UTI  # Universal Technical Institute, Inc.
+AI  # C3.ai, Inc.
+AMSC  # American Superconductor Corporation
+TYRA  # Tyra Biosciences, Inc.
+UROY  # Uranium Royalty Corp.
+SBH  # Sally Beauty Holdings, Inc.
+TWFG  # TWFG, Inc.
+CNXC  # Concentrix Corporation
+FLO  # Flowers Foods, Inc.
+BBAI  # BigBear.ai Holdings, Inc.
+TNDM  # Tandem Diabetes Care, Inc.
+AZUL  # Azul S.A.
+CRSR  # Corsair Gaming, Inc.
+WWW  # Wolverine World Wide, Inc.
+XNCR  # Xencor, Inc.
+ENR  # Energizer Holdings, Inc.
+POET  # POET Technologies Inc.
+COUR  # Coursera, Inc.
+ENOV  # Enovis Corporation
+LKFN  # Lakeland Financial Corporation
+GSL  # Global Ship Lease, Inc.
+HCSG  # Healthcare Services Group, Inc.
+WD  # Walker & Dunlop, Inc.
+SAFT  # Safety Insurance Group, Inc.
+ABSI  # Absci Corporation
+PSNL  # Personalis, Inc.
+FOR  # Forestar Group Inc.
+ATLC  # Atlanticus Holdings Corporation
+EOSE  # Eos Energy Enterprises, Inc.
+MLTX  # MoonLake Immunotherapeutics
+HROW  # Harrow, Inc.
+AVLN  # Avalyn Pharma Inc.
+SHLS  # Shoals Technologies Group, Inc.
+ADNT  # Adient plc
+GIII  # G-III Apparel Group, Ltd.
+GIC  # Global Industrial Company
+ROCK  # Gibraltar Industries, Inc.
+AMAL  # Amalgamated Financial Corp.
+VIR  # Vir Biotechnology, Inc.
+REAL  # The RealReal, Inc.
+INVA  # Innoviva, Inc.
+SCL  # Stepan Company
+BJRI  # BJ's Restaurants, Inc.
+SVRA  # Savara Inc.
+NSSC  # Napco Security Technologies, Inc.
+KOS  # Kosmos Energy Ltd.
+CNMD  # CONMED Corporation
+CRI  # Carter's, Inc.
+WEN  # The Wendy's Company
+GBX  # The Greenbrier Companies, Inc.
+DMC  # Del Monte Corporation
+WLTH  # Wealthfront Corporation
+XERS  # Xeris Biopharma Holdings, Inc.
+TRS  # TriMas Corporation
+PEBO  # Peoples Bancorp Inc.
+ATEC  # Alphatec Holdings, Inc.
+AVBP  # ArriVent BioPharma, Inc.
+OMDA  # Omada Health, Inc.
+PCT  # PureCycle Technologies, Inc.
+NRP  # Natural Resource Partners L.P.
+HLX  # Helix Energy Solutions Group, Inc.
+CTBI  # Community Trust Bancorp, Inc.
+REX  # REX American Resources Corporation
+AESI  # Atlas Energy Solutions Inc.
+AMPL  # Amplitude, Inc.
+YELP  # Yelp Inc.
+CDRE  # Cadre Holdings, Inc.
+IAUX  # i-80 Gold Corp.
+AZTA  # Azenta, Inc.
+RCAT  # Red Cat Holdings, Inc.
+UFCS  # United Fire Group, Inc.
+ORIC  # ORIC Pharmaceuticals, Inc.
+AMN  # AMN Healthcare Services, Inc.
+LGIH  # LGI Homes, Inc.
+BW  # Babcock & Wilcox Enterprises, Inc.
+PAHC  # Phibro Animal Health Corporation
+XPEL  # XPEL, Inc.
+AIP  # Arteris, Inc.
+ESRT  # Empire State Realty Trust, Inc.
+NAT  # Nordic American Tankers Limited
+WABC  # Westamerica Bancorporation
+DFH  # Dream Finders Homes, Inc.
+AGRO  # Adecoagro S.A.
+PNTG  # The Pennant Group, Inc.
+AMRC  # Ameresco, Inc.
+FMBH  # First Mid Bancshares, Inc.
+ARHS  # Arhaus, Inc.
+ALVO  # Alvotech
+SDGR  # Schrödinger, Inc.
+UMH  # UMH Properties, Inc.
+VTOL  # Bristow Group Inc.
+LSPD  # Lightspeed Commerce Inc.
+PUMP  # ProPetro Holding Corp.
+ODC  # Oil-Dri Corporation of America
+BRBR  # BellRing Brands, Inc.
+IART  # Integra LifeSciences Holdings Corporation
+SLSR  # Solaris Resources Inc.
+AKTS  # Aktis Oncology, Inc.
+FMC  # FMC Corporation
+VZLA  # Vizsla Silver Corp.
+WINA  # Winmark Corporation
+HBT  # HBT Financial, Inc.
+MNKD  # MannKind Corporation
+AORT  # Artivion, Inc.
+IMTX  # Immatics N.V.
+LQDT  # Liquidity Services, Inc.
+DOLE  # Dole plc
+NVAX  # Novavax, Inc.
+CNL  # Collective Mining Ltd.
+WLDN  # Willdan Group, Inc.
+GHM  # Graham Corporation
+ORC  # Orchid Island Capital, Inc.
+EPC  # Edgewell Personal Care Company
+MSDL  # Morgan Stanley Direct Lending Fund
+JBIO  # Jade Biosciences, Inc.
+ACVA  # ACV Auctions Inc.
+DEA  # Easterly Government Properties, Inc.
+INBX  # Inhibrx Biosciences, Inc.
+LINC  # Lincoln Educational Services Corporation
+TDOC  # Teladoc Health, Inc.
+HLF  # Herbalife Ltd.
+OSBC  # Old Second Bancorp, Inc.
+MYE  # Myers Industries, Inc.
+CBRL  # Cracker Barrel Old Country Store, Inc.
+WLFC  # Willis Lease Finance Corporation
+HLIT  # Harmonic Inc.
+FTK  # Flotek Industries, Inc.
+VOR  # Vor Biopharma Inc.
+RES  # RPC, Inc.
+TWO  # Two Harbors Investment Corp.
+NVGS  # Navigator Holdings Ltd.
+SGML  # Sigma Lithium Corporation
+THRM  # Gentherm Incorporated
+UVV  # Universal Corporation
+SPTX  # Seaport Therapeutics, Inc.
+TRIP  # Tripadvisor, Inc.
+TTI  # TETRA Technologies, Inc.
+TNC  # Tennant Company
+DMLP  # Dorchester Minerals, L.P.
+SBET  # Sharplink, Inc.
+PFBC  # Preferred Bank
+CERT  # Certara, Inc.
+LWLG  # Lightwave Logic, Inc.
+UMAC  # Unusual Machines, Inc.
+GDRX  # GoodRx Holdings, Inc.
+RXT  # Rackspace Technology, Inc.
+NHP  # National Healthcare Properties, Inc.
+LADR  # Ladder Capital Corp
+AFYA  # Afya Limited
+CCO  # Clear Channel Outdoor Holdings, Inc.
+UVE  # Universal Insurance Holdings, Inc.
+CRCT  # Cricut, Inc.
+ETON  # Eton Pharmaceuticals, Inc.
+MRTN  # Marten Transport, Ltd.
+GTM  # ZoomInfo Technologies Inc.
+QNST  # QuinStreet, Inc.
+MGTX  # MeiraGTx Holdings plc
+WBTN  # WEBTOON Entertainment Inc.
+NBR  # Nabors Industries Ltd.
+HFWA  # Heritage Financial Corporation
+STAA  # STAAR Surgical Company
+WVE  # Wave Life Sciences Ltd.
+BFS  # Saul Centers, Inc.
+EYPT  # EyePoint, Inc.
+OPY  # Oppenheimer Holdings Inc.
+USPH  # U.S. Physical Therapy, Inc.
+FINV  # FinVolution Group
+UPWK  # Upwork Inc.
+BKSY  # BlackSky Technology Inc.
+MMI  # Marcus & Millichap, Inc.
+RDWR  # Radware Ltd.
+BVS  # Bioventus Inc.
+BORR  # Borr Drilling Limited
+DRTS  # Alpha Tau Medical Ltd.
+TRUP  # Trupanion, Inc.
+IRMD  # IRADIMED CORPORATION
+UVSP  # Univest Financial Corporation
+SPH  # Suburban Propane Partners, L.P.
+LNN  # Lindsay Corporation
+TEN  # Tsakos Energy Navigation Limited
+MUX  # McEwen Inc.
+CRVS  # Corvus Pharmaceuticals, Inc.
+PRCT  # PROCEPT BioRobotics Corporation
+ASM  # Avino Silver & Gold Mines Ltd.
+PSEC  # Prospect Capital Corporation
+AVO  # Mission Produce, Inc.
+LAC  # Lithium Americas Corp.
+BLZE  # Backblaze, Inc.
+DFIN  # Donnelley Financial Solutions, Inc.
+CRON  # Cronos Group Inc.
+UPBD  # Upbound Group, Inc.
+NWPX  # NWPX Infrastructure, Inc.
+SAFE  # Safehold Inc.
+MCB  # Metropolitan Bank Holding Corp.
+CMP  # Compass Minerals International, Inc.
+DLX  # Deluxe Corporation
+SIFY  # Sify Technologies Limited
+NBN  # Northeast Bank
+OCSL  # Oaktree Specialty Lending Corporation
+VYX  # NCR Voyix Corporation
+ECVT  # Ecovyst Inc.
+AMTB  # Amerant Bancorp Inc.
+FSBC  # Five Star Bancorp
+IGIC  # International General Insurance Holdings Ltd.
+SCSC  # ScanSource, Inc.
+NUTX  # Nutex Health Inc.
+ANRO  # Alto Neuroscience, Inc.
+TBLA  # Taboola.com Ltd.
+GNK  # Genco Shipping & Trading Limited
+VRTS  # Virtus Investment Partners, Inc.
+EVLV  # Evolv Technologies Holdings, Inc.
+CFFN  # Capitol Federal Financial, Inc.
+BOW  # Bowhead Specialty Holdings Inc.
+EVC  # Entravision Communications Corporation
+GSBD  # Goldman Sachs BDC, Inc.
+LXRX  # Lexicon Pharmaceuticals, Inc.
+MSEX  # Middlesex Water Company
+CGEM  # Cullinan Therapeutics, Inc.
+RZLV  # Rezolve AI PLC
+ABR  # Arbor Realty Trust, Inc.
+OI  # O-I Glass, Inc.
+AOSL  # Alpha and Omega Semiconductor Limited
+CSIQ  # Canadian Solar Inc.
+XIFR  # XPLR Infrastructure, LP
+ESQ  # Esquire Financial Holdings, Inc.
+CEVA  # CEVA, Inc.
+APMD  # Apnimed, Inc.
+SVC  # Service Properties Trust
+CRML  # Critical Metals Corp.
+CRAI  # CRA International, Inc.
+BV  # BrightView Holdings, Inc.
+SANA  # Sana Biotechnology, Inc.
+ITRN  # Ituran Location and Control Ltd.
+SBR  # Sabine Royalty Trust
+OLMA  # Olema Pharmaceuticals, Inc.
+EQBK  # Equity Bancshares, Inc.
+MBWM  # Mercantile Bank Corporation
+HBNC  # Horizon Bancorp, Inc.
+TROX  # Tronox Holdings plc
+DAKT  # Daktronics, Inc.
+BFST  # Business First Bancshares, Inc.
+MCBS  # MetroCity Bankshares, Inc.
+SBGI  # Sinclair, Inc.
+GPRE  # Green Plains Inc.
+PLOW  # Douglas Dynamics, Inc.
+OPK  # OPKO Health, Inc.
+ASTE  # Astec Industries, Inc.
+GRPN  # Groupon, Inc.
+CCNE  # CNB Financial Corporation
+RHLD  # Resolute Holdings Management, Inc.
+REPL  # Replimune Group, Inc.
+NNE  # NANO Nuclear Energy Inc.
+UAMY  # United States Antimony Corporation
+RERE  # ATRenew Inc.
+KBDC  # Kayne Anderson BDC, Inc.
+CPF  # Central Pacific Financial Corp.
+CIM  # Chimera Investment Corporation
+CSR  # Centerspace
+ENVX  # Enovix Corporation
+NX  # Quanex Building Products Corporation
+PCRX  # Pacira BioSciences, Inc.

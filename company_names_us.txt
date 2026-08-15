@@ -1,0 +1,408 @@
+Ethos Technologies Inc.
+Ziff Davis, Inc.
+TMC the metals company Inc.
+Alamar Biosciences, Inc.
+Live Oak Bancshares, Inc.
+Flowco Holdings Inc.
+Innovex International, Inc.
+Nanobiotix S.A.
+FirstSun Capital Bancorp
+Tecnoglass Holdings Inc.
+Dorian LPG Ltd.
+SolarEdge Technologies, Inc.
+Weibo Corporation
+Worthington Steel, Inc.
+Republic Bancorp, Inc.
+Global Net Lease, Inc.
+A10 Networks, Inc.
+Chagee Holdings Limited
+Vertex, Inc.
+Anterix Inc.
+Alpha Metallurgical Resources, Inc.
+EverCommerce Inc.
+Enerpac Tool Group Corp.
+Agios Pharmaceuticals, Inc.
+Photronics, Inc.
+Braveheart Bio, Inc.
+Xenia Hotels & Resorts, Inc.
+Allient Inc.
+OceanFirst Financial Corp.
+NovoCure Limited
+MasterBrand, Inc.
+Expro Ltd
+GigaCloud Technology Inc.
+SmartStop Self Storage REIT, Inc.
+German American Bancorp, Inc.
+CTS Corporation
+Savers Value Village, Inc.
+Sonida Senior Living, Inc.
+The Boston Beer Company, Inc.
+Forte Biosciences, Inc.
+Vestis Corporation
+Central Garden & Pet Company
+ChipMOS TECHNOLOGIES INC.
+Nexa Resources S.A.
+Strategic Education, Inc.
+World Kinect Corporation
+LeMaitre Vascular, Inc.
+Weis Markets, Inc.
+Patria Investments Limited
+National Bank Holdings Corporation
+The Goodyear Tire & Rubber Company
+Sonos, Inc.
+Genesis Energy, L.P.
+Bicara Therapeutics Inc.
+Generate Biomedicines, Inc.
+TriCo Bancshares
+COMPASS Pathways plc
+Pathward Financial, Inc.
+Syndax Pharmaceuticals, Inc.
+Sixth Street Specialty Lending, Inc.
+Triumph Financial, Inc.
+Aeva Technologies, Inc.
+Via Transportation, Inc.
+National Vision Holdings, Inc.
+Porch Group, Inc.
+S&T Bancorp, Inc.
+Hillman Solutions Corp.
+Opera Limited
+Hope Bancorp, Inc.
+EVERTEC, Inc.
+NextDecade Corporation
+Perrigo Company plc
+Dime Commercial Bancshares, Inc.
+Albany International Corp.
+China Yuchai International Limited
+Pagaya Technologies Ltd.
+Huntsman Corporation
+Sarepta Therapeutics, Inc.
+American Assets Trust, Inc.
+Costamare Inc.
+Astrana Health, Inc.
+Ellington Financial Inc.
+Progress Software Corporation
+Byline Bancorp, Inc.
+Fortrea Holdings Inc.
+Septerna, Inc.
+CBL & Associates Properties, Inc.
+Ivanhoe Electric Inc.
+Turning Point Brands, Inc.
+Capri Holdings Limited
+Inspire Medical Systems, Inc.
+Arcos Dorados Holdings Inc.
+Digital Turbine, Inc.
+DXC Technology Company
+Amprius Technologies, Inc.
+Immunocore Holdings plc
+Recursion Pharmaceuticals, Inc.
+Revolve Group, Inc.
+BlackLine, Inc.
+Global Partners LP
+EZCORP, Inc.
+J&J Snack Foods Corp.
+Trinity Capital Inc.
+Wolfspeed, Inc.
+PROG Holdings, Inc.
+ICF International, Inc.
+QCR Holdings, Inc.
+Frontier Group Holdings, Inc.
+Americas Gold and Silver Corporation
+BioLife Solutions, Inc.
+La-Z-Boy Incorporated
+Zymeworks Inc.
+Trulieve Cannabis Corp.
+Kemper Corporation
+Omnicell, Inc.
+AnaptysBio, Inc.
+Nomad Foods Limited
+RLJ Lodging Trust
+Six Flags Entertainment Corporation
+Ingles Markets, Incorporated
+MillerKnoll, Inc.
+Intellia Therapeutics, Inc.
+FLEX LNG Ltd.
+Liberty Latin America Ltd.
+Vermilion Energy Inc.
+Marqeta, Inc.
+Origin Bancorp, Inc.
+ANI Pharmaceuticals, Inc.
+Arlo Technologies, Inc.
+ConnectOne Bancorp, Inc.
+Perella Weinberg Partners
+Target Hospitality Corp.
+Ardent Health, Inc.
+FuelCell Energy, Inc.
+Sylvamo Corporation
+Innovative Industrial Properties, Inc.
+IDT Corporation
+Globant S.A.
+Kimbell Royalty Partners, LP
+Distribution Solutions Group, Inc.
+Qfin Holdings, Inc.
+Maravai LifeSciences Holdings, Inc.
+Bandwidth Inc.
+Sprinklr, Inc.
+SFL Corporation Ltd.
+agilon health, inc.
+Capital Southwest Corporation
+Universal Technical Institute, Inc.
+C3.ai, Inc.
+American Superconductor Corporation
+Tyra Biosciences, Inc.
+Uranium Royalty Corp.
+Sally Beauty Holdings, Inc.
+TWFG, Inc.
+Concentrix Corporation
+Flowers Foods, Inc.
+BigBear.ai Holdings, Inc.
+Tandem Diabetes Care, Inc.
+Azul S.A.
+Corsair Gaming, Inc.
+Wolverine World Wide, Inc.
+Xencor, Inc.
+Energizer Holdings, Inc.
+POET Technologies Inc.
+Coursera, Inc.
+Enovis Corporation
+Lakeland Financial Corporation
+Global Ship Lease, Inc.
+Healthcare Services Group, Inc.
+Walker & Dunlop, Inc.
+Safety Insurance Group, Inc.
+Absci Corporation
+Personalis, Inc.
+Forestar Group Inc.
+Atlanticus Holdings Corporation
+Eos Energy Enterprises, Inc.
+MoonLake Immunotherapeutics
+Harrow, Inc.
+Avalyn Pharma Inc.
+Shoals Technologies Group, Inc.
+Adient plc
+G-III Apparel Group, Ltd.
+Global Industrial Company
+Gibraltar Industries, Inc.
+Amalgamated Financial Corp.
+Vir Biotechnology, Inc.
+The RealReal, Inc.
+Innoviva, Inc.
+Stepan Company
+BJ's Restaurants, Inc.
+Savara Inc.
+Napco Security Technologies, Inc.
+Kosmos Energy Ltd.
+CONMED Corporation
+Carter's, Inc.
+The Wendy's Company
+The Greenbrier Companies, Inc.
+Del Monte Corporation
+Wealthfront Corporation
+Xeris Biopharma Holdings, Inc.
+TriMas Corporation
+Peoples Bancorp Inc.
+Alphatec Holdings, Inc.
+ArriVent BioPharma, Inc.
+Omada Health, Inc.
+PureCycle Technologies, Inc.
+Natural Resource Partners L.P.
+Helix Energy Solutions Group, Inc.
+Community Trust Bancorp, Inc.
+REX American Resources Corporation
+Atlas Energy Solutions Inc.
+Amplitude, Inc.
+Yelp Inc.
+Cadre Holdings, Inc.
+i-80 Gold Corp.
+Azenta, Inc.
+Red Cat Holdings, Inc.
+United Fire Group, Inc.
+ORIC Pharmaceuticals, Inc.
+AMN Healthcare Services, Inc.
+LGI Homes, Inc.
+Babcock & Wilcox Enterprises, Inc.
+Phibro Animal Health Corporation
+XPEL, Inc.
+Arteris, Inc.
+Empire State Realty Trust, Inc.
+Nordic American Tankers Limited
+Westamerica Bancorporation
+Dream Finders Homes, Inc.
+Adecoagro S.A.
+The Pennant Group, Inc.
+Ameresco, Inc.
+First Mid Bancshares, Inc.
+Arhaus, Inc.
+Alvotech
+Schrödinger, Inc.
+UMH Properties, Inc.
+Bristow Group Inc.
+Lightspeed Commerce Inc.
+ProPetro Holding Corp.
+Oil-Dri Corporation of America
+BellRing Brands, Inc.
+Integra LifeSciences Holdings Corporation
+Solaris Resources Inc.
+Aktis Oncology, Inc.
+FMC Corporation
+Vizsla Silver Corp.
+Winmark Corporation
+HBT Financial, Inc.
+MannKind Corporation
+Artivion, Inc.
+Immatics N.V.
+Liquidity Services, Inc.
+Dole plc
+Novavax, Inc.
+Collective Mining Ltd.
+Willdan Group, Inc.
+Graham Corporation
+Orchid Island Capital, Inc.
+Edgewell Personal Care Company
+Morgan Stanley Direct Lending Fund
+Jade Biosciences, Inc.
+ACV Auctions Inc.
+Easterly Government Properties, Inc.
+Inhibrx Biosciences, Inc.
+Lincoln Educational Services Corporation
+Teladoc Health, Inc.
+Herbalife Ltd.
+Old Second Bancorp, Inc.
+Myers Industries, Inc.
+Cracker Barrel Old Country Store, Inc.
+Willis Lease Finance Corporation
+Harmonic Inc.
+Flotek Industries, Inc.
+Vor Biopharma Inc.
+RPC, Inc.
+Two Harbors Investment Corp.
+Navigator Holdings Ltd.
+Sigma Lithium Corporation
+Gentherm Incorporated
+Universal Corporation
+Seaport Therapeutics, Inc.
+Tripadvisor, Inc.
+TETRA Technologies, Inc.
+Tennant Company
+Dorchester Minerals, L.P.
+Sharplink, Inc.
+Preferred Bank
+Certara, Inc.
+Lightwave Logic, Inc.
+Unusual Machines, Inc.
+GoodRx Holdings, Inc.
+Rackspace Technology, Inc.
+National Healthcare Properties, Inc.
+Ladder Capital Corp
+Afya Limited
+Clear Channel Outdoor Holdings, Inc.
+Universal Insurance Holdings, Inc.
+Cricut, Inc.
+Eton Pharmaceuticals, Inc.
+Marten Transport, Ltd.
+ZoomInfo Technologies Inc.
+QuinStreet, Inc.
+MeiraGTx Holdings plc
+WEBTOON Entertainment Inc.
+Nabors Industries Ltd.
+Heritage Financial Corporation
+STAAR Surgical Company
+Wave Life Sciences Ltd.
+Saul Centers, Inc.
+EyePoint, Inc.
+Oppenheimer Holdings Inc.
+U.S. Physical Therapy, Inc.
+FinVolution Group
+Upwork Inc.
+BlackSky Technology Inc.
+Marcus & Millichap, Inc.
+Radware Ltd.
+Bioventus Inc.
+Borr Drilling Limited
+Alpha Tau Medical Ltd.
+Trupanion, Inc.
+IRADIMED CORPORATION
+Univest Financial Corporation
+Suburban Propane Partners, L.P.
+Lindsay Corporation
+Tsakos Energy Navigation Limited
+McEwen Inc.
+Corvus Pharmaceuticals, Inc.
+PROCEPT BioRobotics Corporation
+Avino Silver & Gold Mines Ltd.
+Prospect Capital Corporation
+Mission Produce, Inc.
+Lithium Americas Corp.
+Backblaze, Inc.
+Donnelley Financial Solutions, Inc.
+Cronos Group Inc.
+Upbound Group, Inc.
+NWPX Infrastructure, Inc.
+Safehold Inc.
+Metropolitan Bank Holding Corp.
+Compass Minerals International, Inc.
+Deluxe Corporation
+Sify Technologies Limited
+Northeast Bank
+Oaktree Specialty Lending Corporation
+NCR Voyix Corporation
+Ecovyst Inc.
+Amerant Bancorp Inc.
+Five Star Bancorp
+International General Insurance Holdings Ltd.
+ScanSource, Inc.
+Nutex Health Inc.
+Alto Neuroscience, Inc.
+Taboola.com Ltd.
+Genco Shipping & Trading Limited
+Virtus Investment Partners, Inc.
+Evolv Technologies Holdings, Inc.
+Capitol Federal Financial, Inc.
+Bowhead Specialty Holdings Inc.
+Entravision Communications Corporation
+Goldman Sachs BDC, Inc.
+Lexicon Pharmaceuticals, Inc.
+Middlesex Water Company
+Cullinan Therapeutics, Inc.
+Rezolve AI PLC
+Arbor Realty Trust, Inc.
+O-I Glass, Inc.
+Alpha and Omega Semiconductor Limited
+Canadian Solar Inc.
+XPLR Infrastructure, LP
+Esquire Financial Holdings, Inc.
+CEVA, Inc.
+Apnimed, Inc.
+Service Properties Trust
+Critical Metals Corp.
+CRA International, Inc.
+BrightView Holdings, Inc.
+Sana Biotechnology, Inc.
+Ituran Location and Control Ltd.
+Sabine Royalty Trust
+Olema Pharmaceuticals, Inc.
+Equity Bancshares, Inc.
+Mercantile Bank Corporation
+Horizon Bancorp, Inc.
+Tronox Holdings plc
+Daktronics, Inc.
+Business First Bancshares, Inc.
+MetroCity Bankshares, Inc.
+Sinclair, Inc.
+Green Plains Inc.
+Douglas Dynamics, Inc.
+OPKO Health, Inc.
+Astec Industries, Inc.
+Groupon, Inc.
+CNB Financial Corporation
+Resolute Holdings Management, Inc.
+Replimune Group, Inc.
+NANO Nuclear Energy Inc.
+United States Antimony Corporation
+ATRenew Inc.
+Kayne Anderson BDC, Inc.
+Central Pacific Financial Corp.
+Chimera Investment Corporation
+Centerspace
+Enovix Corporation
+Quanex Building Products Corporation
+Pacira BioSciences, Inc.
