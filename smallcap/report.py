@@ -164,19 +164,24 @@ def build_morning_summary(status: dict, market: str = "se") -> str:
     """
     Kort statustext för morgonkollen (öppningsauktionen).
 
-    Ingen full rapport — bara en snabb koll om något hänt vid öppning
-    som är värt att titta närmare på innan resten av dagen. Lägger
-    inga nya ordrar, ändrar ingen strategi.
+    Skickas ALLTID, oavsett om något hänt eller inte — själva
+    statusmeddelandet är poängen: det bekräftar att systemet lever
+    och kört planenligt, inte bara vid dramatiska händelser.
     """
     cfg = config.get_config(market)
-    lines = [f"Morgonkoll {cfg.label} — {status.get('checked', 0)} ordrar kollade"]
+    pf = status.get("portfolio", {})
+    lines = [f"☀️ Morgonkoll {cfg.label}"]
+    if pf:
+        lines.append(f"{pf.get('total', 0):,.0f} {cfg.currency} "
+                     f"({pf.get('return_pct', 0):+.2f} %)")
+    lines.append(f"{status.get('checked', 0)} öppna köpordrar kollade")
 
     fills = status.get("fills", [])
     if not fills:
         lines.append("Inget nytt sen igår.")
         return "\n".join(lines)
 
-    lines.append(f"{len(fills)} fylld(a) i öppningsauktionen:")
+    lines.append(f"\n{len(fills)} fylld(a) i öppningsauktionen:")
     for f in fills:
         flag = " ⚠️ stort gap" if f.get("gap_warning") else ""
         lines.append(f"  {f['ticker']} @ {f['price']:.2f}{flag}")
@@ -189,6 +194,36 @@ def build_morning_summary(status: dict, market: str = "se") -> str:
             "extra titt innan resten av dagen."
         )
 
+    return "\n".join(lines)
+
+
+def build_midday_summary(market: str = "se") -> str:
+    """
+    Kort "lever"-statuskoll mitt på dagen.
+
+    Ingen ny data hämtas här — vi har ingen live-kurskälla mitt på
+    handelsdagen (Yahoo Finance ger dagliga staplar, kompletta först
+    efter stängning). Det här är medvetet BARA en bekräftelse att
+    systemet är igång och en påminnelse om senast kända portföljläge,
+    inte en uppdatering. Skickas ändå varje dag för att du ska kunna
+    lita på att tystnad senare (t.ex. om kvällskörningen skulle
+    faila) faktiskt betyder något, inte bara "vi hörde aldrig av oss".
+    """
+    from . import paper
+    cfg = config.get_config(market)
+    pf = paper.portfolio(market)
+
+    with connect(market) as c:
+        open_orders = c.execute(
+            "SELECT COUNT(*) n FROM orders WHERE status = 'open' AND side = 'buy'"
+        ).fetchone()["n"]
+
+    lines = [
+        f"☀️ Mitt på dagen — {cfg.label}",
+        f"{pf['total']:,.0f} {cfg.currency} ({pf['return_pct']:+.2f} %)",
+        f"{pf['open_positions']} öppna positioner, {open_orders} väntande ordrar",
+        "(baserat på senaste stängning — ingen ny data hämtad nu)",
+    ]
     return "\n".join(lines)
 
 
