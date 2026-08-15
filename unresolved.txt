@@ -1,8 +1,8 @@
 # Bolag som inte gick att matcha automatiskt.
-# Slå upp tickern manuellt (t.ex. på Avanza) och lägg
-# till i universe.txt om du vill ha med dem.
+# Slå upp tickern manuellt och lägg till i universe.txt om du vill ha med dem.
 
 Bonäsudden Holding
+GomSpace Group
 Gotlandsbolaget
 Heliospectra
 Hernö Gin

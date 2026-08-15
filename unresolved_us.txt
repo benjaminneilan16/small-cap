@@ -1,0 +1,7 @@
+# Bolag som inte gick att matcha automatiskt.
+# Slå upp tickern manuellt och lägg till i universe_us.txt om du vill ha med dem.
+
+Adecoagro S.A.
+Alvotech
+Univest Financial Corporation
+Critical Metals Corp.
