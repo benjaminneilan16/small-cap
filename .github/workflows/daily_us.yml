@@ -1,0 +1,39 @@
+name: Daglig körning — USA
+
+on:
+  schedule:
+    - cron: "0 21 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hämta koden
+        uses: actions/checkout@v4
+      - name: Sätt upp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Installera beroenden
+        run: pip install -r requirements.txt
+      - name: Kör
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python run_daily.py --market us
+      - name: Spara resultatet
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add data/market_us.db reports/latest_us.md reports/positions_us.csv reports/orders_us.csv
+          if git diff --staged --quiet; then
+            echo "Inget nytt att spara"
+          else
+            git commit -m "US körning $(date -u +'%Y-%m-%d')"
+            git push
+          fi
