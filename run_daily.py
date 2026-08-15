@@ -131,17 +131,28 @@ def main():
              len(actions["exits"]), len(actions["cancels"]), len(placed), pf["total"]),
         )
 
-    # --- Telegram, om konfigurerat ---
-    if actions["fills"] or actions["exits"]:
-        lines = [f"Småbolag {cfg.label} {pf['total']:,.0f} {cfg.currency} "
-                f"({pf['return_pct']:+.2f} %)"]
-        for e in actions["exits"]:
-            lines.append(f"{'+' if e['pnl'] >= 0 else ''}{e['pnl']:.0f} {cfg.currency}  "
-                         f"{e['ticker']}  {e['reason']}")
-        for f in actions["fills"]:
-            gap_note = " ⚠️ stort gap" if f.get("gap_warning") else ""
-            lines.append(f"KÖPT {f['ticker']} @ {f['price']:.2f}{gap_note}")
-        report.telegram("\n".join(lines))
+    # --- Telegram: skickas ALLTID, inte bara vid fills/exits ---
+    # En daglig statuskoll är värdefull i sig — den bekräftar att
+    # körningen faktiskt gick igenom. Annars går det inte att skilja
+    # "inget hände idag" från "körningen kraschade och du hörde
+    # aldrig av dig".
+    lines = [f"🌙 Kvällskörning — {cfg.label}",
+             f"{pf['total']:,.0f} {cfg.currency} ({pf['return_pct']:+.2f} %)",
+             f"Exponering {pf['exposure_pct']:.0f} %, kapital i vila "
+             f"{pf['idle_capital_pct']:.0f} %, {pf['open_positions']} öppna positioner"]
+    if actions["exits"] or actions["fills"] or placed:
+        lines.append("")
+    for e in actions["exits"]:
+        lines.append(f"{'+' if e['pnl'] >= 0 else ''}{e['pnl']:.0f} {cfg.currency}  "
+                     f"{e['ticker']}  {e['reason']}")
+    for f in actions["fills"]:
+        gap_note = " ⚠️ stort gap" if f.get("gap_warning") else ""
+        lines.append(f"KÖPT {f['ticker']} @ {f['price']:.2f}{gap_note}")
+    if placed and not (actions["exits"] or actions["fills"]):
+        lines.append(f"{len(placed)} nya köpordrar lagda")
+    if not (actions["exits"] or actions["fills"] or placed):
+        lines.append("Inget hände idag — normalt, de flesta ordrar ligger och väntar.")
+    report.telegram("\n".join(lines))
 
     log.info("Klart.")
 
