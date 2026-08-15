@@ -1,0 +1,31 @@
+name: Mitt på dagen — USA
+
+# Ren "botten lever"-signal, ingen datahämtning eller strategi-logik.
+# 17:00 UTC = ca 13:00 EDT (sommar) / 12:00 EST (vinter) — ungefär
+# mitten av Nasdaq/NYSE handelsdag (09:30–16:00 lokal tid).
+on:
+  schedule:
+    - cron: "0 17 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hämta koden
+        uses: actions/checkout@v4
+      - name: Sätt upp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Installera beroenden
+        run: pip install -r requirements.txt
+      - name: Mitt på dagen-koll
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python run_midday.py --market us
