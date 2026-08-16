@@ -1,6 +1,6 @@
 # Smabolagsrapport — Sverige
 
-*Genererad 2026-08-16 17:51 UTC*
+*Genererad 2026-08-16 20:41 UTC*
 
 ## Portfolj
 
@@ -19,21 +19,21 @@
 
 | Bolag | Limitpris | Antal |
 |---|---|---|
-| DICOT.ST | 0.20 | 4997 |
-| ORTIN.ST | 0.09 | 11111 |
-| LEMSE.ST | 1.94 | 516 |
-| SUBGEN.ST | 0.05 | 20040 |
-| PROGEN.ST | 0.09 | 10626 |
-| VETT.ST | 3.98 | 251 |
-| K33.ST | 0.02 | 41841 |
-| BRAVE.ST | 2.28 | 438 |
-| SPRINT.ST | 3.26 | 306 |
-| KLAR.ST | 0.87 | 1145 |
-| FERRO.ST | 2.60 | 384 |
-| IVACC.ST | 1.10 | 907 |
-| SPEC.ST | 0.03 | 28985 |
-| NIO.ST | 4.37 | 228 |
-| ENVAR.ST | 46.55 | 21 |
+| BEAMMW-B.ST | 12.88 | 77 |
+| STW.ST | 32.27 | 30 |
+| AEC.ST | 1.42 | 702 |
+| OPTI.ST | 2.50 | 399 |
+| MAGI.ST | 7.25 | 137 |
+| NXTCL.ST | 1.01 | 994 |
+| ELIC.ST | 2.71 | 369 |
+| SALT-B.ST | 6.00 | 166 |
+| HEART.ST | 18.49 | 54 |
+| ONCOZ.ST | 5.81 | 172 |
+| ACCON.ST | 16.31 | 61 |
+| CLAV.ST | 4.88 | 204 |
+| BRAIN.ST | 0.64 | 1552 |
+| GIG-SDB.ST | 1.88 | 532 |
+| DONE.ST | 7.97 | 125 |
 
 ## Resultat hittills
 
