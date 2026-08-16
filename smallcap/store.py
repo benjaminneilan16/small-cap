@@ -1,23 +1,17 @@
 """
 Lagring i SQLite-filer som ligger i repot.
 
-VARFÖR INGEN RIKTIG DATABAS: strategin körs en gång per dygn och
-hanterar kanske tjugo bolag. Det är några tusen rader totalt. Att sätta
-upp en molndatabas för det vore att lösa ett problem du inte har — och
-det innebär anslutningssträngar, konton och en gratisnivå som kan
-försvinna.
+VARFOR INGEN RIKTIG DATABAS: strategin kors en gang per dygn och
+hanterar kanske tjugo bolag. Det ar nagra tusen rader totalt.
 
-Med SQLite i repot får du istället:
+Med SQLite i repot far du istallet:
   - Ingen registrering, inga hemligheter att hantera
-  - Git-historiken som revisionslogg: varje körning syns som en commit
-  - Möjlighet att ladda ner filen och öppna den lokalt när du vill
-  - Gratis för alltid
+  - Git-historiken som revisionslogg: varje korning syns som en commit
+  - Mojlighet att ladda ner filen och oppna den lokalt nar du vill
+  - Gratis for alltid
 
-TVÅ MARKNADER, TVÅ DATABASER: svenska och amerikanska bolag hålls
-fysiskt separerade i olika filer (market_se.db / market_us.db), inte
-bara filtrerade inom samma fil. Det gör det omöjligt att kapital eller
-positioner från en marknad av misstag räknas in i den andra — en bugg
-i en WHERE-sats kan inte blanda ihop kronor och dollar.
+TVA MARKNADER, TVA DATABASER: svenska och amerikanska bolag halls
+fysiskt separerade i olika filer (market_se.db / market_us.db).
 """
 import sqlite3
 from pathlib import Path
@@ -25,33 +19,43 @@ from contextlib import contextmanager
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 
-VALID_MARKETS = ("se", "us")
+VALID_MARKETS = ("se", "us", "se_bt", "us_bt")
+
+# se_bt/us_bt ar BACKTEST-ISOLERADE varianter av se/us -- egna
+# databasfiler, men allt annat (config, screener, paper) fungerar
+# identiskt eftersom get_config() bara bryr sig om "se" eller "us"
+# forekommer i namnet.
+#
+# VARFOR DET HAR BEHOVS: backtest.run() anropar reset_account() och
+# skriver om hela portfoljen som en del av simuleringen. Om det kors
+# mot samma databas som den dagliga produktionskorningen anvander
+# skriver en walk-forward-analys OVER din riktiga paper-portfolj --
+# historik, oppna positioner, allt. Med separata databasfiler kan
+# backtest/walk-forward koras hur ofta som helst utan att nagonsin
+# rora produktionsdata.
+
+
+def _base_market(market: str) -> str:
+    """se_bt -> se, us_bt -> us, se/us oforandrat."""
+    return market.removesuffix("_bt")
 
 
 def _db_path(market: str) -> Path:
     if market not in VALID_MARKETS:
-        raise ValueError(f"okänd marknad '{market}', förväntade en av {VALID_MARKETS}")
+        raise ValueError(f"okand marknad '{market}', forvantade en av {VALID_MARKETS}")
     return DATA_DIR / f"market_{market}.db"
 
 
 @contextmanager
 def connect(market: str = "se"):
     """
-    Ger en databasanslutning för en marknad.
+    Ger en databasanslutning for en marknad.
 
-    PRESTANDA: återanvänder EN anslutning per marknad inom samma
-    process istället för att öppna/stänga en ny SQLite-fil varje
-    gång. Profilering av walk_forward avslöjade att öppna/committa/
-    stänga en anslutning för varje enskild frågaanrop (tiotusentals
-    gånger i en tät backtest-loop) stod för mer än 20% av all körtid
-    — inte databasoperationerna själva, utan bara att öppna och
-    stänga anslutningen om och om igen. WAL-läge tillåter dessutom
-    säkra samtidiga läsningar utan att låsa filen i onödan.
-
-    Anslutningen stängs INTE här — den lever kvar i _CONNECTIONS och
-    återanvänds av nästa anrop. Den stängs bara explicit via
-    close_all() (t.ex. vid processavslut) eller om processen avslutas
-    naturligt.
+    PRESTANDA: atervander EN anslutning per marknad inom samma
+    process istallet for att oppna/stanga en ny SQLite-fil varje
+    gang. Profilering av walk_forward avslojade att oppna/committa/
+    stanga en anslutning for varje enskild fragaanrop stod for mer an
+    20% av all kortid.
     """
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     conn = _CONNECTIONS.get(market)
@@ -72,7 +76,7 @@ _CONNECTIONS: dict[str, sqlite3.Connection] = {}
 
 
 def close_all():
-    """Stänger alla öppna databasanslutningar. Kör vid processavslut."""
+    """Stanger alla oppna databasanslutningar."""
     for conn in _CONNECTIONS.values():
         conn.close()
     _CONNECTIONS.clear()
@@ -99,12 +103,6 @@ CREATE TABLE IF NOT EXISTS bars (
 );
 CREATE INDEX IF NOT EXISTS idx_bars_ticker_date ON bars (ticker, date DESC);
 
--- Intradagsstaplar (5-minuters, senaste ~60 dagarna via Yahoo Finance).
--- Separat tabell från 'bars' eftersom de har olika livslängd och syfte:
--- 'bars' är dagliga och behålls för hela historiken (screening, backtest).
--- 'intraday_bars' är kortlivade och rensas regelbundet (se data.py) —
--- de används bara för att reagera SNABBARE inom en redan pågående dag,
--- inte för långsiktig analys.
 CREATE TABLE IF NOT EXISTS intraday_bars (
     ticker    TEXT NOT NULL,
     timestamp TEXT NOT NULL,
@@ -220,11 +218,7 @@ def get_bars(ticker: str, limit: int = 400, market: str = "se") -> list[dict]:
 def get_intraday_bars(ticker: str, since: str | None = None,
                        market: str = "se") -> list[dict]:
     """
-    Hämtar intradagsstaplar för en ticker, äldst först.
-
-    since: ISO-tidsstämpel — bara staplar EFTER denna returneras.
-    Används för att bara titta på dagens rörelse, inte gårdagens
-    kvarvarande intradagsdata.
+    Hamtar intradagsstaplar for en ticker, aldst forst.
     """
     with connect(market) as c:
         if since:
@@ -244,10 +238,7 @@ def get_intraday_bars(ticker: str, since: str | None = None,
 
 def prune_intraday_bars(older_than_days: int = 3, market: str = "se") -> int:
     """
-    Rensar gamla intradagsstaplar. De är bara relevanta för att reagera
-    inom en pågående dag — att spara dem för evigt vore att låta
-    databasen växa obegränsat för data som ändå aldrig används igen
-    (samma lärdom som orderbok-snapshots i crypto-arenan tidigare).
+    Rensar gamla intradagsstaplar.
     """
     from datetime import datetime, timezone, timedelta
     cutoff = (datetime.now(timezone.utc) - timedelta(days=older_than_days)).isoformat()
