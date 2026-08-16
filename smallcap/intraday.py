@@ -2,28 +2,19 @@
 Intradagsreaktion -- se ett fall eskalera INNAN nasta kvallskorning.
 
 VARFOR DET HAR BEHOVS: den dagliga korningen ser bara gardagens
-stangning. Om en aktie gappar ner kraftigt pa formiddagen och
-fortsatter falla, ligger en liggande koporder kvar orord tills kvallen
--- da kan den redan ha fyllts mitt i ett fritt fall.
+stangning.
 
-VAD DET HAR FAKTISKT GOR, OCH INTE GOR:
-Vi hamtar 5-minutersstaplar (Yahoo Finance, gratis, senaste ~60
-dagarna) for bolag med oppna koporder. Tre lagen baserat pa hur mycket
-priset fallit sedan ordern lades:
+VAD DET HAR FAKTISKT GOR: hamtar 5-minutersstaplar for bolag med
+oppna koporder, tre lagen:
+  1. Under intraday_adjust_pct: ingen atgard.
+  2. Mellan adjust_pct och pullback_pct: JUSTERA limitpriset nedat.
+  3. Over pullback_pct: DRA TILLBAKA ordern helt.
 
-  1. Under intraday_adjust_pct (t.ex. 4%): normal dagsrorelse, ingen
-     atgard.
-  2. Mellan intraday_adjust_pct och intraday_pullback_pct (4-8%):
-     JUSTERA limitpriset nedat for att folja kursen -- se
-     adjust_orders().
-  3. Over intraday_pullback_pct (8%): DRA TILLBAKA ordern helt -- se
-     check_pullback_withdrawals().
-
-Det har ar fortfarande INTE realtidsdata eller en riktig orderbok --
-bara en mycket farskare approximation an gardagens stangning.
+Dessutom: nyhetsflagga (check_recent_news) som kompletterar
+volymspiken med en explicit relevanskontroll mot kand yfinance-bugg.
 """
 import logging
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 from .store import connect, get_intraday_bars, prune_intraday_bars
 from . import config
@@ -88,24 +79,7 @@ def fetch_intraday(ticker: str, market: str = "se") -> dict:
 
 def adjust_orders(market: str = "se") -> list[dict]:
     """
-    Justerar limitpriset nedat for ordrar som fallit mattligt intradag
-    -- mellan intraday_adjust_pct och intraday_pullback_pct under
-    limitpriset sedan ordern lades.
-
-    VARFOR EN MELLANNIVA MELLAN "GOR INGET" OCH "DRA TILLBAKA": att
-    bara ha tva lagen missar precis den situation Marja sjalv beskriver
-    -- att aktivt folja med i en rorelse och lagga om ordern dar
-    koparna faktiskt ar NU.
-
-    VARFOR DET FINNS ETT TAK (intraday_max_adjustments): utan en grans
-    skulle en aktie i jamn, ihallande nedgang kunna fa ordern justerad
-    om och om igen hela vagen ner -- i praktiken samma sak som att jaga
-    kursen nedat. Nar taket nas gar ordern istallet till vanlig
-    pullback-tillbakadragning pa nasta kontroll.
-
-    Ordning i run_intraday_check(): justering kors FORE tillbaka-
-    dragning, sa en order som redan justerat sig ner till en ny,
-    rimlig niva inte omedelbart bedoms mot sitt URSPRUNGLIGA pris.
+    Justerar limitpriset nedat for ordrar som fallit mattligt intradag.
     """
     cfg = config.get_config(market)
 
@@ -163,9 +137,7 @@ def adjust_orders(market: str = "se") -> list[dict]:
 
 def check_pullback_withdrawals(market: str = "se") -> list[dict]:
     """
-    Kollar alla oppna koporder mot intradagsdata. Om priset fallit
-    mer an intraday_pullback_pct under limitpriset SEDAN ordern
-    lades, dras ordern tillbaka.
+    Kollar alla oppna koporder mot intradagsdata.
     """
     cfg = config.get_config(market)
 
@@ -212,8 +184,7 @@ def check_pullback_withdrawals(market: str = "se") -> list[dict]:
 def detect_volume_spike(ticker: str, market: str = "se",
                          bars: list[dict] | None = None) -> dict | None:
     """
-    Grov proxy for "nagot hande": onormal volym + stort prisfall samma
-    dag.
+    Grov proxy for "nagot hande": onormal volym + stort prisfall.
     """
     cfg = config.get_config(market)
     needed = cfg.volume_spike_lookback_days + 1
@@ -248,12 +219,74 @@ def detect_volume_spike(ticker: str, market: str = "se",
     return None
 
 
+def check_recent_news(ticker: str, market: str = "se") -> dict | None:
+    """
+    Grov proxy for "finns det en forklaring till rorelsen": kollar om
+    det finns farska nyhetsartiklar kopplade till bolaget.
+
+    VARFOR EXTRA FORSIKTIG HAR: yfinance's news-API har en kand, sedan
+    lange olost bugg (rapporterad pa deras GitHub, oppen sedan mars
+    2024) dar resultatet ibland innehaller artiklar som INTE handlar
+    om den efterfragade tickern. Varje artikel filtreras darfor
+    explicit mot dess egna relatedTickers-falt innan den raknas.
+
+    VAD DET HAR INTE AR: en bedomning av VAD nyheten betyder -- bara
+    ATT det finns farsk, verifierat relevant nyhetstackning senaste
+    dygnet.
+    """
+    try:
+        import yfinance as yf
+    except ImportError:
+        return None
+
+    cfg = config.get_config(market)
+    bare_ticker = ticker.removesuffix(cfg.ticker_suffix) if cfg.ticker_suffix else ticker
+
+    try:
+        articles = yf.Ticker(ticker).news
+    except Exception as e:
+        logger.warning("Kunde inte hamta nyheter for %s: %s", ticker, str(e)[:100])
+        return None
+
+    if not articles:
+        return None
+
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+    relevant = []
+    for a in articles:
+        related = a.get("relatedTickers") or []
+        if not any(bare_ticker == r.removesuffix(cfg.ticker_suffix) if cfg.ticker_suffix
+                   else bare_ticker == r for r in related):
+            continue
+
+        publish_ts = a.get("providerPublishTime")
+        if publish_ts is None:
+            continue
+        published = datetime.fromtimestamp(publish_ts, tz=timezone.utc)
+        if published < cutoff:
+            continue
+
+        relevant.append({
+            "title": a.get("title", "")[:120],
+            "publisher": a.get("publisher", "okand kalla"),
+            "published": published.isoformat(),
+        })
+
+    if not relevant:
+        return None
+
+    return {
+        "ticker": ticker,
+        "article_count": len(relevant),
+        "latest_title": relevant[0]["title"],
+        "latest_publisher": relevant[0]["publisher"],
+    }
+
+
 def run_intraday_check(market: str = "se") -> dict:
     """
     Huvudfunktion: justerar ordrar som fallit mattligt, drar tillbaka
     ordrar som fallit kraftigt, stadar gammal intradagsdata.
-
-    ORDNING SPELAR ROLL: justering kors FORE tillbakadragning.
     """
     adjusted = adjust_orders(market)
     withdrawn = check_pullback_withdrawals(market)
