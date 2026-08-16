@@ -1,36 +1,34 @@
 """
-Backtest — spelar upp historiken dag för dag.
+Backtest -- spelar upp historiken dag for dag.
 
-VARFÖR: utan detta skulle du behöva vänta månader på att få veta om
-strategin överhuvudtaget fungerar. Med två års historik får du ett
-första svar på några sekunder.
+VARFOR: utan detta skulle du behova vanta manader pa att fa veta om
+strategin overhuvudtaget fungerar. Med tva ars historik far du ett
+forsta svar pa nagra sekunder.
 
-VARFÖR DET ÄR TROVÄRDIGT HÄR, till skillnad från de flesta backtest:
+VARFOR DET AR TROVARDIGT HAR, till skillnad fran de flesta backtest:
 
-  Samma kod. Fill-logiken, exit-reglerna och courtaget är exakt samma
-  funktioner som paper.py använder live. Bygger man en separat
-  "backtest-version" testar man något annat än det som faktiskt körs.
+  Samma kod. Fill-logiken, exit-reglerna och courtaget ar exakt samma
+  funktioner som paper.py anvander live.
 
   Ingen lookahead. Loopen ger strategin bara staplar fram till och med
   dagens datum. Screenern kan aldrig se framtida kurser.
 
-  Konservativ fyllnad. Priset måste gå IGENOM limitnivån, inte nudda
-  den. Rundtur samma dag är omöjlig.
+  Konservativ fyllnad. Priset maste ga IGENOM limitnivan, inte nudda
+  den. Rundtur samma dag ar omojlig.
 
-VAD DET FORTFARANDE INTE KAN FÅNGA:
+VAD DET FORTFARANDE INTE KAN FANGA:
 
-  Om DIN order faktiskt hade blivit fylld. Vi vet att priset var där,
-  inte att det fanns en motpart för just dig. I ett bolag som omsätter
-  100 000 kr om dagen är det en verklig osäkerhet.
+  Om DIN order faktiskt hade blivit fylld. Vi vet att priset var dar,
+  inte att det fanns en motpart for just dig.
 
-  Överlevnadsbias. Universum består av bolag som finns idag. Bolag som
-  avnoterats eller gått i konkurs saknas — och det är precis de som
+  Overlevnadsbias. Universum bestar av bolag som finns idag. Bolag som
+  avnoterats eller gatt i konkurs saknas -- och det ar precis de som
   hade skadat strategin mest.
 
-Läs alltså resultatet som ett OVRE TAK, inte som en prognos.
+Las alltsa resultatet som ett OVRE TAK, inte som en prognos.
 
-MARKNADSPARAMETER: samma backtest-motor används för SE och US — bara
-databasen och konfigurationen som läses av bytes ut.
+MARKNADSPARAMETER: samma backtest-motor anvands for SE och US -- bara
+databasen och konfigurationen som lases av byts ut.
 """
 import logging
 from datetime import date
@@ -54,10 +52,7 @@ def _bars_until(ticker: str, until: str, limit: int = 400, market: str = "se") -
 def run(start_date: str = None, end_date: str = None,
         capital: float = None, market: str = "se") -> dict:
     """
-    Spelar upp historiken. Returnerar resultat med samma mått som live.
-
-    Simuleringen ersätter datakällan men behåller all annan logik —
-    samma fill-regler, samma exit-regler, samma courtage.
+    Spelar upp historiken. Returnerar resultat med samma matt som live.
     """
     from .store import reset_account, init
     from .data import usable_tickers
@@ -71,7 +66,6 @@ def run(start_date: str = None, end_date: str = None,
     if not tickers:
         return {"error": "Inga bolag med data"}
 
-    # Hitta gemensamt datumintervall
     with connect(market) as c:
         row = c.execute("SELECT MIN(date) a, MAX(date) b FROM bars").fetchone()
     first, last = row["a"], row["b"]
@@ -81,32 +75,23 @@ def run(start_date: str = None, end_date: str = None,
     eval_start = start_date or first
     eval_end = end_date or last
 
-    # ALLA handelsdagar i databasen, inte bara evalueringsperioden — vi
-    # behöver kunna se dagar FÖRE eval_start för uppvärmning (screenern
-    # kräver historik för att bedöma ett bolag). Bara dagarna FRÅN OCH
-    # MED eval_start faktiskt SIMULERAS och mäts; dagarna före används
-    # enbart som kontext att titta bakåt på, precis som i skarpt läge.
     with connect(market) as c:
         all_days = [r["date"] for r in c.execute(
             "SELECT DISTINCT date FROM bars WHERE date <= ? ORDER BY date",
             (eval_end,)).fetchall()]
 
-    # Hitta var evalueringsperioden faktiskt börjar i den fullständiga listan
     try:
         eval_start_idx = next(i for i, d in enumerate(all_days) if d >= eval_start)
     except StopIteration:
-        return {"error": f"Inget data från och med {eval_start}"}
+        return {"error": f"Inget data fran och med {eval_start}"}
 
     warmup = 120
     if eval_start_idx < warmup:
-        return {"error": f"För lite historik före {eval_start} "
-                         f"({eval_start_idx} dagar, behöver >{warmup} för uppvärmning)"}
+        return {"error": f"For lite historik fore {eval_start} "
+                         f"({eval_start_idx} dagar, behover >{warmup} for uppvarmning)"}
 
-    days = all_days  # simuleringsloopen nedan använder eval_start_idx som startpunkt
+    days = all_days
 
-    # Monkey-patcha datakällan så att strategin bara ser dagar <= today.
-    # Detta är hela lookahead-skyddet: samma kod, men den kan bara nå
-    # data som fanns vid beslutstillfället.
     real_get_bars = paper.get_bars
     real_screener_get_bars = screener.get_bars
 
@@ -116,19 +101,15 @@ def run(start_date: str = None, end_date: str = None,
     try:
         for i, today in enumerate(days[eval_start_idx:], start=eval_start_idx):
             def limited(ticker, limit=400, _d=today, _m=market, market=None):
-                # market-kwarg ignoreras avsiktligt här: under backtest
-                # patchar vi bara aktuell marknads get_bars, så anropet
-                # kommer alltid från rätt kontext.
                 return _bars_until(ticker, _d, limit, _m)
 
             paper.get_bars = limited
             screener.get_bars = limited
 
-            # Simulera "idag" för TTL-beräkningar
             paper.datetime = _FakeDatetime(today)
 
             actions = paper.process(market)
-            screen = screener.screen_all(market=market)
+            screen = screener.screen_all(market=market, skip_volume_spike=True)
             placed = []
             if "error" not in screen:
                 placed = paper.place_orders(screen.get("candidates", []), market)
@@ -140,7 +121,6 @@ def run(start_date: str = None, end_date: str = None,
                     "exits": actions["exits"],
                 })
 
-            # Kapitalkurva varje tionde dag för att hålla den läsbar
             if i % 10 == 0 or i == len(days) - 1:
                 pf = paper.portfolio(market)
                 equity_curve.append({"date": today, "total": pf["total"]})
@@ -152,7 +132,6 @@ def run(start_date: str = None, end_date: str = None,
 
     perf = paper.performance(market)
 
-    # Buy & hold som jämförelse: lika mycket i varje bolag från start
     bh = _buy_and_hold(tickers, days[eval_start_idx], days[-1], capital, market)
 
     perf["backtest"] = {
@@ -165,17 +144,17 @@ def run(start_date: str = None, end_date: str = None,
         "beats_buy_and_hold": (perf["portfolio"]["return_pct"] > bh
                                if bh is not None else None),
         "caveats": [
-            "Vi vet att priset nådde limitnivån, inte att just din order fylldes.",
-            "Universum består av bolag som finns idag — avnoterade saknas "
-            "(överlevnadsbias).",
-            "Läs resultatet som ett övre tak, inte som en prognos.",
+            "Vi vet att priset nadde limitnivan, inte att just din order fylldes.",
+            "Universum bestar av bolag som finns idag -- avnoterade saknas "
+            "(overlevnadsbias).",
+            "Las resultatet som ett ovre tak, inte som en prognos.",
         ],
     }
     return perf
 
 
 class _FakeDatetime:
-    """Låter paper.py tro att det är en viss dag, för TTL-beräkningar."""
+    """Later paper.py tro att det ar en viss dag, for TTL-berakningar."""
     def __init__(self, day: str):
         self._day = date.fromisoformat(day)
 
@@ -188,7 +167,7 @@ class _FakeDatetime:
 
 def _buy_and_hold(tickers: list[str], start: str, end: str,
                   capital: float, market: str = "se") -> float | None:
-    """Lika mycket i varje bolag från start till slut. Referensen."""
+    """Lika mycket i varje bolag fran start till slut. Referensen."""
     per = capital / len(tickers)
     total = 0.0
     counted = 0
@@ -202,41 +181,39 @@ def _buy_and_hold(tickers: list[str], start: str, end: str,
         counted += 1
     if not counted:
         return None
-    # Bolag utan data behåller sin kontantdel
     total += per * (len(tickers) - counted)
     return round((total - capital) / capital * 100, 2)
 
 
 # --- Walk-forward-parametrisering -----------------------------------------
 #
-# VARFÖR: fasta trösklar (MIN_DAILY_RANGE_PCT, MAX_EFFICIENCY_RATIO osv)
-# är en gissning som gjordes en gång och sen aldrig ifrågasattes. Vad som
-# fungerade för sex månader sen fungerar inte nödvändigtvis nu — bolagens
-# volatilitetsprofil, marknadsklimat och likviditet förändras.
+# VARFOR: fasta trosklar (MIN_DAILY_RANGE_PCT, MAX_EFFICIENCY_RATIO osv)
+# ar en gissning som gjordes en gang och sen aldrig ifragasattes.
 #
-# METODEN: dela historiken i rullande fönster. För varje fönster, testa
-# flera parameterkombinationer på perioden FÖRE fönstret ("in-sample"),
-# välj den kombination som presterade bäst där, och mät sedan HUR DEN
-# KOMBINATIONEN presterar på fönstret EFTER ("out-of-sample" — det
-# fönstret har den aldrig "sett"). Det är skillnaden mellan att bara
-# leta efter parametrar som råkar passa hela historiken perfekt
-# (overfitting, värdelöst för framtiden) och att testa om en metod för
-# att VÄLJA parametrar generaliserar till okänd framtida data.
+# METODEN: dela historiken i rullande fonster. For varje fonster, testa
+# flera parameterkombinationer pa perioden FORE fonstret ("in-sample"),
+# valj den kombination som presterade bast dar, och mat sedan HUR DEN
+# KOMBINATIONEN presterar pa fonstret EFTER ("out-of-sample").
 #
-# VIKTIGT ATT VARA ÄRLIG OM: även out-of-sample-resultat på en enda
-# walk-forward-körning är bara EN observation av hur metoden presterar.
-# Det säger något, men inte allt — samma försiktighet som gäller för
-# hela backtestet (se modulens docstring) gäller här också.
+# VIKTIGT ATT VARA ARLIG OM: aven out-of-sample-resultat pa en enda
+# walk-forward-korning ar bara EN observation av hur metoden presterar.
 
 PARAM_GRID = {
-    "min_daily_range_pct": [2.0, 3.0, 4.0],
-    "max_efficiency_ratio": [0.20, 0.30, 0.40],
-    "target_profit_pct": [5.0, 7.0, 10.0],
+    "min_daily_range_pct": [2.5, 4.0],
+    "max_efficiency_ratio": [0.25, 0.35],
+    "target_profit_pct": [6.0, 9.0],
 }
+# 8 kombinationer (2x2x2), inte 27 (3x3x3). VARFOR MINDRE AR RATT HAR:
+# varje kombination kor en fullstandig backtest.run() en gang per
+# fonster. Med verkliga marknadsstorlekar (300+ bolag i USA) blev 27
+# kombinationer opraktiskt langsamt aven efter att databasanslutningar
+# atervands (se store.py). Ett smalare grid ger ett snabbare, om an
+# grovre, svar. Skicka ett eget grid-argument till walk_forward() om
+# du vill testa fler kombinationer nar du har tid att vanta langre.
 
 
 def _param_combinations(grid: dict) -> list[dict]:
-    """Alla kombinationer av parametervärden i grid (kartesisk produkt)."""
+    """Alla kombinationer av parametervarden i grid (kartesisk produkt)."""
     import itertools
     keys = list(grid.keys())
     values = list(grid.values())
@@ -246,18 +223,10 @@ def _param_combinations(grid: dict) -> list[dict]:
 def _run_with_params(params: dict, start_date: str, end_date: str,
                      capital: float, market: str) -> dict:
     """
-    Kör backtest.run() med temporärt överskrivna parametrar.
-
-    Överskriver config.MARKETS[market] direkt (samma dict som
-    MarketConfig läser från vid varje get_config()-anrop), så att
-    ALL kod som läser konfiguration under körningen — screener,
-    paper, allt — automatiskt använder testparametrarna utan att
-    behöva skickas explicit genom hela anropskedjan.
+    Kor backtest.run() med temporart overskrivna parametrar.
     """
     market_settings = config.MARKETS[market]
     original = {k: market_settings.get(k) for k in params}
-    # target_profit_pct m.fl. är marknadsoberoende moduld-nivå-konstanter,
-    # inte MARKETS-nycklar — hantera separat.
     module_level_keys = {"target_profit_pct": "TARGET_PROFIT_PCT",
                           "position_size_pct": "POSITION_SIZE_PCT",
                           "buy_below_pct": "BUY_BELOW_PCT",
@@ -286,15 +255,7 @@ def _run_with_params(params: dict, start_date: str, end_date: str,
 def walk_forward(window_days: int = 90, grid: dict | None = None,
                  capital: float | None = None, market: str = "se") -> dict:
     """
-    Testar parameterkombinationer på rullande fönster.
-
-    För varje fönster: hitta bästa parametrar på föregående period
-    (in-sample), applicera dem oförändrade på nästa period
-    (out-of-sample), mät faktisk avkastning där.
-
-    Detta är kostsamt (kör hela backtestet en gång per parameter-
-    kombination per fönster), så window_days styr hur många fönster
-    som testas — större fönster = färre, snabbare körningar.
+    Testar parameterkombinationer pa rullande fonster.
     """
     from .store import connect as _connect
 
@@ -315,8 +276,8 @@ def walk_forward(window_days: int = 90, grid: dict | None = None,
 
     warmup = 120
     if len(all_days) < warmup + window_days * 2:
-        return {"error": f"För lite historik för walk-forward "
-                         f"(behöver minst {warmup + window_days*2} dagar, "
+        return {"error": f"For lite historik for walk-forward "
+                         f"(behover minst {warmup + window_days*2} dagar, "
                          f"har {len(all_days)})"}
 
     windows = []
@@ -330,17 +291,16 @@ def walk_forward(window_days: int = 90, grid: dict | None = None,
         i += window_days
 
     if not windows:
-        return {"error": "Inga fullständiga fönster i historiken"}
+        return {"error": "Inga fullstandiga fonster i historiken"}
 
-    logger.info("Walk-forward: %d fönster, %d parameterkombinationer per fönster",
+    logger.info("Walk-forward: %d fonster, %d parameterkombinationer per fonster",
                len(windows), len(combos))
 
     results = []
     for w_i, (is_start, is_end, oos_start, oos_end) in enumerate(windows, 1):
-        logger.info("Fönster %d/%d: in-sample %s–%s, out-of-sample %s–%s",
+        logger.info("Fonster %d/%d: in-sample %s-%s, out-of-sample %s-%s",
                    w_i, len(windows), is_start, is_end, oos_start, oos_end)
 
-        # In-sample: testa alla kombinationer, hitta bäst
         best_combo = None
         best_return = None
         for combo in combos:
@@ -356,15 +316,14 @@ def walk_forward(window_days: int = 90, grid: dict | None = None,
             results.append({"window": w_i, "error": "ingen kombination gav resultat"})
             continue
 
-        # Out-of-sample: applicera BÄSTA in-sample-kombinationen, oförändrad
         oos_result = _run_with_params(best_combo, oos_start, oos_end, capital, market)
         oos_return = (oos_result["portfolio"]["return_pct"]
                      if "error" not in oos_result else None)
 
         results.append({
             "window": w_i,
-            "in_sample_period": f"{is_start} – {is_end}",
-            "out_of_sample_period": f"{oos_start} – {oos_end}",
+            "in_sample_period": f"{is_start} - {is_end}",
+            "out_of_sample_period": f"{oos_start} - {oos_end}",
             "best_params": best_combo,
             "in_sample_return_pct": round(best_return, 2),
             "out_of_sample_return_pct": (round(oos_return, 2)
@@ -379,10 +338,10 @@ def walk_forward(window_days: int = 90, grid: dict | None = None,
         "avg_out_of_sample_return_pct": (round(sum(oos_returns) / len(oos_returns), 2)
                                          if oos_returns else None),
         "note": (
-            "Ut-av-provresultat är den ärligaste indikationen på om "
-            "parametervalet generaliserar — men det är fortfarande bara "
-            "en handfull fönster, inte en garanti. Stor spridning mellan "
-            "fönster tyder på att strategin är känslig för marknadsklimat, "
-            "inte att en 'rätt' parameteruppsättning hittats."
+            "Ut-av-provresultat ar den arligaste indikationen pa om "
+            "parametervalet generaliserar -- men det ar fortfarande bara "
+            "en handfull fonster, inte en garanti. Stor spridning mellan "
+            "fonster tyder pa att strategin ar kanslig for marknadsklimat, "
+            "inte att en ratt parameteruppsattning hittats."
         ),
     }
