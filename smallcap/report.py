@@ -1,12 +1,7 @@
 """
 Genererar rapporten som committas tillbaka till repot.
 
-Poängen: du ska kunna öppna GitHub och läsa vad som hänt utan att köra
-något. Rapporten skrivs över varje körning, och git-historiken bevarar
-alla tidigare versioner.
-
-SE och US får separata rapportfiler (latest.md / latest_us.md) så att
-de går att läsa var för sig, precis som portföljerna hålls separata.
+SE och US far separata rapportfiler (latest.md / latest_us.md).
 """
 from datetime import datetime, timezone
 
@@ -21,42 +16,38 @@ def build(screen: dict, actions: dict, perf: dict, market: str = "se") -> str:
     pf = perf["portfolio"]
     L = []
 
-    L.append(f"# Småbolagsrapport — {cfg.label}\n")
+    L.append(f"# Smabolagsrapport — {cfg.label}\n")
     L.append(f"*Genererad {now}*\n")
 
-    # --- Portfölj ---
-    L.append("## Portfölj\n")
+    L.append("## Portfolj\n")
     L.append(f"| | |")
     L.append(f"|---|---|")
-    L.append(f"| Totalt värde | {pf['total']:,.0f} {cur} |")
+    L.append(f"| Totalt varde | {pf['total']:,.0f} {cur} |")
     L.append(f"| Varav kontant | {pf['cash']:,.0f} {cur} |")
     L.append(f"| Avkastning | {pf['return_pct']:+.2f} % |")
     L.append(f"| Exponering | {pf['exposure_pct']:.0f} % (tak {cfg.max_exposure_pct:.0f} %) |")
     L.append(f"| Kapital i vila | {pf['idle_capital_pct']:.0f} % |")
-    L.append(f"| Öppna positioner | {pf['open_positions']} |")
+    L.append(f"| Oppna positioner | {pf['open_positions']} |")
     L.append("")
 
-    # Exponeringsvarning — nära taket är värt att lägga märke till även
-    # om det tekniskt inte har brutits.
     near_cap = pf['exposure_pct'] >= cfg.max_exposure_pct * 0.9
     if near_cap:
-        L.append(f"> ⚠️ Exponeringen ({pf['exposure_pct']:.0f} %) ligger nära taket "
-                 f"({cfg.max_exposure_pct:.0f} %). Få eller inga nya ordrar läggs "
-                 "förrän positioner stängs och frigör kapital.\n")
+        L.append(f"> Exponeringen ({pf['exposure_pct']:.0f} %) ligger nara taket "
+                 f"({cfg.max_exposure_pct:.0f} %). Fa eller inga nya ordrar laggs "
+                 "forran positioner stangs och frigor kapital.\n")
 
-    # --- Dagens händelser ---
     fills = actions.get("fills", [])
     exits = actions.get("exits", [])
     placed = actions.get("placed", [])
     cancels = actions.get("cancels", [])
 
-    L.append("## Dagens händelser\n")
+    L.append("## Dagens handelser\n")
     if not (fills or exits or placed or cancels):
-        L.append("Inget hände. Det är normalt — de flesta ordrar ligger och väntar.\n")
+        L.append("Inget hande. Det ar normalt — de flesta ordrar ligger och vantar.\n")
     else:
         if exits:
-            L.append("**Stängda positioner**\n")
-            L.append("| Bolag | Anledning | Resultat | Dagar | Max motgång |")
+            L.append("**Stangda positioner**\n")
+            L.append("| Bolag | Anledning | Resultat | Dagar | Max motgang |")
             L.append("|---|---|---|---|---|")
             for e in exits:
                 L.append(f"| {e['ticker']} | {e['reason']} | {e['pnl']:+.0f} {cur} | "
@@ -64,7 +55,7 @@ def build(screen: dict, actions: dict, perf: dict, market: str = "se") -> str:
             L.append("")
         if fills:
             L.append("**Nya positioner**\n")
-            L.append("| Bolag | Pris | Antal | Mål | Gap vid fyllnad |")
+            L.append("| Bolag | Pris | Antal | Mal | Gap vid fyllnad |")
             L.append("|---|---|---|---|---|")
             for f in fills:
                 gap_flag = " ⚠️" if f.get("gap_warning") else ""
@@ -75,12 +66,11 @@ def build(screen: dict, actions: dict, perf: dict, market: str = "se") -> str:
                 L.append("")
                 L.append(f"⚠️ {len(gap_warned)} fyllnad(er) hade ett ovanligt stort gap "
                          f"(> {cfg.fill_gap_warning_pct:.0f} %) mellan limitpris och "
-                         "dagens lägsta — kan betyda att aktien gappade ner kraftigt "
-                         "snarare än att studsa vid en sund nivå. Värt en extra titt "
-                         "innan du litar på den positionen.")
+                         "dagens lagsta — kan betyda att aktien gappade ner kraftigt "
+                         "snarare an att studsa vid en sund niva.")
             L.append("")
         if placed:
-            L.append(f"**{len(placed)} nya köpordrar lagda**\n")
+            L.append(f"**{len(placed)} nya kopordrar lagda**\n")
             L.append("| Bolag | Limitpris | Antal |")
             L.append("|---|---|---|")
             for p in placed[:15]:
@@ -91,60 +81,54 @@ def build(screen: dict, actions: dict, perf: dict, market: str = "se") -> str:
         if cancels:
             L.append(f"**{len(cancels)} ordrar togs bort** (inte fyllda i tid)\n")
 
-    # --- Resultat ---
     L.append("## Resultat hittills\n")
     if perf.get("closed_trades", 0) == 0:
-        L.append("Inga avslutade affärer än.\n")
+        L.append("Inga avslutade affarer an.\n")
     else:
         L.append("| | |")
         L.append("|---|---|")
-        L.append(f"| Avslutade affärer | {perf['closed_trades']} |")
+        L.append(f"| Avslutade affarer | {perf['closed_trades']} |")
         L.append(f"| Resultat | {perf['total_pnl']:+,.0f} {cur} |")
         L.append(f"| Vinstandel | {perf['win_rate_pct']:.0f} % |")
         if perf.get("avg_win"):
             L.append(f"| Snittvinst | {perf['avg_win']:+,.0f} {cur} |")
         if perf.get("avg_loss"):
-            L.append(f"| Snittförlust | {perf['avg_loss']:+,.0f} {cur} |")
+            L.append(f"| Snittforlust | {perf['avg_loss']:+,.0f} {cur} |")
         if perf.get("profit_factor"):
             L.append(f"| Profit factor | {perf['profit_factor']} |")
         if perf.get("avg_days_held"):
-            L.append(f"| Snitt hålltid | {perf['avg_days_held']:.0f} dagar |")
+            L.append(f"| Snitt halltid | {perf['avg_days_held']:.0f} dagar |")
         L.append("")
-        L.append("### Nyckeltal för strategin\n")
+        L.append("### Nyckeltal for strategin\n")
         L.append(f"**Fyllnadsgrad: {perf.get('fill_rate_pct')} %** — andelen ordrar "
-                 "som blev affärer. Låg siffra är normalt: *\"de flesta ordrar blir "
-                 "aldrig affärer\"*.\n")
+                 "som blev affarer. Lag siffra ar normalt.\n")
         if perf.get("avg_mae_pct") is not None:
-            L.append(f"**Genomsnittlig maximal motgång: {perf['avg_mae_pct']:.1f} %** "
-                     "— hur långt ner positionerna gick innan de stängdes. Detta är "
-                     "måttet på adverse selection: blir du systematiskt fylld precis "
-                     "innan det fortsätter ner?\n")
+            L.append(f"**Genomsnittlig maximal motgang: {perf['avg_mae_pct']:.1f} %** "
+                     "— hur langt ner positionerna gick innan de stangdes.\n")
         if perf.get("avg_gap_pct") is not None:
             L.append(f"**Genomsnittligt gap vid fyllnad: {perf['avg_gap_pct']:.1f} %** "
-                     f"— {perf.get('large_gap_fills', 0)} fyllnad(er) hade ett gap över "
-                     f"{cfg.fill_gap_warning_pct:.0f} %. Stigande snitt över tid kan "
-                     "betyda att screenern allt oftare fångar fallande knivar "
-                     "snarare än sunda studsar.\n")
+                     f"— {perf.get('large_gap_fills', 0)} fyllnad(er) hade ett gap over "
+                     f"{cfg.fill_gap_warning_pct:.0f} %.\n")
         if perf.get("exit_reasons"):
             L.append("**Exit-orsaker:** " + ", ".join(
                 f"{k} ({v})" for k, v in perf["exit_reasons"].items()) + "\n")
         if perf.get("note"):
             L.append(f"> {perf['note']}\n")
 
-    # --- Screener ---
     cands = screen.get("candidates", [])
     L.append("## Screener\n")
     L.append(f"{len(cands)} av {screen.get('screened', 0)} bolag passar kriterierna.\n")
     if cands:
-        L.append(f"| Bolag | Poäng | Dagligt spann | Eff. ratio | Omsättning | Kurs | |")
+        L.append(f"| Bolag | Poang | Dagligt spann | Eff. ratio | Omsattning | Kurs | |")
         L.append("|---|---|---|---|---|---|---|")
         for c in cands[:20]:
             spike_flag = " 📊" if c.get("volume_spike") else ""
+            news_flag = " 📰" if c.get("news") else ""
             L.append(f"| {c['ticker']} | {c['score']:.2f} | "
                      f"{c['median_daily_range_pct']:.1f} % | "
                      f"{c['efficiency_ratio_60']} | "
                      f"{c['median_turnover']:,.0f} {cur} | "
-                     f"{c['last_close']:.2f} |{spike_flag} |")
+                     f"{c['last_close']:.2f} |{spike_flag}{news_flag} |")
         L.append("")
         warned = [c for c in cands if c.get("warning")]
         if warned:
@@ -155,11 +139,10 @@ def build(screen: dict, actions: dict, perf: dict, market: str = "se") -> str:
 
         spiked = [c for c in cands if c.get("volume_spike")]
         if spiked:
-            L.append("### 📊 Volymspikar (möjlig nyhetshändelse)\n")
+            L.append("### 📊 Volymspikar (mojlig nyhetshandelse)\n")
             L.append(
                 "Onormal volym kombinerat med stort prisfall — kan betyda att "
-                "något hänt (nyheter, sektor-rörelse) snarare än normal "
-                "oscillation. Kolla gärna manuellt innan du litar på fyndet.\n"
+                "nagot hant snarare an normal oscillation.\n"
             )
             for c in spiked[:10]:
                 vs = c["volume_spike"]
@@ -167,21 +150,31 @@ def build(screen: dict, actions: dict, perf: dict, market: str = "se") -> str:
                          f"volym, {vs['price_change_pct']:+.1f} % samma dag")
             L.append("")
 
+        newsy = [c for c in cands if c.get("news")]
+        if newsy:
+            L.append("### 📰 Farska nyheter (senaste dygnet)\n")
+            L.append(
+                "Verifierat relevanta nyhetsartiklar for dessa bolag senaste "
+                "dygnet — en grov signal, inte en bedomning av om nyheten ar "
+                "bra eller dalig. Las sjalv innan du litar pa fyndet.\n"
+            )
+            for c in newsy[:10]:
+                n = c["news"]
+                extra = f" (+{n['article_count']-1} till)" if n["article_count"] > 1 else ""
+                L.append(f"- **{c['ticker']}**: \"{n['latest_title']}\" "
+                         f"— {n['latest_publisher']}{extra}")
+            L.append("")
+
     L.append("---\n")
-    L.append("*Simulerad handel med låtsaspengar. Fyllnad antas bara när priset "
-             "gick IGENOM limitnivån, inte när det nuddade den — det underskattar "
-             "antalet affärer, vilket är rätt håll att fela på.*")
+    L.append("*Simulerad handel med latsaspengar. Fyllnad antas bara nar priset "
+             "gick IGENOM limitnivan, inte nar det nuddade den.*")
 
     return "\n".join(L)
 
 
 def build_morning_summary(status: dict, market: str = "se") -> str:
     """
-    Kort statustext för morgonkollen (öppningsauktionen).
-
-    Skickas ALLTID, oavsett om något hänt eller inte — själva
-    statusmeddelandet är poängen: det bekräftar att systemet lever
-    och kört planenligt, inte bara vid dramatiska händelser.
+    Kort statustext for morgonkollen.
     """
     cfg = config.get_config(market)
     pf = status.get("portfolio", {})
@@ -189,14 +182,14 @@ def build_morning_summary(status: dict, market: str = "se") -> str:
     if pf:
         lines.append(f"{pf.get('total', 0):,.0f} {cfg.currency} "
                      f"({pf.get('return_pct', 0):+.2f} %)")
-    lines.append(f"{status.get('checked', 0)} öppna köpordrar kollade")
+    lines.append(f"{status.get('checked', 0)} oppna kopordrar kollade")
 
     fills = status.get("fills", [])
     if not fills:
-        lines.append("Inget nytt sen igår.")
+        lines.append("Inget nytt sen igar.")
         return "\n".join(lines)
 
-    lines.append(f"\n{len(fills)} fylld(a) i öppningsauktionen:")
+    lines.append(f"\n{len(fills)} fylld(a) i oppningsauktionen:")
     for f in fills:
         flag = " ⚠️ stort gap" if f.get("gap_warning") else ""
         lines.append(f"  {f['ticker']} @ {f['price']:.2f}{flag}")
@@ -204,9 +197,7 @@ def build_morning_summary(status: dict, market: str = "se") -> str:
     large_gaps = [f for f in fills if f.get("gap_warning")]
     if large_gaps:
         lines.append(
-            f"\n{len(large_gaps)} av dem hade ovanligt stort gap — aktien kan ha "
-            "gappat ner kraftigt vid öppning snarare än studsat sunt. Värt en "
-            "extra titt innan resten av dagen."
+            f"\n{len(large_gaps)} av dem hade ovanligt stort gap."
         )
 
     return "\n".join(lines)
@@ -214,15 +205,7 @@ def build_morning_summary(status: dict, market: str = "se") -> str:
 
 def build_midday_summary(market: str = "se") -> str:
     """
-    Kort "lever"-statuskoll mitt på dagen.
-
-    Ingen ny data hämtas här — vi har ingen live-kurskälla mitt på
-    handelsdagen (Yahoo Finance ger dagliga staplar, kompletta först
-    efter stängning). Det här är medvetet BARA en bekräftelse att
-    systemet är igång och en påminnelse om senast kända portföljläge,
-    inte en uppdatering. Skickas ändå varje dag för att du ska kunna
-    lita på att tystnad senare (t.ex. om kvällskörningen skulle
-    faila) faktiskt betyder något, inte bara "vi hörde aldrig av oss".
+    Kort "lever"-statuskoll mitt pa dagen.
     """
     from . import paper
     cfg = config.get_config(market)
@@ -234,10 +217,10 @@ def build_midday_summary(market: str = "se") -> str:
         ).fetchone()["n"]
 
     lines = [
-        f"☀️ Mitt på dagen — {cfg.label}",
+        f"☀️ Mitt pa dagen — {cfg.label}",
         f"{pf['total']:,.0f} {cfg.currency} ({pf['return_pct']:+.2f} %)",
-        f"{pf['open_positions']} öppna positioner, {open_orders} väntande ordrar",
-        "(baserat på senaste stängning — ingen ny data hämtad nu)",
+        f"{pf['open_positions']} oppna positioner, {open_orders} vantande ordrar",
+        "(baserat pa senaste stangning — ingen ny data hamtad nu)",
     ]
     return "\n".join(lines)
 
@@ -249,7 +232,7 @@ def write(text: str, market: str = "se"):
 
 
 def export_csv(market: str = "se"):
-    """Positioner och ordrar som CSV, så du kan öppna dem i Excel."""
+    """Positioner och ordrar som CSV."""
     import csv
     cfg = config.get_config(market)
     cfg.reports_dir.mkdir(parents=True, exist_ok=True)
