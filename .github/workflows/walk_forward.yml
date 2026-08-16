@@ -2,8 +2,11 @@ name: Walk-forward-analys
 
 # Testar parameterkombinationer på rullande fönster (se
 # smallcap/backtest.py för metoden). Beräkningstungt — kör var 14:e
-# dag, inte dagligen. Resultatet skrivs till en rapportfil som
-# committas, så du kan läsa den utan att köra något själv.
+# dag, inte dagligen. SE och US körs som SEPARATA, PARALLELLA jobb
+# (inte sekventiella steg i samma jobb) — det är den enskilt största
+# tidsbesparingen: två jobb som kör samtidigt är snabbare än ett jobb
+# som kör dem efter varandra, och om ett skulle hänga sig blockerar
+# det inte det andra.
 on:
   schedule:
     - cron: "0 5 */14 * *"
@@ -18,7 +21,7 @@ permissions:
   contents: write
 
 jobs:
-  run:
+  walk_forward_se:
     runs-on: ubuntu-latest
     steps:
       - name: Hämta koden
@@ -35,6 +38,31 @@ jobs:
           python run_daily.py --market se --walk-forward \
             --window-days "${{ github.event.inputs.window_days || '90' }}" \
             > reports/walk_forward_se.txt
+      - name: Spara resultatet
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add reports/walk_forward_se.txt
+          if git diff --staged --quiet; then
+            echo "Ingen förändring"
+          else
+            git commit -m "Walk-forward SE $(date -u +'%Y-%m-%d')"
+            git pull --rebase
+            git push
+          fi
+
+  walk_forward_us:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hämta koden
+        uses: actions/checkout@v4
+      - name: Sätt upp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Installera beroenden
+        run: pip install -r requirements.txt
       - name: Walk-forward USA
         run: |
           python run_daily.py --market us --walk-forward \
@@ -44,10 +72,11 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add reports/walk_forward_se.txt reports/walk_forward_us.txt
+          git add reports/walk_forward_us.txt
           if git diff --staged --quiet; then
             echo "Ingen förändring"
           else
-            git commit -m "Walk-forward-analys $(date -u +'%Y-%m-%d')"
+            git commit -m "Walk-forward US $(date -u +'%Y-%m-%d')"
+            git pull --rebase
             git push
           fi
