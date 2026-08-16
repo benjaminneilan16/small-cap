@@ -1,26 +1,26 @@
 """
-Screener — hittar bolag som passar spread-strategin.
+Screener -- hittar bolag som passar spread-strategin.
 
-VAD VI LETAR EFTER, översatt från hennes egna ord:
+VAD VI LETAR EFTER, oversatt fran hennes egna ord:
 
-  "stora spreadar, stora upp- och nedgångar per dag och per vecka"
+  "stora spreadar, stora upp- och nedgangar per dag och per vecka"
       -> stort dagligt spann i procent
 
-  "kursen blir väldigt spretig"
-      -> LÅG efficiency ratio. Priset rör sig mycket men kommer ingenstans.
+  "kursen blir valdigt spretig"
+      -> LAG efficiency ratio. Priset ror sig mycket men kommer ingenstans.
 
-  "Hur har den studsat förut? Ser jag tydliga nivåer?"
-      -> priset återvänder till samma nivåer om och om igen
+  "Hur har den studsat forut? Ser jag tydliga nivaer?"
+      -> priset atervander till samma nivaer om och om igen
 
 DEN VIKTIGASTE INSIKTEN: strategin vill ha det som konventionell analys
-kallar dåligt. Bred spread och spretig kurs är normalt varningstecken.
-Här är de själva råvaran. En aktie som trendar snyggt uppåt är värdelös —
-det finns inga studsar att fånga.
+kallar daligt. Bred spread och spretig kurs ar normalt varningstecken.
+Har ar de sjalva ravaran. En aktie som trendar snyggt uppat ar vardelos
+-- det finns inga studsar att fanga.
 
-MARKNADSOBEROENDE: mönstret hon beskriver är inte specifikt för svenska
-småbolag — samma logik (spread, oscillation, återkommande nivåer) gäller
-för illikvida amerikanska small caps. Bara valutan och omsättnings-
-tröskeln skiljer, och de kommer från MarketConfig.
+MARKNADSOBEROENDE: monstret hon beskriver ar inte specifikt for svenska
+smabolag -- samma logik (spread, oscillation, atervandande nivaer)
+galler for illikvida amerikanska small caps. Bara valutan och
+omsattningstroskeln skiljer, och de kommer fran MarketConfig.
 """
 import logging
 import statistics
@@ -34,13 +34,13 @@ logger = logging.getLogger("screener")
 
 def efficiency_ratio(closes: list[float], period: int = 20) -> float | None:
     """
-    Kaufmans Efficiency Ratio: nettorörelse delat med summan av alla
-    enskilda rörelser.
+    Kaufmans Efficiency Ratio: nettororelse delat med summan av alla
+    enskilda rorelser.
 
-      nära 1,0 = priset gick rakt från A till B (trend)
-      nära 0,0 = priset rörde sig mycket men kom ingenstans (oscillation)
+      nara 1,0 = priset gick rakt fran A till B (trend)
+      nara 0,0 = priset rorde sig mycket men kom ingenstans (oscillation)
 
-    För den här strategin vill vi ha LÅGT värde.
+    For den har strategin vill vi ha LAGT varde.
     """
     if len(closes) < period + 1:
         return None
@@ -52,11 +52,11 @@ def efficiency_ratio(closes: list[float], period: int = 20) -> float | None:
 
 def find_levels(bars: list[dict], bins: int = 20) -> list[dict]:
     """
-    Hittar prisnivåer där aktien handlat ofta.
+    Hittar prisnivaer dar aktien handlat ofta.
 
-    Metoden: dela prisintervallet i lådor och räkna hur många dagar som
-    berört varje låda. Nivåer med många träffar är där handeln
-    koncentrerats — dit priset tenderar att återvända.
+    Metoden: dela prisintervallet i lador och rakna hur manga dagar som
+    berort varje lada. Nivaer med manga traffar ar dar handeln
+    koncentrerats -- dit priset tenderar att atervanda.
     """
     if len(bars) < 40:
         return []
@@ -88,12 +88,13 @@ def find_levels(bars: list[dict], bins: int = 20) -> list[dict]:
     return levels
 
 
-def analyze(ticker: str, lookback: int = 250, market: str = "se") -> dict:
+def analyze(ticker: str, lookback: int = 250, market: str = "se",
+           skip_volume_spike: bool = False) -> dict:
     cfg = get_config(market)
     bars = get_bars(ticker, lookback, market)
     if len(bars) < 100:
         return {"ticker": ticker, "usable": False,
-                "reason": f"för lite data ({len(bars)} staplar)"}
+                "reason": f"for lite data ({len(bars)} staplar)"}
 
     closes = [float(b["close"]) for b in bars]
     highs = [float(b["high"]) for b in bars]
@@ -123,11 +124,11 @@ def analyze(ticker: str, lookback: int = 250, market: str = "se") -> dict:
 
     if median_turnover < cfg.min_daily_turnover:
         usable = False
-        reasons.append(f"omsättning {median_turnover:,.0f} {cfg.currency}/dag för låg")
+        reasons.append(f"omsattning {median_turnover:,.0f} {cfg.currency}/dag for lag")
 
     if er_60 is not None and er_60 > cfg.max_efficiency_ratio:
         usable = False
-        reasons.append(f"efficiency ratio {er_60:.2f} — trendar, studsar inte")
+        reasons.append(f"efficiency ratio {er_60:.2f} -- trendar, studsar inte")
 
     score = 0.0
     if median_range:
@@ -136,12 +137,19 @@ def analyze(ticker: str, lookback: int = 250, market: str = "se") -> dict:
         score += (1 - min(er_60 / cfg.max_efficiency_ratio, 1.0)) * 2
     score += min(revisit / 40, 1.0)
 
-    # Volymspik-flagga: grov proxy för "något hände nyligen", inte en
-    # förståelse av VARFÖR. Se intraday.py för fullständigt resonemang.
-    # Importeras lokalt för att undvika en modulnivå-cirkularitet
-    # (intraday importerar redan från store/config, inte från screener).
-    from . import intraday as _intraday
-    volume_spike = _intraday.detect_volume_spike(ticker, market)
+    # Volymspik-flagga: grov proxy for "nagot hande nyligen".
+    #
+    # PRESTANDA: atervander `bars` som redan hamtats ovan istallet for
+    # en ny databasfraga. Under backtest/walk-forward hoppas berak-
+    # ningen helt over (skip_volume_spike=True) -- flaggan ar till for
+    # att du manuellt ska kolla en LEVANDE kandidat innan du litar pa
+    # den, vilket ar meningslost i en historisk simulering som kors
+    # helt automatiskt utan manskllig granskning. Att randa ut den dar
+    # kostade tidigare miljontals extra databasfragor per korning.
+    volume_spike = None
+    if not skip_volume_spike:
+        from . import intraday as _intraday
+        volume_spike = _intraday.detect_volume_spike(ticker, market, bars=bars)
 
     return {
         "ticker": ticker,
@@ -163,42 +171,39 @@ def analyze(ticker: str, lookback: int = 250, market: str = "se") -> dict:
 
 def _warning(net_change: float, turnover: float, currency: str) -> str | None:
     """
-    Varningar för fall som passerar filtren men ändå är farliga.
+    Varningar for fall som passerar filtren men anda ar farliga.
 
-    Den viktigaste: en aktie som fallit 60% har också låg efficiency
-    ratio — men av fel skäl. Den oscillerar inte, den faller i etapper.
-    Att köpa studsar där är att fånga en fallande kniv.
-
-    Tröskeln 300 000 för "tunn omsättning" är i lokal valuta (kr eller
-    dollar). Det är en grov tumregel snarare än ett exakt likvärde
-    mellan marknader — poängen är att flagga bolag nära screenerns
-    egen lägstanivå, inte att jämföra SE och US mot varandra.
+    Den viktigaste: en aktie som fallit 60% har ocksa lag efficiency
+    ratio -- men av fel skal. Den oscillerar inte, den faller i etapper.
+    Att kopa studsar dar ar att fanga en fallande kniv.
     """
     parts = []
     if net_change < -50:
         parts.append(
-            f"Aktien är ner {abs(net_change):.0f}% över perioden. Låg efficiency "
-            "ratio kan bero på att den faller i etapper snarare än oscillerar."
+            f"Aktien ar ner {abs(net_change):.0f}% over perioden. Lag efficiency "
+            "ratio kan bero pa att den faller i etapper snarare an oscillerar."
         )
     if turnover < 300_000:
         parts.append(
-            f"Tunn omsättning ({turnover:,.0f} {currency}/dag) — risk att bli fylld "
-            "just när någon säljer av ett skäl du inte känner till."
+            f"Tunn omsattning ({turnover:,.0f} {currency}/dag) -- risk att bli fylld "
+            "just nar nagon saljer av ett skal du inte kanner till."
         )
     return " ".join(parts) if parts else None
 
 
-def screen_all(lookback: int = 250, market: str = "se") -> dict:
+def screen_all(lookback: int = 250, market: str = "se",
+               skip_volume_spike: bool = False) -> dict:
     tickers = usable_tickers(market)
     if not tickers:
-        return {"error": "Inga validerade tickers. Kör datauppdateringen först."}
+        return {"error": "Inga validerade tickers. Kor datauppdateringen forst."}
 
     results = []
     for t in tickers:
         try:
-            results.append(analyze(t, lookback, market))
+            results.append(analyze(t, lookback, market,
+                                   skip_volume_spike=skip_volume_spike))
         except Exception as e:
-            logger.error("Analys misslyckades för %s: %s", t, e)
+            logger.error("Analys misslyckades for %s: %s", t, e)
 
     candidates = [r for r in results if r.get("usable")]
     candidates.sort(key=lambda r: r["score"], reverse=True)
