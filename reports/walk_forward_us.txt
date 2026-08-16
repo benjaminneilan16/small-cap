@@ -1,0 +1,24 @@
+
+======================================================================
+  WALK-FORWARD -- USA
+======================================================================
+
+  Fonster 1: 2025-02-07 - 2025-06-17 -> 2025-06-18 - 2025-10-24
+    Basta parametrar (in-sample):  {'min_daily_range_pct': 2.5, 'max_efficiency_ratio': 0.25, 'target_profit_pct': 9.0}
+    In-sample avkastning:          -54.53 %
+    Out-of-sample avkastning:      -54.53 %
+
+  Fonster 2: 2025-06-18 - 2025-10-24 -> 2025-10-27 - 2026-03-06
+    Basta parametrar (in-sample):  {'min_daily_range_pct': 2.5, 'max_efficiency_ratio': 0.25, 'target_profit_pct': 9.0}
+    In-sample avkastning:          -54.53 %
+    Out-of-sample avkastning:      -54.53 %
+
+  Fonster 3: 2025-10-27 - 2026-03-06 -> 2026-03-09 - 2026-07-16
+    Basta parametrar (in-sample):  {'min_daily_range_pct': 2.5, 'max_efficiency_ratio': 0.25, 'target_profit_pct': 9.0}
+    In-sample avkastning:          -54.53 %
+    Out-of-sample avkastning:      -56.42 %
+
+  Snitt out-of-sample-avkastning: -55.16 %
+
+  Ut-av-provresultat ar den arligaste indikationen pa om parametervalet generaliserar -- men det ar fortfarande bara en handfull fonster, inte en garanti.
+
