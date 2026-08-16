@@ -36,17 +36,46 @@ def _db_path(market: str) -> Path:
 
 @contextmanager
 def connect(market: str = "se"):
+    """
+    Ger en databasanslutning för en marknad.
+
+    PRESTANDA: återanvänder EN anslutning per marknad inom samma
+    process istället för att öppna/stänga en ny SQLite-fil varje
+    gång. Profilering av walk_forward avslöjade att öppna/committa/
+    stänga en anslutning för varje enskild frågaanrop (tiotusentals
+    gånger i en tät backtest-loop) stod för mer än 20% av all körtid
+    — inte databasoperationerna själva, utan bara att öppna och
+    stänga anslutningen om och om igen. WAL-läge tillåter dessutom
+    säkra samtidiga läsningar utan att låsa filen i onödan.
+
+    Anslutningen stängs INTE här — den lever kvar i _CONNECTIONS och
+    återanvänds av nästa anrop. Den stängs bara explicit via
+    close_all() (t.ex. vid processavslut) eller om processen avslutas
+    naturligt.
+    """
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-    conn = sqlite3.connect(_db_path(market))
-    conn.row_factory = sqlite3.Row
+    conn = _CONNECTIONS.get(market)
+    if conn is None:
+        conn = sqlite3.connect(_db_path(market), check_same_thread=False)
+        conn.row_factory = sqlite3.Row
+        conn.execute("PRAGMA journal_mode=WAL")
+        _CONNECTIONS[market] = conn
     try:
         yield conn
         conn.commit()
     except Exception:
         conn.rollback()
         raise
-    finally:
+
+
+_CONNECTIONS: dict[str, sqlite3.Connection] = {}
+
+
+def close_all():
+    """Stänger alla öppna databasanslutningar. Kör vid processavslut."""
+    for conn in _CONNECTIONS.values():
         conn.close()
+    _CONNECTIONS.clear()
 
 
 SCHEMA = """
