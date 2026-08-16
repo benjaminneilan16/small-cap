@@ -1,137 +1,72 @@
 """
-Inställningar för båda marknaderna. Ändra här eller sätt miljövariabler.
+Installningar for bada marknaderna. Andra har eller satt miljovariabler.
 
-Alla värden har fungerande standardvärden — du behöver inte konfigurera
-något för att komma igång.
+Alla varden har fungerande standardvarden -- du behover inte konfigurera
+nagot for att komma igang.
 
-TVÅ MARKNADER: strategins princip (bred spread, spretig kurs, limit-
-ordrar under marknaden) är marknadsoberoende — grundparametrarna delas.
-Det som skiljer SE och US är sådant som faktiskt ÄR olika mellan
-marknaderna: valuta, tickerformat, handelstider och courtagenivå.
-Se MARKETS nedan för de marknadsspecifika värdena.
+TVA MARKNADER: strategins princip (bred spread, spretig kurs, limit-
+ordrar under marknaden) ar marknadsoberoende -- grundparametrarna delas.
+Det som skiljer SE och US ar sadant som faktiskt AR olika mellan
+marknaderna: valuta, tickerformat, handelstider och courtagenniva.
 """
 import os
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
 
-# --- Kapital (delat startvärde, kan override:as per marknad) --------
 STARTING_CAPITAL = float(os.getenv("STARTING_CAPITAL", "50000"))
-
-# --- Strategi, från Folckes beskrivning — marknadsoberoende ----------
-# "Grundtanken är att jag ska utnyttja en stor spread, tänk 5-10 procent"
 TARGET_PROFIT_PCT = float(os.getenv("TARGET_PROFIT_PCT", "7.0"))
-
-# "Det handlar om små, små positioner i varje order"
 POSITION_SIZE_PCT = float(os.getenv("POSITION_SIZE_PCT", "2.0"))
-
-# "Jag kanske har max 30 procent i faktiska trades"
 MAX_EXPOSURE_PCT = float(os.getenv("MAX_EXPOSURE_PCT", "30.0"))
-
-# "Det kan vara uppåt hundra ordrar"
 MAX_OPEN_ORDERS = int(os.getenv("MAX_OPEN_ORDERS", "100"))
-
-# Hur långt under senaste kurs köpordern läggs.
-# "Jag håller mig där köparna ligger" — alltså under marknaden.
 BUY_BELOW_PCT = float(os.getenv("BUY_BELOW_PCT", "4.0"))
-
-# Order som inte fyllts inom denna tid tas bort och läggs om
 ORDER_TTL_DAYS = int(os.getenv("ORDER_TTL_DAYS", "10"))
-
-# Stop loss. Artikeln nämner ingen, men utan skydd blir en fallande
-# aktie en position man sitter i för alltid — och det är precis så
-# adverse selection gör ont.
 STOP_LOSS_PCT = float(os.getenv("STOP_LOSS_PCT", "-15.0"))
-
-# --- Screener — marknadsoberoende -------------------------------------
-# Minsta dagliga spann. Under detta finns inget att fånga efter courtage.
 MIN_DAILY_RANGE_PCT = float(os.getenv("MIN_DAILY_RANGE_PCT", "3.0"))
-
-# Efficiency ratio: LÅG är bra här. Över detta trendar aktien för
-# tydligt och studsarna blir opålitliga.
 MAX_EFFICIENCY_RATIO = float(os.getenv("MAX_EFFICIENCY_RATIO", "0.30"))
-
-# --- Gap-flagga vid fyllnad (nytt) -------------------------------------
-# Om en order fylls med ett större prisgap än detta jämfört med
-# limitpriset (dagens LÅGA gick klart under, inte bara nätt och jämnt
-# under), flaggas det i rapporten. Stort gap kan betyda att du blev
-# fylld på väg ner i ett ras, inte vid en sund studs.
 FILL_GAP_WARNING_PCT = float(os.getenv("FILL_GAP_WARNING_PCT", "5.0"))
 
-# --- Intradagsdata (nytt) ------------------------------------------------
-# Yahoo Finance ger 5-minutersstaplar för de senaste ~60 dagarna. Det
-# räcker inte för långsiktig historik (därför används fortfarande
-# dagliga staplar för screening och backtest), men det räcker för att
-# reagera SNABBARE än en gång per dygn: se ett ras eskalera intradag
-# och dra tillbaka en order innan den fylls i fritt fall, eller se en
-# faktisk intradagsstuds istället för att gissa från dag-till-dag-data.
 INTRADAY_INTERVAL = os.getenv("INTRADAY_INTERVAL", "5m")
 INTRADAY_PERIOD = os.getenv("INTRADAY_PERIOD", "5d")
-
-# Hur mycket priset får falla INTRADAG under en liggande limitorder
-# innan vi drar tillbaka den, istället för att vänta och riskera att
-# den fylls mitt i ett fortsatt fall. Detta är skilt från gap_pct
-# (som mäts EFTER fyllnad) — pull_back agerar FÖRE fyllnad.
 INTRADAY_PULLBACK_PCT = float(os.getenv("INTRADAY_PULLBACK_PCT", "8.0"))
 
-# --- Volymspik-/nyhetsflagga (nytt) ---------------------------------------
-# En dag med onormalt hög volym + stort prisfall flaggas som "möjlig
-# nyhetshändelse" snarare än normal oscillation. Det är en grov proxy
-# för "varför rör sig aktien", som skiljer den från ren mönsterigen-
-# känning — men det är fortfarande bara en proxy, inte förståelse.
 VOLUME_SPIKE_MULTIPLIER = float(os.getenv("VOLUME_SPIKE_MULTIPLIER", "3.0"))
 VOLUME_SPIKE_LOOKBACK_DAYS = int(os.getenv("VOLUME_SPIKE_LOOKBACK_DAYS", "20"))
 
-# --- Tidig varningsexit (nytt) ---------------------------------------------
-# Om en position går djupt back DIREKT efter fyllnad (inom detta antal
-# dagar), långt innan stop loss på STOP_LOSS_PCT, är det ett tecken på
-# att det är ett fall snarare än en studs. Kliv ur tidigt istället för
-# att vänta på den fulla stop-lossen. Detta skiljer sig från stop loss
-# genom att den triggar på HUR SNABBT positionen går fel, inte bara
-# HUR MYCKET.
 EARLY_WARNING_DAYS = int(os.getenv("EARLY_WARNING_DAYS", "2"))
 EARLY_WARNING_PCT = float(os.getenv("EARLY_WARNING_PCT", "-8.0"))
 
-# --- Telegram (valfritt, delas mellan marknaderna) ---------------------
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
 
 
-# --- Marknadsspecifika inställningar ------------------------------------
 MARKETS = {
     "se": {
         "label": "Sverige",
         "currency": "kr",
         "ticker_suffix": ".ST",
-        # Rader utan suffix i universe-filen tolkas som denna marknad
         "universe_file": ROOT / "universe.txt",
         "report_file": "latest.md",
-        # Nordnet Mini: 0,25%, minst 1 kr
         "commission_pct": float(os.getenv("SE_COMMISSION_PCT", "0.25")),
         "commission_min": float(os.getenv("SE_COMMISSION_MIN", "1.0")),
-        # Under detta blir du kanske aldrig fylld (kronor/dag)
         "min_daily_turnover": float(os.getenv("SE_MIN_DAILY_TURNOVER", "100000")),
-        # Stockholmsbörsen: 09:00–17:30 CET/CEST
-        "market_close_utc": "15:30",   # sommartid (CEST = UTC+2)
-        "market_close_utc_winter": "16:30",  # vintertid (CET = UTC+1)
-        "market_open_utc": "07:00",    # sommartid
+        "market_close_utc": "15:30",
+        "market_close_utc_winter": "16:30",
+        "market_open_utc": "07:00",
         "market_open_utc_winter": "08:00",
     },
     "us": {
         "label": "USA",
         "currency": "$",
-        "ticker_suffix": "",  # inget suffix — AAPL, inte AAPL.US
+        "ticker_suffix": "",
         "universe_file": ROOT / "universe_us.txt",
         "report_file": "latest_us.md",
-        # Typiskt courtage hos en nordisk mäklare för US-aktier
         "commission_pct": float(os.getenv("US_COMMISSION_PCT", "0.15")),
-        "commission_min": float(os.getenv("US_COMMISSION_MIN", "1.5")),  # USD
-        # Under detta blir du kanske aldrig fylld (dollar/dag)
+        "commission_min": float(os.getenv("US_COMMISSION_MIN", "1.5")),
         "min_daily_turnover": float(os.getenv("US_MIN_DAILY_TURNOVER", "50000")),
-        # Nasdaq/NYSE: 09:30–16:00 ET
-        "market_close_utc": "20:00",   # sommartid (EDT = UTC-4)
-        "market_close_utc_winter": "21:00",  # vintertid (EST = UTC-5)
-        "market_open_utc": "13:30",    # sommartid
+        "market_close_utc": "20:00",
+        "market_close_utc_winter": "21:00",
+        "market_open_utc": "13:30",
         "market_open_utc_winter": "14:30",
     },
 }
@@ -139,19 +74,20 @@ MARKETS = {
 
 class MarketConfig:
     """
-    Ett konfigurationsobjekt för en given marknad.
-
-    Används istället för modulnivå-konstanter så att SE och US kan
-    hållas isär i samma process (t.ex. i tester) utan att en import
-    "fryser" fel marknads inställningar.
+    Ett konfigurationsobjekt for en given marknad.
     """
 
     def __init__(self, market: str):
-        if market not in MARKETS:
-            raise ValueError(f"okänd marknad '{market}', förväntade en av {list(MARKETS)}")
+        # se_bt/us_bt (backtest-isolerade databaser, se store.py) delar
+        # ALLA installningar med se/us -- bara vilken databasfil som
+        # anvands skiljer.
+        settings_key = market.removesuffix("_bt")
+        if settings_key not in MARKETS:
+            raise ValueError(f"okand marknad '{market}', forvantade en av "
+                            f"{list(MARKETS)} (valfritt med _bt-suffix)")
         self.market = market
-        m = MARKETS[market]
-        self.label = m["label"]
+        m = MARKETS[settings_key]
+        self.label = m["label"] + (" (backtest)" if market != settings_key else "")
         self.currency = m["currency"]
         self.ticker_suffix = m["ticker_suffix"]
         self.universe_file = m["universe_file"]
@@ -164,7 +100,6 @@ class MarketConfig:
         self.market_open_utc = m["market_open_utc"]
         self.market_open_utc_winter = m["market_open_utc_winter"]
 
-        # Delade, marknadsoberoende värden — samma för alla marknader
         self.starting_capital = STARTING_CAPITAL
         self.target_profit_pct = TARGET_PROFIT_PCT
         self.position_size_pct = POSITION_SIZE_PCT
@@ -193,10 +128,6 @@ def get_config(market: str = "se") -> MarketConfig:
     return MarketConfig(market)
 
 
-# --- Bakåtkompatibla modulnivå-värden (default = SE) --------------------
-# Vissa delar av koden (och ev. egna script du skrivit) kan referera
-# config.UNIVERSE_FILE eller config.REPORTS_DIR direkt. De pekar mot
-# SE-marknaden som standard, precis som innan denna ändring.
 UNIVERSE_FILE = MARKETS["se"]["universe_file"]
 REPORTS_DIR = ROOT / "reports"
 COMMISSION_PCT = MARKETS["se"]["commission_pct"]
