@@ -45,7 +45,15 @@ def main():
     ap.add_argument("--skip-fetch", action="store_true", help="hoppa över datahämtning")
     ap.add_argument("--backtest", action="store_true",
                     help="spela upp historiken istället för att köra live")
+    ap.add_argument("--walk-forward", action="store_true",
+                    help="testa parameterkombinationer på rullande fönster")
+    ap.add_argument("--window-days", type=int, default=90,
+                    help="fönsterstorlek i dagar för walk-forward (standard: 90)")
     args = ap.parse_args()
+
+    if args.walk_forward:
+        run_walk_forward(args.market, args.skip_fetch, args.window_days)
+        return
 
     if args.backtest:
         run_backtest(args.market, args.skip_fetch)
@@ -213,6 +221,52 @@ def run_backtest(market: str = "se", skip_fetch: bool = False):
     print()
     if r.get("note"):
         print(f"  {r['note']}")
+    print()
+
+
+def run_walk_forward(market: str = "se", skip_fetch: bool = False,
+                     window_days: int = 90):
+    """Testar parameterkombinationer på rullande fönster, se backtest.py."""
+    from smallcap import store, data, backtest, config
+
+    cfg = config.get_config(market)
+    store.init(market)
+    if not skip_fetch:
+        log.info("Hämtar historik...")
+        result = data.update_all(market=market)
+        if "error" in result:
+            log.error(result["error"])
+            return
+        log.info("%d bolag med data", result["usable"])
+
+    log.info("Kör walk-forward (%s), fönster om %d dagar...", cfg.label, window_days)
+    r = backtest.walk_forward(window_days=window_days, market=market)
+    if "error" in r:
+        log.error(r["error"])
+        return
+
+    print()
+    print("=" * 70)
+    print(f"  WALK-FORWARD — {cfg.label}")
+    print("=" * 70)
+    print()
+    for w in r["windows"]:
+        if "error" in w:
+            print(f"  Fönster {w['window']}: {w['error']}")
+            continue
+        print(f"  Fönster {w['window']}: {w['in_sample_period']} → "
+             f"{w['out_of_sample_period']}")
+        print(f"    Bästa parametrar (in-sample):  {w['best_params']}")
+        print(f"    In-sample avkastning:          {w['in_sample_return_pct']:+.2f} %")
+        oos = w['out_of_sample_return_pct']
+        print(f"    Out-of-sample avkastning:      "
+             f"{oos:+.2f} %" if oos is not None else "    Out-of-sample avkastning:      (fel)")
+        print()
+
+    if r.get("avg_out_of_sample_return_pct") is not None:
+        print(f"  Snitt out-of-sample-avkastning: {r['avg_out_of_sample_return_pct']:+.2f} %")
+    print()
+    print(f"  {r['note']}")
     print()
 
 
