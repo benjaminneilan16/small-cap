@@ -3,11 +3,6 @@ Installningar for bada marknaderna. Andra har eller satt miljovariabler.
 
 Alla varden har fungerande standardvarden -- du behover inte konfigurera
 nagot for att komma igang.
-
-TVA MARKNADER: strategins princip (bred spread, spretig kurs, limit-
-ordrar under marknaden) ar marknadsoberoende -- grundparametrarna delas.
-Det som skiljer SE och US ar sadant som faktiskt AR olika mellan
-marknaderna: valuta, tickerformat, handelstider och courtagenniva.
 """
 import os
 from pathlib import Path
@@ -28,7 +23,27 @@ FILL_GAP_WARNING_PCT = float(os.getenv("FILL_GAP_WARNING_PCT", "5.0"))
 
 INTRADAY_INTERVAL = os.getenv("INTRADAY_INTERVAL", "5m")
 INTRADAY_PERIOD = os.getenv("INTRADAY_PERIOD", "5d")
+
+# Hur mycket priset far falla INTRADAG under en liggande limitorder
+# innan vi drar tillbaka den.
 INTRADAY_PULLBACK_PCT = float(os.getenv("INTRADAY_PULLBACK_PCT", "8.0"))
+
+# Vid vilket intradagsfall vi JUSTERAR limitpriset nedat istallet for
+# att bara lata ordern ligga still. Maste vara lagre an
+# INTRADAY_PULLBACK_PCT -- det skapar tre lagen: under denna troskel
+# gors inget (normal dagsrorelse), mellan denna och pullback justeras
+# ordern for att folja kursen ner, over pullback dras den tillbaka
+# helt. Se intraday.adjust_orders().
+INTRADAY_ADJUST_PCT = float(os.getenv("INTRADAY_ADJUST_PCT", "4.0"))
+
+# Hur langt UNDER det nya, lagre priset den justerade ordern laggs.
+INTRADAY_ADJUST_BELOW_PCT = float(os.getenv("INTRADAY_ADJUST_BELOW_PCT", "2.0"))
+
+# Max antal ganger en enskild order far justeras innan den istallet
+# dras tillbaka. Utan detta tak skulle en aktie i ihallande, jamn
+# nedgang kunna fa ordern justerad om och om igen hela vagen ner --
+# vilket i praktiken vore detsamma som att jaga kursen nedat.
+INTRADAY_MAX_ADJUSTMENTS = int(os.getenv("INTRADAY_MAX_ADJUSTMENTS", "2"))
 
 VOLUME_SPIKE_MULTIPLIER = float(os.getenv("VOLUME_SPIKE_MULTIPLIER", "3.0"))
 VOLUME_SPIKE_LOOKBACK_DAYS = int(os.getenv("VOLUME_SPIKE_LOOKBACK_DAYS", "20"))
@@ -78,9 +93,6 @@ class MarketConfig:
     """
 
     def __init__(self, market: str):
-        # se_bt/us_bt (backtest-isolerade databaser, se store.py) delar
-        # ALLA installningar med se/us -- bara vilken databasfil som
-        # anvands skiljer.
         settings_key = market.removesuffix("_bt")
         if settings_key not in MARKETS:
             raise ValueError(f"okand marknad '{market}', forvantade en av "
@@ -114,6 +126,9 @@ class MarketConfig:
         self.intraday_interval = INTRADAY_INTERVAL
         self.intraday_period = INTRADAY_PERIOD
         self.intraday_pullback_pct = INTRADAY_PULLBACK_PCT
+        self.intraday_adjust_pct = INTRADAY_ADJUST_PCT
+        self.intraday_adjust_below_pct = INTRADAY_ADJUST_BELOW_PCT
+        self.intraday_max_adjustments = INTRADAY_MAX_ADJUSTMENTS
         self.volume_spike_multiplier = VOLUME_SPIKE_MULTIPLIER
         self.volume_spike_lookback_days = VOLUME_SPIKE_LOOKBACK_DAYS
         self.early_warning_days = EARLY_WARNING_DAYS
