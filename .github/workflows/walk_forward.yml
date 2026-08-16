@@ -1,0 +1,53 @@
+name: Walk-forward-analys
+
+# Testar parameterkombinationer på rullande fönster (se
+# smallcap/backtest.py för metoden). Beräkningstungt — kör var 14:e
+# dag, inte dagligen. Resultatet skrivs till en rapportfil som
+# committas, så du kan läsa den utan att köra något själv.
+on:
+  schedule:
+    - cron: "0 5 */14 * *"
+  workflow_dispatch:
+    inputs:
+      window_days:
+        description: "Fönsterstorlek i dagar"
+        required: false
+        default: "90"
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hämta koden
+        uses: actions/checkout@v4
+      - name: Sätt upp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Installera beroenden
+        run: pip install -r requirements.txt
+      - name: Walk-forward Sverige
+        run: |
+          python run_daily.py --market se --walk-forward \
+            --window-days "${{ github.event.inputs.window_days || '90' }}" \
+            > reports/walk_forward_se.txt
+      - name: Walk-forward USA
+        run: |
+          python run_daily.py --market us --walk-forward \
+            --window-days "${{ github.event.inputs.window_days || '90' }}" \
+            > reports/walk_forward_us.txt
+      - name: Spara resultatet
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add reports/walk_forward_se.txt reports/walk_forward_us.txt
+          if git diff --staged --quiet; then
+            echo "Ingen förändring"
+          else
+            git commit -m "Walk-forward-analys $(date -u +'%Y-%m-%d')"
+            git push
+          fi
