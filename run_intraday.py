@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Intradagskoll — drar tillbaka ordrar som fallit kraftigt sedan de lades.
+Intradagskoll -- justerar ordrar som fallit mattligt, drar tillbaka
+ordrar som fallit kraftigt sedan de lades.
 
-Körs några gånger under handelsdagen (t.ex. varannan timme), separat
-från morgonkoll/mitt på dagen/kvällskörning. Se smallcap/intraday.py
-för det fullständiga resonemanget om varför detta behövs och vad det
-inte kan ersätta.
+Kors nagra ganger under handelsdagen (t.ex. varannan timme), separat
+fran morgonkoll/mitt pa dagen/kvallskorning. Se smallcap/intraday.py
+for det fullstandiga resonemanget.
 
-Kör manuellt med:
+Kor manuellt med:
     python run_intraday.py                 (svenska marknaden, standard)
     python run_intraday.py --market us      (amerikanska marknaden)
 """
@@ -38,7 +38,16 @@ def main():
     store.init_account(cfg.starting_capital, market)
 
     result = intraday.run_intraday_check(market)
+    adjusted = result["adjusted"]
     withdrawn = result["withdrawn"]
+
+    if not adjusted:
+        log.info("Inga ordrar justerade.")
+    else:
+        for a in adjusted:
+            log.info("  JUSTERADE %s: %.2f -> %.2f (fallit %.1f%%, %d/%d)",
+                     a["ticker"], a["old_limit"], a["new_limit"], a["drop_pct"],
+                     a["adjustments_count"], cfg.intraday_max_adjustments)
 
     if not withdrawn:
         log.info("Inga ordrar drogs tillbaka.")
@@ -48,13 +57,25 @@ def main():
                      "-%.1f%%)", w["ticker"], w["limit_price"], w["lowest_seen"],
                      w["drop_pct"])
 
-        lines = [f"⚡ Intradagskoll — {cfg.label}",
-                 f"{len(withdrawn)} order(rar) drogs tillbaka pga kraftigt fall:"]
-        for w in withdrawn:
-            lines.append(f"  {w['ticker']}: -{w['drop_pct']:.1f}% sedan ordern lades")
+    if adjusted or withdrawn:
+        lines = [f"⚡ Intradagskoll — {cfg.label}"]
+        if adjusted:
+            lines.append(f"\n{len(adjusted)} order(rar) justerade (följer kursen ner):")
+            for a in adjusted:
+                lines.append(f"  {a['ticker']}: {a['old_limit']:.2f} → "
+                            f"{a['new_limit']:.2f} ({a['drop_pct']:.1f}% fall)")
+        if withdrawn:
+            lines.append(f"\n{len(withdrawn)} order(rar) drogs tillbaka pga kraftigt fall:")
+            for w in withdrawn:
+                lines.append(f"  {w['ticker']}: -{w['drop_pct']:.1f}% sedan ordern lades")
         report.telegram("\n".join(lines))
 
     log.info("Städade %d gamla intradagsrader.", result["pruned_rows"])
+
+    # Checkpointar WAL innan workflow-filens git-steg committar
+    # databasen — se run_daily.py för samma resonemang.
+    store.close_all()
+
     log.info("Klart.")
 
 
