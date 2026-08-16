@@ -1,27 +1,26 @@
 """
-Intradagsreaktion — se ett fall eskalera INNAN nästa kvällskörning.
+Intradagsreaktion -- se ett fall eskalera INNAN nasta kvallskorning.
 
-VARFÖR DET HÄR BEHÖVS: den dagliga körningen ser bara gårdagens
-stängning. Om en aktie gappar ner kraftigt på förmiddagen och
-fortsätter falla, ligger en liggande köporder kvar orörd tills kvällen
-— då kan den redan ha fyllts mitt i ett fritt fall. Det här är
-Marja-metodens verkliga styrka (hon ser det hända och kan reagera i
-sekunder) som den dagliga cykeln inte kan efterlikna.
+VARFOR DET HAR BEHOVS: den dagliga korningen ser bara gardagens
+stangning. Om en aktie gappar ner kraftigt pa formiddagen och
+fortsatter falla, ligger en liggande koporder kvar orord tills kvallen
+-- da kan den redan ha fyllts mitt i ett fritt fall.
 
-VAD DET HÄR FAKTISKT GÖR, OCH INTE GÖR:
-Vi hämtar 5-minutersstaplar (Yahoo Finance, gratis, senaste ~60
-dagarna) för bolag med öppna köpordrar, och drar tillbaka en order om
-priset fallit mer än INTRADAY_PULLBACK_PCT under limitpriset SEDAN
-ordern lades — innan den hinner fyllas i den kvällskörning som annars
-skulle ha accepterat fyllnaden blint.
+VAD DET HAR FAKTISKT GOR, OCH INTE GOR:
+Vi hamtar 5-minutersstaplar (Yahoo Finance, gratis, senaste ~60
+dagarna) for bolag med oppna koporder. Tre lagen baserat pa hur mycket
+priset fallit sedan ordern lades:
 
-Det här är fortfarande INTE realtidsdata eller en riktig orderbok.
-5-minutersstaplar med viss fördröjning är fortfarande en approximation
-— bara en mycket färskare approximation än gårdagens stängning.
+  1. Under intraday_adjust_pct (t.ex. 4%): normal dagsrorelse, ingen
+     atgard.
+  2. Mellan intraday_adjust_pct och intraday_pullback_pct (4-8%):
+     JUSTERA limitpriset nedat for att folja kursen -- se
+     adjust_orders().
+  3. Over intraday_pullback_pct (8%): DRA TILLBAKA ordern helt -- se
+     check_pullback_withdrawals().
 
-KÖRS SEPARAT från både morgonkoll och daglig körning, tänkt att köras
-några gånger under handelsdagen (t.ex. varannan timme) för att fånga
-eskalerande fall i tid.
+Det har ar fortfarande INTE realtidsdata eller en riktig orderbok --
+bara en mycket farskare approximation an gardagens stangning.
 """
 import logging
 from datetime import datetime, timezone
@@ -33,7 +32,7 @@ logger = logging.getLogger("intraday")
 
 
 def fetch_intraday(ticker: str, market: str = "se") -> dict:
-    """Hämtar färska intradagsstaplar för en ticker."""
+    """Hamtar farska intradagsstaplar for en ticker."""
     try:
         import yfinance as yf
     except ImportError:
@@ -65,8 +64,6 @@ def fetch_intraday(ticker: str, market: str = "se") -> dict:
                 skipped += 1
                 continue
 
-            # Samma NaN-skydd som i data.py — Yahoo kan returnera
-            # ofullständiga rader, särskilt runt handelsstopp.
             if any(v != v for v in (open_, high, low, close)):
                 skipped += 1
                 continue
@@ -84,22 +81,91 @@ def fetch_intraday(ticker: str, market: str = "se") -> dict:
             rows += 1
 
     if skipped:
-        logger.warning("%s: hoppade över %d intradagsrad(er)", ticker, skipped)
+        logger.warning("%s: hoppade over %d intradagsrad(er)", ticker, skipped)
 
     return {"ticker": ticker, "bars": rows}
 
 
+def adjust_orders(market: str = "se") -> list[dict]:
+    """
+    Justerar limitpriset nedat for ordrar som fallit mattligt intradag
+    -- mellan intraday_adjust_pct och intraday_pullback_pct under
+    limitpriset sedan ordern lades.
+
+    VARFOR EN MELLANNIVA MELLAN "GOR INGET" OCH "DRA TILLBAKA": att
+    bara ha tva lagen missar precis den situation Marja sjalv beskriver
+    -- att aktivt folja med i en rorelse och lagga om ordern dar
+    koparna faktiskt ar NU.
+
+    VARFOR DET FINNS ETT TAK (intraday_max_adjustments): utan en grans
+    skulle en aktie i jamn, ihallande nedgang kunna fa ordern justerad
+    om och om igen hela vagen ner -- i praktiken samma sak som att jaga
+    kursen nedat. Nar taket nas gar ordern istallet till vanlig
+    pullback-tillbakadragning pa nasta kontroll.
+
+    Ordning i run_intraday_check(): justering kors FORE tillbaka-
+    dragning, sa en order som redan justerat sig ner till en ny,
+    rimlig niva inte omedelbart bedoms mot sitt URSPRUNGLIGA pris.
+    """
+    cfg = config.get_config(market)
+
+    with connect(market) as c:
+        orders = c.execute(
+            "SELECT id, ticker, limit_price, placed_date, adjustments_count, "
+            "original_limit_price FROM orders WHERE status = 'open' AND side = 'buy'"
+        ).fetchall()
+
+    adjusted = []
+    for o in orders:
+        ticker = o["ticker"]
+        limit_price = float(o["limit_price"])
+        adjustments_count = o["adjustments_count"] or 0
+
+        if adjustments_count >= cfg.intraday_max_adjustments:
+            continue
+
+        fetch_intraday(ticker, market)
+
+        since = f"{o['placed_date']}T00:00:00"
+        bars = get_intraday_bars(ticker, since=since, market=market)
+        if not bars:
+            continue
+
+        lowest = min(float(b["low"]) for b in bars)
+        drop_pct = (limit_price - lowest) / limit_price * 100
+
+        if drop_pct <= cfg.intraday_adjust_pct or drop_pct > cfg.intraday_pullback_pct:
+            continue
+
+        new_limit = round(lowest * (1 - cfg.intraday_adjust_below_pct / 100), 4)
+        original = o["original_limit_price"] or limit_price
+
+        with connect(market) as c:
+            c.execute(
+                "UPDATE orders SET limit_price = ?, adjustments_count = ?, "
+                "original_limit_price = ? WHERE id = ?",
+                (new_limit, adjustments_count + 1, original, o["id"]),
+            )
+
+        adjusted.append({
+            "ticker": ticker,
+            "old_limit": limit_price,
+            "new_limit": new_limit,
+            "drop_pct": round(drop_pct, 1),
+            "adjustments_count": adjustments_count + 1,
+        })
+        logger.info("Justerade %s: %.2f -> %.2f (fallit %.1f%%, justering %d/%d)",
+                   ticker, limit_price, new_limit, drop_pct,
+                   adjustments_count + 1, cfg.intraday_max_adjustments)
+
+    return adjusted
+
+
 def check_pullback_withdrawals(market: str = "se") -> list[dict]:
     """
-    Kollar alla öppna köpordrar mot intradagsdata. Om priset fallit
-    mer än intraday_pullback_pct under limitpriset SEDAN ordern
+    Kollar alla oppna koporder mot intradagsdata. Om priset fallit
+    mer an intraday_pullback_pct under limitpriset SEDAN ordern
     lades, dras ordern tillbaka.
-
-    Detta är medvetet ett FÖRSIKTIGT drag, inte ett aggressivt: vi
-    drar bara tillbaka om röreslen är stor (standard 8%), inte vid
-    normala dagsrörelser. Målet är att undvika de mest uppenbara
-    "fylld mitt i ett fritt fall"-scenarierna, inte att försöka
-    tajma varje liten rörelse.
     """
     cfg = config.get_config(market)
 
@@ -114,10 +180,8 @@ def check_pullback_withdrawals(market: str = "se") -> list[dict]:
         ticker = o["ticker"]
         limit_price = float(o["limit_price"])
 
-        # Hämta färsk intradagsdata för just denna ticker
         fetch_intraday(ticker, market)
 
-        # Bara staplar EFTER att ordern lades är relevanta
         since = f"{o['placed_date']}T00:00:00"
         bars = get_intraday_bars(ticker, since=since, market=market)
         if not bars:
@@ -131,7 +195,7 @@ def check_pullback_withdrawals(market: str = "se") -> list[dict]:
                 c.execute(
                     "UPDATE orders SET status = 'cancelled', "
                     "cancel_reason = ? WHERE id = ?",
-                    (f"intradagsfall {drop_pct:.1f}% — drogs tillbaka", o["id"]),
+                    (f"intradagsfall {drop_pct:.1f}% - drogs tillbaka", o["id"]),
                 )
             withdrawn.append({
                 "ticker": ticker,
@@ -145,21 +209,22 @@ def check_pullback_withdrawals(market: str = "se") -> list[dict]:
     return withdrawn
 
 
-def detect_volume_spike(ticker: str, market: str = "se") -> dict | None:
+def detect_volume_spike(ticker: str, market: str = "se",
+                         bars: list[dict] | None = None) -> dict | None:
     """
-    Grov proxy för "något hände": onormal volym + stort prisfall samma
-    dag. Skiljer inte VAD som hände (nyheter, sektor-rörelse, ren
-    spekulation) — bara ATT något avvek från det normala mönstret.
-
-    Detta ersätter INTE mänsklig bedömning av varför en aktie rör sig
-    (se README om varför det är svårt att kodifiera), men ger en
-    enkel flagga att titta extra noga på innan man litar på ett fynd.
+    Grov proxy for "nagot hande": onormal volym + stort prisfall samma
+    dag.
     """
-    from .store import get_bars
-
     cfg = config.get_config(market)
-    bars = get_bars(ticker, cfg.volume_spike_lookback_days + 1, market)
-    if len(bars) < cfg.volume_spike_lookback_days + 1:
+    needed = cfg.volume_spike_lookback_days + 1
+
+    if bars is None:
+        from .store import get_bars
+        bars = get_bars(ticker, needed, market)
+    elif len(bars) > needed:
+        bars = bars[-needed:]
+
+    if len(bars) < needed:
         return None
 
     *history, today = bars
@@ -185,10 +250,12 @@ def detect_volume_spike(ticker: str, market: str = "se") -> dict | None:
 
 def run_intraday_check(market: str = "se") -> dict:
     """
-    Huvudfunktion: kollar pullback-tillbakadragningar för alla öppna
-    ordrar, städar gammal intradagsdata. Tänkt att köras några gånger
-    under handelsdagen.
+    Huvudfunktion: justerar ordrar som fallit mattligt, drar tillbaka
+    ordrar som fallit kraftigt, stadar gammal intradagsdata.
+
+    ORDNING SPELAR ROLL: justering kors FORE tillbakadragning.
     """
+    adjusted = adjust_orders(market)
     withdrawn = check_pullback_withdrawals(market)
     pruned = prune_intraday_bars(market=market)
-    return {"withdrawn": withdrawn, "pruned_rows": pruned}
+    return {"adjusted": adjusted, "withdrawn": withdrawn, "pruned_rows": pruned}
