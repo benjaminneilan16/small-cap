@@ -1,12 +1,5 @@
 name: Walk-forward-analys
 
-# Testar parameterkombinationer på rullande fönster (se
-# smallcap/backtest.py för metoden). Beräkningstungt — kör var 14:e
-# dag, inte dagligen. SE och US körs som SEPARATA, PARALLELLA jobb
-# (inte sekventiella steg i samma jobb) — det är den enskilt största
-# tidsbesparingen: två jobb som kör samtidigt är snabbare än ett jobb
-# som kör dem efter varandra, och om ett skulle hänga sig blockerar
-# det inte det andra.
 on:
   schedule:
     - cron: "0 5 */14 * *"
@@ -35,7 +28,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Walk-forward Sverige
         run: |
-          python run_daily.py --market se --walk-forward \
+          python run_daily.py --market se --walk-forward --skip-fetch \
             --window-days "${{ github.event.inputs.window_days || '90' }}" \
             > reports/walk_forward_se.txt
       - name: Spara resultatet
@@ -65,7 +58,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Walk-forward USA
         run: |
-          python run_daily.py --market us --walk-forward \
+          python run_daily.py --market us --walk-forward --skip-fetch \
             --window-days "${{ github.event.inputs.window_days || '90' }}" \
             > reports/walk_forward_us.txt
       - name: Spara resultatet
