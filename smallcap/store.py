@@ -29,10 +29,7 @@ VALID_MARKETS = ("se", "us", "se_bt", "us_bt")
 # VARFOR DET HAR BEHOVS: backtest.run() anropar reset_account() och
 # skriver om hela portfoljen som en del av simuleringen. Om det kors
 # mot samma databas som den dagliga produktionskorningen anvander
-# skriver en walk-forward-analys OVER din riktiga paper-portfolj --
-# historik, oppna positioner, allt. Med separata databasfiler kan
-# backtest/walk-forward koras hur ofta som helst utan att nagonsin
-# rora produktionsdata.
+# skriver en walk-forward-analys OVER din riktiga paper-portfolj.
 
 
 def _base_market(market: str) -> str:
@@ -53,9 +50,11 @@ def connect(market: str = "se"):
 
     PRESTANDA: atervander EN anslutning per marknad inom samma
     process istallet for att oppna/stanga en ny SQLite-fil varje
-    gang. Profilering av walk_forward avslojade att oppna/committa/
-    stanga en anslutning for varje enskild fragaanrop stod for mer an
-    20% av all kortid.
+    gang.
+
+    Anslutningen stangs INTE har -- den lever kvar i _CONNECTIONS.
+    Den stangs bara explicit via close_all(), som MASTE anropas
+    innan git committar databasfilerna (se close_all()).
     """
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     conn = _CONNECTIONS.get(market)
@@ -76,8 +75,24 @@ _CONNECTIONS: dict[str, sqlite3.Connection] = {}
 
 
 def close_all():
-    """Stanger alla oppna databasanslutningar."""
+    """
+    Stanger alla oppna databasanslutningar. MASTE koras innan git
+    committar databasfilerna.
+
+    WAL-lage (se connect()) kan lamna nyskriven data i en separat
+    -wal-sidofil istallet for huvudfilen, tills en checkpoint sker.
+    Den -wal-filen committas aldrig till git -- sa om ett skript
+    avslutas utan att checkpointa, kan huvudfilen som faktiskt hamnar
+    i git sakna den senaste datan. Det hande pa riktigt: en walk-
+    forward-korning kopierade fran market_se.db och fick "Ingen
+    kursdata" trots att den dagliga korningen borde ha fyllt den med
+    tva ars historik.
+    """
     for conn in _CONNECTIONS.values():
+        try:
+            conn.execute("PRAGMA wal_checkpoint(TRUNCATE)")
+        except Exception:
+            pass
         conn.close()
     _CONNECTIONS.clear()
 
