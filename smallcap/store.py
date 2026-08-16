@@ -70,6 +70,24 @@ CREATE TABLE IF NOT EXISTS bars (
 );
 CREATE INDEX IF NOT EXISTS idx_bars_ticker_date ON bars (ticker, date DESC);
 
+-- Intradagsstaplar (5-minuters, senaste ~60 dagarna via Yahoo Finance).
+-- Separat tabell från 'bars' eftersom de har olika livslängd och syfte:
+-- 'bars' är dagliga och behålls för hela historiken (screening, backtest).
+-- 'intraday_bars' är kortlivade och rensas regelbundet (se data.py) —
+-- de används bara för att reagera SNABBARE inom en redan pågående dag,
+-- inte för långsiktig analys.
+CREATE TABLE IF NOT EXISTS intraday_bars (
+    ticker    TEXT NOT NULL,
+    timestamp TEXT NOT NULL,
+    open      REAL NOT NULL,
+    high      REAL NOT NULL,
+    low       REAL NOT NULL,
+    close     REAL NOT NULL,
+    volume    REAL,
+    PRIMARY KEY (ticker, timestamp)
+);
+CREATE INDEX IF NOT EXISTS idx_intraday_ticker_ts ON intraday_bars (ticker, timestamp DESC);
+
 CREATE TABLE IF NOT EXISTS account (
     id               INTEGER PRIMARY KEY CHECK (id = 1),
     cash             REAL NOT NULL,
@@ -168,3 +186,42 @@ def get_bars(ticker: str, limit: int = 400, market: str = "se") -> list[dict]:
             (ticker, limit),
         ).fetchall()
     return [dict(r) for r in reversed(rows)]
+
+
+def get_intraday_bars(ticker: str, since: str | None = None,
+                       market: str = "se") -> list[dict]:
+    """
+    Hämtar intradagsstaplar för en ticker, äldst först.
+
+    since: ISO-tidsstämpel — bara staplar EFTER denna returneras.
+    Används för att bara titta på dagens rörelse, inte gårdagens
+    kvarvarande intradagsdata.
+    """
+    with connect(market) as c:
+        if since:
+            rows = c.execute(
+                "SELECT timestamp, open, high, low, close, volume "
+                "FROM intraday_bars WHERE ticker = ? AND timestamp > ? "
+                "ORDER BY timestamp", (ticker, since),
+            ).fetchall()
+        else:
+            rows = c.execute(
+                "SELECT timestamp, open, high, low, close, volume "
+                "FROM intraday_bars WHERE ticker = ? ORDER BY timestamp",
+                (ticker,),
+            ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def prune_intraday_bars(older_than_days: int = 3, market: str = "se") -> int:
+    """
+    Rensar gamla intradagsstaplar. De är bara relevanta för att reagera
+    inom en pågående dag — att spara dem för evigt vore att låta
+    databasen växa obegränsat för data som ändå aldrig används igen
+    (samma lärdom som orderbok-snapshots i crypto-arenan tidigare).
+    """
+    from datetime import datetime, timezone, timedelta
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=older_than_days)).isoformat()
+    with connect(market) as c:
+        cur = c.execute("DELETE FROM intraday_bars WHERE timestamp < ?", (cutoff,))
+        return cur.rowcount
