@@ -1,5 +1,8 @@
 name: Daglig körning — Sverige
 
+# Körs efter Stockholmsbörsens stängning (17:30 svensk tid). 18:00 UTC
+# ger marginal åt både sommar- och vintertid (CEST/CET), så dagens
+# kursdata alltid hunnit bli komplett hos Yahoo Finance innan körningen.
 on:
   schedule:
     - cron: "0 18 * * 1-5"
@@ -36,6 +39,7 @@ jobs:
             echo "Inget nytt att spara"
           else
             git commit -m "SE körning $(date -u +'%Y-%m-%d')"
-            git pull --rebase
+            git checkout -- . 2>/dev/null || true
+            git pull --rebase -X theirs
             git push
           fi
