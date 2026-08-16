@@ -2,33 +2,27 @@
 Backtest -- spelar upp historiken dag for dag.
 
 VARFOR: utan detta skulle du behova vanta manader pa att fa veta om
-strategin overhuvudtaget fungerar. Med tva ars historik far du ett
-forsta svar pa nagra sekunder.
+strategin overhuvudtaget fungerar.
 
 VARFOR DET AR TROVARDIGT HAR, till skillnad fran de flesta backtest:
-
   Samma kod. Fill-logiken, exit-reglerna och courtaget ar exakt samma
   funktioner som paper.py anvander live.
-
   Ingen lookahead. Loopen ger strategin bara staplar fram till och med
-  dagens datum. Screenern kan aldrig se framtida kurser.
-
-  Konservativ fyllnad. Priset maste ga IGENOM limitnivan, inte nudda
-  den. Rundtur samma dag ar omojlig.
+  dagens datum.
+  Konservativ fyllnad. Priset maste ga IGENOM limitnivan, inte nudda den.
 
 VAD DET FORTFARANDE INTE KAN FANGA:
-
-  Om DIN order faktiskt hade blivit fylld. Vi vet att priset var dar,
-  inte att det fanns en motpart for just dig.
-
-  Overlevnadsbias. Universum bestar av bolag som finns idag. Bolag som
-  avnoterats eller gatt i konkurs saknas -- och det ar precis de som
-  hade skadat strategin mest.
+  Om DIN order faktiskt hade blivit fylld.
+  Overlevnadsbias. Universum bestar av bolag som finns idag.
 
 Las alltsa resultatet som ett OVRE TAK, inte som en prognos.
 
-MARKNADSPARAMETER: samma backtest-motor anvands for SE och US -- bara
-databasen och konfigurationen som lases av byts ut.
+MARKNADSPARAMETER: samma backtest-motor anvands for SE och US.
+
+VIKTIGT -- ISOLERAD DATABAS: anropas normalt med market="se_bt" eller
+"us_bt" (se store.py och run_daily.py), ALDRIG direkt med "se"/"us",
+eftersom run() anropar reset_account() som skulle skriva over den
+riktiga paper-portfoljen annars.
 """
 import logging
 from datetime import date
@@ -72,23 +66,39 @@ def run(start_date: str = None, end_date: str = None,
     if not first:
         return {"error": "Ingen kursdata"}
 
-    eval_start = start_date or first
+    # ALLA handelsdagar i databasen fram till eval_end -- vi behover
+    # kunna se dagar FORE eval_start for uppvarmning. Bara dagarna
+    # FRAN OCH MED eval_start faktiskt SIMULERAS och mats.
     eval_end = end_date or last
-
     with connect(market) as c:
         all_days = [r["date"] for r in c.execute(
             "SELECT DISTINCT date FROM bars WHERE date <= ? ORDER BY date",
             (eval_end,)).fetchall()]
 
-    try:
-        eval_start_idx = next(i for i, d in enumerate(all_days) if d >= eval_start)
-    except StopIteration:
-        return {"error": f"Inget data fran och med {eval_start}"}
-
     warmup = 120
-    if eval_start_idx < warmup:
-        return {"error": f"For lite historik fore {eval_start} "
-                         f"({eval_start_idx} dagar, behover >{warmup} for uppvarmning)"}
+
+    if start_date:
+        try:
+            eval_start_idx = next(i for i, d in enumerate(all_days) if d >= start_date)
+        except StopIteration:
+            return {"error": f"Inget data fran och med {start_date}"}
+        if eval_start_idx < warmup:
+            return {"error": f"For lite historik fore {start_date} "
+                             f"({eval_start_idx} dagar, behover >{warmup} for uppvarmning)"}
+    else:
+        # INGET startdatum angivet (det vanliga fallet): starta
+        # evalueringen EFTER uppvarmningsperioden istallet for vid
+        # databasens forsta dag.
+        #
+        # Detta var tidigare buggat: eval_start sattes till `first`
+        # som standard, vilket ALLTID gav eval_start_idx = 0 -- och
+        # backtestet kunde darfor ALDRIG koras utan ett explicit
+        # start_date, oavsett hur mycket historik som fanns.
+        if len(all_days) <= warmup:
+            return {"error": f"For lite historik totalt ({len(all_days)} dagar, "
+                             f"behover >{warmup} for uppvarmning plus minst en "
+                             "dags evaluering)"}
+        eval_start_idx = warmup
 
     days = all_days
 
@@ -187,8 +197,8 @@ def _buy_and_hold(tickers: list[str], start: str, end: str,
 
 # --- Walk-forward-parametrisering -----------------------------------------
 #
-# VARFOR: fasta trosklar (MIN_DAILY_RANGE_PCT, MAX_EFFICIENCY_RATIO osv)
-# ar en gissning som gjordes en gang och sen aldrig ifragasattes.
+# VARFOR: fasta trosklar ar en gissning som gjordes en gang och sen
+# aldrig ifragasattes.
 #
 # METODEN: dela historiken i rullande fonster. For varje fonster, testa
 # flera parameterkombinationer pa perioden FORE fonstret ("in-sample"),
@@ -203,13 +213,9 @@ PARAM_GRID = {
     "max_efficiency_ratio": [0.25, 0.35],
     "target_profit_pct": [6.0, 9.0],
 }
-# 8 kombinationer (2x2x2), inte 27 (3x3x3). VARFOR MINDRE AR RATT HAR:
-# varje kombination kor en fullstandig backtest.run() en gang per
-# fonster. Med verkliga marknadsstorlekar (300+ bolag i USA) blev 27
-# kombinationer opraktiskt langsamt aven efter att databasanslutningar
-# atervands (se store.py). Ett smalare grid ger ett snabbare, om an
-# grovre, svar. Skicka ett eget grid-argument till walk_forward() om
-# du vill testa fler kombinationer nar du har tid att vanta langre.
+# 8 kombinationer (2x2x2), inte 27 (3x3x3). Med verkliga marknads-
+# storlekar (300+ bolag i USA) blev 27 kombinationer opraktiskt
+# langsamt aven efter att databasanslutningar atervands.
 
 
 def _param_combinations(grid: dict) -> list[dict]:
@@ -224,8 +230,13 @@ def _run_with_params(params: dict, start_date: str, end_date: str,
                      capital: float, market: str) -> dict:
     """
     Kor backtest.run() med temporart overskrivna parametrar.
+
+    market kan vara "se_bt"/"us_bt" -- installningarna hamtas da fran
+    bas-marknaden ("se"/"us") eftersom MARKETS-dictionaryn bara har
+    de nycklarna.
     """
-    market_settings = config.MARKETS[market]
+    settings_key = market.removesuffix("_bt")
+    market_settings = config.MARKETS[settings_key]
     original = {k: market_settings.get(k) for k in params}
     module_level_keys = {"target_profit_pct": "TARGET_PROFIT_PCT",
                           "position_size_pct": "POSITION_SIZE_PCT",
@@ -340,8 +351,6 @@ def walk_forward(window_days: int = 90, grid: dict | None = None,
         "note": (
             "Ut-av-provresultat ar den arligaste indikationen pa om "
             "parametervalet generaliserar -- men det ar fortfarande bara "
-            "en handfull fonster, inte en garanti. Stor spridning mellan "
-            "fonster tyder pa att strategin ar kanslig for marknadsklimat, "
-            "inte att en ratt parameteruppsattning hittats."
+            "en handfull fonster, inte en garanti."
         ),
     }
