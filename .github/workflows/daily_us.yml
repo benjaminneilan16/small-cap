@@ -36,5 +36,6 @@ jobs:
             echo "Inget nytt att spara"
           else
             git commit -m "US körning $(date -u +'%Y-%m-%d')"
+            git pull --rebase
             git push
           fi
