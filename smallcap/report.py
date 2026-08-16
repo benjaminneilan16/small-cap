@@ -136,20 +136,35 @@ def build(screen: dict, actions: dict, perf: dict, market: str = "se") -> str:
     L.append("## Screener\n")
     L.append(f"{len(cands)} av {screen.get('screened', 0)} bolag passar kriterierna.\n")
     if cands:
-        L.append(f"| Bolag | Poäng | Dagligt spann | Eff. ratio | Omsättning | Kurs |")
-        L.append("|---|---|---|---|---|---|")
+        L.append(f"| Bolag | Poäng | Dagligt spann | Eff. ratio | Omsättning | Kurs | |")
+        L.append("|---|---|---|---|---|---|---|")
         for c in cands[:20]:
+            spike_flag = " 📊" if c.get("volume_spike") else ""
             L.append(f"| {c['ticker']} | {c['score']:.2f} | "
                      f"{c['median_daily_range_pct']:.1f} % | "
                      f"{c['efficiency_ratio_60']} | "
                      f"{c['median_turnover']:,.0f} {cur} | "
-                     f"{c['last_close']:.2f} |")
+                     f"{c['last_close']:.2f} |{spike_flag} |")
         L.append("")
         warned = [c for c in cands if c.get("warning")]
         if warned:
             L.append("### Varningar\n")
             for c in warned[:10]:
                 L.append(f"- **{c['ticker']}**: {c['warning']}")
+            L.append("")
+
+        spiked = [c for c in cands if c.get("volume_spike")]
+        if spiked:
+            L.append("### 📊 Volymspikar (möjlig nyhetshändelse)\n")
+            L.append(
+                "Onormal volym kombinerat med stort prisfall — kan betyda att "
+                "något hänt (nyheter, sektor-rörelse) snarare än normal "
+                "oscillation. Kolla gärna manuellt innan du litar på fyndet.\n"
+            )
+            for c in spiked[:10]:
+                vs = c["volume_spike"]
+                L.append(f"- **{c['ticker']}**: {vs['volume_ratio']:.1f}x normal "
+                         f"volym, {vs['price_change_pct']:+.1f} % samma dag")
             L.append("")
 
     L.append("---\n")
