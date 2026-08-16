@@ -98,4 +98,97 @@ def check_pullback_withdrawals(market: str = "se") -> list[dict]:
     Detta är medvetet ett FÖRSIKTIGT drag, inte ett aggressivt: vi
     drar bara tillbaka om röreslen är stor (standard 8%), inte vid
     normala dagsrörelser. Målet är att undvika de mest uppenbara
-    "fylld mitt i ett fritt
+    "fylld mitt i ett fritt fall"-scenarierna, inte att försöka
+    tajma varje liten rörelse.
+    """
+    cfg = config.get_config(market)
+
+    with connect(market) as c:
+        orders = c.execute(
+            "SELECT id, ticker, limit_price, placed_date FROM orders "
+            "WHERE status = 'open' AND side = 'buy'"
+        ).fetchall()
+
+    withdrawn = []
+    for o in orders:
+        ticker = o["ticker"]
+        limit_price = float(o["limit_price"])
+
+        # Hämta färsk intradagsdata för just denna ticker
+        fetch_intraday(ticker, market)
+
+        # Bara staplar EFTER att ordern lades är relevanta
+        since = f"{o['placed_date']}T00:00:00"
+        bars = get_intraday_bars(ticker, since=since, market=market)
+        if not bars:
+            continue
+
+        lowest = min(float(b["low"]) for b in bars)
+        drop_pct = (limit_price - lowest) / limit_price * 100
+
+        if drop_pct > cfg.intraday_pullback_pct:
+            with connect(market) as c:
+                c.execute(
+                    "UPDATE orders SET status = 'cancelled', "
+                    "cancel_reason = ? WHERE id = ?",
+                    (f"intradagsfall {drop_pct:.1f}% — drogs tillbaka", o["id"]),
+                )
+            withdrawn.append({
+                "ticker": ticker,
+                "limit_price": limit_price,
+                "lowest_seen": round(lowest, 4),
+                "drop_pct": round(drop_pct, 1),
+            })
+            logger.info("Drog tillbaka %s: fallit %.1f%% under limit sedan ordern lades",
+                       ticker, drop_pct)
+
+    return withdrawn
+
+
+def detect_volume_spike(ticker: str, market: str = "se") -> dict | None:
+    """
+    Grov proxy för "något hände": onormal volym + stort prisfall samma
+    dag. Skiljer inte VAD som hände (nyheter, sektor-rörelse, ren
+    spekulation) — bara ATT något avvek från det normala mönstret.
+
+    Detta ersätter INTE mänsklig bedömning av varför en aktie rör sig
+    (se README om varför det är svårt att kodifiera), men ger en
+    enkel flagga att titta extra noga på innan man litar på ett fynd.
+    """
+    from .store import get_bars
+
+    cfg = config.get_config(market)
+    bars = get_bars(ticker, cfg.volume_spike_lookback_days + 1, market)
+    if len(bars) < cfg.volume_spike_lookback_days + 1:
+        return None
+
+    *history, today = bars
+    volumes = [float(b["volume"] or 0) for b in history]
+    median_volume = sorted(volumes)[len(volumes) // 2] if volumes else 0
+    today_volume = float(today["volume"] or 0)
+
+    if median_volume <= 0:
+        return None
+
+    ratio = today_volume / median_volume
+    price_change = (float(today["close"]) - float(today["open"])) / float(today["open"]) * 100
+
+    if ratio >= cfg.volume_spike_multiplier:
+        return {
+            "ticker": ticker,
+            "volume_ratio": round(ratio, 1),
+            "price_change_pct": round(price_change, 1),
+            "likely_news": ratio >= cfg.volume_spike_multiplier and price_change < -5,
+        }
+    return None
+
+
+def run_intraday_check(market: str = "se") -> dict:
+    """
+    Huvudfunktion: kollar pullback-tillbakadragningar för alla öppna
+    ordrar, städar gammal intradagsdata. Tänkt att köras några gånger
+    under handelsdagen.
+    """
+    withdrawn = check_pullback_withdrawals(market)
+    pruned = prune_intraday_bars(market=market)
+    return {"withdrawn": withdrawn, "pruned_rows": pruned}
