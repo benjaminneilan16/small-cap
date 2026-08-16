@@ -35,11 +35,15 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+          echo "=== git status FÖRE add ==="
+          git status
           git add reports/walk_forward_se.txt
           if git diff --staged --quiet; then
             echo "Ingen förändring"
           else
             git commit -m "Walk-forward SE $(date -u +'%Y-%m-%d')"
+            echo "=== git status EFTER commit, FÖRE pull ==="
+            git status
             git pull --rebase
             git push
           fi
