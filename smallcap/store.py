@@ -2,16 +2,16 @@
 Lagring i SQLite-filer som ligger i repot.
 
 VARFOR INGEN RIKTIG DATABAS: strategin kors en gang per dygn och
-hanterar kanske tjugo bolag. Det ar nagra tusen rader totalt.
+hanterar kanske tjugo bolag.
 
 Med SQLite i repot far du istallet:
   - Ingen registrering, inga hemligheter att hantera
-  - Git-historiken som revisionslogg: varje korning syns som en commit
+  - Git-historiken som revisionslogg
   - Mojlighet att ladda ner filen och oppna den lokalt nar du vill
   - Gratis for alltid
 
 TVA MARKNADER, TVA DATABASER: svenska och amerikanska bolag halls
-fysiskt separerade i olika filer (market_se.db / market_us.db).
+fysiskt separerade i olika filer.
 """
 import sqlite3
 from pathlib import Path
@@ -20,16 +20,6 @@ from contextlib import contextmanager
 DATA_DIR = Path(__file__).parent.parent / "data"
 
 VALID_MARKETS = ("se", "us", "se_bt", "us_bt")
-
-# se_bt/us_bt ar BACKTEST-ISOLERADE varianter av se/us -- egna
-# databasfiler, men allt annat (config, screener, paper) fungerar
-# identiskt eftersom get_config() bara bryr sig om "se" eller "us"
-# forekommer i namnet.
-#
-# VARFOR DET HAR BEHOVS: backtest.run() anropar reset_account() och
-# skriver om hela portfoljen som en del av simuleringen. Om det kors
-# mot samma databas som den dagliga produktionskorningen anvander
-# skriver en walk-forward-analys OVER din riktiga paper-portfolj.
 
 
 def _base_market(market: str) -> str:
@@ -46,15 +36,8 @@ def _db_path(market: str) -> Path:
 @contextmanager
 def connect(market: str = "se"):
     """
-    Ger en databasanslutning for en marknad.
-
-    PRESTANDA: atervander EN anslutning per marknad inom samma
-    process istallet for att oppna/stanga en ny SQLite-fil varje
-    gang.
-
-    Anslutningen stangs INTE har -- den lever kvar i _CONNECTIONS.
-    Den stangs bara explicit via close_all(), som MASTE anropas
-    innan git committar databasfilerna (se close_all()).
+    Ger en databasanslutning for en marknad. Atervander EN anslutning
+    per marknad inom samma process for prestanda.
     """
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     conn = _CONNECTIONS.get(market)
@@ -77,16 +60,8 @@ _CONNECTIONS: dict[str, sqlite3.Connection] = {}
 def close_all():
     """
     Stanger alla oppna databasanslutningar. MASTE koras innan git
-    committar databasfilerna.
-
-    WAL-lage (se connect()) kan lamna nyskriven data i en separat
-    -wal-sidofil istallet for huvudfilen, tills en checkpoint sker.
-    Den -wal-filen committas aldrig till git -- sa om ett skript
-    avslutas utan att checkpointa, kan huvudfilen som faktiskt hamnar
-    i git sakna den senaste datan. Det hande pa riktigt: en walk-
-    forward-korning kopierade fran market_se.db och fick "Ingen
-    kursdata" trots att den dagliga korningen borde ha fyllt den med
-    tva ars historik.
+    committar databasfilerna -- annars kan senaste datan sitta kvar i
+    en -wal-sidofil som aldrig nar git.
     """
     for conn in _CONNECTIONS.values():
         try:
@@ -149,7 +124,9 @@ CREATE TABLE IF NOT EXISTS orders (
     fill_price    REAL,
     gap_pct       REAL,
     cancel_reason TEXT,
-    position_id   INTEGER
+    position_id   INTEGER,
+    adjustments_count INTEGER NOT NULL DEFAULT 0,
+    original_limit_price REAL
 );
 CREATE INDEX IF NOT EXISTS idx_orders_status ON orders (status, ticker);
 
@@ -189,6 +166,25 @@ CREATE TABLE IF NOT EXISTS runs (
 def init(market: str = "se"):
     with connect(market) as c:
         c.executescript(SCHEMA)
+        _migrate(c)
+
+
+def _migrate(c):
+    """
+    Lagger till kolumner som saknas i redan existerande databaser.
+
+    CREATE TABLE IF NOT EXISTS andrar inte en tabell som redan finns.
+    Nya kolumner som adjustments_count maste darfor laggas till
+    explicit har, annars kraschar koden mot din redan korande
+    produktionsdatabas.
+    """
+    existing = {row["name"] for row in
+               c.execute("PRAGMA table_info(orders)").fetchall()}
+    if "adjustments_count" not in existing:
+        c.execute("ALTER TABLE orders ADD COLUMN adjustments_count "
+                  "INTEGER NOT NULL DEFAULT 0")
+    if "original_limit_price" not in existing:
+        c.execute("ALTER TABLE orders ADD COLUMN original_limit_price REAL")
 
 
 def init_account(capital: float, market: str = "se"):
