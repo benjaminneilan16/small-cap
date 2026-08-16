@@ -65,8 +65,6 @@ def fetch_intraday(ticker: str, market: str = "se") -> dict:
                 skipped += 1
                 continue
 
-            # Samma NaN-skydd som i data.py — Yahoo kan returnera
-            # ofullständiga rader, särskilt runt handelsstopp.
             if any(v != v for v in (open_, high, low, close)):
                 skipped += 1
                 continue
@@ -84,22 +82,16 @@ def fetch_intraday(ticker: str, market: str = "se") -> dict:
             rows += 1
 
     if skipped:
-        logger.warning("%s: hoppade över %d intradagsrad(er)", ticker, skipped)
+        logger.warning("%s: hoppade over %d intradagsrad(er)", ticker, skipped)
 
     return {"ticker": ticker, "bars": rows}
 
 
 def check_pullback_withdrawals(market: str = "se") -> list[dict]:
     """
-    Kollar alla öppna köpordrar mot intradagsdata. Om priset fallit
-    mer än intraday_pullback_pct under limitpriset SEDAN ordern
+    Kollar alla oppna koporder mot intradagsdata. Om priset fallit
+    mer an intraday_pullback_pct under limitpriset SEDAN ordern
     lades, dras ordern tillbaka.
-
-    Detta är medvetet ett FÖRSIKTIGT drag, inte ett aggressivt: vi
-    drar bara tillbaka om röreslen är stor (standard 8%), inte vid
-    normala dagsrörelser. Målet är att undvika de mest uppenbara
-    "fylld mitt i ett fritt fall"-scenarierna, inte att försöka
-    tajma varje liten rörelse.
     """
     cfg = config.get_config(market)
 
@@ -114,10 +106,8 @@ def check_pullback_withdrawals(market: str = "se") -> list[dict]:
         ticker = o["ticker"]
         limit_price = float(o["limit_price"])
 
-        # Hämta färsk intradagsdata för just denna ticker
         fetch_intraday(ticker, market)
 
-        # Bara staplar EFTER att ordern lades är relevanta
         since = f"{o['placed_date']}T00:00:00"
         bars = get_intraday_bars(ticker, since=since, market=market)
         if not bars:
@@ -131,7 +121,7 @@ def check_pullback_withdrawals(market: str = "se") -> list[dict]:
                 c.execute(
                     "UPDATE orders SET status = 'cancelled', "
                     "cancel_reason = ? WHERE id = ?",
-                    (f"intradagsfall {drop_pct:.1f}% — drogs tillbaka", o["id"]),
+                    (f"intradagsfall {drop_pct:.1f}% - drogs tillbaka", o["id"]),
                 )
             withdrawn.append({
                 "ticker": ticker,
@@ -145,21 +135,29 @@ def check_pullback_withdrawals(market: str = "se") -> list[dict]:
     return withdrawn
 
 
-def detect_volume_spike(ticker: str, market: str = "se") -> dict | None:
+def detect_volume_spike(ticker: str, market: str = "se",
+                         bars: list[dict] | None = None) -> dict | None:
     """
-    Grov proxy för "något hände": onormal volym + stort prisfall samma
-    dag. Skiljer inte VAD som hände (nyheter, sektor-rörelse, ren
-    spekulation) — bara ATT något avvek från det normala mönstret.
+    Grov proxy for "nagot hande": onormal volym + stort prisfall samma
+    dag.
 
-    Detta ersätter INTE mänsklig bedömning av varför en aktie rör sig
-    (se README om varför det är svårt att kodifiera), men ger en
-    enkel flagga att titta extra noga på innan man litar på ett fynd.
+    PRESTANDA: tar valfritt emot redan hamtad `bars`-data istallet for
+    att alltid gora en ny databasfraga. screener.analyze() har redan
+    hamtat bars for samma ticker -- att hamta dem igen har dubblerade
+    databasarbetet for VARJE bolag, VARJE dag, i backtest/walk-forward,
+    vilket i praktiken gjorde walk-forward orimligt langsamt. Live-
+    korning (utan bars-argument) fungerar som forut.
     """
-    from .store import get_bars
-
     cfg = config.get_config(market)
-    bars = get_bars(ticker, cfg.volume_spike_lookback_days + 1, market)
-    if len(bars) < cfg.volume_spike_lookback_days + 1:
+    needed = cfg.volume_spike_lookback_days + 1
+
+    if bars is None:
+        from .store import get_bars
+        bars = get_bars(ticker, needed, market)
+    elif len(bars) > needed:
+        bars = bars[-needed:]
+
+    if len(bars) < needed:
         return None
 
     *history, today = bars
@@ -185,9 +183,8 @@ def detect_volume_spike(ticker: str, market: str = "se") -> dict | None:
 
 def run_intraday_check(market: str = "se") -> dict:
     """
-    Huvudfunktion: kollar pullback-tillbakadragningar för alla öppna
-    ordrar, städar gammal intradagsdata. Tänkt att köras några gånger
-    under handelsdagen.
+    Huvudfunktion: kollar pullback-tillbakadragningar for alla oppna
+    ordrar, stadar gammal intradagsdata.
     """
     withdrawn = check_pullback_withdrawals(market)
     pruned = prune_intraday_bars(market=market)
