@@ -2,25 +2,12 @@
 Screener -- hittar bolag som passar spread-strategin.
 
 VAD VI LETAR EFTER, oversatt fran hennes egna ord:
+  "stora spreadar, stora upp- och nedgangar per dag" -> stort dagligt spann
+  "kursen blir valdigt spretig" -> LAG efficiency ratio
+  "Hur har den studsat forut?" -> priset atervander till samma nivaer
 
-  "stora spreadar, stora upp- och nedgangar per dag och per vecka"
-      -> stort dagligt spann i procent
-
-  "kursen blir valdigt spretig"
-      -> LAG efficiency ratio. Priset ror sig mycket men kommer ingenstans.
-
-  "Hur har den studsat forut? Ser jag tydliga nivaer?"
-      -> priset atervander till samma nivaer om och om igen
-
-DEN VIKTIGASTE INSIKTEN: strategin vill ha det som konventionell analys
-kallar daligt. Bred spread och spretig kurs ar normalt varningstecken.
-Har ar de sjalva ravaran. En aktie som trendar snyggt uppat ar vardelos
--- det finns inga studsar att fanga.
-
-MARKNADSOBEROENDE: monstret hon beskriver ar inte specifikt for svenska
-smabolag -- samma logik (spread, oscillation, atervandande nivaer)
-galler for illikvida amerikanska small caps. Bara valutan och
-omsattningstroskeln skiljer, och de kommer fran MarketConfig.
+MARKNADSOBEROENDE: samma logik galler for svenska och amerikanska
+small caps -- bara valutan och omsattningstroskeln skiljer.
 """
 import logging
 import statistics
@@ -35,12 +22,7 @@ logger = logging.getLogger("screener")
 def efficiency_ratio(closes: list[float], period: int = 20) -> float | None:
     """
     Kaufmans Efficiency Ratio: nettororelse delat med summan av alla
-    enskilda rorelser.
-
-      nara 1,0 = priset gick rakt fran A till B (trend)
-      nara 0,0 = priset rorde sig mycket men kom ingenstans (oscillation)
-
-    For den har strategin vill vi ha LAGT varde.
+    enskilda rorelser. Nara 1,0 = trend. Nara 0,0 = oscillation.
     """
     if len(closes) < period + 1:
         return None
@@ -53,10 +35,6 @@ def efficiency_ratio(closes: list[float], period: int = 20) -> float | None:
 def find_levels(bars: list[dict], bins: int = 20) -> list[dict]:
     """
     Hittar prisnivaer dar aktien handlat ofta.
-
-    Metoden: dela prisintervallet i lador och rakna hur manga dagar som
-    berort varje lada. Nivaer med manga traffar ar dar handeln
-    koncentrerats -- dit priset tenderar att atervanda.
     """
     if len(bars) < 40:
         return []
@@ -137,19 +115,19 @@ def analyze(ticker: str, lookback: int = 250, market: str = "se",
         score += (1 - min(er_60 / cfg.max_efficiency_ratio, 1.0)) * 2
     score += min(revisit / 40, 1.0)
 
-    # Volymspik-flagga: grov proxy for "nagot hande nyligen".
-    #
-    # PRESTANDA: atervander `bars` som redan hamtats ovan istallet for
-    # en ny databasfraga. Under backtest/walk-forward hoppas berak-
-    # ningen helt over (skip_volume_spike=True) -- flaggan ar till for
-    # att du manuellt ska kolla en LEVANDE kandidat innan du litar pa
-    # den, vilket ar meningslost i en historisk simulering som kors
-    # helt automatiskt utan manskllig granskning. Att randa ut den dar
-    # kostade tidigare miljontals extra databasfragor per korning.
+    # Volymspik-flagga: aterananvander bars (lokal databas, billigt).
+    # Under backtest/walk-forward hoppas den over helt.
     volume_spike = None
     if not skip_volume_spike:
         from . import intraday as _intraday
         volume_spike = _intraday.detect_volume_spike(ticker, market, bars=bars)
+
+    # Nyhetsflagga: SAMMA skip-flagga, men annu viktigare att
+    # respektera -- riktigt HTTP-anrop, inte en lokal databasfraga.
+    # Bara for redan godkanda kandidater i skarpt lage.
+    news = None
+    if not skip_volume_spike and usable:
+        news = _intraday.check_recent_news(ticker, market)
 
     return {
         "ticker": ticker,
@@ -166,16 +144,13 @@ def analyze(ticker: str, lookback: int = 250, market: str = "se",
         "reasons": reasons,
         "warning": _warning(net_change, median_turnover, cfg.currency),
         "volume_spike": volume_spike,
+        "news": news,
     }
 
 
 def _warning(net_change: float, turnover: float, currency: str) -> str | None:
     """
     Varningar for fall som passerar filtren men anda ar farliga.
-
-    Den viktigaste: en aktie som fallit 60% har ocksa lag efficiency
-    ratio -- men av fel skal. Den oscillerar inte, den faller i etapper.
-    Att kopa studsar dar ar att fanga en fallande kniv.
     """
     parts = []
     if net_change < -50:
