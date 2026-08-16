@@ -58,6 +58,40 @@ MAX_EFFICIENCY_RATIO = float(os.getenv("MAX_EFFICIENCY_RATIO", "0.30"))
 # fylld på väg ner i ett ras, inte vid en sund studs.
 FILL_GAP_WARNING_PCT = float(os.getenv("FILL_GAP_WARNING_PCT", "5.0"))
 
+# --- Intradagsdata (nytt) ------------------------------------------------
+# Yahoo Finance ger 5-minutersstaplar för de senaste ~60 dagarna. Det
+# räcker inte för långsiktig historik (därför används fortfarande
+# dagliga staplar för screening och backtest), men det räcker för att
+# reagera SNABBARE än en gång per dygn: se ett ras eskalera intradag
+# och dra tillbaka en order innan den fylls i fritt fall, eller se en
+# faktisk intradagsstuds istället för att gissa från dag-till-dag-data.
+INTRADAY_INTERVAL = os.getenv("INTRADAY_INTERVAL", "5m")
+INTRADAY_PERIOD = os.getenv("INTRADAY_PERIOD", "5d")
+
+# Hur mycket priset får falla INTRADAG under en liggande limitorder
+# innan vi drar tillbaka den, istället för att vänta och riskera att
+# den fylls mitt i ett fortsatt fall. Detta är skilt från gap_pct
+# (som mäts EFTER fyllnad) — pull_back agerar FÖRE fyllnad.
+INTRADAY_PULLBACK_PCT = float(os.getenv("INTRADAY_PULLBACK_PCT", "8.0"))
+
+# --- Volymspik-/nyhetsflagga (nytt) ---------------------------------------
+# En dag med onormalt hög volym + stort prisfall flaggas som "möjlig
+# nyhetshändelse" snarare än normal oscillation. Det är en grov proxy
+# för "varför rör sig aktien", som skiljer den från ren mönsterigen-
+# känning — men det är fortfarande bara en proxy, inte förståelse.
+VOLUME_SPIKE_MULTIPLIER = float(os.getenv("VOLUME_SPIKE_MULTIPLIER", "3.0"))
+VOLUME_SPIKE_LOOKBACK_DAYS = int(os.getenv("VOLUME_SPIKE_LOOKBACK_DAYS", "20"))
+
+# --- Tidig varningsexit (nytt) ---------------------------------------------
+# Om en position går djupt back DIREKT efter fyllnad (inom detta antal
+# dagar), långt innan stop loss på STOP_LOSS_PCT, är det ett tecken på
+# att det är ett fall snarare än en studs. Kliv ur tidigt istället för
+# att vänta på den fulla stop-lossen. Detta skiljer sig från stop loss
+# genom att den triggar på HUR SNABBT positionen går fel, inte bara
+# HUR MYCKET.
+EARLY_WARNING_DAYS = int(os.getenv("EARLY_WARNING_DAYS", "2"))
+EARLY_WARNING_PCT = float(os.getenv("EARLY_WARNING_PCT", "-8.0"))
+
 # --- Telegram (valfritt, delas mellan marknaderna) ---------------------
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
@@ -142,6 +176,13 @@ class MarketConfig:
         self.min_daily_range_pct = MIN_DAILY_RANGE_PCT
         self.max_efficiency_ratio = MAX_EFFICIENCY_RATIO
         self.fill_gap_warning_pct = FILL_GAP_WARNING_PCT
+        self.intraday_interval = INTRADAY_INTERVAL
+        self.intraday_period = INTRADAY_PERIOD
+        self.intraday_pullback_pct = INTRADAY_PULLBACK_PCT
+        self.volume_spike_multiplier = VOLUME_SPIKE_MULTIPLIER
+        self.volume_spike_lookback_days = VOLUME_SPIKE_LOOKBACK_DAYS
+        self.early_warning_days = EARLY_WARNING_DAYS
+        self.early_warning_pct = EARLY_WARNING_PCT
 
     @property
     def reports_dir(self) -> Path:
