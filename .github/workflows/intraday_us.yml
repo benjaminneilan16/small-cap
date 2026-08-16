@@ -39,5 +39,6 @@ jobs:
             echo "Inga tillbakadragningar att spara"
           else
             git commit -m "US intradagskoll $(date -u +'%Y-%m-%d %H:%M')"
+            git pull --rebase
             git push
           fi
