@@ -35,15 +35,13 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          echo "=== git status FÖRE add ==="
-          git status
+          git checkout -- data/market_se.db 2>/dev/null || true
           git add reports/walk_forward_se.txt
           if git diff --staged --quiet; then
             echo "Ingen förändring"
           else
             git commit -m "Walk-forward SE $(date -u +'%Y-%m-%d')"
-            echo "=== git status EFTER commit, FÖRE pull ==="
-            git status
+            git checkout -- data/market_se.db 2>/dev/null || true
             git pull --rebase
             git push
           fi
@@ -69,11 +67,13 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+          git checkout -- data/market_us.db 2>/dev/null || true
           git add reports/walk_forward_us.txt
           if git diff --staged --quiet; then
             echo "Ingen förändring"
           else
             git commit -m "Walk-forward US $(date -u +'%Y-%m-%d')"
+            git checkout -- data/market_us.db 2>/dev/null || true
             git pull --rebase
             git push
           fi
