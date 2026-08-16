@@ -156,6 +156,11 @@ def main():
         lines.append("Inget hande idag -- normalt, de flesta ordrar ligger och vantar.")
     report.telegram("\n".join(lines))
 
+    # Checkpointar WAL och stanger anslutningen INNAN workflow-filens
+    # git-steg committar databasen -- annars kan den senaste datan sitta
+    # kvar i en -wal-sidofil som aldrig nar git. Se store.close_all().
+    store.close_all()
+
     log.info("Klart.")
 
 
@@ -165,8 +170,7 @@ def run_backtest(market: str = "se", skip_fetch: bool = False):
 
     KORS MOT EN ISOLERAD BACKTEST-DATABAS (market + "_bt"), ALDRIG mot
     den riktiga paper-portfoljen -- backtest.run() anropar
-    reset_account() som en del av simuleringen, vilket annars skulle
-    skriva over din riktiga portfoljhistorik.
+    reset_account() som en del av simuleringen.
     """
     from smallcap import store, data, backtest, config
 
@@ -242,6 +246,8 @@ def run_backtest(market: str = "se", skip_fetch: bool = False):
         print(f"  {r['note']}")
     print()
 
+    store.close_all()
+
 
 def run_walk_forward(market: str = "se", skip_fetch: bool = False,
                      window_days: int = 90):
@@ -310,6 +316,8 @@ def run_walk_forward(market: str = "se", skip_fetch: bool = False,
     print()
     print(f"  {r['note']}")
     print()
+
+    store.close_all()
 
 
 if __name__ == "__main__":
