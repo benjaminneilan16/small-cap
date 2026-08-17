@@ -1,9 +1,5 @@
 name: Intradagskoll — Sverige
 
-# Kör några gånger under handelsdagen för att dra tillbaka ordrar som
-# fallit kraftigt sedan de lades — se smallcap/intraday.py för
-# resonemanget. Tider valda för att ligga inom svensk handelstid
-# (09:00–17:30 lokal, ~07:00–15:30 UTC sommartid).
 on:
   schedule:
     - cron: "0 9,12,15 * * 1-5"
@@ -35,6 +31,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add data/market_se.db
+          git add reports/positions.csv reports/orders.csv 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "Inga tillbakadragningar att spara"
           else
