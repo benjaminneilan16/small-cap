@@ -1,13 +1,11 @@
+# Omregistrerad 2026-08-17 för att fixa cron-schema som aldrig triggade
 name: Morgonkoll — Sverige
-
 on:
   schedule:
     - cron: "15 7 * * 1-5"
   workflow_dispatch:
-
 permissions:
   contents: read
-
 jobs:
   run:
     runs-on: ubuntu-latest
