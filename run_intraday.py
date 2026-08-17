@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 """
-Intradagskoll -- justerar ordrar som fallit mattligt, drar tillbaka
+Intradagskoll — justerar ordrar som fallit måttligt, drar tillbaka
 ordrar som fallit kraftigt sedan de lades.
 
-Kors nagra ganger under handelsdagen (t.ex. varannan timme), separat
-fran morgonkoll/mitt pa dagen/kvallskorning. Se smallcap/intraday.py
-for det fullstandiga resonemanget.
-
-Kor manuellt med:
+Kör manuellt med:
     python run_intraday.py                 (svenska marknaden, standard)
     python run_intraday.py --market us      (amerikanska marknaden)
 """
@@ -70,10 +66,13 @@ def main():
                 lines.append(f"  {w['ticker']}: -{w['drop_pct']:.1f}% sedan ordern lades")
         report.telegram("\n".join(lines))
 
+        # Skriv om orders.csv så appen visar justerade limitpriser och
+        # tillbakadragna ordrar direkt, utan att vänta till kvällen.
+        report.export_csv(market)
+        log.info("Skrev om orders.csv efter justering(ar)/tillbakadragning(ar).")
+
     log.info("Städade %d gamla intradagsrader.", result["pruned_rows"])
 
-    # Checkpointar WAL innan workflow-filens git-steg committar
-    # databasen — se run_daily.py för samma resonemang.
     store.close_all()
 
     log.info("Klart.")
