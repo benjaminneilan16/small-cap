@@ -184,7 +184,9 @@ def build(screen: dict, actions: dict, perf: dict, market: str = "se") -> str:
              "antalet affärer, vilket är rätt håll att fela på.*")
 
     return "\n".join(L)
-    def write_portfolio_json(market: str = "se"):
+
+
+def write_portfolio_json(market: str = "se"):
     """
     Skriver en liten, alltid-färsk JSON-fil med bara portföljvärdet.
 
