@@ -1,0 +1,5 @@
+id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+4,RCAT,93.0,10.6488,2026-08-17,11.3942,1.5,open,,,,,,,3.84
+3,LWLG,134.0,7.424,2026-08-17,7.9437,1.5,open,,,,,,,3.69
+2,FCEL,46.0,21.6825,2026-08-17,23.2003,1.5,open,,,,,,,0.2
+1,AMPX,82.0,12.1682,2026-08-17,13.02,1.5,open,,,,,,,4.42
