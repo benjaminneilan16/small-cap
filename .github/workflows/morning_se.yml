@@ -1,11 +1,5 @@
 name: Morgonkoll — Sverige
 
-# Körs strax efter Stockholmsbörsens öppning (09:00 svensk tid) för att
-# fånga upp ev. fyllnader i öppningsauktionen. Lägger INGA nya ordrar.
-#
-# Skriver om positions.csv/orders.csv (INTE latest.md) om något
-# fyllts — annars visar frontend-appen fortfarande "inga positioner"
-# tills kvällskörningen, trots att en riktig fyllnad redan skett.
 on:
   schedule:
     - cron: "15 7 * * 1-5"
@@ -37,7 +31,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add data/market_se.db
-          git add reports/positions.csv reports/orders.csv 2>/dev/null || true
+          git add reports/positions.csv reports/orders.csv reports/portfolio.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "Inget nytt att spara"
           else
