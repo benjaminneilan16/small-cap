@@ -16,7 +16,7 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 31,BEAMMW-B.ST,buy,12.881,77.0,2026-08-16,open,,,,,,0,
 30,ENVAR.ST,buy,46.552,21.0,2026-08-16,open,,,,,,0,
 29,NIO.ST,buy,4.3733,228.0,2026-08-16,open,,,,,,0,
-28,SPEC.ST,buy,0.0345,28985.0,2026-08-16,open,,,,,,0,
+28,SPEC.ST,buy,0.032,28985.0,2026-08-16,open,,,,,,1,0.0345
 27,IVACC.ST,buy,1.1022,907.0,2026-08-16,open,,,,,,0,
 26,FERRO.ST,buy,2.599,384.0,2026-08-16,open,,,,,,0,
 25,KLAR.ST,buy,0.8731,1145.0,2026-08-16,open,,,,,,0,
