@@ -31,7 +31,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add data/market_se.db
-          git add reports/positions.csv reports/orders.csv 2>/dev/null || true
+          git add reports/positions.csv reports/orders.csv reports/portfolio.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "Inga tillbakadragningar att spara"
           else
