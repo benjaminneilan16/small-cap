@@ -165,7 +165,9 @@ def main():
     store.close_all()
 
     log.info("Klart.")
-  def run_backtest(market: str = "se", skip_fetch: bool = False):
+
+
+def run_backtest(market: str = "se", skip_fetch: bool = False):
     """
     Spelar upp historiken dag för dag med samma logik som live.
 
