@@ -32,7 +32,7 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 15,GSKR-SDB.ST,buy,21.62,46.0,2026-08-16,open,,,,,,0,
 14,BIOEX.ST,buy,2.2272,448.0,2026-08-16,open,,,,,,0,
 13,IMPC.ST,buy,2.668,374.0,2026-08-16,open,,,,,,0,
-12,BLINC-B.ST,buy,0.1058,9451.0,2026-08-16,open,,,,,,0,
+12,BLINC-B.ST,buy,0.098,9451.0,2026-08-16,open,,,,,,1,0.1058
 11,OXE.ST,buy,0.2256,4432.0,2026-08-16,filled,2026-08-17,0.2256,0.71,,10,0,
 10,DMXSE-SDB.ST,buy,4.1232,242.0,2026-08-16,open,,,,,,0,
 9,SERT.ST,buy,0.5154,1940.0,2026-08-16,cancelled,,,,intradagsfall 9.6% - drogs tillbaka,,0,
