@@ -1,4 +1,7 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+16,ONCOZ.ST,172.0,5.8121,2026-08-18,6.2189,2.499203,open,,,,,,,0.21
+15,HILB-B.ST,266.0,3.7582,2026-08-18,4.0213,2.499203,open,,,,,,,3.15
+14,BEAMMW-B.ST,77.0,12.881,2026-08-18,13.7827,2.4795925,open,,,,,,,1.09
 13,SES.ST,5324.0,0.1878,2026-08-17,0.2009,2.499618,open,,,,,,,0.43
 12,SALT-B.ST,166.0,5.9981,2026-08-17,6.418,2.4892115,open,,,,,,,0.8
 11,QLIFE.ST,566.0,1.7645,2026-08-17,1.888,2.4967675,open,,,,,,,0.48
