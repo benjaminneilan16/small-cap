@@ -1,4 +1,5 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+23,BLINC-B.ST,9451.0,0.098,2026-08-19,0.1049,2.315495,open,,,,,,,2.04
 22,STW.ST,30.0,32.265,2026-08-18,34.5236,2.419875,open,,,,,,,1.6
 21,SPRINT.ST,306.0,3.2647,2026-08-18,3.4932,2.4974955,open,,,,,,,0.45
 20,SPEC.ST,28985.0,0.032,2026-08-17,0.0342,4.7970175,closed,0.0342,2026-08-18,MAL NATT,58.96998250000002,3.124999441206453,1,1.56
