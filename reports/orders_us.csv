@@ -1,4 +1,9 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+24,RHLD,buy,113.1264,8.0,2026-08-19,open,,,,,,0,
+23,USAS,buy,5.3125,186.0,2026-08-19,open,,,,,,0,
+22,AMPX,buy,10.5277,94.0,2026-08-19,open,,,,,,0,
+21,UAMY,buy,5.5008,179.0,2026-08-19,open,,,,,,0,
+20,INBX,buy,99.394,9.0,2026-08-19,open,,,,,,0,
 19,NBTX,buy,38.7237,25.0,2026-08-18,open,,,,,,0,
 18,ASM,buy,6.7837,145.0,2026-08-18,open,,,,,,0,
 17,UMAC,buy,28.1336,35.0,2026-08-18,filled,2026-08-19,28.1336,2.86,,14,0,
@@ -8,7 +13,7 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 13,LWLG,buy,7.424,134.0,2026-08-15,filled,2026-08-17,7.424,3.69,,3,0,
 12,SHLS,buy,8.112,123.0,2026-08-15,filled,2026-08-18,8.112,1.13,,10,0,
 11,RZLV,buy,2.53,395.0,2026-08-15,filled,2026-08-18,2.53,0.79,,9,0,
-10,JBIO,buy,22.7332,43.0,2026-08-15,open,,,,,,0,
+10,JBIO,buy,22.7332,43.0,2026-08-15,filled,2026-08-19,22.7332,1.33,,15,0,
 9,NNE,buy,18.8736,52.0,2026-08-15,filled,2026-08-18,18.8736,2.19,,6,0,
 8,POET,buy,8.8136,113.0,2026-08-15,filled,2026-08-18,8.8136,1.74,,7,0,
 7,AMPX,buy,12.1682,82.0,2026-08-15,filled,2026-08-17,12.1682,4.42,,1,0,
