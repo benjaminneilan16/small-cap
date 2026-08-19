@@ -1,8 +1,8 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
 19,NBTX,buy,38.7237,25.0,2026-08-18,open,,,,,,0,
 18,ASM,buy,6.7837,145.0,2026-08-18,open,,,,,,0,
-17,UMAC,buy,28.1336,35.0,2026-08-18,open,,,,,,0,
-16,FCEL,buy,21.6825,45.0,2026-08-18,open,,,,,,0,
+17,UMAC,buy,28.1336,35.0,2026-08-18,filled,2026-08-19,28.1336,2.86,,14,0,
+16,FCEL,buy,21.6825,45.0,2026-08-18,filled,2026-08-19,21.6825,9.88,,13,0,
 15,TRLV,buy,9.1646,109.0,2026-08-15,open,,,,,,0,
 14,NTLA,buy,11.5025,86.0,2026-08-15,filled,2026-08-18,11.5025,0.54,,12,0,
 13,LWLG,buy,7.424,134.0,2026-08-15,filled,2026-08-17,7.424,3.69,,3,0,

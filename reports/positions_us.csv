@@ -1,4 +1,6 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+14,UMAC,35.0,28.1336,2026-08-19,30.103,1.5,open,,,,,,,2.86
+13,FCEL,45.0,21.6825,2026-08-19,23.2003,1.5,open,,,,,,,9.88
 12,NTLA,86.0,11.5025,2026-08-18,12.3077,1.5,open,,,,,,,0.54
 11,UAMY,189.0,5.2896,2026-08-18,5.6599,1.5,open,,,,,,,0.56
 10,SHLS,123.0,8.112,2026-08-18,8.6798,1.5,open,,,,,,,1.13
