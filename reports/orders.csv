@@ -15,7 +15,7 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 32,STW.ST,buy,32.265,30.0,2026-08-16,filled,2026-08-18,32.265,1.6,,22,0,
 31,BEAMMW-B.ST,buy,12.881,77.0,2026-08-16,filled,2026-08-18,12.881,1.09,,14,0,
 30,ENVAR.ST,buy,46.552,21.0,2026-08-16,open,,,,,,0,
-29,NIO.ST,buy,4.3733,228.0,2026-08-16,open,,,,,,0,
+29,NIO.ST,buy,4.3733,228.0,2026-08-16,cancelled,,,,intradagsfall 19.3% - drogs tillbaka,,0,
 28,SPEC.ST,buy,0.032,28985.0,2026-08-16,filled,2026-08-17,0.032,1.56,,20,1,0.0345
 27,IVACC.ST,buy,1.1022,907.0,2026-08-16,filled,2026-08-20,1.1022,9.36,,26,0,
 26,FERRO.ST,buy,2.599,384.0,2026-08-16,open,,,,,,0,
