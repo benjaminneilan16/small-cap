@@ -1,4 +1,9 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+34,CMPS,buy,12.2636,80.0,2026-08-21,open,,,,,,0,
+33,KOS,buy,2.9025,338.0,2026-08-21,open,,,,,,0,
+32,AKTS,buy,23.9682,40.0,2026-08-21,open,,,,,,0,
+31,SGML,buy,11.0711,88.0,2026-08-21,open,,,,,,0,
+30,ULCC,buy,5.4832,179.0,2026-08-21,open,,,,,,0,
 29,NTLA,buy,11.5025,84.0,2026-08-20,open,,,,,,0,
 28,AEVA,buy,17.3604,56.0,2026-08-20,open,,,,,,0,
 27,RXT,buy,2.99,326.0,2026-08-20,open,,,,,,0,
