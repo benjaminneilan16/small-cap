@@ -1,4 +1,7 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+37,LXRX,buy,2.1344,456.0,2026-08-24,open,,,,,,0,
+36,POET,buy,7.6815,126.0,2026-08-24,open,,,,,,0,
+35,UMAC,buy,22.6044,43.0,2026-08-24,open,,,,,,0,
 34,CMPS,buy,12.2636,80.0,2026-08-21,open,,,,,,0,
 33,KOS,buy,2.9025,338.0,2026-08-21,filled,2026-08-24,2.9025,1.46,,23,0,
 32,AKTS,buy,23.9682,40.0,2026-08-21,filled,2026-08-24,23.9682,4.21,,22,0,
