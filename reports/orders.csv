@@ -1,4 +1,8 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+49,HILB-B.ST,buy,3.7076,270.0,2026-08-24,open,,,,,,0,
+48,DICOT.ST,buy,0.2001,5016.0,2026-08-24,open,,,,,,0,
+47,SERT.ST,buy,0.4931,2035.0,2026-08-24,open,,,,,,0,
+46,DMXSE-SDB.ST,buy,4.1485,241.0,2026-08-24,open,,,,,,0,
 45,DONE.ST,buy,7.97,125.0,2026-08-16,filled,2026-08-17,7.97,1.76,,3,0,
 44,GIG-SDB.ST,buy,1.8768,532.0,2026-08-16,filled,2026-08-17,1.8768,1.43,,5,0,
 43,BRAIN.ST,buy,0.644,1552.0,2026-08-16,open,,,,,,0,
