@@ -1,4 +1,11 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+44,CNL,buy,16.175,60.0,2026-08-25,open,,,,,,0,
+43,APPS,buy,9.9636,98.0,2026-08-25,open,,,,,,0,
+42,LWLG,buy,5.4648,179.0,2026-08-25,open,,,,,,0,
+41,USAS,buy,5.3875,181.0,2026-08-25,open,,,,,,0,
+40,GRPN,buy,18.0228,54.0,2026-08-25,open,,,,,,0,
+39,RXRX,buy,3.5417,276.0,2026-08-25,open,,,,,,0,
+38,RZLV,buy,2.85,344.0,2026-08-25,open,,,,,,0,
 37,LXRX,buy,2.1344,456.0,2026-08-24,open,,,,,,0,
 36,POET,buy,7.6815,126.0,2026-08-24,open,,,,,,0,
 35,UMAC,buy,22.6044,43.0,2026-08-24,open,,,,,,0,
