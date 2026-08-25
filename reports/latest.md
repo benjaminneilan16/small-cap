@@ -1,37 +1,33 @@
 # Småbolagsrapport — Sverige
 
-*Genererad 2026-08-24 18:37 UTC*
+*Genererad 2026-08-25 18:37 UTC*
 
 ## Portfölj
 
 | | |
 |---|---|
-| Totalt värde | 50,190 kr |
-| Varav kontant | 39,355 kr |
-| Avkastning | +0.38 % |
-| Exponering | 22 % (tak 30 %) |
-| Kapital i vila | 78 % |
-| Öppna positioner | 11 |
+| Totalt värde | 50,294 kr |
+| Varav kontant | 38,434 kr |
+| Avkastning | +0.59 % |
+| Exponering | 24 % (tak 30 %) |
+| Kapital i vila | 76 % |
+| Öppna positioner | 12 |
 
 ## Dagens händelser
 
-**Stängda positioner**
+**Nya positioner**
 
-| Bolag | Anledning | Resultat | Dagar | Max motgång |
+| Bolag | Pris | Antal | Mål | Gap vid fyllnad |
 |---|---|---|---|---|
-| BEAMMW-B.ST | MAL NATT | +64 kr | 6 | -7.9 % |
-| DMXSE-SDB.ST | MAL NATT | +65 kr | 4 | -3.1 % |
-| SUBGEN.ST | TIDIG VARNING | -107 kr | 4 | -14.2 % |
-| DICOT.ST | MAL NATT | +65 kr | 3 | 1.1 % |
+| MODTX.ST | 0.36 | 2575 | 0.38 | 3.6 % |
 
-**4 nya köpordrar lagda**
+**3 nya köpordrar lagda**
 
 | Bolag | Limitpris | Antal |
 |---|---|---|
-| DMXSE-SDB.ST | 4.15 | 241 |
-| SERT.ST | 0.49 | 2035 |
-| DICOT.ST | 0.20 | 5016 |
-| HILB-B.ST | 3.71 | 270 |
+| OPTI.ST | 2.21 | 456 |
+| OXE.ST | 0.24 | 4224 |
+| NXTCL.ST | 1.06 | 946 |
 
 ## Resultat hittills
 
@@ -47,11 +43,11 @@
 
 ### Nyckeltal för strategin
 
-**Fyllnadsgrad: 93.5 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
+**Fyllnadsgrad: 93.8 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
 
 **Genomsnittlig maximal motgång: -5.2 %** — hur långt ner positionerna gick innan de stängdes. Detta är måttet på adverse selection: blir du systematiskt fylld precis innan det fortsätter ner?
 
-**Genomsnittligt gap vid fyllnad: 2.4 %** — 3 fyllnad(er) hade ett gap över 5 %. Stigande snitt över tid kan betyda att screenern allt oftare fångar fallande knivar snarare än sunda studsar.
+**Genomsnittligt gap vid fyllnad: 2.5 %** — 3 fyllnad(er) hade ett gap över 5 %. Stigande snitt över tid kan betyda att screenern allt oftare fångar fallande knivar snarare än sunda studsar.
 
 **Exit-orsaker:** MAL NATT (14), STOP LOSS (3), TIDIG VARNING (1)
 
@@ -59,58 +55,58 @@
 
 ## Screener
 
-129 av 305 bolag passar kriterierna.
+130 av 305 bolag passar kriterierna.
 
 | Bolag | Poäng | Dagligt spann | Eff. ratio | Omsättning | Kurs | |
 |---|---|---|---|---|---|---|
-| DMXSE-SDB.ST | 5.62 | 8.9 % | 0.052 | 979,193 kr | 4.27 | |
-| GSKR-SDB.ST | 5.58 | 7.9 % | 0.008 | 177,113 kr | 24.30 | |
-| BIOEX.ST | 5.50 | 9.2 % | 0.075 | 173,845 kr | 2.11 | |
-| SERT.ST | 5.41 | 7.6 % | 0.017 | 113,570 kr | 0.51 | |
-| FREEM.ST | 5.39 | 7.4 % | 0.013 | 590,793 kr | 1.37 | |
-| QLIFE.ST | 5.38 | 8.2 % | 0.054 | 121,116 kr | 1.82 | |
-| K33.ST | 5.35 | 7.6 % | 0.028 | 1,199,925 kr | 0.03 | |
-| BRAVE.ST | 5.35 | 9.0 % | 0.096 | 322,688 kr | 2.70 | 📊 |
-| DICOT.ST | 5.33 | 7.5 % | 0.027 | 3,253,415 kr | 0.21 | |
-| VETT.ST | 5.31 | 11.1 % | 0.104 | 159,864 kr | 4.17 | |
-| HILB-B.ST | 5.31 | 7.8 % | 0.045 | 2,240,869 kr | 4.03 | |
-| LEMSE.ST | 5.24 | 7.2 % | 0.025 | 295,749 kr | 1.86 | 📊 |
-| OPTI.ST | 5.24 | 7.7 % | 0.051 | 356,043 kr | 2.49 | |
-| OXE.ST | 5.23 | 8.1 % | 0.073 | 101,053 kr | 0.25 | |
-| MODTX.ST | 5.19 | 10.1 % | 0.122 | 120,178 kr | 0.39 | |
-| ENVAR.ST | 5.15 | 7.0 % | 0.029 | 246,143 kr | 50.40 | |
-| IMPC.ST | 5.14 | 7.3 % | 0.044 | 121,790 kr | 3.02 | |
-| BIOVIC-B.ST | 5.13 | 8.1 % | 0.086 | 121,662 kr | 0.44 | |
-| PROGEN.ST | 5.05 | 13.5 % | 0.143 | 145,628 kr | 0.16 | 📊 |
-| CFISH.ST | 5.03 | 8.2 % | 0.104 | 281,992 kr | 2.38 | 📊 |
+| GSKR-SDB.ST | 5.55 | 7.9 % | 0.011 | 177,113 kr | 24.50 | |
+| BIOEX.ST | 5.51 | 9.2 % | 0.073 | 173,845 kr | 2.24 | |
+| OPTI.ST | 5.50 | 7.7 % | 0.012 | 356,043 kr | 2.39 | |
+| DMXSE-SDB.ST | 5.49 | 8.9 % | 0.071 | 962,811 kr | 4.22 | |
+| FREEM.ST | 5.41 | 7.4 % | 0.011 | 585,492 kr | 1.33 | |
+| OXE.ST | 5.39 | 8.2 % | 0.05 | 101,483 kr | 0.25 | |
+| NXTCL.ST | 5.33 | 7.4 % | 0.019 | 204,142 kr | 1.12 | |
+| SOLT.ST | 5.28 | 8.7 % | 0.093 | 1,326,250 kr | 0.21 | |
+| VETT.ST | 5.26 | 11.1 % | 0.111 | 164,307 kr | 4.34 | |
+| SPRINT.ST | 5.22 | 7.0 % | 0.017 | 718,076 kr | 3.15 | |
+| BRAVE.ST | 5.20 | 8.9 % | 0.118 | 322,688 kr | 2.70 | |
+| HILB-B.ST | 5.19 | 7.8 % | 0.064 | 2,240,869 kr | 3.88 | |
+| K33.ST | 5.16 | 7.6 % | 0.056 | 1,199,925 kr | 0.03 | |
+| SERT.ST | 5.16 | 7.6 % | 0.055 | 111,992 kr | 0.53 | |
+| BRAIN.ST | 5.16 | 6.9 % | 0.021 | 232,487 kr | 0.73 | |
+| ENVAR.ST | 5.12 | 7.0 % | 0.032 | 246,143 kr | 49.60 | |
+| DICOT.ST | 5.12 | 7.5 % | 0.058 | 3,242,683 kr | 0.21 | |
+| PROGEN.ST | 5.09 | 13.5 % | 0.136 | 147,292 kr | 0.16 | 📊 |
+| BIOVIC-B.ST | 5.04 | 8.1 % | 0.099 | 121,662 kr | 0.45 | |
+| LEMSE.ST | 5.04 | 7.1 % | 0.051 | 295,749 kr | 1.82 | |
 
 ### Varningar
 
 - **GSKR-SDB.ST**: Tunn omsattning (177,113 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
 - **BIOEX.ST**: Tunn omsattning (173,845 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **SERT.ST**: Tunn omsattning (113,570 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **QLIFE.ST**: Aktien ar ner 55% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar. Tunn omsattning (121,116 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **K33.ST**: Aktien ar ner 54% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **DICOT.ST**: Aktien ar ner 79% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **VETT.ST**: Tunn omsattning (159,864 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **HILB-B.ST**: Aktien ar ner 57% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **LEMSE.ST**: Tunn omsattning (295,749 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **OPTI.ST**: Aktien ar ner 59% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **OPTI.ST**: Aktien ar ner 60% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **DMXSE-SDB.ST**: Aktien ar ner 50% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **OXE.ST**: Aktien ar ner 54% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar. Tunn omsattning (101,483 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **NXTCL.ST**: Tunn omsattning (204,142 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **SOLT.ST**: Aktien ar ner 87% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **VETT.ST**: Tunn omsattning (164,307 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **HILB-B.ST**: Aktien ar ner 58% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **K33.ST**: Aktien ar ner 51% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
 
 ### 📊 Volymspikar (möjlig nyhetshändelse)
 
 Onormal volym kombinerat med stort prisfall — kan betyda att något hänt (nyheter, sektor-rörelse) snarare än normal oscillation. Kolla gärna manuellt innan du litar på fyndet.
 
-- **BRAVE.ST**: 4.4x normal volym, +4.7 % samma dag
-- **LEMSE.ST**: 4.2x normal volym, -6.4 % samma dag
-- **PROGEN.ST**: 7.0x normal volym, +19.1 % samma dag
-- **CFISH.ST**: 4.1x normal volym, +5.8 % samma dag
-- **DMYD-B.ST**: 4.7x normal volym, +6.8 % samma dag
-- **UTG.ST**: 5.2x normal volym, -1.8 % samma dag
-- **PAX.ST**: 5.3x normal volym, +1.6 % samma dag
-- **INTEG-B.ST**: 3.8x normal volym, +1.1 % samma dag
-- **BOAT.ST**: 4.0x normal volym, -1.7 % samma dag
-- **IMP-A-SDB.ST**: 14.9x normal volym, -4.9 % samma dag
+- **PROGEN.ST**: 5.7x normal volym, -2.8 % samma dag
+- **4C.ST**: 3.0x normal volym, +0.3 % samma dag
+- **CLBIO.ST**: 9.4x normal volym, +3.3 % samma dag
+- **IMP-A-SDB.ST**: 3.6x normal volym, +4.1 % samma dag
+- **WPTG-B.ST**: 4.7x normal volym, -1.9 % samma dag
+- **PTRK.ST**: 3.7x normal volym, -0.2 % samma dag
+- **ZZ-B.ST**: 12.5x normal volym, -2.9 % samma dag
+- **UNIBAP.ST**: 33.6x normal volym, +3.9 % samma dag
+- **INTEG-B.ST**: 4.8x normal volym, +0.9 % samma dag
+- **UTG.ST**: 9.6x normal volym, +0.0 % samma dag
 
 ---
 
