@@ -1,4 +1,6 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+32,OXE.ST,4224.0,0.2381,2026-08-26,0.2548,2.514336,open,,,,,,,2.56
+31,DMXSE-SDB.ST,241.0,4.1485,2026-08-26,4.4389,2.4994712500000005,open,,,,,,,0.69
 30,MODTX.ST,2575.0,0.3567,2026-08-25,0.3817,2.2962562500000003,open,,,,,,,3.56
 29,LEMSE.ST,516.0,1.937,2026-08-21,2.0726,2.49873,open,,,,,-6.5565336716809,,0.05
 28,DICOT.ST,4997.0,0.2001,2026-08-21,0.2141,5.174393500000001,closed,0.2141,2026-08-24,MAL NATT,64.78360649999995,1.1494247392676342,3,1.05
