@@ -1,8 +1,9 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
-52,NXTCL.ST,buy,1.0628,946.0,2026-08-25,open,,,,,,0,
+53,BIOEX.ST,buy,2.38,422.0,2026-08-26,open,,,,,,0,
+52,NXTCL.ST,buy,1.0628,946.0,2026-08-25,filled,2026-08-26,1.0628,0.64,,35,0,
 51,OXE.ST,buy,0.2381,4224.0,2026-08-25,filled,2026-08-26,0.2381,2.56,,32,0,
 50,OPTI.ST,buy,2.205,456.0,2026-08-25,open,,,,,,0,
-49,HILB-B.ST,buy,3.7076,270.0,2026-08-24,open,,,,,,0,
+49,HILB-B.ST,buy,3.7076,270.0,2026-08-24,filled,2026-08-26,3.7076,3.98,,33,0,
 48,DICOT.ST,buy,0.2001,5016.0,2026-08-24,open,,,,,,0,
 47,SERT.ST,buy,0.4931,2035.0,2026-08-24,open,,,,,,0,
 46,DMXSE-SDB.ST,buy,4.1485,241.0,2026-08-24,filled,2026-08-26,4.1485,0.69,,31,0,
@@ -38,7 +39,7 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 16,DICOT.ST,buy,0.2001,4997.0,2026-08-16,filled,2026-08-21,0.2001,1.05,,28,0,
 15,GSKR-SDB.ST,buy,21.62,46.0,2026-08-16,open,,,,,,0,
 14,BIOEX.ST,buy,2.2272,448.0,2026-08-16,filled,2026-08-20,2.2272,18.51,,24,0,
-13,IMPC.ST,buy,2.668,374.0,2026-08-16,open,,,,,,0,
+13,IMPC.ST,buy,2.668,374.0,2026-08-16,filled,2026-08-26,2.668,1.8,,34,0,
 12,BLINC-B.ST,buy,0.098,9451.0,2026-08-16,filled,2026-08-19,0.098,2.04,,23,1,0.1058
 11,OXE.ST,buy,0.2256,4432.0,2026-08-16,filled,2026-08-17,0.2256,0.71,,10,0,
 10,DMXSE-SDB.ST,buy,4.1232,242.0,2026-08-16,filled,2026-08-20,4.1232,0.44,,25,0,
