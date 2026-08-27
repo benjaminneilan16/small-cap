@@ -1,4 +1,6 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+37,FREEM.ST,793.0,1.2595,2026-08-27,1.3477,2.49695875,open,,,,,,,1.55
+36,BIOEX.ST,422.0,2.38,2026-08-27,2.5466,2.5109,open,,,,,,,3.78
 35,NXTCL.ST,946.0,1.0628,2026-08-26,1.1372,2.513522,open,,,,,,,0.64
 34,IMPC.ST,374.0,2.668,2026-08-26,2.8548,2.4945800000000005,open,,,,,,,1.8
 33,HILB-B.ST,270.0,3.7076,2026-08-26,3.9671,2.50263,open,,,,,,,3.98
