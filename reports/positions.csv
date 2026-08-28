@@ -1,4 +1,6 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+39,OPTI.ST,456.0,2.205,2026-08-28,2.3594,2.5137,open,,,,,,,12.56
+38,DICOT.ST,5016.0,0.2001,2026-08-28,0.2141,2.509254,open,,,,,,,0.05
 37,FREEM.ST,793.0,1.2595,2026-08-27,1.3477,2.49695875,open,,,,,,,1.55
 36,BIOEX.ST,422.0,2.38,2026-08-27,2.5466,2.5109,open,,,,,,,3.78
 35,NXTCL.ST,946.0,1.0628,2026-08-26,1.1372,2.513522,open,,,,,,,0.64
