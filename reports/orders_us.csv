@@ -1,4 +1,11 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+58,UROY,buy,4.114,238.0,2026-08-28,open,,,,,,0,
+57,CNXC,buy,27.8399,35.0,2026-08-28,open,,,,,,0,
+56,MUX,buy,20.7985,47.0,2026-08-28,open,,,,,,0,
+55,ABSI,buy,8.6664,113.0,2026-08-28,open,,,,,,0,
+54,AKTS,buy,24.0856,40.0,2026-08-28,open,,,,,,0,
+53,VZLA,buy,4.0653,241.0,2026-08-28,open,,,,,,0,
+52,OLMA,buy,10.7673,91.0,2026-08-28,open,,,,,,0,
 51,UAMY,buy,4.8576,201.0,2026-08-27,open,,,,,,0,
 50,AVBP,buy,30.6518,31.0,2026-08-27,open,,,,,,0,
 49,GENB,buy,14.8488,65.0,2026-08-27,open,,,,,,0,
