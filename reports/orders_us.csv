@@ -1,4 +1,7 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+61,ASM,buy,7.3957,131.0,2026-08-29,open,,,,,,0,
+60,JBIO,buy,19.1728,50.0,2026-08-29,open,,,,,,0,
+59,RZLV,buy,2.85,342.0,2026-08-29,open,,,,,,0,
 58,UROY,buy,4.114,238.0,2026-08-28,open,,,,,,0,
 57,CNXC,buy,27.8399,35.0,2026-08-28,open,,,,,,0,
 56,MUX,buy,20.7985,47.0,2026-08-28,open,,,,,,0,
@@ -38,8 +41,8 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 22,AMPX,buy,10.5277,94.0,2026-08-19,filled,2026-08-20,10.5277,3.59,,17,0,
 21,UAMY,buy,5.5008,179.0,2026-08-19,filled,2026-08-20,5.5008,5.38,,19,0,
 20,INBX,buy,99.394,9.0,2026-08-19,filled,2026-08-20,99.394,2.85,,18,0,
-19,NBTX,buy,38.7237,25.0,2026-08-18,open,,,,,,0,
-18,ASM,buy,6.7837,145.0,2026-08-18,open,,,,,,0,
+19,NBTX,buy,38.7237,25.0,2026-08-18,cancelled,,,,inte fylld inom 10 dagar,,0,
+18,ASM,buy,6.7837,145.0,2026-08-18,cancelled,,,,inte fylld inom 10 dagar,,0,
 17,UMAC,buy,28.1336,35.0,2026-08-18,filled,2026-08-19,28.1336,2.86,,14,0,
 16,FCEL,buy,21.6825,45.0,2026-08-18,filled,2026-08-19,21.6825,9.88,,13,0,
 15,TRLV,buy,9.1646,109.0,2026-08-15,cancelled,,,,inte fylld inom 10 dagar,,0,
