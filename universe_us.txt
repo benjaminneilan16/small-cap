@@ -8,7 +8,7 @@ TMC  # TMC the metals company Inc.
 ALMR  # Alamar Biosciences, Inc.
 LOB  # Live Oak Bancshares, Inc.
 FLOC  # Flowco Holdings Inc.
-INVX  # Innovex International, Inc.
+OPAD  # Innovex International, Inc.
 NBTX  # Nanobiotix S.A.
 FSUN  # FirstSun Capital Bancorp
 TGLS  # Tecnoglass Holdings Inc.
@@ -16,8 +16,8 @@ LPG  # Dorian LPG Ltd.
 SEDG  # SolarEdge Technologies, Inc.
 WB  # Weibo Corporation
 WS  # Worthington Steel, Inc.
-VOGX  # Republic Bancorp, Inc.
-VOGX  # Global Net Lease, Inc.
+OPAD  # Republic Bancorp, Inc.
+OPAD  # Global Net Lease, Inc.
 ATEN  # A10 Networks, Inc.
 CHA  # Chagee Holdings Limited
 VRTX  # Vertex, Inc.
@@ -25,7 +25,7 @@ ATEX  # Anterix Inc.
 AMR  # Alpha Metallurgical Resources, Inc.
 EVCM  # EverCommerce Inc.
 EPAC  # Enerpac Tool Group Corp.
-VOGX  # Agios Pharmaceuticals, Inc.
+OPAD  # Agios Pharmaceuticals, Inc.
 PLAB  # Photronics, Inc.
 BRVE  # Braveheart Bio, Inc.
 XHR  # Xenia Hotels & Resorts, Inc.
@@ -35,20 +35,20 @@ NVCR  # NovoCure Limited
 MBC  # MasterBrand, Inc.
 XPRO  # Expro Ltd
 GCT  # GigaCloud Technology Inc.
-VOGX  # SmartStop Self Storage REIT, Inc.
+SMA  # SmartStop Self Storage REIT, Inc.
 GABC  # German American Bancorp, Inc.
 CTS  # CTS Corporation
 SVV  # Savers Value Village, Inc.
-VOGX  # Sonida Senior Living, Inc.
+OPAD  # Sonida Senior Living, Inc.
 SAM  # The Boston Beer Company, Inc.
 FBRX  # Forte Biosciences, Inc.
 VSTS  # Vestis Corporation
 CENT  # Central Garden & Pet Company
 IMOS  # ChipMOS TECHNOLOGIES INC.
 NEXA  # Nexa Resources S.A.
-VOGX  # Strategic Education, Inc.
+OPAD  # Strategic Education, Inc.
 WKC  # World Kinect Corporation
-VOGX  # LeMaitre Vascular, Inc.
+OPAD  # LeMaitre Vascular, Inc.
 WMK  # Weis Markets, Inc.
 PAX  # Patria Investments Limited
 NBHC  # National Bank Holdings Corporation
@@ -59,19 +59,19 @@ BCAX  # Bicara Therapeutics Inc.
 GENB  # Generate Biomedicines, Inc.
 TCBK  # TriCo Bancshares
 CMPS  # COMPASS Pathways plc
-VOGX  # Pathward Financial, Inc.
+OPAD  # Pathward Financial, Inc.
 SNDX  # Syndax Pharmaceuticals, Inc.
 TSLX  # Sixth Street Specialty Lending, Inc.
-VOGX  # Triumph Financial, Inc.
+OPAD  # Triumph Financial, Inc.
 AEVA  # Aeva Technologies, Inc.
-VOGX  # Via Transportation, Inc.
-VOGX  # National Vision Holdings, Inc.
+VIA  # Via Transportation, Inc.
+OPAD  # National Vision Holdings, Inc.
 PRCH  # Porch Group, Inc.
 STBA  # S&T Bancorp, Inc.
 HLMN  # Hillman Solutions Corp.
 OPRA  # Opera Limited
-GHXI  # Hope Bancorp, Inc.
-VOGX  # EVERTEC, Inc.
+HOPE  # Hope Bancorp, Inc.
+EVTC  # EVERTEC, Inc.
 NEXT  # NextDecade Corporation
 PRGO  # Perrigo Company plc
 DCOM  # Dime Commercial Bancshares, Inc.
@@ -85,12 +85,12 @@ CMRE  # Costamare Inc.
 ASTH  # Astrana Health, Inc.
 EFC  # Ellington Financial Inc.
 PRGS  # Progress Software Corporation
-VOGX  # Byline Bancorp, Inc.
+OPAD  # Byline Bancorp, Inc.
 FTRE  # Fortrea Holdings Inc.
 SEPN  # Septerna, Inc.
 CBL  # CBL & Associates Properties, Inc.
 IE  # Ivanhoe Electric Inc.
-VOGX  # Turning Point Brands, Inc.
+OPAD  # Turning Point Brands, Inc.
 CPRI  # Capri Holdings Limited
 INSP  # Inspire Medical Systems, Inc.
 ARCO  # Arcos Dorados Holdings Inc.
@@ -102,16 +102,15 @@ RXRX  # Recursion Pharmaceuticals, Inc.
 RVLV  # Revolve Group, Inc.
 BL  # BlackLine, Inc.
 GLP  # Global Partners LP
-EZPW  # EZCORP, Inc.
+OPAD  # EZCORP, Inc.
 JJSF  # J&J Snack Foods Corp.
 TRIN  # Trinity Capital Inc.
 WOLF  # Wolfspeed, Inc.
-VOGX  # PROG Holdings, Inc.
+OPAD  # PROG Holdings, Inc.
 ICFI  # ICF International, Inc.
 QCRH  # QCR Holdings, Inc.
 ULCC  # Frontier Group Holdings, Inc.
-USAS  # Americas Gold and Silver Corporation
-BLFS  # BioLife Solutions, Inc.
+OPAD  # BioLife Solutions, Inc.
 LZB  # La-Z-Boy Incorporated
 ZYME  # Zymeworks Inc.
 TRLV  # Trulieve Cannabis Corp.
@@ -141,7 +140,7 @@ IIPR  # Innovative Industrial Properties, Inc.
 IDT  # IDT Corporation
 GLOB  # Globant S.A.
 ET  # Kimbell Royalty Partners, LP
-VOGX  # Distribution Solutions Group, Inc.
+OPAD  # Distribution Solutions Group, Inc.
 QFIN  # Qfin Holdings, Inc.
 MRVI  # Maravai LifeSciences Holdings, Inc.
 BAND  # Bandwidth Inc.
@@ -154,7 +153,7 @@ AI  # C3.ai, Inc.
 AMSC  # American Superconductor Corporation
 TYRA  # Tyra Biosciences, Inc.
 UROY  # Uranium Royalty Corp.
-SBH  # Sally Beauty Holdings, Inc.
+OPAD  # Sally Beauty Holdings, Inc.
 TWFG  # TWFG, Inc.
 CNXC  # Concentrix Corporation
 FLO  # Flowers Foods, Inc.
@@ -163,14 +162,14 @@ TNDM  # Tandem Diabetes Care, Inc.
 AZUL  # Azul S.A.
 CRSR  # Corsair Gaming, Inc.
 WWW  # Wolverine World Wide, Inc.
-VOGX  # Xencor, Inc.
+OPAD  # Xencor, Inc.
 ENR  # Energizer Holdings, Inc.
 POET  # POET Technologies Inc.
 COUR  # Coursera, Inc.
 ENOV  # Enovis Corporation
 LKFN  # Lakeland Financial Corporation
 GSL  # Global Ship Lease, Inc.
-HCSG  # Healthcare Services Group, Inc.
+OPAD  # Healthcare Services Group, Inc.
 WD  # Walker & Dunlop, Inc.
 SAFT  # Safety Insurance Group, Inc.
 ABSI  # Absci Corporation
@@ -183,17 +182,16 @@ HROW  # Harrow, Inc.
 AVLN  # Avalyn Pharma Inc.
 SHLS  # Shoals Technologies Group, Inc.
 ADNT  # Adient plc
-CNL  # G-III Apparel Group, Ltd.
+CCL  # G-III Apparel Group, Ltd.
 GIC  # Global Industrial Company
-VOGX  # Gibraltar Industries, Inc.
+OPAD  # Gibraltar Industries, Inc.
 AMAL  # Amalgamated Financial Corp.
 VIR  # Vir Biotechnology, Inc.
-VOGX  # The RealReal, Inc.
-INVA  # Innoviva, Inc.
-SCL  # Stepan Company
-VOGX  # BJ's Restaurants, Inc.
+OPAD  # The RealReal, Inc.
+OPAD  # Innoviva, Inc.
+OPAD  # BJ's Restaurants, Inc.
 SVRA  # Savara Inc.
-NSSC  # Napco Security Technologies, Inc.
+OPAD  # Napco Security Technologies, Inc.
 KOS  # Kosmos Energy Ltd.
 CNMD  # CONMED Corporation
 CRI  # Carter's, Inc.
@@ -206,7 +204,7 @@ TRS  # TriMas Corporation
 PEBO  # Peoples Bancorp Inc.
 ATEC  # Alphatec Holdings, Inc.
 AVBP  # ArriVent BioPharma, Inc.
-VOGX  # Omada Health, Inc.
+OMDA  # Omada Health, Inc.
 PCT  # PureCycle Technologies, Inc.
 NRP  # Natural Resource Partners L.P.
 HLX  # Helix Energy Solutions Group, Inc.
@@ -217,15 +215,14 @@ AMPL  # Amplitude, Inc.
 YELP  # Yelp Inc.
 CDRE  # Cadre Holdings, Inc.
 IAUX  # i-80 Gold Corp.
-VOGX  # Azenta, Inc.
+AZTA  # Azenta, Inc.
 RCAT  # Red Cat Holdings, Inc.
 UFCS  # United Fire Group, Inc.
-VOGX  # ORIC Pharmaceuticals, Inc.
+OPAD  # ORIC Pharmaceuticals, Inc.
 AMN  # AMN Healthcare Services, Inc.
 LGIH  # LGI Homes, Inc.
 BW  # Babcock & Wilcox Enterprises, Inc.
 PAHC  # Phibro Animal Health Corporation
-XPEL  # XPEL, Inc.
 AIP  # Arteris, Inc.
 ESRT  # Empire State Realty Trust, Inc.
 NAT  # Nordic American Tankers Limited
@@ -235,12 +232,11 @@ PNTG  # The Pennant Group, Inc.
 AMRC  # Ameresco, Inc.
 FMBH  # First Mid Bancshares, Inc.
 ARHS  # Arhaus, Inc.
-VOGX  # Schrödinger, Inc.
-VOGX  # UMH Properties, Inc.
+ALVO  # Alvotech
+OPAD  # Schrödinger, Inc.
+OPAD  # UMH Properties, Inc.
 VTOL  # Bristow Group Inc.
-LSPD  # Lightspeed Commerce Inc.
 PUMP  # ProPetro Holding Corp.
-ODC  # Oil-Dri Corporation of America
 BRBR  # BellRing Brands, Inc.
 IART  # Integra LifeSciences Holdings Corporation
 SLSR  # Solaris Resources Inc.
@@ -248,15 +244,15 @@ AKTS  # Aktis Oncology, Inc.
 FMC  # FMC Corporation
 VZLA  # Vizsla Silver Corp.
 WINA  # Winmark Corporation
-VOGX  # HBT Financial, Inc.
+OPAD  # HBT Financial, Inc.
 MNKD  # MannKind Corporation
 AORT  # Artivion, Inc.
 IMTX  # Immatics N.V.
-VOGX  # Liquidity Services, Inc.
+OPAD  # Liquidity Services, Inc.
 DOLE  # Dole plc
 NVAX  # Novavax, Inc.
 CNL  # Collective Mining Ltd.
-WLDN  # Willdan Group, Inc.
+OPAD  # Willdan Group, Inc.
 GHM  # Graham Corporation
 ORC  # Orchid Island Capital, Inc.
 EPC  # Edgewell Personal Care Company
@@ -264,16 +260,15 @@ MSDL  # Morgan Stanley Direct Lending Fund
 JBIO  # Jade Biosciences, Inc.
 ACVA  # ACV Auctions Inc.
 DEA  # Easterly Government Properties, Inc.
-INBX  # Inhibrx Biosciences, Inc.
 LINC  # Lincoln Educational Services Corporation
 TDOC  # Teladoc Health, Inc.
 HLF  # Herbalife Ltd.
-VOGX  # Old Second Bancorp, Inc.
+OPAD  # Old Second Bancorp, Inc.
 MYE  # Myers Industries, Inc.
 CBRL  # Cracker Barrel Old Country Store, Inc.
 WLFC  # Willis Lease Finance Corporation
 HLIT  # Harmonic Inc.
-VOGX  # Flotek Industries, Inc.
+OPAD  # Flotek Industries, Inc.
 VOR  # Vor Biopharma Inc.
 RPC  # RPC, Inc.
 TWO  # Two Harbors Investment Corp.
@@ -283,34 +278,33 @@ THRM  # Gentherm Incorporated
 UVV  # Universal Corporation
 SPTX  # Seaport Therapeutics, Inc.
 TRIP  # Tripadvisor, Inc.
-VOGX  # TETRA Technologies, Inc.
+OPAD  # TETRA Technologies, Inc.
 TNC  # Tennant Company
 EPD  # Dorchester Minerals, L.P.
-VOGX  # Sharplink, Inc.
+OPAD  # Sharplink, Inc.
 PFBC  # Preferred Bank
 CERT  # Certara, Inc.
 LWLG  # Lightwave Logic, Inc.
 UMAC  # Unusual Machines, Inc.
 GDRX  # GoodRx Holdings, Inc.
 RXT  # Rackspace Technology, Inc.
-NHP  # National Healthcare Properties, Inc.
+OPAD  # National Healthcare Properties, Inc.
 LADR  # Ladder Capital Corp
 AFYA  # Afya Limited
 CCO  # Clear Channel Outdoor Holdings, Inc.
 UVE  # Universal Insurance Holdings, Inc.
-VOGX  # Cricut, Inc.
+OPAD  # Cricut, Inc.
 ETON  # Eton Pharmaceuticals, Inc.
-CNL  # Marten Transport, Ltd.
+CCL  # Marten Transport, Ltd.
 GTM  # ZoomInfo Technologies Inc.
-VOGX  # QuinStreet, Inc.
+OPAD  # QuinStreet, Inc.
 MGTX  # MeiraGTx Holdings plc
 WBTN  # WEBTOON Entertainment Inc.
 NBR  # Nabors Industries Ltd.
 HFWA  # Heritage Financial Corporation
 STAA  # STAAR Surgical Company
-WVE  # Wave Life Sciences Ltd.
-BFS  # Saul Centers, Inc.
-VOGX  # EyePoint, Inc.
+OPAD  # Saul Centers, Inc.
+EYPT  # EyePoint, Inc.
 OPY  # Oppenheimer Holdings Inc.
 USPH  # U.S. Physical Therapy, Inc.
 FINV  # FinVolution Group
@@ -323,11 +317,12 @@ BORR  # Borr Drilling Limited
 DRTS  # Alpha Tau Medical Ltd.
 TRUP  # Trupanion, Inc.
 IRMD  # IRADIMED CORPORATION
+UVSP  # Univest Financial Corporation
 SPH  # Suburban Propane Partners, L.P.
 LNN  # Lindsay Corporation
 TEN  # Tsakos Energy Navigation Limited
 MUX  # McEwen Inc.
-CRVS  # Corvus Pharmaceuticals, Inc.
+OPAD  # Corvus Pharmaceuticals, Inc.
 PRCT  # PROCEPT BioRobotics Corporation
 ASM  # Avino Silver & Gold Mines Ltd.
 PSEC  # Prospect Capital Corporation
@@ -357,7 +352,7 @@ TBLA  # Taboola.com Ltd.
 GNK  # Genco Shipping & Trading Limited
 VRTS  # Virtus Investment Partners, Inc.
 EVLV  # Evolv Technologies Holdings, Inc.
-VOGX  # Capitol Federal Financial, Inc.
+OPAD  # Capitol Federal Financial, Inc.
 BOW  # Bowhead Specialty Holdings Inc.
 EVC  # Entravision Communications Corporation
 GSBD  # Goldman Sachs BDC, Inc.
@@ -367,13 +362,13 @@ CGEM  # Cullinan Therapeutics, Inc.
 RZLV  # Rezolve AI PLC
 ABR  # Arbor Realty Trust, Inc.
 OI  # O-I Glass, Inc.
-AOSL  # Alpha and Omega Semiconductor Limited
 CSIQ  # Canadian Solar Inc.
 ET  # XPLR Infrastructure, LP
 ESQ  # Esquire Financial Holdings, Inc.
 CEVA  # CEVA, Inc.
 APMD  # Apnimed, Inc.
 SVC  # Service Properties Trust
+CRML  # Critical Metals Corp.
 CRAI  # CRA International, Inc.
 BV  # BrightView Holdings, Inc.
 SANA  # Sana Biotechnology, Inc.
@@ -382,12 +377,11 @@ SBR  # Sabine Royalty Trust
 OLMA  # Olema Pharmaceuticals, Inc.
 EQBK  # Equity Bancshares, Inc.
 MBWM  # Mercantile Bank Corporation
-VOGX  # Horizon Bancorp, Inc.
 TROX  # Tronox Holdings plc
 DAKT  # Daktronics, Inc.
 BFST  # Business First Bancshares, Inc.
-VOGX  # MetroCity Bankshares, Inc.
-SBGI  # Sinclair, Inc.
+OPAD  # MetroCity Bankshares, Inc.
+DINO  # Sinclair, Inc.
 GPRE  # Green Plains Inc.
 PLOW  # Douglas Dynamics, Inc.
 OPK  # OPKO Health, Inc.
@@ -405,4 +399,4 @@ CIM  # Chimera Investment Corporation
 CSR  # Centerspace
 ENVX  # Enovix Corporation
 NX  # Quanex Building Products Corporation
-PCRX  # Pacira BioSciences, Inc.
+OPAD  # Pacira BioSciences, Inc.

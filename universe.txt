@@ -101,7 +101,6 @@ ENERS  # Enersize
 ERMA  # Enorama Pharma
 ENVAR  # Envar Holding
 ENZY  # Enzymatica
-ESGR-B  # ES Group
 EXPRS2  # ExpreS2ion Biotech Holding
 EXS  # Exsitec Holding
 FERRO  # Ferroamp
@@ -127,15 +126,16 @@ GENO  # Genovis
 GIG-SDB  # GiG Software
 GIGA  # Gigasun
 GSKR-SDB  # Goldsky Resources
+GOMX  # GomSpace Group
 GBK  # Goodbye Kansas Group
 GRANGX  # Grangex
 GREAT  # Greater Than
-GUARD  # Guard Therapeutics International
 GGEO  # Guideline Geo
 GULD  # Guldbrev Holding
 HAYPP  # Haypp Group
 HEGR  # Hedera Group
 HEIM-PREF  # Heimstaden
+HERNO-B  # Hernö Gin
 HEXI  # Hexicon
 HIGHCO-B  # High Coast Distillery
 HILB-B  # Hilbert Group
