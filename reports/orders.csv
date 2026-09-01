@@ -1,4 +1,11 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+61,LEMSE.ST,buy,1.728,576.0,2026-09-01,open,,,,,,0,
+60,SPRINT.ST,buy,3.2647,305.0,2026-09-01,open,,,,,,0,
+59,MINEST.ST,buy,1.2788,778.0,2026-09-01,open,,,,,,0,
+58,DICOT.ST,buy,0.2105,4731.0,2026-09-01,open,,,,,,0,
+57,NXTCL.ST,buy,1.0628,937.0,2026-09-01,open,,,,,,0,
+56,BRAVE.ST,buy,2.3625,421.0,2026-09-01,open,,,,,,0,
+55,MODTX.ST,buy,0.4453,2236.0,2026-09-01,open,,,,,,0,
 54,GSKR-SDB.ST,buy,22.08,45.0,2026-08-31,open,,,,,,0,
 53,BIOEX.ST,buy,2.38,422.0,2026-08-26,filled,2026-08-27,2.38,3.78,,36,0,
 52,NXTCL.ST,buy,1.0628,946.0,2026-08-25,filled,2026-08-26,1.0628,0.64,,35,0,
