@@ -1,4 +1,7 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+43,UROY,238.0,4.114,2026-09-01,4.402,1.5,open,,,,,,,2.04
+42,UMAC,43.0,22.6044,2026-09-01,24.1867,1.5,open,,,,,,,0.37
+41,AEVA,65.0,15.0092,2026-09-01,16.0598,1.5,open,,,,,,,1.59
 40,VZLA,241.0,4.0653,2026-08-31,4.3499,1.5,open,,,,,,,3.7
 39,RZLV,342.0,2.85,2026-08-31,3.0495,1.5,open,,,,,,,1.75
 38,MUX,47.0,20.7985,2026-08-31,22.2544,1.5,open,,,,,,,4.25
