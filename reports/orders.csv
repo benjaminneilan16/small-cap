@@ -1,6 +1,6 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
 61,LEMSE.ST,buy,1.728,576.0,2026-09-01,open,,,,,,0,
-60,SPRINT.ST,buy,3.2647,305.0,2026-09-01,open,,,,,,0,
+60,SPRINT.ST,buy,3.2647,305.0,2026-09-01,filled,2026-09-02,3.2647,2.29,,40,0,
 59,MINEST.ST,buy,1.2788,778.0,2026-09-01,open,,,,,,0,
 58,DICOT.ST,buy,0.2105,4731.0,2026-09-01,open,,,,,,0,
 57,NXTCL.ST,buy,1.0628,937.0,2026-09-01,open,,,,,,0,
