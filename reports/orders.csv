@@ -1,4 +1,8 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+70,ENVAR.ST,buy,47.7125,20.0,2026-09-03,open,,,,,,0,
+69,EXPRS2.ST,buy,1.3392,745.0,2026-09-03,open,,,,,,0,
+68,IZAFE-B.ST,buy,0.3072,3248.0,2026-09-03,open,,,,,,0,
+67,NXTCL.ST,buy,1.0628,938.0,2026-09-03,open,,,,,,0,
 66,SUBGEN.ST,buy,0.0374,26636.0,2026-09-02,filled,2026-09-03,0.0374,1.07,,43,0,
 65,VETT.ST,buy,4.4913,221.0,2026-09-02,open,,,,,,0,
 64,K33.ST,buy,0.0228,43692.0,2026-09-02,open,,,,,,0,
