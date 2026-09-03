@@ -1,4 +1,5 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+62,UMAC,buy,22.5492,43.0,2026-09-03,open,,,,,,0,
 61,ASM,buy,7.3957,131.0,2026-08-29,filled,2026-08-31,7.3957,3.25,,35,0,
 60,JBIO,buy,19.1728,50.0,2026-08-29,open,,,,,,0,
 59,RZLV,buy,2.85,342.0,2026-08-29,filled,2026-08-31,2.85,1.75,,39,0,
