@@ -1,9 +1,9 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
-66,SUBGEN.ST,buy,0.0374,26636.0,2026-09-02,open,,,,,,0,
+66,SUBGEN.ST,buy,0.0374,26636.0,2026-09-02,filled,2026-09-03,0.0374,1.07,,43,0,
 65,VETT.ST,buy,4.4913,221.0,2026-09-02,open,,,,,,0,
 64,K33.ST,buy,0.0228,43692.0,2026-09-02,open,,,,,,0,
 63,BIOVIC-B.ST,buy,0.3956,2518.0,2026-09-02,open,,,,,,0,
-62,MODTX.ST,buy,0.4516,2205.0,2026-09-02,open,,,,,,0,
+62,MODTX.ST,buy,0.4516,2205.0,2026-09-02,filled,2026-09-03,0.4516,2.57,,42,0,
 61,LEMSE.ST,buy,1.728,576.0,2026-09-01,open,,,,,,0,
 60,SPRINT.ST,buy,3.2647,305.0,2026-09-01,filled,2026-09-02,3.2647,2.29,,40,0,
 59,MINEST.ST,buy,1.2788,778.0,2026-09-01,open,,,,,,0,
