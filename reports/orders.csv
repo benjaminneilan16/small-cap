@@ -1,4 +1,5 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+71,CFISH.ST,buy,2.016,494.0,2026-09-04,open,,,,,,0,
 70,ENVAR.ST,buy,47.7125,20.0,2026-09-03,open,,,,,,0,
 69,EXPRS2.ST,buy,1.3392,745.0,2026-09-03,filled,2026-09-04,1.3392,3.67,,44,0,
 68,IZAFE-B.ST,buy,0.3072,3248.0,2026-09-03,filled,2026-09-04,0.3072,2.34,,45,0,
