@@ -1,4 +1,5 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+63,FCEL,buy,13.754,71.0,2026-09-04,open,,,,,,0,
 62,UMAC,buy,22.5492,43.0,2026-09-03,open,,,,,,0,
 61,ASM,buy,7.3957,131.0,2026-08-29,filled,2026-08-31,7.3957,3.25,,35,0,
 60,JBIO,buy,19.1728,50.0,2026-08-29,open,,,,,,0,
@@ -24,7 +25,7 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 40,GRPN,buy,18.0228,54.0,2026-08-25,open,,,,,,0,
 39,RXRX,buy,3.5417,276.0,2026-08-25,filled,2026-08-26,3.5417,3.15,,26,0,
 38,RZLV,buy,2.85,344.0,2026-08-25,filled,2026-08-26,2.85,0.7,,27,0,
-37,LXRX,buy,2.1344,456.0,2026-08-24,open,,,,,,0,
+37,LXRX,buy,2.1344,456.0,2026-08-24,cancelled,,,,inte fylld inom 10 dagar,,0,
 36,POET,buy,7.6815,126.0,2026-08-24,filled,2026-08-28,7.6815,2.56,,31,0,
 35,UMAC,buy,22.6044,43.0,2026-08-24,filled,2026-09-01,22.6044,0.37,,42,0,
 34,CMPS,buy,12.2636,80.0,2026-08-21,cancelled,,,,inte fylld inom 10 dagar,,0,
