@@ -1,6 +1,6 @@
 # Småbolagsrapport — USA
 
-*Genererad 2026-09-04 22:46 UTC*
+*Genererad 2026-09-07 23:16 UTC*
 
 ## Portfölj
 
@@ -21,7 +21,7 @@
 
 | Bolag | Limitpris | Antal |
 |---|---|---|
-| FCEL | 13.75 | 71 |
+| OPAD | 3.97 | 245 |
 
 ## Resultat hittills
 
@@ -37,7 +37,7 @@
 
 ### Nyckeltal för strategin
 
-**Fyllnadsgrad: 81.5 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
+**Fyllnadsgrad: 77.2 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
 
 **Genomsnittlig maximal motgång: -7.9 %** — hur långt ner positionerna gick innan de stängdes. Detta är måttet på adverse selection: blir du systematiskt fylld precis innan det fortsätter ner?
 
@@ -49,7 +49,7 @@
 
 ## Screener
 
-223 av 349 bolag passar kriterierna.
+224 av 349 bolag passar kriterierna.
 
 | Bolag | Poäng | Dagligt spann | Eff. ratio | Omsättning | Kurs | |
 |---|---|---|---|---|---|---|
@@ -92,6 +92,7 @@
 Onormal volym kombinerat med stort prisfall — kan betyda att något hänt (nyheter, sektor-rörelse) snarare än normal oscillation. Kolla gärna manuellt innan du litar på fyndet.
 
 - **TYRA**: 4.4x normal volym, +16.9 % samma dag
+- **CHA**: 3.1x normal volym, +3.5 % samma dag
 - **NX**: 7.6x normal volym, +11.1 % samma dag
 
 ---
