@@ -1,4 +1,5 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+48,CFISH.ST,494.0,2.016,2026-09-07,2.1571,2.48976,open,,,,,,,0.79
 47,VETT.ST,221.0,4.4913,2026-09-04,4.8057,2.48144325,open,,,,,,,1.03
 46,NXTCL.ST,938.0,1.0628,2026-09-04,1.1372,2.492266,open,,,,,,,2.9
 45,IZAFE-B.ST,3248.0,0.3072,2026-09-04,0.3287,2.494464,open,,,,,,,2.34
