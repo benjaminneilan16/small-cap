@@ -1,4 +1,5 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+49,FREEM.ST,801.0,1.248,2026-09-08,1.3354,2.49912,open,,,,,,,1.28
 48,CFISH.ST,494.0,2.016,2026-09-07,2.1571,2.48976,open,,,,,,,0.79
 47,VETT.ST,221.0,4.4913,2026-09-04,4.8057,5.1365925,closed,4.8057,2026-09-07,MAL NATT,64.34580750000008,-0.9195598320055023,3,1.03
 46,NXTCL.ST,938.0,1.0628,2026-09-04,1.1372,2.492266,open,,,,,-6.191195049005921,,2.9
