@@ -1,4 +1,7 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+76,IZAFE-B.ST,buy,0.3168,3157.0,2026-09-08,open,,,,,,0,
+75,SERT.ST,buy,0.5154,1940.0,2026-09-08,open,,,,,,0,
+74,WYLD.ST,buy,0.263,3803.0,2026-09-08,open,,,,,,0,
 73,FREEM.ST,buy,1.248,801.0,2026-09-07,filled,2026-09-08,1.248,1.28,,49,0,
 72,VETT.ST,buy,4.4913,222.0,2026-09-07,open,,,,,,0,
 71,CFISH.ST,buy,2.016,494.0,2026-09-04,filled,2026-09-07,2.016,0.79,,48,0,
