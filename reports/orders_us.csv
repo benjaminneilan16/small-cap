@@ -1,8 +1,8 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
 67,POET,buy,7.6815,127.0,2026-09-08,open,,,,,,0,
-66,UAMY,buy,5.2224,188.0,2026-09-08,open,,,,,,0,
-65,AEVA,buy,16.1327,60.0,2026-09-08,open,,,,,,0,
-64,OPAD,buy,3.972,245.0,2026-09-07,open,,,,,,0,
+66,UAMY,buy,5.2224,188.0,2026-09-08,filled,2026-09-09,5.2224,0.43,,48,0,
+65,AEVA,buy,16.1327,60.0,2026-09-08,filled,2026-09-09,16.1327,2.68,,46,0,
+64,OPAD,buy,3.972,245.0,2026-09-07,filled,2026-09-09,3.972,1.81,,47,0,
 63,FCEL,buy,13.754,71.0,2026-09-04,open,,,,,,0,
 62,UMAC,buy,22.5492,43.0,2026-09-03,open,,,,,,0,
 61,ASM,buy,7.3957,131.0,2026-08-29,filled,2026-08-31,7.3957,3.25,,35,0,
