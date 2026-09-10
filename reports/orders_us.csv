@@ -1,6 +1,7 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+69,SANA,buy,2.9664,326.0,2026-09-10,open,,,,,,0,
 68,RXT,buy,2.9808,327.0,2026-09-09,open,,,,,,0,
-67,POET,buy,7.6815,127.0,2026-09-08,open,,,,,,0,
+67,POET,buy,7.6815,127.0,2026-09-08,filled,2026-09-10,7.6815,1.45,,49,0,
 66,UAMY,buy,5.2224,188.0,2026-09-08,filled,2026-09-09,5.2224,0.43,,48,0,
 65,AEVA,buy,16.1327,60.0,2026-09-08,filled,2026-09-09,16.1327,2.68,,46,0,
 64,OPAD,buy,3.972,245.0,2026-09-07,filled,2026-09-09,3.972,1.81,,47,0,
