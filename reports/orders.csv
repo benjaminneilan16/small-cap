@@ -1,4 +1,5 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+80,ALZ.ST,buy,0.4329,2310.0,2026-09-11,open,,,,,,0,
 79,ARCT.ST,buy,5.5915,178.0,2026-09-09,filled,2026-09-10,5.5915,0.21,,52,0,
 78,GIG-SDB.ST,buy,2.3505,425.0,2026-09-09,filled,2026-09-10,2.3505,2.15,,55,0,
 77,FERRO.ST,buy,2.53,395.0,2026-09-09,open,,,,,,0,
