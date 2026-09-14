@@ -1,4 +1,9 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+85,NXTCL.ST,buy,1.0051,989.0,2026-09-14,open,,,,,,0,
+84,FREEM.ST,buy,1.7112,580.0,2026-09-14,open,,,,,,0,
+83,MINEST.ST,buy,1.1942,832.0,2026-09-14,open,,,,,,0,
+82,TENEO.ST,buy,0.0476,20884.0,2026-09-14,open,,,,,,0,
+81,MODTX.ST,buy,0.4075,2439.0,2026-09-14,open,,,,,,0,
 80,ALZ.ST,buy,0.4329,2310.0,2026-09-11,open,,,,,,0,
 79,ARCT.ST,buy,5.5915,178.0,2026-09-09,filled,2026-09-10,5.5915,0.21,,52,0,
 78,GIG-SDB.ST,buy,2.3505,425.0,2026-09-09,filled,2026-09-10,2.3505,2.15,,55,0,
