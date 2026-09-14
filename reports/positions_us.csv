@@ -1,4 +1,6 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+51,UMAC,43.0,22.5492,2026-09-14,24.1276,1.5,open,,,,,,,2.21
+50,RCAT,126.0,7.6416,2026-09-14,8.1765,1.5,open,,,,,,,0.02
 49,POET,127.0,7.6815,2026-09-10,8.2192,1.5,open,,,,,-0.13669200267268772,,1.45
 48,UAMY,188.0,5.2224,2026-09-09,5.588,1.5,open,,,,,-6.7478575835041035,,0.43
 47,OPAD,245.0,3.972,2026-09-09,4.25,1.5,open,,,,,-7.6032206371111455,,1.81
