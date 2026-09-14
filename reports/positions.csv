@@ -1,4 +1,5 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+59,LEMSE.ST,576.0,1.728,2026-09-14,1.849,2.48832,open,,,,,,,0.81
 58,K33.ST,43692.0,0.0228,2026-09-10,0.0244,2.490444,open,,,,,-3.0701767065023153,,0.88
 57,MINEST.ST,778.0,1.2788,2026-09-10,1.3683,2.487266,open,,,,,-3.5032868646329915,,1.47
 56,GSKR-SDB.ST,45.0,22.08,2026-09-10,23.6256,2.484,open,,,,,0.9963733562524845,,0.36
