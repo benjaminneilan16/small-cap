@@ -1,4 +1,10 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+77,NBTX,buy,32.8716,29.0,2026-09-14,open,,,,,,0,
+76,BKSY,buy,19.4923,49.0,2026-09-14,open,,,,,,0,
+75,RZLV,buy,2.21,435.0,2026-09-14,open,,,,,,0,
+74,RHLD,buy,120.3701,7.0,2026-09-14,open,,,,,,0,
+73,OPAD,buy,3.3396,288.0,2026-09-14,open,,,,,,0,
+72,AEVA,buy,13.8857,69.0,2026-09-14,open,,,,,,0,
 71,RCAT,buy,7.6416,126.0,2026-09-11,filled,2026-09-14,7.6416,0.02,,50,0,
 70,AKTS,buy,21.436,45.0,2026-09-11,open,,,,,,0,
 69,SANA,buy,2.9664,326.0,2026-09-10,open,,,,,,0,
