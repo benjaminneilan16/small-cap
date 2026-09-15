@@ -1,4 +1,8 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+89,SPEC.ST,buy,0.0207,48040.0,2026-09-15,open,,,,,,0,
+88,GIG-SDB.ST,buy,2.0735,479.0,2026-09-15,open,,,,,,0,
+87,IZAFE-B.ST,buy,0.3196,3111.0,2026-09-15,open,,,,,,0,
+86,BIOVIC-B.ST,buy,0.2957,3362.0,2026-09-15,open,,,,,,0,
 85,NXTCL.ST,buy,1.0051,989.0,2026-09-14,open,,,,,,0,
 84,FREEM.ST,buy,1.7112,580.0,2026-09-14,open,,,,,,0,
 83,MINEST.ST,buy,1.1942,832.0,2026-09-14,open,,,,,,0,
