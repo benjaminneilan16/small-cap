@@ -1,4 +1,7 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+92,IMPC.ST,buy,2.9053,340.0,2026-09-16,open,,,,,,0,
+91,TENEO.ST,buy,0.0385,25720.0,2026-09-16,open,,,,,,0,
+90,SUBGEN.ST,buy,0.0317,31237.0,2026-09-16,open,,,,,,0,
 89,SPEC.ST,buy,0.0207,48040.0,2026-09-15,filled,2026-09-16,0.0207,2.42,,64,0,
 88,GIG-SDB.ST,buy,2.0735,479.0,2026-09-15,open,,,,,,0,
 87,IZAFE-B.ST,buy,0.3196,3111.0,2026-09-15,filled,2026-09-16,0.3196,4.88,,63,0,
