@@ -1,4 +1,6 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+64,SPEC.ST,48040.0,0.0207,2026-09-16,0.0221,2.48607,open,,,,,,,2.42
+63,IZAFE-B.ST,3111.0,0.3196,2026-09-16,0.342,2.485689,open,,,,,,,4.88
 62,WYLD.ST,3803.0,0.263,2026-09-15,0.2814,2.5004725000000003,open,,,,,,,1.9
 61,TENEO.ST,20884.0,0.0476,2026-09-15,0.0509,2.485196,open,,,,,,,15.97
 60,MODTX.ST,2439.0,0.4075,2026-09-15,0.436,2.48473125,open,,,,,,,4.54
