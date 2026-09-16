@@ -3,7 +3,7 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 85,TRLV,buy,10.672,90.0,2026-09-15,open,,,,,,0,
 84,RXRX,buy,3.1007,309.0,2026-09-15,open,,,,,,0,
 83,OLMA,buy,8.9976,106.0,2026-09-15,open,,,,,,0,
-82,GENB,buy,15.9598,60.0,2026-09-15,open,,,,,,0,
+82,GENB,buy,15.9598,60.0,2026-09-15,filled,2026-09-16,15.9598,0.12,,52,0,
 81,LXRX,buy,1.8492,519.0,2026-09-15,open,,,,,,0,
 80,ABSI,buy,7.3048,131.0,2026-09-15,open,,,,,,0,
 79,JBIO,buy,15.9896,60.0,2026-09-15,open,,,,,,0,

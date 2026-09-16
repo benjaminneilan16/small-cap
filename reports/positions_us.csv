@@ -1,4 +1,5 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+52,GENB,60.0,15.9598,2026-09-16,17.077,1.5,open,,,,,,,0.12
 51,UMAC,43.0,22.5492,2026-09-14,24.1276,1.5,open,,,,,-1.9920867193970186,,2.21
 50,RCAT,126.0,7.6416,2026-09-14,8.1765,1.5,open,,,,,-0.2826648141870598,,0.02
 49,POET,127.0,7.6815,2026-09-10,8.2192,1.5,open,,,,,-6.25528589958931,,1.45
