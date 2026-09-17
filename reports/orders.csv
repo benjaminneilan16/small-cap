@@ -1,7 +1,7 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
 92,IMPC.ST,buy,2.9053,340.0,2026-09-16,open,,,,,,0,
 91,TENEO.ST,buy,0.0385,25720.0,2026-09-16,open,,,,,,0,
-90,SUBGEN.ST,buy,0.0317,31237.0,2026-09-16,open,,,,,,0,
+90,SUBGEN.ST,buy,0.0317,31237.0,2026-09-16,filled,2026-09-17,0.0317,0.32,,66,0,
 89,SPEC.ST,buy,0.0207,48040.0,2026-09-15,filled,2026-09-16,0.0207,2.42,,64,0,
 88,GIG-SDB.ST,buy,2.0735,479.0,2026-09-15,open,,,,,,0,
 87,IZAFE-B.ST,buy,0.3196,3111.0,2026-09-15,filled,2026-09-16,0.3196,4.88,,63,0,
@@ -11,7 +11,7 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 83,MINEST.ST,buy,1.1942,832.0,2026-09-14,open,,,,,,0,
 82,TENEO.ST,buy,0.0476,20884.0,2026-09-14,filled,2026-09-15,0.0476,15.97,,61,0,
 81,MODTX.ST,buy,0.4075,2439.0,2026-09-14,filled,2026-09-15,0.4075,4.54,,60,0,
-80,ALZ.ST,buy,0.4329,2310.0,2026-09-11,open,,,,,,0,
+80,ALZ.ST,buy,0.4329,2310.0,2026-09-11,filled,2026-09-16,0.4329,0.36,,65,0,
 79,ARCT.ST,buy,5.5915,178.0,2026-09-09,filled,2026-09-10,5.5915,0.21,,52,0,
 78,GIG-SDB.ST,buy,2.3505,425.0,2026-09-09,filled,2026-09-10,2.3505,2.15,,55,0,
 77,FERRO.ST,buy,2.53,395.0,2026-09-09,open,,,,,,0,

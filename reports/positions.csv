@@ -1,4 +1,6 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+66,SUBGEN.ST,31237.0,0.0317,2026-09-17,0.0339,2.47553225,open,,,,,,,0.32
+65,ALZ.ST,2310.0,0.4329,2026-09-16,0.4632,2.4999975,open,,,,,-5.289906116026494,,0.36
 64,SPEC.ST,48040.0,0.0207,2026-09-16,0.0221,2.48607,open,,,,,,,2.42
 63,IZAFE-B.ST,3111.0,0.3196,2026-09-16,0.342,2.485689,open,,,,,,,4.88
 62,WYLD.ST,3803.0,0.263,2026-09-15,0.2814,2.5004725000000003,open,,,,,-1.1406880367844774,,1.9
