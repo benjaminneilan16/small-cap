@@ -1,6 +1,6 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
 96,CALVIK.ST,buy,53.176,18.0,2026-09-17,open,,,,,,0,
-95,BEAMMW-B.ST,buy,13.984,70.0,2026-09-17,open,,,,,,0,
+95,BEAMMW-B.ST,buy,13.984,70.0,2026-09-17,cancelled,,,,intradagsfall 8.9% - drogs tillbaka,,0,
 94,LEMSE.ST,buy,1.6608,595.0,2026-09-17,open,,,,,,0,
 93,SERT.ST,buy,0.4502,2197.0,2026-09-17,open,,,,,,0,
 92,IMPC.ST,buy,2.9053,340.0,2026-09-16,open,,,,,,0,
