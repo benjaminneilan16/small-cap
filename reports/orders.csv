@@ -1,4 +1,9 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+101,QLIFE.ST,buy,1.6512,600.0,2026-09-18,open,,,,,,0,
+100,IZAFE-B.ST,buy,0.2717,3646.0,2026-09-18,open,,,,,,0,
+99,VETT.ST,buy,5.06,195.0,2026-09-18,open,,,,,,0,
+98,SUBGEN.ST,buy,0.0315,31453.0,2026-09-18,open,,,,,,0,
+97,BIOEX.ST,buy,2.38,416.0,2026-09-18,open,,,,,,0,
 96,CALVIK.ST,buy,53.176,18.0,2026-09-17,open,,,,,,0,
 95,BEAMMW-B.ST,buy,13.984,70.0,2026-09-17,cancelled,,,,intradagsfall 8.9% - drogs tillbaka,,0,
 94,LEMSE.ST,buy,1.6608,595.0,2026-09-17,open,,,,,,0,
