@@ -6,7 +6,7 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 98,ANRO,buy,28.5016,33.0,2026-09-17,open,,,,,,0,
 97,IE,buy,9.1008,105.0,2026-09-17,open,,,,,,0,
 96,GENB,buy,15.9598,60.0,2026-09-17,open,,,,,,0,
-95,CRML,buy,6.5952,145.0,2026-09-17,open,,,,,,0,
+95,CRML,buy,6.5952,145.0,2026-09-17,filled,2026-09-18,6.5952,0.38,,56,0,
 94,SANA,buy,2.976,323.0,2026-09-17,open,,,,,,0,
 93,UMAC,buy,21.9696,43.0,2026-09-17,open,,,,,,0,
 92,BAND,buy,47.4545,20.0,2026-09-16,open,,,,,,0,
