@@ -1,4 +1,7 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+104,GSKR-SDB.ST,buy,22.3075,44.0,2026-09-21,open,,,,,,0,
+103,EXPRS2.ST,buy,1.1808,835.0,2026-09-21,open,,,,,,0,
+102,PROGEN.ST,buy,0.1459,6759.0,2026-09-21,open,,,,,,0,
 101,QLIFE.ST,buy,1.6512,600.0,2026-09-18,filled,2026-09-21,1.6512,2.62,,71,0,
 100,IZAFE-B.ST,buy,0.2717,3646.0,2026-09-18,open,,,,,,0,
 99,VETT.ST,buy,5.06,195.0,2026-09-18,filled,2026-09-21,5.06,1.98,,74,0,
