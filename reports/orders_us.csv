@@ -5,7 +5,7 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 108,SEPN,buy,35.5948,27.0,2026-09-18,open,,,,,,0,
 107,BLZE,buy,12.1072,79.0,2026-09-18,open,,,,,,0,
 106,EOSE,buy,3.8016,253.0,2026-09-18,open,,,,,,0,
-105,SGML,buy,9.5712,100.0,2026-09-18,open,,,,,,0,
+105,SGML,buy,8.8985,100.0,2026-09-18,open,,,,,,1,9.5712
 104,AMPX,buy,9.12,105.0,2026-09-18,open,,,,,,0,
 103,RCAT,buy,6.48,148.0,2026-09-18,open,,,,,,0,
 102,GRPN,buy,17.9802,53.0,2026-09-17,open,,,,,,0,
