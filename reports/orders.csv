@@ -1,4 +1,5 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+105,DICOT.ST,buy,0.207,4767.0,2026-09-22,open,,,,,,0,
 104,GSKR-SDB.ST,buy,22.3075,44.0,2026-09-21,filled,2026-09-22,22.3075,4.96,,76,0,
 103,EXPRS2.ST,buy,1.1808,835.0,2026-09-21,open,,,,,,0,
 102,PROGEN.ST,buy,0.1459,6759.0,2026-09-21,filled,2026-09-22,0.1459,6.79,,78,0,
