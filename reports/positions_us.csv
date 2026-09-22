@@ -1,4 +1,5 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+59,CRML,112.0,8.5836,2026-09-22,9.1845,1.5,open,,,,,,,1.09
 58,AKTS,45.0,21.0477,2026-09-21,22.521,1.5,open,,,,,,,1.41
 57,KOS,344.0,2.7775,2026-09-18,2.9719,1.5,open,,,,,-6.750678157720552,,2.07
 56,CRML,145.0,6.5952,2026-09-18,7.0569,3.03487575,closed,7.0569,2026-09-21,MAL NATT,63.911624250000045,29.944502526495654,3,0.38
