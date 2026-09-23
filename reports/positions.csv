@@ -1,4 +1,5 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+79,EXPRS2.ST,835.0,1.1808,2026-09-23,1.2635,2.46492,open,,,,,,,0.07
 78,PROGEN.ST,6759.0,0.1459,2026-09-22,0.1561,2.46534525,open,,,,,,,6.79
 77,IZAFE-B.ST,3646.0,0.2717,2026-09-22,0.2907,2.4765455,open,,,,,,,2.1
 76,GSKR-SDB.ST,44.0,22.3075,2026-09-22,23.869,2.453825,open,,,,,,,4.96
