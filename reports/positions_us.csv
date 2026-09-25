@@ -1,4 +1,8 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+87,TMC,242.0,3.9744,2026-09-25,4.2526,1.5,open,,,,,,,0.74
+86,RZLV,435.0,2.21,2026-09-25,2.3647,1.5,open,,,,,,,1.36
+85,LXRX,519.0,1.8492,2026-09-25,1.9786,1.5,open,,,,,,,1.58
+84,BORR,227.0,4.2314,2026-09-25,4.5276,1.5,open,,,,,,,3.22
 83,OMDA,49.0,19.6604,2026-09-24,21.0366,1.5,open,,,,,,,0.1
 82,SPTX,44.0,21.2767,2026-09-24,22.7661,1.5,open,,,,,,,6.33
 81,SIFY,71.0,13.5168,2026-09-24,14.463,1.5,open,,,,,,,1.97
