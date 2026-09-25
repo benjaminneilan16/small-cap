@@ -1,6 +1,8 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+112,GSKR-SDB.ST,buy,21.1925,46.0,2026-09-25,open,,,,,,0,
+111,PROGEN.ST,buy,0.1171,8422.0,2026-09-25,open,,,,,,0,
 110,STIL.ST,buy,251.5,3.0,2026-09-24,open,,,,,,0,
-109,CFISH.ST,buy,1.9632,500.0,2026-09-23,open,,,,,,0,
+109,CFISH.ST,buy,1.9632,500.0,2026-09-23,filled,2026-09-25,1.9632,0.98,,84,0,
 108,IZAFE-B.ST,buy,0.2851,3446.0,2026-09-23,filled,2026-09-24,0.2851,2.49,,81,0,
 107,TENEO.ST,buy,0.0331,29687.0,2026-09-23,open,,,,,,0,
 106,PROGEN.ST,buy,0.1152,8530.0,2026-09-23,filled,2026-09-24,0.1152,0.17,,83,0,
