@@ -1,4 +1,7 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+90,UAMY,218.0,4.3776,2026-09-28,4.684,1.5,open,,,,,,,2.69
+89,NEXA,77.0,12.3937,2026-09-28,13.2613,1.5,open,,,,,,,4.79
+88,CNL,77.0,12.3744,2026-09-28,13.2406,1.5,open,,,,,,,2.22
 87,TMC,242.0,3.9744,2026-09-25,4.2526,1.5,open,,,,,,,0.74
 86,RZLV,435.0,2.21,2026-09-25,2.3647,1.5,open,,,,,,,1.36
 85,LXRX,519.0,1.8492,2026-09-25,1.9786,1.5,open,,,,,,,1.58
