@@ -1,4 +1,7 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+87,STIL.ST,3.0,251.5,2026-09-28,269.105,1.88625,open,,,,,,,0.2
+86,PROGEN.ST,8422.0,0.1171,2026-09-28,0.1253,2.4655405,open,,,,,,,19.39
+85,GSKR-SDB.ST,46.0,21.1925,2026-09-28,22.676,2.4371375,open,,,,,,,3.27
 84,CFISH.ST,500.0,1.9632,2026-09-25,2.1006,2.454,open,,,,,,,0.98
 83,PROGEN.ST,8530.0,0.1152,2026-09-24,0.1233,5.0860125,closed,0.1233,2026-09-25,MAL NATT,64.00698750000004,-1.041666614926521,1,0.17
 82,NXTCL.ST,989.0,1.0051,2026-09-24,1.0755,2.4851097500000003,open,,,,,-0.9053833555100779,,0.51
