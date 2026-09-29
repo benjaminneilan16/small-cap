@@ -1,31 +1,23 @@
 # Småbolagsrapport — USA
 
-*Genererad 2026-09-25 23:46 UTC*
+*Genererad 2026-09-29 00:49 UTC*
 
 ## Portfölj
 
 | | |
 |---|---|
-| Totalt värde | 47,532 $ |
-| Varav kontant | 22,109 $ |
-| Avkastning | -4.94 % |
-| Exponering | 54 % (tak 30 %) |
-| Kapital i vila | 46 % |
-| Öppna positioner | 27 |
+| Totalt värde | 47,484 $ |
+| Varav kontant | 19,243 $ |
+| Avkastning | -5.03 % |
+| Exponering | 60 % (tak 30 %) |
+| Kapital i vila | 40 % |
+| Öppna positioner | 30 |
 
-> ⚠️ Exponeringen (54 %) ligger nära taket (30 %). Få eller inga nya ordrar läggs förrän positioner stängs och frigör kapital.
+> ⚠️ Exponeringen (60 %) ligger nära taket (30 %). Få eller inga nya ordrar läggs förrän positioner stängs och frigör kapital.
 
 ## Dagens händelser
 
-**Stängda positioner**
-
-| Bolag | Anledning | Resultat | Dagar | Max motgång |
-|---|---|---|---|---|
-| RHLD | MAL NATT | +56 $ | 9 | -3.6 % |
-| CRML | TIDIG VARNING | -87 $ | 3 | -11.3 % |
-| JBIO | TIDIG VARNING | -97 $ | 2 | -10.0 % |
-| VOR | TIDIG VARNING | -84 $ | 2 | -13.3 % |
-| AGL | MAL NATT | +62 $ | 1 | -1.2 % |
+**6 ordrar togs bort** (inte fyllda i tid)
 
 ## Resultat hittills
 
@@ -41,7 +33,7 @@
 
 ### Nyckeltal för strategin
 
-**Fyllnadsgrad: 81.3 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
+**Fyllnadsgrad: 70.9 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
 
 **Genomsnittlig maximal motgång: -7.5 %** — hur långt ner positionerna gick innan de stängdes. Detta är måttet på adverse selection: blir du systematiskt fylld precis innan det fortsätter ner?
 
@@ -57,7 +49,7 @@
 
 | Bolag | Poäng | Dagligt spann | Eff. ratio | Omsättning | Kurs | |
 |---|---|---|---|---|---|---|
-| UMAC | 5.93 | 11.0 % | 0.01 | 58,477,726 $ | 24.05 | |
+| UMAC | 5.85 | 11.0 % | 0.023 | 58,477,726 $ | 23.92 | |
 | VOR | 5.54 | 7.7 % | 0.003 | 13,750,736 $ | 18.52 | |
 | SPTX | 5.52 | 7.8 % | 0.001 | 3,032,635 $ | 21.52 | |
 | ANRO | 5.42 | 7.9 % | 0.033 | 6,791,798 $ | 26.49 | |
@@ -65,18 +57,18 @@
 | POET | 5.41 | 8.9 % | 0.087 | 73,233,722 $ | 7.77 | |
 | AVLN | 5.39 | 7.9 % | 0.036 | 7,570,585 $ | 28.08 | |
 | BKSY | 5.33 | 9.0 % | 0.101 | 36,013,124 $ | 23.25 | |
-| REPL | 5.19 | 7.2 % | 0.034 | 18,781,618 $ | 12.36 | |
+| REPL | 5.21 | 7.2 % | 0.03 | 18,901,389 $ | 12.56 | |
+| RXT | 5.12 | 9.6 % | 0.131 | 13,474,194 $ | 3.79 | |
+| LWLG | 5.12 | 9.2 % | 0.133 | 15,540,619 $ | 5.00 | |
 | CMPS | 5.11 | 6.5 % | 0.009 | 19,547,719 $ | 13.06 | |
+| WOLF | 5.09 | 9.4 % | 0.137 | 60,198,834 $ | 27.57 | |
 | GENB | 5.06 | 7.0 % | 0.043 | 8,608,581 $ | 15.15 | |
 | AGL | 5.05 | 9.3 % | 0.143 | 9,349,883 $ | 80.73 | |
-| ABSI | 4.99 | 7.2 % | 0.063 | 17,632,757 $ | 9.74 | |
-| LWLG | 4.98 | 9.2 % | 0.154 | 15,540,619 $ | 5.31 | |
 | NNE | 4.96 | 7.7 % | 0.089 | 52,410,288 $ | 16.99 | |
-| RXRX | 4.92 | 6.0 % | 0.009 | 68,581,354 $ | 3.74 | |
+| APPS | 4.94 | 6.8 % | 0.05 | 16,309,360 $ | 11.22 | |
 | TMC | 4.92 | 6.7 % | 0.046 | 31,718,188 $ | 3.93 | |
-| RXT | 4.90 | 9.6 % | 0.165 | 13,474,194 $ | 3.97 | |
+| FCEL | 4.91 | 9.6 % | 0.164 | 43,267,454 $ | 16.14 | |
 | TNDM | 4.88 | 5.7 % | 0.001 | 33,665,943 $ | 15.72 | |
-| ASM | 4.86 | 6.2 % | 0.029 | 28,420,892 $ | 5.94 | |
 
 ### Varningar
 
@@ -95,6 +87,7 @@
 
 Onormal volym kombinerat med stort prisfall — kan betyda att något hänt (nyheter, sektor-rörelse) snarare än normal oscillation. Kolla gärna manuellt innan du litar på fyndet.
 
+- **AMPX**: 3.1x normal volym, -11.8 % samma dag
 - **AESI**: 4.2x normal volym, +1.4 % samma dag
 - **MNKD**: 3.1x normal volym, +0.6 % samma dag
 
