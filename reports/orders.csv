@@ -1,6 +1,6 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
 118,SERT.ST,buy,0.5376,1838.0,2026-09-29,filled,2026-09-30,0.5376,2.53,,90,0,
-117,NXTCL.ST,buy,1.0628,929.0,2026-09-29,open,,,,,,0,
+117,NXTCL.ST,buy,1.0628,929.0,2026-09-29,cancelled,,,,intradagsfall 8.8% - drogs tillbaka,,0,
 116,GIG-SDB.ST,buy,2.0543,481.0,2026-09-29,open,,,,,,0,
 115,VETT.ST,buy,4.8875,202.0,2026-09-29,open,,,,,,0,
 114,IZAFE-B.ST,buy,0.2976,3321.0,2026-09-29,filled,2026-09-30,0.2976,5.91,,89,0,
