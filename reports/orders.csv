@@ -1,10 +1,10 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
-118,SERT.ST,buy,0.5376,1838.0,2026-09-29,open,,,,,,0,
+118,SERT.ST,buy,0.5376,1838.0,2026-09-29,filled,2026-09-30,0.5376,2.53,,90,0,
 117,NXTCL.ST,buy,1.0628,929.0,2026-09-29,open,,,,,,0,
 116,GIG-SDB.ST,buy,2.0543,481.0,2026-09-29,open,,,,,,0,
 115,VETT.ST,buy,4.8875,202.0,2026-09-29,open,,,,,,0,
-114,IZAFE-B.ST,buy,0.2976,3321.0,2026-09-29,open,,,,,,0,
-113,BLINC-B.ST,buy,0.0946,10447.0,2026-09-29,open,,,,,,0,
+114,IZAFE-B.ST,buy,0.2976,3321.0,2026-09-29,filled,2026-09-30,0.2976,5.91,,89,0,
+113,BLINC-B.ST,buy,0.0946,10447.0,2026-09-29,filled,2026-09-30,0.0946,9.09,,88,0,
 112,GSKR-SDB.ST,buy,21.1925,46.0,2026-09-25,filled,2026-09-28,21.1925,3.27,,85,0,
 111,PROGEN.ST,buy,0.1171,8422.0,2026-09-25,filled,2026-09-28,0.1171,19.39,,86,0,
 110,STIL.ST,buy,251.5,3.0,2026-09-24,filled,2026-09-28,251.5,0.2,,87,0,
