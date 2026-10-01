@@ -1,4 +1,5 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+91,RXT,259.0,3.7168,2026-10-01,3.977,1.5,open,,,,,,,0.45
 90,UAMY,218.0,4.3776,2026-09-28,4.684,1.5,open,,,,,-4.970763719569874,,2.69
 89,NEXA,77.0,12.3937,2026-09-28,13.2613,1.5,open,,,,,-2.4504372980797515,,4.79
 88,CNL,77.0,12.3744,2026-09-28,13.2406,1.5,open,,,,,-0.7224605038457643,,2.22
