@@ -1,13 +1,10 @@
 # Bolag som inte gick att matcha automatiskt.
 # Slå upp tickern manuellt och lägg till i universe_us.txt om du vill ha med dem.
 
-Americas Gold and Silver Corporation
-Stepan Company
-XPEL, Inc.
-Adecoagro S.A.
-Lightspeed Commerce Inc.
-Oil-Dri Corporation of America
-Inhibrx Biosciences, Inc.
+Savers Value Village, Inc.
+EVERTEC, Inc.
+BioLife Solutions, Inc.
+United Fire Group, Inc.
+Immatics N.V.
 Wave Life Sciences Ltd.
-Alpha and Omega Semiconductor Limited
-Horizon Bancorp, Inc.
+McEwen Inc.

@@ -1,8 +1,10 @@
 # Bolag som inte gick att matcha automatiskt.
 # Slå upp tickern manuellt och lägg till i universe.txt om du vill ha med dem.
 
+2cureX
 Bonäsudden Holding
 ES Group
+Firefly
 Gotlandsbolaget
 Guard Therapeutics International
 Heliospectra
@@ -14,8 +16,11 @@ Lärkberget
 Mavshack
 Nordnet Bank
 oodash Group
+Raketech Group Holding
 Scandinavian ChemoTech
 Skåne-möllan
+Sprint Bioscience
 Studentbostäder i Norden
 Söder Sportfiske
+Tourn International
 Västra Hamnen Corp. Finance

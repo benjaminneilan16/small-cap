@@ -5,337 +5,338 @@
 LIFE  # Ethos Technologies Inc.
 ZD  # Ziff Davis, Inc.
 TMC  # TMC the metals company Inc.
-ALMR  # Alamar Biosciences, Inc.
-LOB  # Live Oak Bancshares, Inc.
+MU  # Alamar Biosciences, Inc.
+MU  # Live Oak Bancshares, Inc.
 FLOC  # Flowco Holdings Inc.
-OPAD  # Innovex International, Inc.
+MU  # Innovex International, Inc.
 NBTX  # Nanobiotix S.A.
 FSUN  # FirstSun Capital Bancorp
 TGLS  # Tecnoglass Holdings Inc.
 LPG  # Dorian LPG Ltd.
-SEDG  # SolarEdge Technologies, Inc.
+MU  # SolarEdge Technologies, Inc.
 WB  # Weibo Corporation
 WS  # Worthington Steel, Inc.
-OPAD  # Republic Bancorp, Inc.
-OPAD  # Global Net Lease, Inc.
-ATEN  # A10 Networks, Inc.
+MU  # Republic Bancorp, Inc.
+MU  # Global Net Lease, Inc.
+MU  # A10 Networks, Inc.
 CHA  # Chagee Holdings Limited
-VRTX  # Vertex, Inc.
+MU  # Vertex, Inc.
 ATEX  # Anterix Inc.
-AMR  # Alpha Metallurgical Resources, Inc.
+MU  # Alpha Metallurgical Resources, Inc.
 EVCM  # EverCommerce Inc.
 EPAC  # Enerpac Tool Group Corp.
-OPAD  # Agios Pharmaceuticals, Inc.
-PLAB  # Photronics, Inc.
-BRVE  # Braveheart Bio, Inc.
-XHR  # Xenia Hotels & Resorts, Inc.
+MU  # Agios Pharmaceuticals, Inc.
+MU  # Photronics, Inc.
+MU  # Braveheart Bio, Inc.
+MU  # Xenia Hotels & Resorts, Inc.
 ALNT  # Allient Inc.
 OCFC  # OceanFirst Financial Corp.
 NVCR  # NovoCure Limited
-MBC  # MasterBrand, Inc.
+MU  # MasterBrand, Inc.
 XPRO  # Expro Ltd
 GCT  # GigaCloud Technology Inc.
-SMA  # SmartStop Self Storage REIT, Inc.
-GABC  # German American Bancorp, Inc.
+MU  # SmartStop Self Storage REIT, Inc.
+MU  # German American Bancorp, Inc.
 CTS  # CTS Corporation
-SVV  # Savers Value Village, Inc.
-OPAD  # Sonida Senior Living, Inc.
-SAM  # The Boston Beer Company, Inc.
-FBRX  # Forte Biosciences, Inc.
+MU  # Sonida Senior Living, Inc.
+MU  # The Boston Beer Company, Inc.
+MU  # Forte Biosciences, Inc.
 VSTS  # Vestis Corporation
 CENT  # Central Garden & Pet Company
 IMOS  # ChipMOS TECHNOLOGIES INC.
 NEXA  # Nexa Resources S.A.
-OPAD  # Strategic Education, Inc.
+MU  # Strategic Education, Inc.
 WKC  # World Kinect Corporation
-OPAD  # LeMaitre Vascular, Inc.
-WMK  # Weis Markets, Inc.
+MU  # LeMaitre Vascular, Inc.
+MU  # Weis Markets, Inc.
 PAX  # Patria Investments Limited
 NBHC  # National Bank Holdings Corporation
 GT  # The Goodyear Tire & Rubber Company
-SONO  # Sonos, Inc.
+MU  # Sonos, Inc.
 GEL  # Genesis Energy, L.P.
 BCAX  # Bicara Therapeutics Inc.
-GENB  # Generate Biomedicines, Inc.
+MU  # Generate Biomedicines, Inc.
 TCBK  # TriCo Bancshares
 CMPS  # COMPASS Pathways plc
-OPAD  # Pathward Financial, Inc.
-SNDX  # Syndax Pharmaceuticals, Inc.
-TSLX  # Sixth Street Specialty Lending, Inc.
-OPAD  # Triumph Financial, Inc.
-AEVA  # Aeva Technologies, Inc.
-VIA  # Via Transportation, Inc.
-OPAD  # National Vision Holdings, Inc.
-PRCH  # Porch Group, Inc.
-STBA  # S&T Bancorp, Inc.
+MU  # Pathward Financial, Inc.
+MU  # Syndax Pharmaceuticals, Inc.
+MU  # Sixth Street Specialty Lending, Inc.
+MU  # Triumph Financial, Inc.
+MU  # Aeva Technologies, Inc.
+MU  # Via Transportation, Inc.
+MU  # National Vision Holdings, Inc.
+MU  # Porch Group, Inc.
+MU  # S&T Bancorp, Inc.
 HLMN  # Hillman Solutions Corp.
 OPRA  # Opera Limited
-HOPE  # Hope Bancorp, Inc.
-EVTC  # EVERTEC, Inc.
+MU  # Hope Bancorp, Inc.
 NEXT  # NextDecade Corporation
 PRGO  # Perrigo Company plc
-DCOM  # Dime Commercial Bancshares, Inc.
+MU  # Dime Commercial Bancshares, Inc.
 AIN  # Albany International Corp.
 CYD  # China Yuchai International Limited
 PGY  # Pagaya Technologies Ltd.
 HUN  # Huntsman Corporation
-SRPT  # Sarepta Therapeutics, Inc.
-AAT  # American Assets Trust, Inc.
+MU  # Sarepta Therapeutics, Inc.
+MU  # American Assets Trust, Inc.
 CMRE  # Costamare Inc.
-ASTH  # Astrana Health, Inc.
+MU  # Astrana Health, Inc.
 EFC  # Ellington Financial Inc.
 PRGS  # Progress Software Corporation
-OPAD  # Byline Bancorp, Inc.
+BY  # Byline Bancorp, Inc.
 FTRE  # Fortrea Holdings Inc.
-SEPN  # Septerna, Inc.
-CBL  # CBL & Associates Properties, Inc.
+MU  # Septerna, Inc.
+MU  # CBL & Associates Properties, Inc.
 IE  # Ivanhoe Electric Inc.
-OPAD  # Turning Point Brands, Inc.
+MU  # Turning Point Brands, Inc.
 CPRI  # Capri Holdings Limited
-INSP  # Inspire Medical Systems, Inc.
+MU  # Inspire Medical Systems, Inc.
 ARCO  # Arcos Dorados Holdings Inc.
-APPS  # Digital Turbine, Inc.
+MU  # Digital Turbine, Inc.
 DXC  # DXC Technology Company
-AMPX  # Amprius Technologies, Inc.
+MU  # Amprius Technologies, Inc.
 IMCR  # Immunocore Holdings plc
-RXRX  # Recursion Pharmaceuticals, Inc.
-RVLV  # Revolve Group, Inc.
+MU  # Recursion Pharmaceuticals, Inc.
+MU  # Revolve Group, Inc.
 BL  # BlackLine, Inc.
 GLP  # Global Partners LP
-OPAD  # EZCORP, Inc.
+MU  # EZCORP, Inc.
 JJSF  # J&J Snack Foods Corp.
 TRIN  # Trinity Capital Inc.
-WOLF  # Wolfspeed, Inc.
-OPAD  # PROG Holdings, Inc.
-ICFI  # ICF International, Inc.
-QCRH  # QCR Holdings, Inc.
-ULCC  # Frontier Group Holdings, Inc.
-OPAD  # BioLife Solutions, Inc.
+MU  # Wolfspeed, Inc.
+MU  # PROG Holdings, Inc.
+MU  # ICF International, Inc.
+MU  # QCR Holdings, Inc.
+MU  # Frontier Group Holdings, Inc.
+USAS  # Americas Gold and Silver Corporation
 LZB  # La-Z-Boy Incorporated
 ZYME  # Zymeworks Inc.
 TRLV  # Trulieve Cannabis Corp.
 KMPR  # Kemper Corporation
-OMCL  # Omnicell, Inc.
-ANAB  # AnaptysBio, Inc.
+MU  # Omnicell, Inc.
+MU  # AnaptysBio, Inc.
 NOMD  # Nomad Foods Limited
 RLJ  # RLJ Lodging Trust
 FUN  # Six Flags Entertainment Corporation
 QCOM  # Ingles Markets, Incorporated
-MLKN  # MillerKnoll, Inc.
-NTLA  # Intellia Therapeutics, Inc.
+MU  # MillerKnoll, Inc.
+MU  # Intellia Therapeutics, Inc.
 FLNG  # FLEX LNG Ltd.
 LILA  # Liberty Latin America Ltd.
 VET  # Vermilion Energy Inc.
 MQ  # Marqeta, Inc.
-OBK  # Origin Bancorp, Inc.
-ANIP  # ANI Pharmaceuticals, Inc.
-ARLO  # Arlo Technologies, Inc.
-CNOB  # ConnectOne Bancorp, Inc.
+MU  # Origin Bancorp, Inc.
+MU  # ANI Pharmaceuticals, Inc.
+MU  # Arlo Technologies, Inc.
+MU  # ConnectOne Bancorp, Inc.
 PWP  # Perella Weinberg Partners
 TH  # Target Hospitality Corp.
-ARDT  # Ardent Health, Inc.
-FCEL  # FuelCell Energy, Inc.
+MU  # Ardent Health, Inc.
+MU  # FuelCell Energy, Inc.
 SLVM  # Sylvamo Corporation
-IIPR  # Innovative Industrial Properties, Inc.
+MU  # Innovative Industrial Properties, Inc.
 IDT  # IDT Corporation
 GLOB  # Globant S.A.
-ET  # Kimbell Royalty Partners, LP
-OPAD  # Distribution Solutions Group, Inc.
-QFIN  # Qfin Holdings, Inc.
-MRVI  # Maravai LifeSciences Holdings, Inc.
+KRP  # Kimbell Royalty Partners, LP
+MU  # Distribution Solutions Group, Inc.
+MU  # Qfin Holdings, Inc.
+MU  # Maravai LifeSciences Holdings, Inc.
 BAND  # Bandwidth Inc.
-CXM  # Sprinklr, Inc.
+MU  # Sprinklr, Inc.
 SFL  # SFL Corporation Ltd.
-AGL  # agilon health, inc.
+MU  # agilon health, inc.
 CSWC  # Capital Southwest Corporation
-UTI  # Universal Technical Institute, Inc.
+MU  # Universal Technical Institute, Inc.
 AI  # C3.ai, Inc.
 AMSC  # American Superconductor Corporation
-TYRA  # Tyra Biosciences, Inc.
+MU  # Tyra Biosciences, Inc.
 UROY  # Uranium Royalty Corp.
-OPAD  # Sally Beauty Holdings, Inc.
-TWFG  # TWFG, Inc.
+MU  # Sally Beauty Holdings, Inc.
+MU  # TWFG, Inc.
 CNXC  # Concentrix Corporation
-FLO  # Flowers Foods, Inc.
-BBAI  # BigBear.ai Holdings, Inc.
-TNDM  # Tandem Diabetes Care, Inc.
+MU  # Flowers Foods, Inc.
+MU  # BigBear.ai Holdings, Inc.
+MU  # Tandem Diabetes Care, Inc.
 AZUL  # Azul S.A.
-CRSR  # Corsair Gaming, Inc.
-WWW  # Wolverine World Wide, Inc.
-OPAD  # Xencor, Inc.
-ENR  # Energizer Holdings, Inc.
+MU  # Corsair Gaming, Inc.
+MU  # Wolverine World Wide, Inc.
+MU  # Xencor, Inc.
+MU  # Energizer Holdings, Inc.
 POET  # POET Technologies Inc.
-COUR  # Coursera, Inc.
+MU  # Coursera, Inc.
 ENOV  # Enovis Corporation
 LKFN  # Lakeland Financial Corporation
-GSL  # Global Ship Lease, Inc.
-OPAD  # Healthcare Services Group, Inc.
+MU  # Global Ship Lease, Inc.
+MU  # Healthcare Services Group, Inc.
 WD  # Walker & Dunlop, Inc.
-SAFT  # Safety Insurance Group, Inc.
+MU  # Safety Insurance Group, Inc.
 ABSI  # Absci Corporation
-PSNL  # Personalis, Inc.
+MU  # Personalis, Inc.
 FOR  # Forestar Group Inc.
 ATLC  # Atlanticus Holdings Corporation
-EOSE  # Eos Energy Enterprises, Inc.
+MU  # Eos Energy Enterprises, Inc.
 MLTX  # MoonLake Immunotherapeutics
-HROW  # Harrow, Inc.
+MU  # Harrow, Inc.
 AVLN  # Avalyn Pharma Inc.
-SHLS  # Shoals Technologies Group, Inc.
+MU  # Shoals Technologies Group, Inc.
 ADNT  # Adient plc
 CCL  # G-III Apparel Group, Ltd.
 GIC  # Global Industrial Company
-OPAD  # Gibraltar Industries, Inc.
+MU  # Gibraltar Industries, Inc.
 AMAL  # Amalgamated Financial Corp.
-VIR  # Vir Biotechnology, Inc.
-OPAD  # The RealReal, Inc.
-OPAD  # Innoviva, Inc.
-OPAD  # BJ's Restaurants, Inc.
+MU  # Vir Biotechnology, Inc.
+MU  # The RealReal, Inc.
+MU  # Innoviva, Inc.
+SCL  # Stepan Company
+MU  # BJ's Restaurants, Inc.
 SVRA  # Savara Inc.
-OPAD  # Napco Security Technologies, Inc.
+MU  # Napco Security Technologies, Inc.
 KOS  # Kosmos Energy Ltd.
 CNMD  # CONMED Corporation
-CRI  # Carter's, Inc.
+MU  # Carter's, Inc.
 WEN  # The Wendy's Company
-GBX  # The Greenbrier Companies, Inc.
+MU  # The Greenbrier Companies, Inc.
 DMC  # Del Monte Corporation
 WLTH  # Wealthfront Corporation
-XERS  # Xeris Biopharma Holdings, Inc.
+MU  # Xeris Biopharma Holdings, Inc.
 TRS  # TriMas Corporation
 PEBO  # Peoples Bancorp Inc.
-ATEC  # Alphatec Holdings, Inc.
-AVBP  # ArriVent BioPharma, Inc.
-OMDA  # Omada Health, Inc.
-PCT  # PureCycle Technologies, Inc.
+MU  # Alphatec Holdings, Inc.
+MU  # ArriVent BioPharma, Inc.
+MU  # Omada Health, Inc.
+MU  # PureCycle Technologies, Inc.
 NRP  # Natural Resource Partners L.P.
-HLX  # Helix Energy Solutions Group, Inc.
-CTBI  # Community Trust Bancorp, Inc.
+MU  # Helix Energy Solutions Group, Inc.
+MU  # Community Trust Bancorp, Inc.
 REX  # REX American Resources Corporation
 AESI  # Atlas Energy Solutions Inc.
-AMPL  # Amplitude, Inc.
+MU  # Amplitude, Inc.
 YELP  # Yelp Inc.
-CDRE  # Cadre Holdings, Inc.
+MU  # Cadre Holdings, Inc.
 IAUX  # i-80 Gold Corp.
-AZTA  # Azenta, Inc.
-RCAT  # Red Cat Holdings, Inc.
-UFCS  # United Fire Group, Inc.
-OPAD  # ORIC Pharmaceuticals, Inc.
-AMN  # AMN Healthcare Services, Inc.
-LGIH  # LGI Homes, Inc.
+MU  # Azenta, Inc.
+MU  # Red Cat Holdings, Inc.
+MU  # ORIC Pharmaceuticals, Inc.
+MU  # AMN Healthcare Services, Inc.
+MU  # LGI Homes, Inc.
 BW  # Babcock & Wilcox Enterprises, Inc.
 PAHC  # Phibro Animal Health Corporation
-AIP  # Arteris, Inc.
-ESRT  # Empire State Realty Trust, Inc.
+MU  # XPEL, Inc.
+MU  # Arteris, Inc.
+MU  # Empire State Realty Trust, Inc.
 NAT  # Nordic American Tankers Limited
 WABC  # Westamerica Bancorporation
-DFH  # Dream Finders Homes, Inc.
-PNTG  # The Pennant Group, Inc.
-AMRC  # Ameresco, Inc.
-FMBH  # First Mid Bancshares, Inc.
-ARHS  # Arhaus, Inc.
+MU  # Dream Finders Homes, Inc.
+AGRO  # Adecoagro S.A.
+MU  # The Pennant Group, Inc.
+MU  # Ameresco, Inc.
+MU  # First Mid Bancshares, Inc.
+MU  # Arhaus, Inc.
 ALVO  # Alvotech
-OPAD  # Schrödinger, Inc.
-OPAD  # UMH Properties, Inc.
+MU  # Schrödinger, Inc.
+MU  # UMH Properties, Inc.
 VTOL  # Bristow Group Inc.
+LSPD  # Lightspeed Commerce Inc.
 PUMP  # ProPetro Holding Corp.
-BRBR  # BellRing Brands, Inc.
+ODC  # Oil-Dri Corporation of America
+MU  # BellRing Brands, Inc.
 IART  # Integra LifeSciences Holdings Corporation
 SLSR  # Solaris Resources Inc.
-AKTS  # Aktis Oncology, Inc.
+MU  # Aktis Oncology, Inc.
 FMC  # FMC Corporation
 VZLA  # Vizsla Silver Corp.
 WINA  # Winmark Corporation
-OPAD  # HBT Financial, Inc.
+MU  # HBT Financial, Inc.
 MNKD  # MannKind Corporation
-AORT  # Artivion, Inc.
-IMTX  # Immatics N.V.
-OPAD  # Liquidity Services, Inc.
+MU  # Artivion, Inc.
+MU  # Liquidity Services, Inc.
 DOLE  # Dole plc
-NVAX  # Novavax, Inc.
+MU  # Novavax, Inc.
 CNL  # Collective Mining Ltd.
-OPAD  # Willdan Group, Inc.
+MU  # Willdan Group, Inc.
 GHM  # Graham Corporation
-ORC  # Orchid Island Capital, Inc.
+MU  # Orchid Island Capital, Inc.
 EPC  # Edgewell Personal Care Company
 MSDL  # Morgan Stanley Direct Lending Fund
-JBIO  # Jade Biosciences, Inc.
+MU  # Jade Biosciences, Inc.
 ACVA  # ACV Auctions Inc.
-DEA  # Easterly Government Properties, Inc.
+MU  # Easterly Government Properties, Inc.
+MU  # Inhibrx Biosciences, Inc.
 LINC  # Lincoln Educational Services Corporation
-TDOC  # Teladoc Health, Inc.
+MU  # Teladoc Health, Inc.
 HLF  # Herbalife Ltd.
-OPAD  # Old Second Bancorp, Inc.
-MYE  # Myers Industries, Inc.
-CBRL  # Cracker Barrel Old Country Store, Inc.
+MU  # Old Second Bancorp, Inc.
+MU  # Myers Industries, Inc.
+MU  # Cracker Barrel Old Country Store, Inc.
 WLFC  # Willis Lease Finance Corporation
 HLIT  # Harmonic Inc.
-OPAD  # Flotek Industries, Inc.
+MU  # Flotek Industries, Inc.
 VOR  # Vor Biopharma Inc.
-RPC  # RPC, Inc.
-TWO  # Two Harbors Investment Corp.
+MU  # RPC, Inc.
+TWOD  # Two Harbors Investment Corp.
 NVGS  # Navigator Holdings Ltd.
 SGML  # Sigma Lithium Corporation
 THRM  # Gentherm Incorporated
 UVV  # Universal Corporation
-SPTX  # Seaport Therapeutics, Inc.
-TRIP  # Tripadvisor, Inc.
-OPAD  # TETRA Technologies, Inc.
+MU  # Seaport Therapeutics, Inc.
+MU  # Tripadvisor, Inc.
+MU  # TETRA Technologies, Inc.
 TNC  # Tennant Company
 EPD  # Dorchester Minerals, L.P.
-OPAD  # Sharplink, Inc.
+MU  # Sharplink, Inc.
 PFBC  # Preferred Bank
-CERT  # Certara, Inc.
-LWLG  # Lightwave Logic, Inc.
-UMAC  # Unusual Machines, Inc.
-GDRX  # GoodRx Holdings, Inc.
-RXT  # Rackspace Technology, Inc.
-OPAD  # National Healthcare Properties, Inc.
+MU  # Certara, Inc.
+MU  # Lightwave Logic, Inc.
+MU  # Unusual Machines, Inc.
+MU  # GoodRx Holdings, Inc.
+MU  # Rackspace Technology, Inc.
+MU  # National Healthcare Properties, Inc.
 LADR  # Ladder Capital Corp
 AFYA  # Afya Limited
-CCO  # Clear Channel Outdoor Holdings, Inc.
-UVE  # Universal Insurance Holdings, Inc.
-OPAD  # Cricut, Inc.
-ETON  # Eton Pharmaceuticals, Inc.
+MU  # Clear Channel Outdoor Holdings, Inc.
+MU  # Universal Insurance Holdings, Inc.
+MU  # Cricut, Inc.
+MU  # Eton Pharmaceuticals, Inc.
 CCL  # Marten Transport, Ltd.
 GTM  # ZoomInfo Technologies Inc.
-OPAD  # QuinStreet, Inc.
+MU  # QuinStreet, Inc.
 MGTX  # MeiraGTx Holdings plc
 WBTN  # WEBTOON Entertainment Inc.
 NBR  # Nabors Industries Ltd.
 HFWA  # Heritage Financial Corporation
 STAA  # STAAR Surgical Company
-OPAD  # Saul Centers, Inc.
-EYPT  # EyePoint, Inc.
+MU  # Saul Centers, Inc.
+MU  # EyePoint, Inc.
 OPY  # Oppenheimer Holdings Inc.
-USPH  # U.S. Physical Therapy, Inc.
+MU  # U.S. Physical Therapy, Inc.
 FINV  # FinVolution Group
 UPWK  # Upwork Inc.
 BKSY  # BlackSky Technology Inc.
-MMI  # Marcus & Millichap, Inc.
+MU  # Marcus & Millichap, Inc.
 RDWR  # Radware Ltd.
 BVS  # Bioventus Inc.
 BORR  # Borr Drilling Limited
 DRTS  # Alpha Tau Medical Ltd.
-TRUP  # Trupanion, Inc.
+MU  # Trupanion, Inc.
 IRMD  # IRADIMED CORPORATION
 UVSP  # Univest Financial Corporation
 SPH  # Suburban Propane Partners, L.P.
 LNN  # Lindsay Corporation
 TEN  # Tsakos Energy Navigation Limited
-MUX  # McEwen Inc.
-OPAD  # Corvus Pharmaceuticals, Inc.
+MU  # Corvus Pharmaceuticals, Inc.
 PRCT  # PROCEPT BioRobotics Corporation
 ASM  # Avino Silver & Gold Mines Ltd.
 PSEC  # Prospect Capital Corporation
-AVO  # Mission Produce, Inc.
+MU  # Mission Produce, Inc.
 LAC  # Lithium Americas Corp.
-BLZE  # Backblaze, Inc.
-DFIN  # Donnelley Financial Solutions, Inc.
+MU  # Backblaze, Inc.
+MU  # Donnelley Financial Solutions, Inc.
 CRON  # Cronos Group Inc.
-UPBD  # Upbound Group, Inc.
-NWPX  # NWPX Infrastructure, Inc.
+MU  # Upbound Group, Inc.
+MU  # NWPX Infrastructure, Inc.
 SAFE  # Safehold Inc.
 MCB  # Metropolitan Bank Holding Corp.
-CMP  # Compass Minerals International, Inc.
+MU  # Compass Minerals International, Inc.
 DLX  # Deluxe Corporation
 SIFY  # Sify Technologies Limited
 NBN  # Northeast Bank
@@ -345,58 +346,60 @@ ECVT  # Ecovyst Inc.
 AMTB  # Amerant Bancorp Inc.
 FSBC  # Five Star Bancorp
 IGIC  # International General Insurance Holdings Ltd.
-SCSC  # ScanSource, Inc.
+MU  # ScanSource, Inc.
 NUTX  # Nutex Health Inc.
-ANRO  # Alto Neuroscience, Inc.
+MU  # Alto Neuroscience, Inc.
 TBLA  # Taboola.com Ltd.
 GNK  # Genco Shipping & Trading Limited
-VRTS  # Virtus Investment Partners, Inc.
-EVLV  # Evolv Technologies Holdings, Inc.
-OPAD  # Capitol Federal Financial, Inc.
+MU  # Virtus Investment Partners, Inc.
+MU  # Evolv Technologies Holdings, Inc.
+MU  # Capitol Federal Financial, Inc.
 BOW  # Bowhead Specialty Holdings Inc.
 EVC  # Entravision Communications Corporation
-GSBD  # Goldman Sachs BDC, Inc.
-LXRX  # Lexicon Pharmaceuticals, Inc.
+MU  # Goldman Sachs BDC, Inc.
+MU  # Lexicon Pharmaceuticals, Inc.
 MSEX  # Middlesex Water Company
-CGEM  # Cullinan Therapeutics, Inc.
+MU  # Cullinan Therapeutics, Inc.
 RZLV  # Rezolve AI PLC
-ABR  # Arbor Realty Trust, Inc.
+MU  # Arbor Realty Trust, Inc.
 OI  # O-I Glass, Inc.
+AOSL  # Alpha and Omega Semiconductor Limited
 CSIQ  # Canadian Solar Inc.
-ET  # XPLR Infrastructure, LP
-ESQ  # Esquire Financial Holdings, Inc.
-CEVA  # CEVA, Inc.
-APMD  # Apnimed, Inc.
+XIFR  # XPLR Infrastructure, LP
+MU  # Esquire Financial Holdings, Inc.
+MU  # CEVA, Inc.
+MU  # Apnimed, Inc.
 SVC  # Service Properties Trust
 CRML  # Critical Metals Corp.
-CRAI  # CRA International, Inc.
+MU  # CRA International, Inc.
 BV  # BrightView Holdings, Inc.
-SANA  # Sana Biotechnology, Inc.
+MU  # Sana Biotechnology, Inc.
 ITRN  # Ituran Location and Control Ltd.
 SBR  # Sabine Royalty Trust
-OLMA  # Olema Pharmaceuticals, Inc.
-EQBK  # Equity Bancshares, Inc.
+MU  # Olema Pharmaceuticals, Inc.
+MU  # Equity Bancshares, Inc.
 MBWM  # Mercantile Bank Corporation
+MU  # Horizon Bancorp, Inc.
 TROX  # Tronox Holdings plc
-DAKT  # Daktronics, Inc.
-BFST  # Business First Bancshares, Inc.
-OPAD  # MetroCity Bankshares, Inc.
-DINO  # Sinclair, Inc.
+MU  # Daktronics, Inc.
+MU  # Business First Bancshares, Inc.
+MU  # MetroCity Bankshares, Inc.
+MU  # Sinclair, Inc.
 GPRE  # Green Plains Inc.
-PLOW  # Douglas Dynamics, Inc.
-OPK  # OPKO Health, Inc.
-ASTE  # Astec Industries, Inc.
-GRPN  # Groupon, Inc.
+MU  # Douglas Dynamics, Inc.
+MU  # OPKO Health, Inc.
+MU  # Astec Industries, Inc.
+MU  # Groupon, Inc.
 CCNE  # CNB Financial Corporation
-RHLD  # Resolute Holdings Management, Inc.
-REPL  # Replimune Group, Inc.
+MU  # Resolute Holdings Management, Inc.
+MU  # Replimune Group, Inc.
 NNE  # NANO Nuclear Energy Inc.
 UAMY  # United States Antimony Corporation
 RERE  # ATRenew Inc.
-KBDC  # Kayne Anderson BDC, Inc.
+MU  # Kayne Anderson BDC, Inc.
 CPF  # Central Pacific Financial Corp.
 CIM  # Chimera Investment Corporation
 CSR  # Centerspace
 ENVX  # Enovix Corporation
 NX  # Quanex Building Products Corporation
-OPAD  # Pacira BioSciences, Inc.
+MU  # Pacira BioSciences, Inc.

@@ -2,7 +2,6 @@
 # Kör 'python run_daily.py --market se' för att hämta data och se vilka som
 # faktiskt har tillräcklig historik och omsättning.
 
-2CUREX  # 2cureX
 4C  # 4C Group
 AAC  # AAC Clyde Space
 ABSO  # Absolent Air Care Group
@@ -104,7 +103,6 @@ ENZY  # Enzymatica
 EXPRS2  # ExpreS2ion Biotech Holding
 EXS  # Exsitec Holding
 FERRO  # Ferroamp
-FIRE  # Firefly
 FIRST-B  # First Venture Sweden
 FLEXM  # Flexion Mobile
 FLEXQ  # FlexQube
@@ -237,7 +235,6 @@ QAIR  # QleanAir
 QLIFE  # QLife Holding
 QCORE  # Qlucore
 QSYS  # Qualisys Holding
-RAKE  # Raketech Group Holding
 RPLAN  # Ranplan Group
 REALFI  # Realfiction Holding
 RUG  # RugVista Group
@@ -268,7 +265,6 @@ SPAGO  # Spago Nanomedical
 SPEC  # SpectraCure
 SPEONE  # SpectrumOne
 SPOTR  # Spotr Group
-SPRINT  # Sprint Bioscience
 STIL  # Stille
 SUBGEN  # Subgen AI
 SUMMAS  # Summa Defence Oyj
@@ -283,9 +279,8 @@ TSEC  # Tempest Security
 TENEO  # Teneo AI
 TEQ  # Teqnion
 TERNOR  # Terranor Group
-TINGS-A  # Tingsvalvet Fastighets
+TINGS-B  # Tingsvalvet Fastighets
 TITA-B  # Titania Holding
-TOURN  # Tourn International
 TRAIN-B  # Train Alliance
 TRIBO-B  # Tribox Group
 UNIBAP  # Unibap Space Solutions
