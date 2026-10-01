@@ -1,4 +1,7 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+125,SUMMAS.ST,buy,4.9036,201.0,2026-10-01,open,,,,,,0,
+124,ELIC.ST,buy,2.7089,365.0,2026-10-01,open,,,,,,0,
+123,CFISH.ST,buy,1.776,557.0,2026-10-01,open,,,,,,0,
 122,MINEST.ST,buy,1.0782,917.0,2026-09-30,open,,,,,,0,
 121,FLEXQ.ST,buy,26.956,36.0,2026-09-30,open,,,,,,0,
 120,NXTCL.ST,buy,1.0628,931.0,2026-09-30,filled,2026-10-01,1.0628,1.39,,91,0,
