@@ -1,4 +1,5 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+91,NXTCL.ST,931.0,1.0628,2026-10-01,1.1372,2.473667,open,,,,,,,1.39
 90,SERT.ST,1838.0,0.5376,2026-09-30,0.5752,2.470272,open,,,,,,,2.53
 89,IZAFE-B.ST,3321.0,0.2976,2026-09-30,0.3184,2.470824,open,,,,,,,5.91
 88,BLINC-B.ST,10447.0,0.0946,2026-09-30,0.1012,2.4707155,open,,,,,,,9.09
