@@ -1,4 +1,5 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+126,PROGEN.ST,buy,0.0906,10852.0,2026-10-02,open,,,,,,0,
 125,SUMMAS.ST,buy,4.9036,201.0,2026-10-01,filled,2026-10-02,4.9036,38.82,,93,0,
 124,ELIC.ST,buy,2.7089,365.0,2026-10-01,open,,,,,,0,
 123,CFISH.ST,buy,1.776,557.0,2026-10-01,open,,,,,,0,
