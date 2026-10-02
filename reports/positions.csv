@@ -1,4 +1,7 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+94,TENEO.ST,29687.0,0.0331,2026-10-02,0.0354,2.45659925,open,,,,,,,0.3
+93,SUMMAS.ST,201.0,4.9036,2026-10-02,5.2469,2.464059,open,,,,,,,38.82
+92,MINEST.ST,917.0,1.0782,2026-10-01,1.1537,2.4717735000000003,open,,,,,-5.5833790877647775,,0.58
 91,NXTCL.ST,931.0,1.0628,2026-10-01,1.1372,2.473667,open,,,,,,,1.39
 90,SERT.ST,1838.0,0.5376,2026-09-30,0.5752,2.470272,open,,,,,,,2.53
 89,IZAFE-B.ST,3321.0,0.2976,2026-09-30,0.3184,2.470824,open,,,,,,,5.91
