@@ -1,7 +1,7 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
 126,PROGEN.ST,buy,0.0906,10852.0,2026-10-02,filled,2026-10-05,0.0906,0.66,,96,0,
 125,SUMMAS.ST,buy,4.9036,201.0,2026-10-01,filled,2026-10-02,4.9036,38.82,,93,0,
-124,ELIC.ST,buy,2.7089,365.0,2026-10-01,open,,,,,,0,
+124,ELIC.ST,buy,2.7089,365.0,2026-10-01,filled,2026-10-06,2.7089,0.51,,97,0,
 123,CFISH.ST,buy,1.776,557.0,2026-10-01,open,,,,,,0,
 122,MINEST.ST,buy,1.0782,917.0,2026-09-30,filled,2026-10-01,1.0782,0.58,,92,0,
 121,FLEXQ.ST,buy,26.956,36.0,2026-09-30,open,,,,,,0,
@@ -10,7 +10,7 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 118,SERT.ST,buy,0.5376,1838.0,2026-09-29,filled,2026-09-30,0.5376,2.53,,90,0,
 117,NXTCL.ST,buy,1.0628,929.0,2026-09-29,cancelled,,,,intradagsfall 8.8% - drogs tillbaka,,0,
 116,GIG-SDB.ST,buy,2.0543,481.0,2026-09-29,filled,2026-10-05,2.0543,1.18,,95,0,
-115,VETT.ST,buy,4.8875,202.0,2026-09-29,open,,,,,,0,
+115,VETT.ST,buy,4.8875,202.0,2026-09-29,filled,2026-10-06,4.8875,4.86,,98,0,
 114,IZAFE-B.ST,buy,0.2976,3321.0,2026-09-29,filled,2026-09-30,0.2976,5.91,,89,0,
 113,BLINC-B.ST,buy,0.0946,10447.0,2026-09-29,filled,2026-09-30,0.0946,9.09,,88,0,
 112,GSKR-SDB.ST,buy,21.1925,46.0,2026-09-25,filled,2026-09-28,21.1925,3.27,,85,0,

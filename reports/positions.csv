@@ -1,4 +1,6 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+98,VETT.ST,202.0,4.8875,2026-10-06,5.2296,2.4681875000000004,open,,,,,,,4.86
+97,ELIC.ST,365.0,2.7089,2026-10-06,2.8985,2.47187125,open,,,,,,,0.51
 96,PROGEN.ST,10852.0,0.0906,2026-10-05,0.0969,2.4579779999999998,open,,,,,,,0.66
 95,GIG-SDB.ST,481.0,2.0543,2026-10-05,2.1981,2.47029575,open,,,,,,,1.18
 94,TENEO.ST,29687.0,0.0331,2026-10-02,0.0354,2.45659925,open,,,,,,,0.3
