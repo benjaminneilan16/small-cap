@@ -1,6 +1,6 @@
 # Småbolagsrapport — USA
 
-*Genererad 2026-10-06 01:39 UTC*
+*Genererad 2026-10-07 00:20 UTC*
 
 ## Portfölj
 
@@ -17,11 +17,7 @@
 
 ## Dagens händelser
 
-**Stängda positioner**
-
-| Bolag | Anledning | Resultat | Dagar | Max motgång |
-|---|---|---|---|---|
-| UAMY | TIDIG VARNING | -88 $ | 4 | -12.1 % |
+Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 
 ## Resultat hittills
 
@@ -49,7 +45,7 @@
 
 ## Screener
 
-124 av 208 bolag passar kriterierna.
+123 av 208 bolag passar kriterierna.
 
 | Bolag | Poäng | Dagligt spann | Eff. ratio | Omsättning | Kurs | |
 |---|---|---|---|---|---|---|
