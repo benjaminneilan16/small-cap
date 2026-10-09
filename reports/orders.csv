@@ -1,4 +1,6 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+134,ENVAR.ST,buy,41.76,23.0,2026-10-09,open,,,,,,0,
+133,FREEM.ST,buy,1.702,578.0,2026-10-09,open,,,,,,0,
 132,MIDS.ST,buy,1.2028,817.0,2026-10-08,filled,2026-10-09,1.2028,0.4,,102,0,
 131,QLIFE.ST,buy,1.5245,645.0,2026-10-08,filled,2026-10-09,1.5245,10.13,,103,0,
 130,GIG-SDB.ST,buy,2.0543,478.0,2026-10-08,open,,,,,,0,
