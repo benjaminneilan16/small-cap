@@ -1,6 +1,6 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
-132,MIDS.ST,buy,1.2028,817.0,2026-10-08,open,,,,,,0,
-131,QLIFE.ST,buy,1.5245,645.0,2026-10-08,open,,,,,,0,
+132,MIDS.ST,buy,1.2028,817.0,2026-10-08,filled,2026-10-09,1.2028,0.4,,102,0,
+131,QLIFE.ST,buy,1.5245,645.0,2026-10-08,filled,2026-10-09,1.5245,10.13,,103,0,
 130,GIG-SDB.ST,buy,2.0543,478.0,2026-10-08,open,,,,,,0,
 129,IZAFE-B.ST,buy,0.3196,3100.0,2026-10-07,filled,2026-10-08,0.3196,11.76,,99,0,
 128,BLINC-B.ST,buy,0.0937,10575.0,2026-10-07,open,,,,,,0,
@@ -12,7 +12,7 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 122,MINEST.ST,buy,1.0782,917.0,2026-09-30,filled,2026-10-01,1.0782,0.58,,92,0,
 121,FLEXQ.ST,buy,26.956,36.0,2026-09-30,open,,,,,,0,
 120,NXTCL.ST,buy,1.0628,931.0,2026-09-30,filled,2026-10-01,1.0628,1.39,,91,0,
-119,FREEM.ST,buy,1.7094,578.0,2026-09-30,open,,,,,,0,
+119,FREEM.ST,buy,1.7094,578.0,2026-09-30,filled,2026-10-08,1.7094,0.55,,101,0,
 118,SERT.ST,buy,0.5376,1838.0,2026-09-29,filled,2026-09-30,0.5376,2.53,,90,0,
 117,NXTCL.ST,buy,1.0628,929.0,2026-09-29,cancelled,,,,intradagsfall 8.8% - drogs tillbaka,,0,
 116,GIG-SDB.ST,buy,2.0543,481.0,2026-09-29,filled,2026-10-05,2.0543,1.18,,95,0,
