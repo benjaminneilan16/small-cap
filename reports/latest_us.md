@@ -1,19 +1,19 @@
 # Småbolagsrapport — USA
 
-*Genererad 2026-10-09 00:57 UTC*
+*Genererad 2026-10-10 00:28 UTC*
 
 ## Portfölj
 
 | | |
 |---|---|
-| Totalt värde | 46,511 $ |
-| Varav kontant | 28,702 $ |
-| Avkastning | -6.98 % |
-| Exponering | 38 % (tak 30 %) |
-| Kapital i vila | 62 % |
-| Öppna positioner | 19 |
+| Totalt värde | 46,283 $ |
+| Varav kontant | 30,389 $ |
+| Avkastning | -7.43 % |
+| Exponering | 34 % (tak 30 %) |
+| Kapital i vila | 66 % |
+| Öppna positioner | 17 |
 
-> ⚠️ Exponeringen (38 %) ligger nära taket (30 %). Få eller inga nya ordrar läggs förrän positioner stängs och frigör kapital.
+> ⚠️ Exponeringen (34 %) ligger nära taket (30 %). Få eller inga nya ordrar läggs förrän positioner stängs och frigör kapital.
 
 ## Dagens händelser
 
@@ -21,84 +21,81 @@
 
 | Bolag | Anledning | Resultat | Dagar | Max motgång |
 |---|---|---|---|---|
-| ASM | TIDIG VARNING | -88 $ | 13 | -10.7 % |
-| TMC | TIDIG VARNING | -113 $ | 12 | -11.4 % |
+| POET | TIDIG VARNING | -89 $ | 14 | -11.8 % |
+| RZLV | STOP LOSS | -147 $ | 13 | -15.8 % |
 
 ## Resultat hittills
 
 | | |
 |---|---|
-| Avslutade affärer | 72 |
-| Resultat | -3,112 $ |
-| Vinstandel | 38 % |
+| Avslutade affärer | 74 |
+| Resultat | -3,348 $ |
+| Vinstandel | 36 % |
 | Snittvinst | +64 $ |
 | Snittförlust | -108 $ |
-| Profit factor | 0.36 |
+| Profit factor | 0.34 |
 | Snitt hålltid | 7 dagar |
 
 ### Nyckeltal för strategin
 
 **Fyllnadsgrad: 68.9 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
 
-**Genomsnittlig maximal motgång: -8.2 %** — hur långt ner positionerna gick innan de stängdes. Detta är måttet på adverse selection: blir du systematiskt fylld precis innan det fortsätter ner?
+**Genomsnittlig maximal motgång: -8.3 %** — hur långt ner positionerna gick innan de stängdes. Detta är måttet på adverse selection: blir du systematiskt fylld precis innan det fortsätter ner?
 
 **Genomsnittligt gap vid fyllnad: 2.3 %** — 6 fyllnad(er) hade ett gap över 5 %. Stigande snitt över tid kan betyda att screenern allt oftare fångar fallande knivar snarare än sunda studsar.
 
-**Exit-orsaker:** STOP LOSS (9), MAL NATT (27), TIDIG VARNING (36)
+**Exit-orsaker:** STOP LOSS (10), MAL NATT (27), TIDIG VARNING (37)
 
-> Genomsnittlig maximal motgang -8.2% -- positionerna gar djupt back innan de vander. Det ar market makings grundproblem.
+> Genomsnittlig maximal motgang -8.3% -- positionerna gar djupt back innan de vander. Det ar market makings grundproblem.
 
 ## Screener
 
-127 av 208 bolag passar kriterierna.
+126 av 208 bolag passar kriterierna.
 
 | Bolag | Poäng | Dagligt spann | Eff. ratio | Omsättning | Kurs | |
 |---|---|---|---|---|---|---|
-| CRML | 5.74 | 9.3 % | 0.04 | 68,302,798 $ | 7.06 | |
-| VOR | 5.46 | 7.5 % | 0.007 | 13,665,033 $ | 18.78 | |
-| BKSY | 5.45 | 8.8 % | 0.071 | 34,838,861 $ | 21.85 | |
-| POET | 5.45 | 8.7 % | 0.069 | 73,100,706 $ | 7.42 | |
-| AVLN | 5.29 | 7.8 % | 0.046 | 7,590,950 $ | 25.53 | |
-| NNE | 5.19 | 7.6 % | 0.052 | 49,351,183 $ | 16.01 | |
-| USAS | 5.13 | 6.5 % | 0.003 | 23,879,964 $ | 4.17 | |
-| ABSI | 5.11 | 7.2 % | 0.043 | 17,705,422 $ | 9.22 | |
-| KOS | 5.07 | 6.5 % | 0.017 | 31,265,394 $ | 2.59 | |
-| SGML | 5.00 | 7.8 % | 0.087 | 33,351,630 $ | 9.86 | |
-| IE | 4.90 | 6.4 % | 0.029 | 24,070,161 $ | 9.77 | |
-| PGY | 4.89 | 5.9 % | 0.004 | 54,685,357 $ | 18.14 | |
-| UAMY | 4.83 | 9.5 % | 0.176 | 75,185,772 $ | 3.86 | |
-| TRLV | 4.79 | 7.5 % | 0.105 | 3,117,004 $ | 10.78 | |
-| TMC | 4.73 | 6.6 % | 0.073 | 30,846,463 $ | 3.52 | |
-| RZLV | 4.70 | 7.1 % | 0.102 | 36,771,793 $ | 2.08 | |
-| ASM | 4.68 | 6.1 % | 0.05 | 27,844,459 $ | 5.32 | |
-| CMPS | 4.68 | 6.5 % | 0.072 | 22,614,346 $ | 11.69 | |
-| BORR | 4.53 | 5.0 % | 0.019 | 25,833,026 $ | 4.30 | |
-| NUTX | 4.51 | 6.8 % | 0.1 | 20,668,038 $ | 213.02 | |
+| CRML | 5.80 | 9.2 % | 0.03 | 67,839,864 $ | 6.83 | |
+| BKSY | 5.53 | 8.8 % | 0.059 | 34,636,343 $ | 21.16 | |
+| POET | 5.47 | 8.6 % | 0.062 | 73,100,706 $ | 7.04 | |
+| AVLN | 5.40 | 7.8 % | 0.029 | 7,615,844 $ | 25.72 | 📊 |
+| VOR | 5.33 | 7.6 % | 0.028 | 13,726,522 $ | 19.13 | |
+| ABSI | 5.16 | 7.2 % | 0.035 | 17,705,422 $ | 8.94 | |
+| NNE | 5.11 | 7.6 % | 0.063 | 48,978,654 $ | 15.26 | |
+| SGML | 5.09 | 7.7 % | 0.072 | 33,029,447 $ | 9.56 | |
+| USAS | 5.01 | 6.4 % | 0.02 | 23,879,964 $ | 4.24 | |
+| UAMY | 4.98 | 9.5 % | 0.153 | 72,860,837 $ | 3.72 | |
+| PGY | 4.86 | 5.9 % | 0.008 | 54,463,964 $ | 18.26 | |
+| TRLV | 4.79 | 7.5 % | 0.106 | 3,117,004 $ | 10.37 | |
+| ASM | 4.76 | 6.0 % | 0.036 | 27,780,543 $ | 5.46 | |
+| IE | 4.75 | 6.3 % | 0.049 | 23,948,094 $ | 9.66 | |
+| KOS | 4.71 | 6.5 % | 0.069 | 31,278,811 $ | 2.69 | |
+| TMC | 4.71 | 6.6 % | 0.075 | 30,705,163 $ | 3.43 | |
+| CMPS | 4.64 | 6.5 % | 0.078 | 22,891,168 $ | 11.47 | |
+| NUTX | 4.61 | 6.8 % | 0.082 | 20,713,353 $ | 205.01 | |
+| CNL | 4.59 | 5.3 % | 0.028 | 920,392 $ | 11.63 | |
+| RZLV | 4.59 | 7.1 % | 0.119 | 36,771,793 $ | 1.90 | |
 
 ### Varningar
 
-- **CRML**: Aktien ar ner 52% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **NNE**: Aktien ar ner 66% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **UAMY**: Aktien ar ner 65% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **TMC**: Aktien ar ner 62% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **RZLV**: Aktien ar ner 64% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **UPWK**: Aktien ar ner 52% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **FMC**: Aktien ar ner 70% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **GTM**: Aktien ar ner 65% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **LAC**: Aktien ar ner 70% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **ENVX**: Aktien ar ner 80% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **CRML**: Aktien ar ner 54% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **NNE**: Aktien ar ner 67% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **UAMY**: Aktien ar ner 70% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **TMC**: Aktien ar ner 61% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **RZLV**: Aktien ar ner 63% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **GTM**: Aktien ar ner 62% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **FMC**: Aktien ar ner 69% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **LAC**: Aktien ar ner 68% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **ENVX**: Aktien ar ner 79% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **WD**: Aktien ar ner 58% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
 
 ### 📊 Volymspikar (möjlig nyhetshändelse)
 
 Onormal volym kombinerat med stort prisfall — kan betyda att något hänt (nyheter, sektor-rörelse) snarare än normal oscillation. Kolla gärna manuellt innan du litar på fyndet.
 
-- **IAUX**: 3.0x normal volym, -5.7 % samma dag
-- **ATLC**: 3.0x normal volym, +2.9 % samma dag
-- **NVCR**: 3.1x normal volym, -1.2 % samma dag
-- **WS**: 4.4x normal volym, -1.7 % samma dag
-- **THRM**: 3.5x normal volym, -1.9 % samma dag
-- **TGLS**: 3.4x normal volym, +4.0 % samma dag
-- **CYD**: 4.3x normal volym, -10.5 % samma dag
+- **AVLN**: 3.5x normal volym, +1.6 % samma dag
+- **AFYA**: 4.4x normal volym, +1.6 % samma dag
+- **THRM**: 3.8x normal volym, -1.0 % samma dag
+- **DXC**: 3.1x normal volym, +2.7 % samma dag
 
 ---
 
