@@ -1,4 +1,13 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+148,FLUO.ST,buy,30.144,32.0,2026-10-13,open,,,,,,0,
+147,EXPRS2.ST,buy,1.0368,945.0,2026-10-13,open,,,,,,0,
+146,AEC.ST,buy,1.127,870.0,2026-10-13,open,,,,,,0,
+145,FLEXQ.ST,buy,25.76,38.0,2026-10-13,open,,,,,,0,
+144,WYLD.ST,buy,0.2112,4643.0,2026-10-13,open,,,,,,0,
+143,PROGEN.ST,buy,0.1013,9681.0,2026-10-13,open,,,,,,0,
+142,ALZ.ST,buy,0.4444,2206.0,2026-10-13,open,,,,,,0,
+141,NXTCL.ST,buy,0.9245,1060.0,2026-10-13,open,,,,,,0,
+140,VETT.ST,buy,3.6478,268.0,2026-10-13,open,,,,,,0,
 139,BRAVE.ST,buy,2.4656,398.0,2026-10-13,open,,,,,,0,
 138,GSKR-SDB.ST,buy,21.1925,46.0,2026-10-13,open,,,,,,0,
 137,IZAFE-B.ST,buy,0.2736,3593.0,2026-10-13,open,,,,,,0,
