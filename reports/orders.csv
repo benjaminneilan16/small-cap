@@ -3,7 +3,7 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 138,GSKR-SDB.ST,buy,21.1925,46.0,2026-10-13,open,,,,,,0,
 137,IZAFE-B.ST,buy,0.2736,3593.0,2026-10-13,open,,,,,,0,
 136,CFISH.ST,buy,2.0352,483.0,2026-10-13,open,,,,,,0,
-135,VETT.ST,buy,4.2375,231.0,2026-10-13,open,,,,,,0,
+135,VETT.ST,buy,4.2375,231.0,2026-10-13,cancelled,,,,intradagsfall 8.4% - drogs tillbaka,,0,
 134,ENVAR.ST,buy,41.76,23.0,2026-10-09,open,,,,,,0,
 133,FREEM.ST,buy,1.702,578.0,2026-10-09,open,,,,,,0,
 132,MIDS.ST,buy,1.2028,817.0,2026-10-08,filled,2026-10-09,1.2028,0.4,,102,0,
