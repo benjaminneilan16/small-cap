@@ -1,4 +1,8 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+152,GAPW-B.ST,buy,12.4752,78.0,2026-10-14,open,,,,,,0,
+151,IMPC.ST,buy,2.9053,338.0,2026-10-14,open,,,,,,0,
+150,EXPRS2.ST,buy,0.9888,993.0,2026-10-14,open,,,,,,0,
+149,MODTX.ST,buy,0.3535,2778.0,2026-10-14,open,,,,,,0,
 148,FLUO.ST,buy,30.144,32.0,2026-10-13,open,,,,,,0,
 147,EXPRS2.ST,buy,1.0368,945.0,2026-10-13,cancelled,,,,intradagsfall 11.8% - drogs tillbaka,,0,
 146,AEC.ST,buy,1.127,870.0,2026-10-13,open,,,,,,0,
