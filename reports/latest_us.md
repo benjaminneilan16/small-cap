@@ -1,6 +1,6 @@
 # Småbolagsrapport — USA
 
-*Genererad 2026-10-13 02:25 UTC*
+*Genererad 2026-10-14 00:06 UTC*
 
 ## Portfölj
 
@@ -17,13 +17,7 @@
 
 ## Dagens händelser
 
-**Stängda positioner**
-
-| Bolag | Anledning | Resultat | Dagar | Max motgång |
-|---|---|---|---|---|
-| MGTX | TIDIG VARNING | -85 $ | 18 | -9.2 % |
-| NNE | TIDIG VARNING | -126 $ | 18 | -13.3 % |
-| NEXA | MAL NATT | +64 $ | 11 | -5.7 % |
+Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 
 ## Resultat hittills
 
