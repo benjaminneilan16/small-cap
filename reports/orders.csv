@@ -1,6 +1,6 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
 148,FLUO.ST,buy,30.144,32.0,2026-10-13,open,,,,,,0,
-147,EXPRS2.ST,buy,1.0368,945.0,2026-10-13,open,,,,,,0,
+147,EXPRS2.ST,buy,1.0368,945.0,2026-10-13,cancelled,,,,intradagsfall 11.8% - drogs tillbaka,,0,
 146,AEC.ST,buy,1.127,870.0,2026-10-13,open,,,,,,0,
 145,FLEXQ.ST,buy,25.76,38.0,2026-10-13,open,,,,,,0,
 144,WYLD.ST,buy,0.2112,4643.0,2026-10-13,filled,2026-10-14,0.2112,2.46,,109,0,
