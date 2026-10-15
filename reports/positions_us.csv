@@ -1,4 +1,5 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+92,CRML,153.0,6.0096,2026-10-15,6.4303,1.5,open,,,,,,,1.82
 91,RXT,259.0,3.7168,2026-10-01,3.977,1.5,open,,,,,,,0.45
 90,UAMY,218.0,4.3776,2026-09-28,4.684,3.0,closed,3.990000009536743,2026-10-02,TIDIG VARNING,-87.49679792099005,-12.052268260403686,4,2.69
 89,NEXA,77.0,12.3937,2026-09-28,13.2613,3.0316801499999997,closed,13.2613,2026-10-09,MAL NATT,63.77351984999984,-5.67788811748469,11,4.79
