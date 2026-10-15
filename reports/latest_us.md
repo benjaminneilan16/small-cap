@@ -1,33 +1,25 @@
 # Småbolagsrapport — USA
 
-*Genererad 2026-10-14 23:38 UTC*
+*Genererad 2026-10-15 23:32 UTC*
 
 ## Portfölj
 
 | | |
 |---|---|
-| Totalt värde | 46,169 $ |
-| Varav kontant | 34,804 $ |
-| Avkastning | -7.66 % |
-| Exponering | 25 % (tak 30 %) |
-| Kapital i vila | 75 % |
-| Öppna positioner | 12 |
+| Totalt värde | 46,311 $ |
+| Varav kontant | 33,884 $ |
+| Avkastning | -7.38 % |
+| Exponering | 27 % (tak 30 %) |
+| Kapital i vila | 73 % |
+| Öppna positioner | 13 |
 
 ## Dagens händelser
 
-**Stängda positioner**
-
-| Bolag | Anledning | Resultat | Dagar | Max motgång |
-|---|---|---|---|---|
-| SIFY | TIDIG VARNING | -98 $ | 20 | -11.1 % |
-| CNL | TIDIG VARNING | -119 $ | 16 | -13.4 % |
-
-**2 nya köpordrar lagda**
+**1 nya köpordrar lagda**
 
 | Bolag | Limitpris | Antal |
 |---|---|---|
-| CRML | 6.01 | 153 |
-| ABSI | 8.04 | 114 |
+| VOR | 18.28 | 50 |
 
 ## Resultat hittills
 
@@ -43,7 +35,7 @@
 
 ### Nyckeltal för strategin
 
-**Fyllnadsgrad: 68.9 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
+**Fyllnadsgrad: 69.2 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
 
 **Genomsnittlig maximal motgång: -8.5 %** — hur långt ner positionerna gick innan de stängdes. Detta är måttet på adverse selection: blir du systematiskt fylld precis innan det fortsätter ner?
 
@@ -55,51 +47,50 @@
 
 ## Screener
 
-123 av 208 bolag passar kriterierna.
+121 av 208 bolag passar kriterierna.
 
 | Bolag | Poäng | Dagligt spann | Eff. ratio | Omsättning | Kurs | |
 |---|---|---|---|---|---|---|
-| CRML | 5.97 | 9.1 % | 0.004 | 65,286,423 $ | 6.26 | |
-| ABSI | 5.27 | 7.2 % | 0.017 | 17,705,422 $ | 8.74 | |
-| VOR | 5.26 | 7.5 % | 0.037 | 13,755,700 $ | 18.75 | |
-| BKSY | 5.08 | 8.6 % | 0.117 | 33,615,641 $ | 17.65 | |
-| TRLV | 5.07 | 7.4 % | 0.061 | 3,121,658 $ | 9.97 | |
-| DRTS | 4.98 | 6.1 % | 0.009 | 3,841,332 $ | 13.50 | |
-| SGML | 4.97 | 7.6 % | 0.084 | 31,871,423 $ | 8.49 | |
-| POET | 4.94 | 8.5 % | 0.132 | 72,218,713 $ | 5.84 | |
-| AVLN | 4.91 | 7.7 % | 0.096 | 7,580,768 $ | 23.69 | |
-| CMPS | 4.90 | 6.5 % | 0.04 | 23,592,936 $ | 11.27 | |
-| USAS | 4.85 | 6.4 % | 0.041 | 23,879,964 $ | 3.70 | |
-| PGY | 4.80 | 5.8 % | 0.018 | 52,791,847 $ | 16.81 | |
-| NNE | 4.80 | 7.5 % | 0.105 | 48,003,426 $ | 13.01 | |
-| KOS | 4.79 | 6.5 % | 0.056 | 31,265,394 $ | 2.71 | |
-| NEXA | 4.71 | 5.3 % | 0.007 | 7,740,811 $ | 12.65 | |
-| IE | 4.68 | 6.2 % | 0.057 | 23,832,874 $ | 8.19 | |
-| IAUX | 4.55 | 5.2 % | 0.03 | 12,384,524 $ | 1.44 | |
-| VZLA | 4.55 | 5.0 % | 0.019 | 22,854,092 $ | 3.17 | |
-| UAMY | 4.54 | 9.4 % | 0.218 | 70,625,819 $ | 2.79 | |
-| NUTX | 4.54 | 6.7 % | 0.084 | 21,738,180 $ | 196.91 | |
+| CRML | 5.87 | 9.1 % | 0.02 | 65,286,423 $ | 6.95 | |
+| VOR | 5.47 | 7.5 % | 0.005 | 13,755,700 $ | 19.34 | |
+| BKSY | 5.33 | 8.6 % | 0.08 | 33,327,415 $ | 18.45 | |
+| POET | 5.24 | 8.5 % | 0.088 | 71,481,238 $ | 6.01 | |
+| ABSI | 5.21 | 7.2 % | 0.026 | 17,705,422 $ | 8.88 | |
+| SGML | 5.15 | 7.6 % | 0.058 | 31,871,423 $ | 8.79 | |
+| KOS | 5.12 | 6.5 % | 0.006 | 31,265,394 $ | 2.68 | |
+| CMPS | 5.07 | 6.5 % | 0.013 | 23,614,341 $ | 11.62 | |
+| AVLN | 5.03 | 7.5 % | 0.072 | 7,570,585 $ | 24.64 | |
+| DRTS | 4.97 | 6.1 % | 0.008 | 3,911,511 $ | 13.16 | |
+| IE | 4.93 | 6.2 % | 0.019 | 23,780,789 $ | 8.73 | |
+| USAS | 4.92 | 6.4 % | 0.03 | 23,680,829 $ | 3.86 | |
+| NNE | 4.90 | 7.5 % | 0.09 | 47,648,632 $ | 13.59 | |
+| TRLV | 4.80 | 7.4 % | 0.098 | 3,139,710 $ | 10.30 | |
+| PGY | 4.74 | 5.8 % | 0.027 | 52,330,641 $ | 17.91 | |
+| RZLV | 4.71 | 7.1 % | 0.1 | 36,226,265 $ | 1.86 | |
+| MU | 4.60 | 5.1 % | 0.016 | 20,497,690,853 $ | 931.24 | |
+| PRCT | 4.58 | 5.3 % | 0.012 | 33,341,332 $ | 18.15 | |
+| VZLA | 4.58 | 5.0 % | 0.016 | 22,683,564 $ | 3.32 | |
+| UAMY | 4.54 | 9.3 % | 0.219 | 70,037,880 $ | 2.78 | |
 
 ### Varningar
 
-- **CRML**: Aktien ar ner 68% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **NNE**: Aktien ar ner 73% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **UAMY**: Aktien ar ner 78% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **RZLV**: Aktien ar ner 66% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **TMC**: Aktien ar ner 70% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **GTM**: Aktien ar ner 62% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **AMSC**: Aktien ar ner 59% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **FMC**: Aktien ar ner 73% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **LAC**: Aktien ar ner 72% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **ENVX**: Aktien ar ner 79% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **CRML**: Aktien ar ner 67% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **NNE**: Aktien ar ner 72% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **RZLV**: Aktien ar ner 62% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **UAMY**: Aktien ar ner 75% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **TMC**: Aktien ar ner 67% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **WBTN**: Aktien ar ner 51% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **AMSC**: Aktien ar ner 55% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **LAC**: Aktien ar ner 67% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **ENVX**: Aktien ar ner 76% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **GTM**: Aktien ar ner 60% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
 
 ### 📊 Volymspikar (möjlig nyhetshändelse)
 
 Onormal volym kombinerat med stort prisfall — kan betyda att något hänt (nyheter, sektor-rörelse) snarare än normal oscillation. Kolla gärna manuellt innan du litar på fyndet.
 
-- **PWP**: 3.2x normal volym, -17.8 % samma dag
-- **GHM**: 3.9x normal volym, -2.8 % samma dag
-- **FUN**: 3.2x normal volym, -10.2 % samma dag
+- **FUN**: 3.4x normal volym, -5.0 % samma dag
+- **FMC**: 7.3x normal volym, +9.8 % samma dag
 
 ---
 
