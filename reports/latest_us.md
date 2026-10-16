@@ -1,6 +1,6 @@
 # Småbolagsrapport — USA Blue chips
 
-*Genererad 2026-10-16 10:45 UTC*
+*Genererad 2026-10-16 12:22 UTC*
 
 ## Portfölj
 
@@ -9,32 +9,32 @@
 | Totalt värde | 50,000 $ |
 | Varav kontant | 50,000 $ |
 | Avkastning | +0.00 % |
-| Exponering | 0 % (tak 45 %) |
+| Exponering | 0 % (tak 60 %) |
 | Kapital i vila | 100 % |
 | Öppna positioner | 0 |
 
 ## Dagens händelser
 
-**17 nya köpordrar lagda**
+**16 nya köpordrar lagda**
 
 | Bolag | Limitpris | Antal |
 |---|---|---|
-| AMD | 539.74 | 2 |
-| MU | 909.65 | 1 |
-| INTC | 91.56 | 16 |
-| PANW | 366.46 | 4 |
-| QCOM | 173.71 | 8 |
-| NVDA | 208.54 | 7 |
-| PYPL | 55.78 | 26 |
-| GM | 82.42 | 18 |
-| ADI | 395.86 | 3 |
-| TXN | 275.11 | 5 |
-| CSCO | 105.46 | 14 |
-| GOOGL | 346.94 | 4 |
-| LLY | 1201.55 | 1 |
-| BMY | 60.15 | 24 |
-| AMZN | 248.44 | 6 |
-| ... | +2 till | |
+| DE | 624.64 | 3 |
+| NOW | 142.63 | 14 |
+| UNH | 394.78 | 5 |
+| CL | 92.52 | 21 |
+| MMM | 163.26 | 12 |
+| ELV | 411.29 | 4 |
+| VRTX | 488.40 | 4 |
+| PGR | 210.53 | 9 |
+| MDLZ | 62.40 | 32 |
+| UNP | 277.16 | 7 |
+| JNJ | 244.92 | 8 |
+| ABT | 103.25 | 19 |
+| META | 707.25 | 2 |
+| ABNB | 167.31 | 11 |
+| TGT | 155.47 | 12 |
+| ... | +1 till | |
 
 ## Resultat hittills
 
