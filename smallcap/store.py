@@ -167,6 +167,8 @@ def init(market: str = "se"):
     with connect(market) as c:
         c.executescript(SCHEMA)
         _migrate(c)
+    if market in ("se", "us"):
+        ensure_strategy(market)
 
 
 def _migrate(c):
@@ -185,15 +187,84 @@ def _migrate(c):
                   "INTEGER NOT NULL DEFAULT 0")
     if "original_limit_price" not in existing:
         c.execute("ALTER TABLE orders ADD COLUMN original_limit_price REAL")
+    acc_cols = {row["name"] for row in
+                c.execute("PRAGMA table_info(account)").fetchall()}
+    if "strategy_version" not in acc_cols:
+        c.execute("ALTER TABLE account ADD COLUMN strategy_version TEXT")
+
+
+def ensure_strategy(market: str):
+    """
+    Byter en marknads strategi rent: om kontots strategy_version inte
+    matchar config.MARKETS[market]["strategy_version"] arkiveras alla
+    gamla ordrar/positioner till reports/archive/ och kontot nollstalls.
+
+    Ett konto utan version raknas som "smallcap-1" (den ursprungliga
+    strategin), sa Sverige paverkas inte, medan USA (nu "bluechip-1")
+    nollstalls EN gang vid forsta korningen efter bytet.
+    """
+    import csv
+    from datetime import datetime, timezone
+    from . import config
+
+    cfg = config.get_config(market)
+    with connect(market) as c:
+        acc = c.execute("SELECT * FROM account WHERE id = 1").fetchone()
+        if acc is None:
+            return
+        current = acc["strategy_version"] or "smallcap-1"
+        if current == cfg.strategy_version:
+            if not acc["strategy_version"]:
+                c.execute("UPDATE account SET strategy_version = ? WHERE id = 1",
+                          (current,))
+            return
+
+        # --- arkivera, sedan nollstall ---
+        archive_dir = config.ROOT / "reports" / "archive"
+        archive_dir.mkdir(parents=True, exist_ok=True)
+        stamp = datetime.now(timezone.utc).strftime("%Y%m%d")
+        for table in ("orders", "positions"):
+            rows = c.execute(f"SELECT * FROM {table}").fetchall()
+            if not rows:
+                continue
+            path = archive_dir / f"{market}_{current}_{table}_{stamp}.csv"
+            with open(path, "w", newline="", encoding="utf-8") as f:
+                w = csv.writer(f)
+                w.writerow(rows[0].keys())
+                for r in rows:
+                    w.writerow(tuple(r))
+        final = acc["cash"]
+        c.execute("DELETE FROM orders")
+        c.execute("DELETE FROM positions")
+        c.execute("DELETE FROM runs")
+        c.execute("DELETE FROM intraday_bars")
+        c.execute(
+            "INSERT OR REPLACE INTO account (id, cash, starting_capital, "
+            "created_at, strategy_version) VALUES (1, ?, ?, ?, ?)",
+            (cfg.starting_capital, cfg.starting_capital,
+             datetime.now(timezone.utc).isoformat(), cfg.strategy_version),
+        )
+        c.execute(
+            "INSERT INTO runs (run_at, kind, total_value, note) VALUES (?, 'reset', ?, ?)",
+            (datetime.now(timezone.utc).isoformat(), cfg.starting_capital,
+             f"Strategibyte {current} -> {cfg.strategy_version}; "
+             f"gammal kassa vid byte: {final:.2f}"),
+        )
+
+
+def _version(market: str) -> str:
+    from . import config
+    return config.get_config(market).strategy_version
 
 
 def init_account(capital: float, market: str = "se"):
     from datetime import datetime, timezone
     with connect(market) as c:
         c.execute(
-            "INSERT OR IGNORE INTO account (id, cash, starting_capital, created_at) "
-            "VALUES (1, ?, ?, ?)",
-            (capital, capital, datetime.now(timezone.utc).isoformat()),
+            "INSERT OR IGNORE INTO account (id, cash, starting_capital, created_at, "
+            "strategy_version) VALUES (1, ?, ?, ?, ?)",
+            (capital, capital, datetime.now(timezone.utc).isoformat(),
+             _version(market)),
         )
 
 
@@ -204,9 +275,10 @@ def reset_account(capital: float, market: str = "se"):
         c.execute("DELETE FROM positions")
         c.execute("DELETE FROM runs")
         c.execute(
-            "INSERT OR REPLACE INTO account (id, cash, starting_capital, created_at) "
-            "VALUES (1, ?, ?, ?)",
-            (capital, capital, datetime.now(timezone.utc).isoformat()),
+            "INSERT OR REPLACE INTO account (id, cash, starting_capital, created_at, "
+            "strategy_version) VALUES (1, ?, ?, ?, ?)",
+            (capital, capital, datetime.now(timezone.utc).isoformat(),
+             _version(market)),
         )
 
 

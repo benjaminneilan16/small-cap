@@ -1,405 +1,108 @@
-# Auto-genererad av build_universe.py --market us
-# Kör 'python run_daily.py --market us' för att hämta data och se vilka som
-# faktiskt har tillräcklig historik och omsättning.
+# Blue chips (USA) -- stora, likvida bolag med tata spreadar.
+# Kurerad lista, byggs INTE om automatiskt. Lagg till/ta bort rader fritt.
+# Ticker  # Foretag
 
-LIFE  # Ethos Technologies Inc.
-ZD  # Ziff Davis, Inc.
-TMC  # TMC the metals company Inc.
-MU  # Alamar Biosciences, Inc.
-MU  # Live Oak Bancshares, Inc.
-FLOC  # Flowco Holdings Inc.
-MU  # Innovex International, Inc.
-NBTX  # Nanobiotix S.A.
-FSUN  # FirstSun Capital Bancorp
-TGLS  # Tecnoglass Holdings Inc.
-LPG  # Dorian LPG Ltd.
-MU  # SolarEdge Technologies, Inc.
-WB  # Weibo Corporation
-WS  # Worthington Steel, Inc.
-MU  # Republic Bancorp, Inc.
-MU  # Global Net Lease, Inc.
-MU  # A10 Networks, Inc.
-CHA  # Chagee Holdings Limited
-MU  # Vertex, Inc.
-ATEX  # Anterix Inc.
-MU  # Alpha Metallurgical Resources, Inc.
-EVCM  # EverCommerce Inc.
-EPAC  # Enerpac Tool Group Corp.
-MU  # Agios Pharmaceuticals, Inc.
-MU  # Photronics, Inc.
-MU  # Braveheart Bio, Inc.
-MU  # Xenia Hotels & Resorts, Inc.
-ALNT  # Allient Inc.
-OCFC  # OceanFirst Financial Corp.
-NVCR  # NovoCure Limited
-MU  # MasterBrand, Inc.
-XPRO  # Expro Ltd
-GCT  # GigaCloud Technology Inc.
-MU  # SmartStop Self Storage REIT, Inc.
-MU  # German American Bancorp, Inc.
-CTS  # CTS Corporation
-MU  # Sonida Senior Living, Inc.
-MU  # The Boston Beer Company, Inc.
-MU  # Forte Biosciences, Inc.
-VSTS  # Vestis Corporation
-CENT  # Central Garden & Pet Company
-IMOS  # ChipMOS TECHNOLOGIES INC.
-NEXA  # Nexa Resources S.A.
-MU  # Strategic Education, Inc.
-WKC  # World Kinect Corporation
-MU  # LeMaitre Vascular, Inc.
-MU  # Weis Markets, Inc.
-PAX  # Patria Investments Limited
-NBHC  # National Bank Holdings Corporation
-GT  # The Goodyear Tire & Rubber Company
-MU  # Sonos, Inc.
-GEL  # Genesis Energy, L.P.
-BCAX  # Bicara Therapeutics Inc.
-MU  # Generate Biomedicines, Inc.
-TCBK  # TriCo Bancshares
-CMPS  # COMPASS Pathways plc
-MU  # Pathward Financial, Inc.
-MU  # Syndax Pharmaceuticals, Inc.
-MU  # Sixth Street Specialty Lending, Inc.
-MU  # Triumph Financial, Inc.
-MU  # Aeva Technologies, Inc.
-MU  # Via Transportation, Inc.
-MU  # National Vision Holdings, Inc.
-MU  # Porch Group, Inc.
-MU  # S&T Bancorp, Inc.
-HLMN  # Hillman Solutions Corp.
-OPRA  # Opera Limited
-MU  # Hope Bancorp, Inc.
-NEXT  # NextDecade Corporation
-PRGO  # Perrigo Company plc
-MU  # Dime Commercial Bancshares, Inc.
-AIN  # Albany International Corp.
-CYD  # China Yuchai International Limited
-PGY  # Pagaya Technologies Ltd.
-HUN  # Huntsman Corporation
-MU  # Sarepta Therapeutics, Inc.
-MU  # American Assets Trust, Inc.
-CMRE  # Costamare Inc.
-MU  # Astrana Health, Inc.
-EFC  # Ellington Financial Inc.
-PRGS  # Progress Software Corporation
-BY  # Byline Bancorp, Inc.
-FTRE  # Fortrea Holdings Inc.
-MU  # Septerna, Inc.
-MU  # CBL & Associates Properties, Inc.
-IE  # Ivanhoe Electric Inc.
-MU  # Turning Point Brands, Inc.
-CPRI  # Capri Holdings Limited
-MU  # Inspire Medical Systems, Inc.
-ARCO  # Arcos Dorados Holdings Inc.
-MU  # Digital Turbine, Inc.
-DXC  # DXC Technology Company
-MU  # Amprius Technologies, Inc.
-IMCR  # Immunocore Holdings plc
-MU  # Recursion Pharmaceuticals, Inc.
-MU  # Revolve Group, Inc.
-BL  # BlackLine, Inc.
-GLP  # Global Partners LP
-MU  # EZCORP, Inc.
-JJSF  # J&J Snack Foods Corp.
-TRIN  # Trinity Capital Inc.
-MU  # Wolfspeed, Inc.
-MU  # PROG Holdings, Inc.
-MU  # ICF International, Inc.
-MU  # QCR Holdings, Inc.
-MU  # Frontier Group Holdings, Inc.
-USAS  # Americas Gold and Silver Corporation
-LZB  # La-Z-Boy Incorporated
-ZYME  # Zymeworks Inc.
-TRLV  # Trulieve Cannabis Corp.
-KMPR  # Kemper Corporation
-MU  # Omnicell, Inc.
-MU  # AnaptysBio, Inc.
-NOMD  # Nomad Foods Limited
-RLJ  # RLJ Lodging Trust
-FUN  # Six Flags Entertainment Corporation
-QCOM  # Ingles Markets, Incorporated
-MU  # MillerKnoll, Inc.
-MU  # Intellia Therapeutics, Inc.
-FLNG  # FLEX LNG Ltd.
-LILA  # Liberty Latin America Ltd.
-VET  # Vermilion Energy Inc.
-MQ  # Marqeta, Inc.
-MU  # Origin Bancorp, Inc.
-MU  # ANI Pharmaceuticals, Inc.
-MU  # Arlo Technologies, Inc.
-MU  # ConnectOne Bancorp, Inc.
-PWP  # Perella Weinberg Partners
-TH  # Target Hospitality Corp.
-MU  # Ardent Health, Inc.
-MU  # FuelCell Energy, Inc.
-SLVM  # Sylvamo Corporation
-MU  # Innovative Industrial Properties, Inc.
-IDT  # IDT Corporation
-GLOB  # Globant S.A.
-KRP  # Kimbell Royalty Partners, LP
-MU  # Distribution Solutions Group, Inc.
-MU  # Qfin Holdings, Inc.
-MU  # Maravai LifeSciences Holdings, Inc.
-BAND  # Bandwidth Inc.
-MU  # Sprinklr, Inc.
-SFL  # SFL Corporation Ltd.
-MU  # agilon health, inc.
-CSWC  # Capital Southwest Corporation
-MU  # Universal Technical Institute, Inc.
-AI  # C3.ai, Inc.
-AMSC  # American Superconductor Corporation
-MU  # Tyra Biosciences, Inc.
-UROY  # Uranium Royalty Corp.
-MU  # Sally Beauty Holdings, Inc.
-MU  # TWFG, Inc.
-CNXC  # Concentrix Corporation
-MU  # Flowers Foods, Inc.
-MU  # BigBear.ai Holdings, Inc.
-MU  # Tandem Diabetes Care, Inc.
-AZUL  # Azul S.A.
-MU  # Corsair Gaming, Inc.
-MU  # Wolverine World Wide, Inc.
-MU  # Xencor, Inc.
-MU  # Energizer Holdings, Inc.
-POET  # POET Technologies Inc.
-MU  # Coursera, Inc.
-ENOV  # Enovis Corporation
-LKFN  # Lakeland Financial Corporation
-MU  # Global Ship Lease, Inc.
-MU  # Healthcare Services Group, Inc.
-WD  # Walker & Dunlop, Inc.
-MU  # Safety Insurance Group, Inc.
-ABSI  # Absci Corporation
-MU  # Personalis, Inc.
-FOR  # Forestar Group Inc.
-ATLC  # Atlanticus Holdings Corporation
-MU  # Eos Energy Enterprises, Inc.
-MLTX  # MoonLake Immunotherapeutics
-MU  # Harrow, Inc.
-AVLN  # Avalyn Pharma Inc.
-MU  # Shoals Technologies Group, Inc.
-ADNT  # Adient plc
-CCL  # G-III Apparel Group, Ltd.
-GIC  # Global Industrial Company
-MU  # Gibraltar Industries, Inc.
-AMAL  # Amalgamated Financial Corp.
-MU  # Vir Biotechnology, Inc.
-MU  # The RealReal, Inc.
-MU  # Innoviva, Inc.
-SCL  # Stepan Company
-MU  # BJ's Restaurants, Inc.
-SVRA  # Savara Inc.
-MU  # Napco Security Technologies, Inc.
-KOS  # Kosmos Energy Ltd.
-CNMD  # CONMED Corporation
-MU  # Carter's, Inc.
-WEN  # The Wendy's Company
-MU  # The Greenbrier Companies, Inc.
-DMC  # Del Monte Corporation
-WLTH  # Wealthfront Corporation
-MU  # Xeris Biopharma Holdings, Inc.
-TRS  # TriMas Corporation
-PEBO  # Peoples Bancorp Inc.
-MU  # Alphatec Holdings, Inc.
-MU  # ArriVent BioPharma, Inc.
-MU  # Omada Health, Inc.
-MU  # PureCycle Technologies, Inc.
-NRP  # Natural Resource Partners L.P.
-MU  # Helix Energy Solutions Group, Inc.
-MU  # Community Trust Bancorp, Inc.
-REX  # REX American Resources Corporation
-AESI  # Atlas Energy Solutions Inc.
-MU  # Amplitude, Inc.
-YELP  # Yelp Inc.
-MU  # Cadre Holdings, Inc.
-IAUX  # i-80 Gold Corp.
-MU  # Azenta, Inc.
-MU  # Red Cat Holdings, Inc.
-MU  # ORIC Pharmaceuticals, Inc.
-MU  # AMN Healthcare Services, Inc.
-MU  # LGI Homes, Inc.
-BW  # Babcock & Wilcox Enterprises, Inc.
-PAHC  # Phibro Animal Health Corporation
-MU  # XPEL, Inc.
-MU  # Arteris, Inc.
-MU  # Empire State Realty Trust, Inc.
-NAT  # Nordic American Tankers Limited
-WABC  # Westamerica Bancorporation
-MU  # Dream Finders Homes, Inc.
-AGRO  # Adecoagro S.A.
-MU  # The Pennant Group, Inc.
-MU  # Ameresco, Inc.
-MU  # First Mid Bancshares, Inc.
-MU  # Arhaus, Inc.
-ALVO  # Alvotech
-MU  # Schrödinger, Inc.
-MU  # UMH Properties, Inc.
-VTOL  # Bristow Group Inc.
-LSPD  # Lightspeed Commerce Inc.
-PUMP  # ProPetro Holding Corp.
-ODC  # Oil-Dri Corporation of America
-MU  # BellRing Brands, Inc.
-IART  # Integra LifeSciences Holdings Corporation
-SLSR  # Solaris Resources Inc.
-MU  # Aktis Oncology, Inc.
-FMC  # FMC Corporation
-VZLA  # Vizsla Silver Corp.
-WINA  # Winmark Corporation
-MU  # HBT Financial, Inc.
-MNKD  # MannKind Corporation
-MU  # Artivion, Inc.
-MU  # Liquidity Services, Inc.
-DOLE  # Dole plc
-MU  # Novavax, Inc.
-CNL  # Collective Mining Ltd.
-MU  # Willdan Group, Inc.
-GHM  # Graham Corporation
-MU  # Orchid Island Capital, Inc.
-EPC  # Edgewell Personal Care Company
-MSDL  # Morgan Stanley Direct Lending Fund
-MU  # Jade Biosciences, Inc.
-ACVA  # ACV Auctions Inc.
-MU  # Easterly Government Properties, Inc.
-MU  # Inhibrx Biosciences, Inc.
-LINC  # Lincoln Educational Services Corporation
-MU  # Teladoc Health, Inc.
-HLF  # Herbalife Ltd.
-MU  # Old Second Bancorp, Inc.
-MU  # Myers Industries, Inc.
-MU  # Cracker Barrel Old Country Store, Inc.
-WLFC  # Willis Lease Finance Corporation
-HLIT  # Harmonic Inc.
-MU  # Flotek Industries, Inc.
-VOR  # Vor Biopharma Inc.
-MU  # RPC, Inc.
-TWOD  # Two Harbors Investment Corp.
-NVGS  # Navigator Holdings Ltd.
-SGML  # Sigma Lithium Corporation
-THRM  # Gentherm Incorporated
-UVV  # Universal Corporation
-MU  # Seaport Therapeutics, Inc.
-MU  # Tripadvisor, Inc.
-MU  # TETRA Technologies, Inc.
-TNC  # Tennant Company
-EPD  # Dorchester Minerals, L.P.
-MU  # Sharplink, Inc.
-PFBC  # Preferred Bank
-MU  # Certara, Inc.
-MU  # Lightwave Logic, Inc.
-MU  # Unusual Machines, Inc.
-MU  # GoodRx Holdings, Inc.
-MU  # Rackspace Technology, Inc.
-MU  # National Healthcare Properties, Inc.
-LADR  # Ladder Capital Corp
-AFYA  # Afya Limited
-MU  # Clear Channel Outdoor Holdings, Inc.
-MU  # Universal Insurance Holdings, Inc.
-MU  # Cricut, Inc.
-MU  # Eton Pharmaceuticals, Inc.
-CCL  # Marten Transport, Ltd.
-GTM  # ZoomInfo Technologies Inc.
-MU  # QuinStreet, Inc.
-MGTX  # MeiraGTx Holdings plc
-WBTN  # WEBTOON Entertainment Inc.
-NBR  # Nabors Industries Ltd.
-HFWA  # Heritage Financial Corporation
-STAA  # STAAR Surgical Company
-MU  # Saul Centers, Inc.
-MU  # EyePoint, Inc.
-OPY  # Oppenheimer Holdings Inc.
-MU  # U.S. Physical Therapy, Inc.
-FINV  # FinVolution Group
-UPWK  # Upwork Inc.
-BKSY  # BlackSky Technology Inc.
-MU  # Marcus & Millichap, Inc.
-RDWR  # Radware Ltd.
-BVS  # Bioventus Inc.
-BORR  # Borr Drilling Limited
-DRTS  # Alpha Tau Medical Ltd.
-MU  # Trupanion, Inc.
-IRMD  # IRADIMED CORPORATION
-UVSP  # Univest Financial Corporation
-SPH  # Suburban Propane Partners, L.P.
-LNN  # Lindsay Corporation
-TEN  # Tsakos Energy Navigation Limited
-MU  # Corvus Pharmaceuticals, Inc.
-PRCT  # PROCEPT BioRobotics Corporation
-ASM  # Avino Silver & Gold Mines Ltd.
-PSEC  # Prospect Capital Corporation
-MU  # Mission Produce, Inc.
-LAC  # Lithium Americas Corp.
-MU  # Backblaze, Inc.
-MU  # Donnelley Financial Solutions, Inc.
-CRON  # Cronos Group Inc.
-MU  # Upbound Group, Inc.
-MU  # NWPX Infrastructure, Inc.
-SAFE  # Safehold Inc.
-MCB  # Metropolitan Bank Holding Corp.
-MU  # Compass Minerals International, Inc.
-DLX  # Deluxe Corporation
-SIFY  # Sify Technologies Limited
-NBN  # Northeast Bank
-OCSL  # Oaktree Specialty Lending Corporation
-VYX  # NCR Voyix Corporation
-ECVT  # Ecovyst Inc.
-AMTB  # Amerant Bancorp Inc.
-FSBC  # Five Star Bancorp
-IGIC  # International General Insurance Holdings Ltd.
-MU  # ScanSource, Inc.
-NUTX  # Nutex Health Inc.
-MU  # Alto Neuroscience, Inc.
-TBLA  # Taboola.com Ltd.
-GNK  # Genco Shipping & Trading Limited
-MU  # Virtus Investment Partners, Inc.
-MU  # Evolv Technologies Holdings, Inc.
-MU  # Capitol Federal Financial, Inc.
-BOW  # Bowhead Specialty Holdings Inc.
-EVC  # Entravision Communications Corporation
-MU  # Goldman Sachs BDC, Inc.
-MU  # Lexicon Pharmaceuticals, Inc.
-MSEX  # Middlesex Water Company
-MU  # Cullinan Therapeutics, Inc.
-RZLV  # Rezolve AI PLC
-MU  # Arbor Realty Trust, Inc.
-OI  # O-I Glass, Inc.
-AOSL  # Alpha and Omega Semiconductor Limited
-CSIQ  # Canadian Solar Inc.
-XIFR  # XPLR Infrastructure, LP
-MU  # Esquire Financial Holdings, Inc.
-MU  # CEVA, Inc.
-MU  # Apnimed, Inc.
-SVC  # Service Properties Trust
-CRML  # Critical Metals Corp.
-MU  # CRA International, Inc.
-BV  # BrightView Holdings, Inc.
-MU  # Sana Biotechnology, Inc.
-ITRN  # Ituran Location and Control Ltd.
-SBR  # Sabine Royalty Trust
-MU  # Olema Pharmaceuticals, Inc.
-MU  # Equity Bancshares, Inc.
-MBWM  # Mercantile Bank Corporation
-MU  # Horizon Bancorp, Inc.
-TROX  # Tronox Holdings plc
-MU  # Daktronics, Inc.
-MU  # Business First Bancshares, Inc.
-MU  # MetroCity Bankshares, Inc.
-MU  # Sinclair, Inc.
-GPRE  # Green Plains Inc.
-MU  # Douglas Dynamics, Inc.
-MU  # OPKO Health, Inc.
-MU  # Astec Industries, Inc.
-MU  # Groupon, Inc.
-CCNE  # CNB Financial Corporation
-MU  # Resolute Holdings Management, Inc.
-MU  # Replimune Group, Inc.
-NNE  # NANO Nuclear Energy Inc.
-UAMY  # United States Antimony Corporation
-RERE  # ATRenew Inc.
-MU  # Kayne Anderson BDC, Inc.
-CPF  # Central Pacific Financial Corp.
-CIM  # Chimera Investment Corporation
-CSR  # Centerspace
-ENVX  # Enovix Corporation
-NX  # Quanex Building Products Corporation
-MU  # Pacira BioSciences, Inc.
+AAPL  # Apple
+MSFT  # Microsoft
+NVDA  # Nvidia
+AMZN  # Amazon
+GOOGL  # Alphabet
+META  # Meta
+AVGO  # Broadcom
+TSLA  # Tesla
+BRK-B  # Berkshire Hathaway
+JPM  # JPMorgan
+V  # Visa
+MA  # Mastercard
+UNH  # UnitedHealth
+XOM  # Exxon Mobil
+LLY  # Eli Lilly
+JNJ  # Johnson & Johnson
+WMT  # Walmart
+PG  # Procter & Gamble
+HD  # Home Depot
+COST  # Costco
+ORCL  # Oracle
+BAC  # Bank of America
+ABBV  # AbbVie
+CVX  # Chevron
+KO  # Coca-Cola
+MRK  # Merck
+PEP  # PepsiCo
+ADBE  # Adobe
+CRM  # Salesforce
+AMD  # AMD
+NFLX  # Netflix
+TMO  # Thermo Fisher
+CSCO  # Cisco
+ACN  # Accenture
+MCD  # McDonald's
+LIN  # Linde
+ABT  # Abbott
+WFC  # Wells Fargo
+DIS  # Disney
+INTU  # Intuit
+TXN  # Texas Instruments
+QCOM  # Qualcomm
+IBM  # IBM
+CAT  # Caterpillar
+GE  # GE Aerospace
+AMGN  # Amgen
+VZ  # Verizon
+PFE  # Pfizer
+DHR  # Danaher
+NOW  # ServiceNow
+GS  # Goldman Sachs
+MS  # Morgan Stanley
+ISRG  # Intuitive Surgical
+SPGI  # S&P Global
+RTX  # RTX
+HON  # Honeywell
+LOW  # Lowe's
+UNP  # Union Pacific
+NEE  # NextEra
+BKNG  # Booking
+AXP  # American Express
+T  # AT&T
+PGR  # Progressive
+BLK  # BlackRock
+ELV  # Elevance
+LMT  # Lockheed Martin
+DE  # Deere
+SYK  # Stryker
+TJX  # TJX
+MDT  # Medtronic
+BA  # Boeing
+C  # Citigroup
+SCHW  # Charles Schwab
+ADP  # ADP
+GILD  # Gilead
+MMC  # Marsh McLennan
+CB  # Chubb
+MDLZ  # Mondelez
+VRTX  # Vertex
+ADI  # Analog Devices
+BMY  # Bristol-Myers
+SBUX  # Starbucks
+AMAT  # Applied Materials
+LRCX  # Lam Research
+MU  # Micron
+PANW  # Palo Alto
+KLAC  # KLA
+CVS  # CVS Health
+MO  # Altria
+SO  # Southern Company
+DUK  # Duke Energy
+CL  # Colgate-Palmolive
+NKE  # Nike
+UPS  # UPS
+PYPL  # PayPal
+TGT  # Target
+COP  # ConocoPhillips
+USB  # US Bancorp
+INTC  # Intel
+MMM  # 3M
+F  # Ford
+GM  # General Motors
+UBER  # Uber
+ABNB  # Airbnb

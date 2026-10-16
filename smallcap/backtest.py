@@ -108,10 +108,31 @@ def run(start_date: str = None, end_date: str = None,
     equity_curve = []
     trades_by_day = []
 
+    # Alla kurser laddas EN gang i minnet (snabbare an en SQL-fraga per
+    # bolag och dag) och skivas per simulerad dag.
+    import bisect
+    cache = {}
+    with connect(market) as c:
+        for r in c.execute("SELECT ticker, date, open, high, low, close, volume "
+                           "FROM bars ORDER BY ticker, date"):
+            cache.setdefault(r["ticker"], []).append(dict(r))
+    cache_dates = {t: [b["date"] for b in rows] for t, rows in cache.items()}
+
     try:
         for i, today in enumerate(days[eval_start_idx:], start=eval_start_idx):
-            def limited(ticker, limit=400, _d=today, _m=market, market=None):
-                return _bars_until(ticker, _d, limit, _m)
+            # BUGFIX: paper.py och screener.py anropar get_bars(ticker,
+            # limit, market). Den gamla signaturen hade `_d=today` som
+            # tredje parameter, sa MARKNADSNAMNET hamnade i datumfaltet
+            # och funktionen gav alltid de SENASTE kurserna i databasen,
+            # oavsett simulerad dag. Backtesten (och walk-forward) har
+            # darfor kikat in i framtiden hela tiden. Nu tas market som
+            # tredje positionsargument och ignoreras; datumet ar bundet.
+            def limited(ticker, limit=400, _market=None, _d=today):
+                rows = cache.get(ticker)
+                if not rows:
+                    return []
+                end = bisect.bisect_right(cache_dates[ticker], _d)
+                return rows[max(0, end - limit):end]
 
             paper.get_bars = limited
             screener.get_bars = limited
@@ -218,6 +239,18 @@ PARAM_GRID = {
 # langsamt aven efter att databasanslutningar atervands.
 
 
+PARAM_GRIDS = {
+    "se": PARAM_GRID,
+    # Blue chips: testar framfor allt risk/reward -- hur stor vinstmal
+    # och hur tight stop som fungerar nar rorelserna ar sma.
+    "us": {
+        "target_profit_pct": [2.5, 4.0],
+        "stop_loss_pct": [-4.0, -7.0],
+        "buy_below_pct": [1.5, 3.0],
+    },
+}
+
+
 def _param_combinations(grid: dict) -> list[dict]:
     """Alla kombinationer av parametervarden i grid (kartesisk produkt)."""
     import itertools
@@ -229,38 +262,17 @@ def _param_combinations(grid: dict) -> list[dict]:
 def _run_with_params(params: dict, start_date: str, end_date: str,
                      capital: float, market: str) -> dict:
     """
-    Kor backtest.run() med temporart overskrivna parametrar.
-
-    market kan vara "se_bt"/"us_bt" -- installningarna hamtas da fran
-    bas-marknaden ("se"/"us") eftersom MARKETS-dictionaryn bara har
-    de nycklarna.
+    Kor backtest.run() med temporart overskrivna parametrar via
+    config.PARAM_OVERRIDES (som MarketConfig laser forst).
     """
-    settings_key = market.removesuffix("_bt")
-    market_settings = config.MARKETS[settings_key]
-    original = {k: market_settings.get(k) for k in params}
-    module_level_keys = {"target_profit_pct": "TARGET_PROFIT_PCT",
-                          "position_size_pct": "POSITION_SIZE_PCT",
-                          "buy_below_pct": "BUY_BELOW_PCT",
-                          "stop_loss_pct": "STOP_LOSS_PCT"}
-    original_module_values = {}
-
+    saved = dict(config.PARAM_OVERRIDES)
     try:
-        for key, value in params.items():
-            if key in module_level_keys:
-                attr = module_level_keys[key]
-                original_module_values[attr] = getattr(config, attr)
-                setattr(config, attr, value)
-            else:
-                market_settings[key] = value
-
+        config.PARAM_OVERRIDES.update(params)
         return run(start_date=start_date, end_date=end_date,
-                  capital=capital, market=market)
+                   capital=capital, market=market)
     finally:
-        for key, value in original.items():
-            if key not in module_level_keys:
-                market_settings[key] = value
-        for attr, value in original_module_values.items():
-            setattr(config, attr, value)
+        config.PARAM_OVERRIDES.clear()
+        config.PARAM_OVERRIDES.update(saved)
 
 
 def walk_forward(window_days: int = 90, grid: dict | None = None,
@@ -272,7 +284,7 @@ def walk_forward(window_days: int = 90, grid: dict | None = None,
 
     cfg = config.get_config(market)
     capital = capital or cfg.starting_capital
-    grid = grid or PARAM_GRID
+    grid = grid or PARAM_GRIDS.get(market.removesuffix("_bt"), PARAM_GRID)
     combos = _param_combinations(grid)
 
     with _connect(market) as c:

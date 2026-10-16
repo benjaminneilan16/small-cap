@@ -250,7 +250,11 @@ def process(market: str = "se") -> dict:
         exit_bar = exit_price = reason = None
         for i, b in enumerate(after, start=1):
             if float(b["low"]) < stop:
-                exit_bar, exit_price, reason = b, stop, "STOP LOSS"
+                # Oppnar aktien REDAN under stoppen (gap ner) saljs den
+                # till oppningskursen, inte till stoppnivan. Tidigare
+                # antogs alltid stoppnivan -- for optimistiskt.
+                fill = min(stop, float(b["open"]))
+                exit_bar, exit_price, reason = b, fill, "STOP LOSS"
                 break
             if float(b["high"]) > target:
                 exit_bar, exit_price, reason = b, target, "MAL NATT"

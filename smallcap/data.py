@@ -55,6 +55,10 @@ def sync_universe(market: str = "se"):
         placeholders = ",".join("?" * len(tickers)) if tickers else "''"
         c.execute(f"DELETE FROM universe WHERE ticker NOT IN ({placeholders})",
                   tickers if tickers else [])
+        # Kurser for bolag som inte langre ar med (t.ex. efter ett
+        # strategibyte) tas bort sa databasen inte vaxer i onodan.
+        c.execute(f"DELETE FROM bars WHERE ticker NOT IN ({placeholders})",
+                  tickers if tickers else [])
     return tickers
 
 

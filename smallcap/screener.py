@@ -108,6 +108,36 @@ def analyze(ticker: str, lookback: int = 250, market: str = "se",
         usable = False
         reasons.append(f"efficiency ratio {er_60:.2f} -- trendar, studsar inte")
 
+    # --- Nya kvalitetsfilter (av som standard, se config.py) -------------
+    # Pris: under ~1 kr/$ drivs det "dagliga spannet" mest av tick-
+    # storleken (ett tick pa 0,05 kr = 5-10 % av kursen). Det ar brus,
+    # inte en riktig spread man kan fanga.
+    if closes[-1] < cfg.min_price:
+        usable = False
+        reasons.append(f"kurs {closes[-1]:.2f} under minpris {cfg.min_price}")
+
+    # Fallande knivar: bolag som tappat mycket over perioden far lag
+    # efficiency ratio for att de faller i etapper, inte for att de
+    # pendlar. Tidigare bara en varning -- nu ett filter.
+    if net_change < -cfg.max_decline_pct:
+        usable = False
+        reasons.append(f"ner {abs(net_change):.0f}% over perioden")
+
+    # Absurda dagsspann = skal/nyhetsdrivna bolag, inte pendlande.
+    if median_range > cfg.max_daily_range_pct:
+        usable = False
+        reasons.append(f"dagligt spann {median_range:.1f}% over "
+                       f"{cfg.max_daily_range_pct}% (for vilt)")
+
+    # Upptrend: kurs over langt medelvarde (SMA200, annars sa langt
+    # historiken racker). Dippar kops bara i bolag i uppgang.
+    if cfg.require_uptrend:
+        n = min(200, len(closes))
+        sma = sum(closes[-n:]) / n
+        if closes[-1] < sma:
+            usable = False
+            reasons.append("under langsiktigt medelvarde (ingen upptrend)")
+
     score = 0.0
     if median_range:
         score += min(median_range / cfg.min_daily_range_pct, 3.0)
