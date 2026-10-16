@@ -1,6 +1,6 @@
 # Småbolagsrapport — Sverige
 
-*Genererad 2026-10-16 18:16 UTC*
+*Genererad 2026-10-16 20:30 UTC*
 
 ## Portfölj
 
@@ -16,16 +16,7 @@
 
 ## Dagens händelser
 
-**Stängda positioner**
-
-| Bolag | Anledning | Resultat | Dagar | Max motgång |
-|---|---|---|---|---|
-| BIOEX.ST | TIDIG VARNING | -109 kr | 25 | -10.5 % |
-| GSKR-SDB.ST | STOP LOSS | -183 kr | 2 | -18.4 % |
-| EXPRS2.ST | MAL NATT | +64 kr | 1 | -2.3 % |
-| IMPC.ST | MAL NATT | +64 kr | 1 | 8.8 % |
-| IZAFE-B.ST | MAL NATT | +64 kr | 1 | -0.6 % |
-| MODTX.ST | STOP LOSS | -450 kr | 1 | -53.2 % |
+Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 
 ## Resultat hittills
 
