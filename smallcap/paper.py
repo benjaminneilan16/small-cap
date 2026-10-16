@@ -86,6 +86,30 @@ def portfolio(market: str = "se") -> dict:
     }
 
 
+def benchmark(market: str = "se") -> float | None:
+    """
+    Referens: samma kapital jamnt fordelat pa ALLA bolag i universumet
+    och bara hallet sedan kontot skapades (kurs till kurs). Visar om
+    den aktiva strategin ens slar att passivt aga samma bolag.
+    """
+    from .data import usable_tickers
+    with connect(market) as c:
+        acc = c.execute("SELECT created_at FROM account WHERE id = 1").fetchone()
+    if not acc:
+        return None
+    start = acc["created_at"][:10]
+    rets = []
+    for t in usable_tickers(market):
+        bars = get_bars(t, 400, market)
+        first = next((b for b in bars if b["date"] >= start), None)
+        if not first or not bars:
+            continue
+        rets.append(float(bars[-1]["close"]) / float(first["close"]) - 1)
+    if not rets:
+        return None
+    return round(sum(rets) / len(rets) * 100, 2)
+
+
 def place_orders(candidates: list[dict], market: str = "se") -> list[dict]:
     """
     Lagger koporder UNDER marknaden.

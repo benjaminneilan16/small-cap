@@ -99,7 +99,7 @@ MARKETS = {
             # istallet efter korta dippar i STARKA bolag:
             # kop nagra procent under kurs, ta vinst snabbt, hall
             # forlusten liten, handla bara i uppatgaende trend.
-            "target_profit_pct": 8.0,
+            "target_profit_pct": 10.0,
             "stop_loss_pct": -15.0,
             "buy_below_pct": 2.0,
             "order_ttl_days": 5,

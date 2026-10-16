@@ -33,6 +33,10 @@ def build(screen: dict, actions: dict, perf: dict, market: str = "se") -> str:
     L.append(f"| Exponering | {pf['exposure_pct']:.0f} % (tak {cfg.max_exposure_pct:.0f} %) |")
     L.append(f"| Kapital i vila | {pf['idle_capital_pct']:.0f} % |")
     L.append(f"| Öppna positioner | {pf['open_positions']} |")
+    from . import paper as _paper
+    bm = _paper.benchmark(market)
+    if bm is not None:
+        L.append(f"| Referens: äga alla bolag lika mycket | {bm:+.2f} % |")
     L.append("")
 
     near_cap = pf['exposure_pct'] >= cfg.max_exposure_pct * 0.9
@@ -226,6 +230,7 @@ def write_portfolio_json(market: str = "se"):
         "idle_capital_pct": pf["idle_capital_pct"],
         "open_positions": pf["open_positions"],
         "currency": cfg.currency,
+        "benchmark_pct": paper.benchmark(market),
     }
     cfg.reports_dir.mkdir(parents=True, exist_ok=True)
     suffix = "" if market == "se" else "_us"
