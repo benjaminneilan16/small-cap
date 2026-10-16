@@ -244,8 +244,8 @@ PARAM_GRIDS = {
     # Blue chips: testar framfor allt risk/reward -- hur stor vinstmal
     # och hur tight stop som fungerar nar rorelserna ar sma.
     "us": {
-        "target_profit_pct": [2.5, 4.0],
-        "stop_loss_pct": [-4.0, -7.0],
+        "target_profit_pct": [6.0, 10.0],
+        "stop_loss_pct": [-10.0, -20.0],
         "buy_below_pct": [1.5, 3.0],
     },
 }

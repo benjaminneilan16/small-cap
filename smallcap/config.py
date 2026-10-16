@@ -89,24 +89,29 @@ MARKETS = {
         "label": "USA Blue chips",
         "strategy_version": "bluechip-1",
         "params": {
+            # Valda efter backtest pa riktig blue chip-data (feb 2025 -
+            # okt 2026): smala mal (3 %/-5 %) gav profit factor 0,84,
+            # bredare (8 %/-15 %, utan tidig varning) 1,3 i BADA
+            # halvorna av perioden. Fortfarande in-sample och i en
+            # uppmarknad -- buy & hold slog det (+40 %).
             # Blue chips har tata spreadar -- Marja-logiken (stora
             # spreadar, stora dagsrorelser) finns inte. Har gar vi
             # istallet efter korta dippar i STARKA bolag:
             # kop nagra procent under kurs, ta vinst snabbt, hall
             # forlusten liten, handla bara i uppatgaende trend.
-            "target_profit_pct": 3.0,
-            "stop_loss_pct": -5.0,
+            "target_profit_pct": 8.0,
+            "stop_loss_pct": -15.0,
             "buy_below_pct": 2.0,
             "order_ttl_days": 5,
             "min_daily_range_pct": 1.2,
             "max_efficiency_ratio": 0.35,
-            "early_warning_pct": -4.0,
+            "early_warning_pct": -99.0,
             "require_uptrend": True,
             "max_decline_pct": 100.0,
             "min_price": 5.0,
             "max_daily_range_pct": 8.0,
-            "position_size_pct": 3.0,
-            "max_exposure_pct": 45.0,
+            "position_size_pct": 4.0,
+            "max_exposure_pct": 60.0,
             "max_open_orders": 40,
         },
         "currency": "$",
