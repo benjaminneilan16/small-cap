@@ -1,6 +1,6 @@
 # Småbolagsrapport — USA Blue chips
 
-*Genererad 2026-10-16 12:22 UTC*
+*Genererad 2026-10-16 12:24 UTC*
 
 ## Portfölj
 
@@ -15,26 +15,17 @@
 
 ## Dagens händelser
 
-**16 nya köpordrar lagda**
+**7 nya köpordrar lagda**
 
 | Bolag | Limitpris | Antal |
 |---|---|---|
-| DE | 624.64 | 3 |
-| NOW | 142.63 | 14 |
-| UNH | 394.78 | 5 |
-| CL | 92.52 | 21 |
-| MMM | 163.26 | 12 |
-| ELV | 411.29 | 4 |
-| VRTX | 488.40 | 4 |
-| PGR | 210.53 | 9 |
-| MDLZ | 62.40 | 32 |
-| UNP | 277.16 | 7 |
-| JNJ | 244.92 | 8 |
-| ABT | 103.25 | 19 |
-| META | 707.25 | 2 |
-| ABNB | 167.31 | 11 |
-| TGT | 155.47 | 12 |
-| ... | +1 till | |
+| MO | 70.89 | 28 |
+| CRM | 236.87 | 8 |
+| AAPL | 328.32 | 6 |
+| JPM | 322.11 | 6 |
+| LIN | 488.04 | 4 |
+| CB | 343.52 | 5 |
+| MRK | 139.38 | 14 |
 
 ## Resultat hittills
 

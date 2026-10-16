@@ -1,4 +1,11 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+175,MRK,buy,139.3824,14.0,2026-10-16,open,,,,,,0,
+174,CB,buy,343.5203,5.0,2026-10-16,open,,,,,,0,
+173,LIN,buy,488.0425,4.0,2026-10-16,open,,,,,,0,
+172,JPM,buy,322.1088,6.0,2026-10-16,open,,,,,,0,
+171,AAPL,buy,328.32,6.0,2026-10-16,open,,,,,,0,
+170,CRM,buy,236.8704,8.0,2026-10-16,open,,,,,,0,
+169,MO,buy,70.8864,28.0,2026-10-16,open,,,,,,0,
 168,BLK,buy,1099.4915,1.0,2026-10-16,open,,,,,,0,
 167,TGT,buy,155.4708,12.0,2026-10-16,open,,,,,,0,
 166,ABNB,buy,167.3088,11.0,2026-10-16,open,,,,,,0,
