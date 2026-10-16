@@ -1,24 +1,24 @@
 
 ======================================================================
-  WALK-FORWARD — USA
+  WALK-FORWARD — USA Blue chips
 ======================================================================
 
   Fönster 1: 2025-02-07 - 2025-06-17 → 2025-06-18 - 2025-10-24
-    Bästa parametrar (in-sample):  {'min_daily_range_pct': 2.5, 'max_efficiency_ratio': 0.25, 'target_profit_pct': 9.0}
-    In-sample avkastning:          +150.53 %
-    Out-of-sample avkastning:      +154.76 %
+    Bästa parametrar (in-sample):  {'target_profit_pct': 10.0, 'stop_loss_pct': -20.0, 'buy_below_pct': 1.5}
+    In-sample avkastning:          +63.02 %
+    Out-of-sample avkastning:      +11.43 %
 
   Fönster 2: 2025-06-18 - 2025-10-24 → 2025-10-27 - 2026-03-06
-    Bästa parametrar (in-sample):  {'min_daily_range_pct': 2.5, 'max_efficiency_ratio': 0.25, 'target_profit_pct': 9.0}
-    In-sample avkastning:          +154.76 %
-    Out-of-sample avkastning:      +148.82 %
+    Bästa parametrar (in-sample):  {'target_profit_pct': 10.0, 'stop_loss_pct': -20.0, 'buy_below_pct': 3.0}
+    In-sample avkastning:          +11.87 %
+    Out-of-sample avkastning:      +5.84 %
 
   Fönster 3: 2025-10-27 - 2026-03-06 → 2026-03-09 - 2026-07-16
-    Bästa parametrar (in-sample):  {'min_daily_range_pct': 2.5, 'max_efficiency_ratio': 0.25, 'target_profit_pct': 9.0}
-    In-sample avkastning:          +148.82 %
-    Out-of-sample avkastning:      +156.57 %
+    Bästa parametrar (in-sample):  {'target_profit_pct': 10.0, 'stop_loss_pct': -10.0, 'buy_below_pct': 3.0}
+    In-sample avkastning:          +14.51 %
+    Out-of-sample avkastning:      +6.72 %
 
-  Snitt out-of-sample-avkastning: +153.38 %
+  Snitt out-of-sample-avkastning: +8.00 %
 
   Ut-av-provresultat ar den arligaste indikationen pa om parametervalet generaliserar -- men det ar fortfarande bara en handfull fonster, inte en garanti.
 
