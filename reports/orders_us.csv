@@ -35,7 +35,7 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 142,PYPL,buy,55.7809,26.0,2026-10-16,open,,,,,,0,
 141,NVDA,buy,208.5408,7.0,2026-10-16,open,,,,,,0,
 140,QCOM,buy,173.7138,8.0,2026-10-16,open,,,,,,0,
-139,PANW,buy,366.459,4.0,2026-10-16,open,,,,,,0,
+139,PANW,buy,332.7637,4.0,2026-10-16,open,,,,,,1,366.459
 138,INTC,buy,91.5552,16.0,2026-10-16,open,,,,,,0,
 137,MU,buy,909.655,1.0,2026-10-16,open,,,,,,0,
 136,AMD,buy,539.7408,2.0,2026-10-16,open,,,,,,0,
