@@ -142,12 +142,39 @@ def place_orders(candidates: list[dict], market: str = "se") -> list[dict]:
 
     simulated_value_committed = 0.0
 
+    # Marknadsbredd: andel bolag som handlar over sitt 20-dagarssnitt.
+    # Ar marknaden bred nedat (lag andel) pausas nya ordrar.
+    if cfg.min_breadth_pct > 0 and candidates:
+        from .data import usable_tickers
+        up = tot = 0
+        for t in usable_tickers(market):
+            bs = get_bars(t, 20, market)
+            if len(bs) < 20:
+                continue
+            tot += 1
+            if float(bs[-1]["close"]) > sum(float(b["close"]) for b in bs) / 20:
+                up += 1
+        if tot and up / tot * 100 < cfg.min_breadth_pct:
+            logger.info("Bredd %.0f%% under %.0f%% -- inga nya ordrar",
+                        up / tot * 100, cfg.min_breadth_pct)
+            return []
+
+    # Karantan: ticker som nyligen stoppats ut/varnats far inget nytt kop.
+    cooling = set()
+    if cfg.cooldown_days > 0:
+        with connect(market) as c:
+            for r in c.execute(
+                "SELECT ticker, exit_date FROM positions WHERE status = 'closed' "
+                "AND realized_pnl < 0 AND exit_date IS NOT NULL"):
+                if (date.fromisoformat(today) - date.fromisoformat(r["exit_date"])).days <= cfg.cooldown_days:
+                    cooling.add(r["ticker"])
+
     placed = []
     for cand in candidates:
         if open_count >= cfg.max_open_orders:
             break
         ticker = cand["ticker"]
-        if ticker in held or ticker in pending:
+        if ticker in held or ticker in pending or ticker in cooling:
             continue
 
         bars = get_bars(ticker, 5, market)

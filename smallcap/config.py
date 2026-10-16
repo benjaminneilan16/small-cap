@@ -63,6 +63,9 @@ MAX_DAILY_RANGE_PCT = float(os.getenv("MAX_DAILY_RANGE_PCT", "1000"))  # 1000 = 
 # (Tidigare skrevs min_daily_range_pct och max_efficiency_ratio till
 # MARKETS-dictionaryn, som aldrig lastes -- de parametrarna hade ingen
 # effekt alls i walk-forward.)
+MAX_5D_DROP_PCT = float(os.getenv("MAX_5D_DROP_PCT", "100"))     # 100 = av
+COOLDOWN_DAYS = int(os.getenv("COOLDOWN_DAYS", "0"))             # 0 = av
+MIN_BREADTH_PCT = float(os.getenv("MIN_BREADTH_PCT", "0"))       # 0 = av
 PARAM_OVERRIDES: dict = {}
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
@@ -83,7 +86,15 @@ MARKETS = {
         "market_close_utc_winter": "16:30",
         "market_open_utc": "07:00",
         "market_open_utc_winter": "08:00",
-        "params": {},
+        "params": {
+            # Marknadsbredd-filter: inga NYA kopordrar nar mindre an
+            # hälften av bolagen handlar over sitt 20-dagarssnitt (dvs.
+            # marknaden faller bredare). Backtest feb 2025-okt 2026:
+            # utan filter -8,5 % (PF 0,93), med 50 % +4,7 % (PF 1,19);
+            # battre i BADA halvorna av perioden. Samma riktning for
+            # 45/55/60 %. Fortfarande in-sample -- folj upp live.
+            "min_breadth_pct": 50.0,
+        },
     },
     "us": {
         "label": "USA Blue chips",
@@ -182,6 +193,9 @@ class MarketConfig:
             "max_decline_pct": MAX_DECLINE_PCT,
             "require_uptrend": REQUIRE_UPTREND,
             "max_daily_range_pct": MAX_DAILY_RANGE_PCT,
+            "max_5d_drop_pct": MAX_5D_DROP_PCT,
+            "cooldown_days": COOLDOWN_DAYS,
+            "min_breadth_pct": MIN_BREADTH_PCT,
         }
         market_params = m.get("params", {})
         for key, default in defaults.items():

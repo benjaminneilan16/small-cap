@@ -129,6 +129,14 @@ def analyze(ticker: str, lookback: int = 250, market: str = "se",
         reasons.append(f"dagligt spann {median_range:.1f}% over "
                        f"{cfg.max_daily_range_pct}% (for vilt)")
 
+    # Kortsiktigt fall: har aktien tappat mycket de senaste 5 dagarna
+    # ar det oftare en handelse an en studs i vantan.
+    if len(closes) > 5:
+        drop5 = (closes[-1] / closes[-6] - 1) * 100
+        if drop5 < -cfg.max_5d_drop_pct:
+            usable = False
+            reasons.append(f"ner {abs(drop5):.1f}% pa 5 dagar")
+
     # Upptrend: kurs over langt medelvarde (SMA200, annars sa langt
     # historiken racker). Dippar kops bara i bolag i uppgang.
     if cfg.require_uptrend:
