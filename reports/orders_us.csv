@@ -1,4 +1,6 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+183,SBUX,buy,98.315,20.0,2026-10-20,open,,,,,,0,
+182,ADBE,buy,255.2125,7.0,2026-10-20,open,,,,,,0,
 181,BRK-B,buy,510.7392,3.0,2026-10-20,open,,,,,,0,
 180,WMT,buy,117.927,16.0,2026-10-20,open,,,,,,0,
 179,CVS,buy,88.6656,22.0,2026-10-20,open,,,,,,0,
