@@ -1,6 +1,6 @@
 {
   "market": "se",
-  "generated_at": "2026-10-19 21:59 UTC",
+  "generated_at": "2026-10-20 12:41 UTC",
   "total_value": 48771.48,
   "cash": 39173.15,
   "market_value": 9598.33,
@@ -11,5 +11,5 @@
   "idle_capital_pct": 80.3,
   "open_positions": 10,
   "currency": "kr",
-  "benchmark_pct": -11.04
+  "benchmark_pct": -11.07
 }
