@@ -1,15 +1,15 @@
 {
   "market": "se",
-  "generated_at": "2026-10-21 12:54 UTC",
-  "total_value": 48759.87,
-  "cash": 41063.2,
-  "market_value": 7696.68,
+  "generated_at": "2026-10-21 21:15 UTC",
+  "total_value": 48615.43,
+  "cash": 41903.36,
+  "market_value": 6712.07,
   "starting_capital": 50000.0,
-  "return_pct": -2.48,
-  "exposure_pct": 15.8,
+  "return_pct": -2.77,
+  "exposure_pct": 13.8,
   "exposure_cap_pct": 30.0,
-  "idle_capital_pct": 84.2,
-  "open_positions": 8,
+  "idle_capital_pct": 86.2,
+  "open_positions": 7,
   "currency": "kr",
-  "benchmark_pct": -10.93
+  "benchmark_pct": -10.62
 }
