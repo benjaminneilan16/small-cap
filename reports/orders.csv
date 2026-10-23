@@ -1,6 +1,6 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
 153,PROGEN.ST,buy,0.1018,9610.0,2026-10-15,filled,2026-10-19,0.1018,7.86,,117,0,
-152,GAPW-B.ST,buy,12.4752,78.0,2026-10-14,open,,,,,,0,
+152,GAPW-B.ST,buy,12.4752,78.0,2026-10-14,filled,2026-10-23,12.4752,37.8,,118,0,
 151,IMPC.ST,buy,2.9053,338.0,2026-10-14,filled,2026-10-15,2.9053,0.53,,112,0,
 150,EXPRS2.ST,buy,0.9888,993.0,2026-10-14,filled,2026-10-15,0.9888,11.0,,110,0,
 149,MODTX.ST,buy,0.3535,2778.0,2026-10-14,filled,2026-10-15,0.3535,55.3,,114,0,
