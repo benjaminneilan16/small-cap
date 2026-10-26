@@ -1,4 +1,5 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+119,NXTCL.ST,1060.0,0.9245,2026-10-26,0.9892,2.449925,open,,,,,,,59.38
 118,GAPW-B.ST,78.0,12.4752,2026-10-23,13.3485,2.432664,open,,,,,,,37.8
 117,PROGEN.ST,9610.0,0.1018,2026-10-19,0.1089,2.445745,open,,,,,-6.679765414629565,,7.86
 116,BLINC-B.ST,10575.0,0.0937,2026-10-19,0.1003,5.128875,closed,0.1003,2026-10-20,MAL NATT,64.66612499999994,-0.8537881402348563,1,0.53
