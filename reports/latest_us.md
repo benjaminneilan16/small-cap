@@ -1,6 +1,6 @@
 # Småbolagsrapport — USA Blue chips
 
-*Genererad 2026-10-23 23:44 UTC*
+*Genererad 2026-10-27 00:12 UTC*
 
 ## Portfölj
 
@@ -12,7 +12,7 @@
 | Exponering | 63 % (tak 60 %) |
 | Kapital i vila | 37 % |
 | Öppna positioner | 20 |
-| Referens: äga alla bolag lika mycket | +0.38 % |
+| Referens: äga alla bolag lika mycket | +0.37 % |
 
 > ⚠️ Exponeringen (63 %) ligger nära taket (60 %). Få eller inga nya ordrar läggs förrän positioner stängs och frigör kapital.
 
@@ -32,7 +32,7 @@ Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 
 ### Nyckeltal för strategin
 
-**Fyllnadsgrad: 48.8 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
+**Fyllnadsgrad: 43.8 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
 
 **Genomsnittlig maximal motgång: 2.6 %** — hur långt ner positionerna gick innan de stängdes. Detta är måttet på adverse selection: blir du systematiskt fylld precis innan det fortsätter ner?
 
