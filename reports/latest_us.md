@@ -1,46 +1,50 @@
 # Småbolagsrapport — USA Blue chips
 
-*Genererad 2026-10-28 00:13 UTC*
+*Genererad 2026-10-29 00:34 UTC*
 
 ## Portfölj
 
 | | |
 |---|---|
-| Totalt värde | 50,317 $ |
-| Varav kontant | 18,765 $ |
-| Avkastning | +0.63 % |
-| Exponering | 63 % (tak 60 %) |
-| Kapital i vila | 37 % |
-| Öppna positioner | 20 |
-| Referens: äga alla bolag lika mycket | +0.68 % |
+| Totalt värde | 50,467 $ |
+| Varav kontant | 20,276 $ |
+| Avkastning | +0.93 % |
+| Exponering | 60 % (tak 60 %) |
+| Kapital i vila | 40 % |
+| Öppna positioner | 19 |
+| Referens: äga alla bolag lika mycket | +0.74 % |
 
-> ⚠️ Exponeringen (63 %) ligger nära taket (60 %). Få eller inga nya ordrar läggs förrän positioner stängs och frigör kapital.
+> ⚠️ Exponeringen (60 %) ligger nära taket (60 %). Få eller inga nya ordrar läggs förrän positioner stängs och frigör kapital.
 
 ## Dagens händelser
 
-Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
+**Stängda positioner**
+
+| Bolag | Anledning | Resultat | Dagar | Max motgång |
+|---|---|---|---|---|
+| TXN | MAL NATT | +133 $ | 8 | -1.1 % |
 
 ## Resultat hittills
 
 | | |
 |---|---|
-| Avslutade affärer | 1 |
-| Resultat | +193 $ |
+| Avslutade affärer | 2 |
+| Resultat | +327 $ |
 | Vinstandel | 100 % |
-| Snittvinst | +193 $ |
-| Snitt hålltid | 3 dagar |
+| Snittvinst | +163 $ |
+| Snitt hålltid | 6 dagar |
 
 ### Nyckeltal för strategin
 
 **Fyllnadsgrad: 43.8 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
 
-**Genomsnittlig maximal motgång: 2.6 %** — hur långt ner positionerna gick innan de stängdes. Detta är måttet på adverse selection: blir du systematiskt fylld precis innan det fortsätter ner?
+**Genomsnittlig maximal motgång: 0.7 %** — hur långt ner positionerna gick innan de stängdes. Detta är måttet på adverse selection: blir du systematiskt fylld precis innan det fortsätter ner?
 
 **Genomsnittligt gap vid fyllnad: 1.1 %** — 0 fyllnad(er) hade ett gap över 5 %. Stigande snitt över tid kan betyda att screenern allt oftare fångar fallande knivar snarare än sunda studsar.
 
-**Exit-orsaker:** MAL NATT (1)
+**Exit-orsaker:** MAL NATT (2)
 
-> Bara 1 avslutade affarer -- for tidigt for slutsatser.
+> Bara 2 avslutade affarer -- for tidigt for slutsatser.
 
 ## Screener
 
@@ -48,26 +52,26 @@ Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 
 | Bolag | Poäng | Dagligt spann | Eff. ratio | Omsättning | Kurs | |
 |---|---|---|---|---|---|---|
-| INTC | 5.99 | 5.2 % | 0.001 | 7,798,344,089 $ | 90.47 | |
-| MU | 5.70 | 5.1 % | 0.053 | 21,119,485,036 $ | 903.70 | |
-| AMD | 5.64 | 4.4 % | 0.064 | 10,772,957,252 $ | 531.28 | |
-| PANW | 5.47 | 3.7 % | 0.092 | 1,654,496,266 $ | 390.46 | |
-| ADBE | 5.39 | 3.0 % | 0.025 | 1,262,779,236 $ | 258.62 | |
-| TGT | 4.94 | 2.5 % | 0.031 | 605,928,711 $ | 148.53 | |
-| UNH | 4.92 | 2.4 % | 0.013 | 2,232,896,601 $ | 410.70 | |
-| PYPL | 4.90 | 2.6 % | 0.044 | 721,606,946 $ | 54.99 | |
-| QCOM | 4.84 | 3.2 % | 0.149 | 1,701,044,619 $ | 179.60 | |
-| NVDA | 4.80 | 2.6 % | 0.068 | 29,835,125,566 $ | 216.00 | |
-| TXN | 4.79 | 2.8 % | 0.088 | 1,549,631,372 $ | 298.12 | |
-| SBUX | 4.75 | 2.4 % | 0.036 | 719,172,154 $ | 102.69 | |
-| ABNB | 4.69 | 2.8 % | 0.105 | 552,011,864 $ | 171.05 | |
-| TSLA | 4.68 | 3.3 % | 0.187 | 21,872,739,891 $ | 391.62 | |
-| NOW | 4.63 | 4.0 % | 0.24 | 1,957,206,002 $ | 158.18 | |
-| CSCO | 4.62 | 2.3 % | 0.057 | 1,813,815,520 $ | 110.24 | |
-| ADI | 4.59 | 2.7 % | 0.12 | 1,229,045,318 $ | 407.93 | |
-| DE | 4.58 | 2.5 % | 0.085 | 718,034,537 $ | 641.25 | |
-| MDLZ | 4.57 | 2.0 % | 0.017 | 524,055,649 $ | 62.97 | |
-| ABT | 4.56 | 2.0 % | 0.012 | 936,929,315 $ | 104.88 | |
+| INTC | 5.92 | 5.2 % | 0.015 | 7,828,539,269 $ | 93.74 | |
+| MU | 5.63 | 5.1 % | 0.065 | 21,154,461,891 $ | 928.76 | |
+| AMD | 5.51 | 4.4 % | 0.085 | 10,772,957,252 $ | 560.26 | |
+| PANW | 5.50 | 3.7 % | 0.087 | 1,656,537,693 $ | 401.70 | |
+| TGT | 5.04 | 2.5 % | 0.011 | 604,170,986 $ | 148.01 | |
+| PYPL | 4.95 | 2.6 % | 0.035 | 721,606,946 $ | 56.09 | |
+| SBUX | 4.92 | 2.3 % | 0.005 | 717,225,245 $ | 103.04 | |
+| NVDA | 4.89 | 2.6 % | 0.051 | 29,705,341,667 $ | 217.94 | |
+| UNH | 4.88 | 2.4 % | 0.018 | 2,219,876,146 $ | 410.39 | |
+| NOW | 4.82 | 4.0 % | 0.207 | 1,959,754,867 $ | 154.78 | |
+| QCOM | 4.81 | 3.2 % | 0.151 | 1,701,044,619 $ | 184.17 | |
+| ABNB | 4.74 | 2.8 % | 0.097 | 547,496,074 $ | 168.82 | |
+| DE | 4.72 | 2.5 % | 0.061 | 718,034,537 $ | 639.58 | |
+| CSCO | 4.69 | 2.3 % | 0.044 | 1,813,815,520 $ | 111.38 | |
+| CRM | 4.66 | 3.3 % | 0.19 | 2,242,392,351 $ | 240.89 | |
+| BLK | 4.65 | 2.1 % | 0.012 | 696,504,645 $ | 1136.05 | |
+| TSLA | 4.62 | 3.3 % | 0.197 | 21,769,393,660 $ | 407.46 | |
+| UPS | 4.61 | 2.0 % | 0.011 | 520,958,665 $ | 106.09 | |
+| IBM | 4.61 | 2.7 % | 0.118 | 1,368,993,450 $ | 250.25 | |
+| GM | 4.59 | 2.5 % | 0.085 | 589,748,440 $ | 80.54 | |
 
 ---
 
