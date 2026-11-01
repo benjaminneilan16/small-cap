@@ -2,25 +2,31 @@
 # Slå upp tickern manuellt och lägg till i universe.txt om du vill ha med dem.
 
 2cureX
+Annexin Pharmaceuticals
+Biosergen
 Bonäsudden Holding
+Cedergrenska
 ES Group
 Firefly
+Goldsky Resources
 Gotlandsbolaget
 Guard Therapeutics International
 Heliospectra
 Hultström Group
 I-Tech
+Insplorion
 Kallebäck Property Invest
+Lifeclean International
 Lyckegård Group
 Lärkberget
 Mavshack
+NanoEcho
 Nordnet Bank
+Nosa Plugs
 oodash Group
-Raketech Group Holding
 Scandinavian ChemoTech
 Skåne-möllan
-Sprint Bioscience
+Spotr Group
 Studentbostäder i Norden
 Söder Sportfiske
-Tourn International
 Västra Hamnen Corp. Finance

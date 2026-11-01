@@ -23,7 +23,6 @@ ALM  # ALM Equity
 ALPCOT-B  # Alpcot Holding
 ALZCUR  # AlzeCure Pharma
 ALZ  # Alzinova
-ANNX  # Annexin Pharmaceuticals
 ARCOMA  # Arcoma
 ARCTIC  # Arctic Blue Beverages
 ARFA  # Arctic Falls
@@ -42,7 +41,6 @@ BEAMMW-B  # BeammWave
 BIM  # BIMobject
 BINERO  # Binero Group
 BIOEX  # Bioextrax
-BIOSGN  # Biosergen
 BIOVIC-B  # Biovica International
 BLINC-B  # BlincVision AB
 BOHO  # Boho Group
@@ -60,7 +58,6 @@ CANDLE-B  # Candles Scandinavia
 CARE  # Careium
 CASE  # Case Group
 CDON  # CDON
-CEDER  # Cedergrenska
 CI  # Cell Impact
 CRNO-B  # Cereno Scientific
 CHARGE  # ChargePanel
@@ -123,7 +120,6 @@ GENI  # Generic Sweden
 GENO  # Genovis
 GIG-SDB  # GiG Software
 GIGA  # Gigasun
-GSKR-SDB  # Goldsky Resources
 GOMX  # GomSpace Group
 GBK  # Goodbye Kansas Group
 GRANGX  # Grangex
@@ -144,7 +140,6 @@ IMPC  # Impact Coatings
 IMP-A-SDB  # Implantica
 INCOAX  # InCoax Networks
 INIT  # Initiator Pharma
-INSP  # Insplorion
 INTEG-B  # Integrum
 IVACC  # Intervacc
 IRIS  # Irisity
@@ -162,7 +157,6 @@ KLAR  # Klaria Pharma Holding
 KLIMAT  # Klimator
 LEA  # Lea Bank
 LEMSE  # Leading Edge Materials Corp.
-LCLEAN  # Lifeclean International
 LITI  # Litium
 LOYAL  # Loyal Solutions
 LUC  # Lucara Diamond Corp
@@ -185,9 +179,8 @@ MODTX  # Modus Therapeutics Holding
 MTI  # MTI Investment
 NANEXA  # Nanexa
 NANOC-B  # NanoCap Group
-NANECH  # NanoEcho
 NANOFS  # Nanoform Finland Oyj
-NAVIGO-PREF  # Navigo Invest
+NAVIGO-STAM  # Navigo Invest
 NEOLA  # Neola Medical
 NEO-B  # Neovici Holding
 NEPA  # Nepa
@@ -204,7 +197,6 @@ NIO  # Nordic Iron Ore
 LEVEL  # Nordic LEVEL Group
 NOTEK  # Norditek Group
 NREST  # Nordrest Holding
-NOSA  # Nosa Plugs
 NYAB  # NYAB
 OBSE  # Observit
 OGUN-B  # Ogunsen
@@ -215,7 +207,7 @@ OPTER  # Opter
 OPTI  # OptiCept Technologies
 ORGC  # OrganoClick
 ORTIN  # Ortelius International
-ORTI-B  # Ortivus
+ORTI-A  # Ortivus
 ORT-B  # Ortoma
 OSSD  # OssDsign
 OXE  # OXE Marine
@@ -235,6 +227,7 @@ QAIR  # QleanAir
 QLIFE  # QLife Holding
 QCORE  # Qlucore
 QSYS  # Qualisys Holding
+RAKE  # Raketech Group Holding
 RPLAN  # Ranplan Group
 REALFI  # Realfiction Holding
 RUG  # RugVista Group
@@ -264,7 +257,7 @@ SONE  # Sonetel
 SPAGO  # Spago Nanomedical
 SPEC  # SpectraCure
 SPEONE  # SpectrumOne
-SPOTR  # Spotr Group
+SPRINT  # Sprint Bioscience
 STIL  # Stille
 SUBGEN  # Subgen AI
 SUMMAS  # Summa Defence Oyj
@@ -279,8 +272,9 @@ TSEC  # Tempest Security
 TENEO  # Teneo AI
 TEQ  # Teqnion
 TERNOR  # Terranor Group
-TINGS-B  # Tingsvalvet Fastighets
+TINGS-A  # Tingsvalvet Fastighets
 TITA-B  # Titania Holding
+TOURN  # Tourn International
 TRAIN-B  # Train Alliance
 TRIBO-B  # Tribox Group
 UNIBAP  # Unibap Space Solutions
