@@ -5,20 +5,20 @@
 
   Fönster 1: 2025-02-07 - 2025-06-17 → 2025-06-18 - 2025-10-24
     Bästa parametrar (in-sample):  {'target_profit_pct': 10.0, 'stop_loss_pct': -20.0, 'buy_below_pct': 1.5}
-    In-sample avkastning:          +61.77 %
-    Out-of-sample avkastning:      +10.68 %
+    In-sample avkastning:          +63.67 %
+    Out-of-sample avkastning:      +11.42 %
 
   Fönster 2: 2025-06-18 - 2025-10-24 → 2025-10-27 - 2026-03-06
     Bästa parametrar (in-sample):  {'target_profit_pct': 10.0, 'stop_loss_pct': -10.0, 'buy_below_pct': 3.0}
-    In-sample avkastning:          +12.92 %
-    Out-of-sample avkastning:      +14.13 %
+    In-sample avkastning:          +13.39 %
+    Out-of-sample avkastning:      +15.48 %
 
   Fönster 3: 2025-10-27 - 2026-03-06 → 2026-03-09 - 2026-07-16
     Bästa parametrar (in-sample):  {'target_profit_pct': 10.0, 'stop_loss_pct': -10.0, 'buy_below_pct': 3.0}
-    In-sample avkastning:          +14.13 %
-    Out-of-sample avkastning:      +6.12 %
+    In-sample avkastning:          +15.48 %
+    Out-of-sample avkastning:      +6.44 %
 
-  Snitt out-of-sample-avkastning: +10.31 %
+  Snitt out-of-sample-avkastning: +11.11 %
 
   Ut-av-provresultat ar den arligaste indikationen pa om parametervalet generaliserar -- men det ar fortfarande bara en handfull fonster, inte en garanti.
 
