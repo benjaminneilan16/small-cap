@@ -5,7 +5,7 @@
 
   Fönster 1: 2025-02-06 - 2025-06-18 → 2025-06-19 - 2025-10-23
     Bästa parametrar (in-sample):  {'min_daily_range_pct': 4.0, 'max_efficiency_ratio': 0.25, 'target_profit_pct': 6.0}
-    In-sample avkastning:          +0.54 %
+    In-sample avkastning:          +0.52 %
     Out-of-sample avkastning:      +2.32 %
 
   Fönster 2: 2025-06-19 - 2025-10-23 → 2025-10-24 - 2026-03-06
