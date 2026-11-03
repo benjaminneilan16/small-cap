@@ -1,4 +1,6 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+186,ABNB,buy,164.2656,12.0,2026-11-03,open,,,,,,0,
+185,PANW,buy,337.6512,5.0,2026-11-03,open,,,,,,0,
 184,BLK,buy,1129.1904,1.0,2026-10-31,open,,,,,,0,
 183,SBUX,buy,98.315,20.0,2026-10-20,filled,2026-10-21,98.315,0.4,,112,0,
 182,ADBE,buy,255.2125,7.0,2026-10-20,filled,2026-10-21,255.2125,1.06,,110,0,
