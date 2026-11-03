@@ -1,6 +1,6 @@
 # Småbolagsrapport — Sverige
 
-*Genererad 2026-10-30 21:57 UTC*
+*Genererad 2026-11-03 00:30 UTC*
 
 ## Portfölj
 
@@ -12,7 +12,7 @@
 | Exponering | 0 % (tak 30 %) |
 | Kapital i vila | 100 % |
 | Öppna positioner | 0 |
-| Referens: äga alla bolag lika mycket | -12.01 % |
+| Referens: äga alla bolag lika mycket | -11.24 % |
 
 ## Dagens händelser
 
@@ -44,7 +44,7 @@ Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 
 ## Screener
 
-110 av 303 bolag passar kriterierna.
+109 av 297 bolag passar kriterierna.
 
 | Bolag | Poäng | Dagligt spann | Eff. ratio | Omsättning | Kurs | |
 |---|---|---|---|---|---|---|
@@ -56,6 +56,7 @@ Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 | XMR.ST | 5.36 | 12.1 % | 0.097 | 103,163 kr | 0.03 | |
 | CFISH.ST | 5.31 | 8.5 % | 0.077 | 213,605 kr | 1.90 | |
 | PROGEN.ST | 5.29 | 13.6 % | 0.107 | 204,936 kr | 0.11 | |
+| SPRINT.ST | 5.15 | 6.8 % | 0.02 | 936,510 kr | 3.60 | |
 | BLINC-B.ST | 5.09 | 8.3 % | 0.1 | 688,402 kr | 0.08 | |
 | MINEST.ST | 5.09 | 8.9 % | 0.129 | 820,160 kr | 1.01 | |
 | AIRA.ST | 5.04 | 10.6 % | 0.144 | 290,000 kr | 5.06 | |
@@ -67,7 +68,6 @@ Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 | GOMX.ST | 4.85 | 5.9 % | 0.016 | 7,176,056 kr | 12.80 | |
 | SUMMAS.ST | 4.83 | 8.1 % | 0.133 | 244,244 kr | 2.08 | |
 | ALZCUR.ST | 4.71 | 6.3 % | 0.058 | 244,992 kr | 6.40 | |
-| HILB-B.ST | 4.70 | 8.4 % | 0.168 | 1,714,286 kr | 2.62 | |
 
 ### Varningar
 
@@ -86,9 +86,10 @@ Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 
 Onormal volym kombinerat med stort prisfall — kan betyda att något hänt (nyheter, sektor-rörelse) snarare än normal oscillation. Kolla gärna manuellt innan du litar på fyndet.
 
-- **FLEXQ.ST**: 3.0x normal volym, -12.2 % samma dag
+- **FLEXQ.ST**: 3.1x normal volym, -12.2 % samma dag
 - **NXTCL.ST**: 4.3x normal volym, -11.5 % samma dag
 - **TALK.ST**: 5.2x normal volym, +0.7 % samma dag
+- **ARFA.ST**: 12.4x normal volym, -17.4 % samma dag
 
 ---
 
