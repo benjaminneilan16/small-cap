@@ -1,4 +1,6 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+188,IBM,buy,249.1662,8.0,2026-11-04,open,,,,,,0,
+187,TXN,buy,293.2375,6.0,2026-11-04,open,,,,,,0,
 186,ABNB,buy,164.2656,12.0,2026-11-03,open,,,,,,0,
 185,PANW,buy,337.6512,5.0,2026-11-03,open,,,,,,0,
 184,BLK,buy,1129.1904,1.0,2026-10-31,open,,,,,,0,
