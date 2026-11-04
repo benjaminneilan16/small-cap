@@ -1,6 +1,6 @@
 # Småbolagsrapport — Sverige
 
-*Genererad 2026-11-03 22:54 UTC*
+*Genererad 2026-11-04 23:12 UTC*
 
 ## Portfölj
 
@@ -12,7 +12,7 @@
 | Exponering | 0 % (tak 30 %) |
 | Kapital i vila | 100 % |
 | Öppna positioner | 0 |
-| Referens: äga alla bolag lika mycket | -12.03 % |
+| Referens: äga alla bolag lika mycket | -12.04 % |
 
 ## Dagens händelser
 
@@ -66,7 +66,7 @@ Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 | FLUO.ST | 4.87 | 5.8 % | 0.012 | 214,206 kr | 30.30 | |
 | SUMMAS.ST | 4.85 | 8.1 % | 0.125 | 239,976 kr | 1.95 | |
 | ALZCUR.ST | 4.59 | 6.2 % | 0.073 | 255,540 kr | 6.16 | |
-| BEAMMW-B.ST | 4.56 | 6.2 % | 0.078 | 1,072,691 kr | 17.44 | |
+| BEAMMW-B.ST | 4.56 | 6.2 % | 0.078 | 1,075,132 kr | 17.44 | |
 | FERRO.ST | 4.55 | 6.2 % | 0.078 | 323,444 kr | 3.00 | |
 
 ### Varningar
@@ -91,10 +91,10 @@ Onormal volym kombinerat med stort prisfall — kan betyda att något hänt (nyh
 - **INTEG-B.ST**: 4.4x normal volym, -1.0 % samma dag
 - **WYLD.ST**: 3.3x normal volym, -7.6 % samma dag
 - **DVYSR.ST**: 4.4x normal volym, -0.5 % samma dag
-- **UNIBAP.ST**: 3.3x normal volym, +3.6 % samma dag
+- **UNIBAP.ST**: 3.7x normal volym, +3.6 % samma dag
 - **ALCA.ST**: 6.9x normal volym, +1.7 % samma dag
 - **ADTR.ST**: 4.3x normal volym, +1.5 % samma dag
-- **OSSD.ST**: 3.1x normal volym, +0.4 % samma dag
+- **OSSD.ST**: 3.2x normal volym, +0.4 % samma dag
 - **IVACC.ST**: 6.0x normal volym, +6.7 % samma dag
 
 ---
