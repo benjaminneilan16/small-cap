@@ -1,15 +1,15 @@
 {
   "market": "us",
-  "generated_at": "2026-11-04 20:32 UTC",
-  "total_value": 50082.6,
+  "generated_at": "2026-11-05 01:15 UTC",
+  "total_value": 49940.88,
   "cash": 24665.93,
-  "market_value": 25416.67,
+  "market_value": 25274.95,
   "starting_capital": 50000.0,
-  "return_pct": 0.17,
-  "exposure_pct": 50.7,
+  "return_pct": -0.12,
+  "exposure_pct": 50.6,
   "exposure_cap_pct": 60.0,
-  "idle_capital_pct": 49.3,
+  "idle_capital_pct": 49.4,
   "open_positions": 16,
   "currency": "$",
-  "benchmark_pct": 1.26
+  "benchmark_pct": 0.93
 }

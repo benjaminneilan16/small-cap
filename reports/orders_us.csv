@@ -1,4 +1,7 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+191,MSFT,buy,500.1504,3.0,2026-11-05,open,,,,,,0,
+190,ELV,buy,402.3313,4.0,2026-11-05,open,,,,,,0,
+189,VRTX,buy,509.5296,3.0,2026-11-05,open,,,,,,0,
 188,IBM,buy,249.1662,8.0,2026-11-04,open,,,,,,0,
 187,TXN,buy,293.2375,6.0,2026-11-04,open,,,,,,0,
 186,ABNB,buy,164.2656,12.0,2026-11-03,open,,,,,,0,
