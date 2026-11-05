@@ -1,6 +1,6 @@
 # Småbolagsrapport — Sverige
 
-*Genererad 2026-11-04 23:12 UTC*
+*Genererad 2026-11-05 23:15 UTC*
 
 ## Portfölj
 
@@ -12,7 +12,7 @@
 | Exponering | 0 % (tak 30 %) |
 | Kapital i vila | 100 % |
 | Öppna positioner | 0 |
-| Referens: äga alla bolag lika mycket | -12.04 % |
+| Referens: äga alla bolag lika mycket | -11.84 % |
 
 ## Dagens händelser
 
@@ -44,58 +44,58 @@ Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 
 ## Screener
 
-110 av 297 bolag passar kriterierna.
+109 av 297 bolag passar kriterierna.
 
 | Bolag | Poäng | Dagligt spann | Eff. ratio | Omsättning | Kurs | |
 |---|---|---|---|---|---|---|
-| VETT.ST | 5.94 | 10.4 % | 0.009 | 282,328 kr | 4.28 | |
-| PROGEN.ST | 5.93 | 13.5 % | 0.01 | 202,274 kr | 0.10 | |
-| BRAVE.ST | 5.57 | 8.2 % | 0.024 | 421,758 kr | 2.19 | |
-| CFISH.ST | 5.48 | 8.5 % | 0.051 | 212,822 kr | 1.95 | |
-| IMPC.ST | 5.46 | 7.8 % | 0.021 | 145,003 kr | 3.01 | |
-| FREEM.ST | 5.45 | 7.6 % | 0.013 | 535,321 kr | 1.35 | 📊 |
-| BIOEX.ST | 5.44 | 8.8 % | 0.071 | 157,122 kr | 2.30 | |
-| TENEO.ST | 5.23 | 11.2 % | 0.115 | 340,883 kr | 0.02 | |
-| SPRINT.ST | 5.20 | 6.9 % | 0.014 | 991,032 kr | 3.43 | |
-| IZAFE-B.ST | 5.15 | 8.6 % | 0.107 | 168,676 kr | 0.25 | 📊 |
-| XMR.ST | 5.12 | 12.1 % | 0.132 | 103,741 kr | 0.03 | |
-| AIRA.ST | 5.07 | 10.7 % | 0.139 | 293,373 kr | 5.01 | |
-| DICOT.ST | 5.05 | 7.2 % | 0.049 | 2,338,383 kr | 0.22 | |
-| BLINC-B.ST | 5.03 | 8.3 % | 0.111 | 693,431 kr | 0.08 | |
-| GOMX.ST | 4.88 | 5.8 % | 0.008 | 7,132,754 kr | 12.28 | |
-| FLUO.ST | 4.87 | 5.8 % | 0.012 | 214,206 kr | 30.30 | |
-| SUMMAS.ST | 4.85 | 8.1 % | 0.125 | 239,976 kr | 1.95 | |
-| ALZCUR.ST | 4.59 | 6.2 % | 0.073 | 255,540 kr | 6.16 | |
-| BEAMMW-B.ST | 4.56 | 6.2 % | 0.078 | 1,075,132 kr | 17.44 | |
-| FERRO.ST | 4.55 | 6.2 % | 0.078 | 323,444 kr | 3.00 | |
+| VETT.ST | 5.94 | 10.5 % | 0.009 | 282,328 kr | 4.25 | |
+| PROGEN.ST | 5.86 | 13.5 % | 0.021 | 204,936 kr | 0.11 | |
+| BRAVE.ST | 5.64 | 8.2 % | 0.014 | 421,758 kr | 2.34 | |
+| BIOEX.ST | 5.59 | 8.7 % | 0.047 | 154,845 kr | 2.35 | |
+| IMPC.ST | 5.55 | 7.8 % | 0.008 | 146,760 kr | 2.99 | |
+| FREEM.ST | 5.53 | 7.6 % | 0.002 | 535,321 kr | 1.36 | |
+| CFISH.ST | 5.38 | 8.5 % | 0.067 | 212,822 kr | 2.50 | 📊 |
+| IZAFE-B.ST | 5.19 | 8.6 % | 0.101 | 167,305 kr | 0.24 | |
+| DICOT.ST | 5.10 | 7.1 % | 0.039 | 2,329,638 kr | 0.22 | |
+| XMR.ST | 5.09 | 12.1 % | 0.137 | 103,741 kr | 0.03 | |
+| BLINC-B.ST | 5.08 | 8.3 % | 0.103 | 698,408 kr | 0.08 | |
+| SPRINT.ST | 4.95 | 6.9 % | 0.052 | 991,032 kr | 3.49 | |
+| AIRA.ST | 4.94 | 10.7 % | 0.159 | 297,303 kr | 5.20 | |
+| GOMX.ST | 4.91 | 5.8 % | 0.003 | 7,132,754 kr | 12.20 | |
+| SUMMAS.ST | 4.85 | 8.0 % | 0.124 | 239,526 kr | 1.90 | |
+| ENVAR.ST | 4.78 | 5.9 % | 0.026 | 165,723 kr | 50.00 | |
+| BEAMMW-B.ST | 4.72 | 6.2 % | 0.053 | 1,079,743 kr | 17.00 | |
+| FLUO.ST | 4.70 | 5.8 % | 0.037 | 212,680 kr | 30.10 | |
+| TENEO.ST | 4.68 | 11.5 % | 0.198 | 340,883 kr | 0.02 | |
+| ALZCUR.ST | 4.64 | 6.2 % | 0.065 | 256,089 kr | 6.12 | |
 
 ### Varningar
 
 - **VETT.ST**: Tunn omsattning (282,328 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **PROGEN.ST**: Aktien ar ner 82% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar. Tunn omsattning (202,274 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **PROGEN.ST**: Aktien ar ner 82% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar. Tunn omsattning (204,936 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **BIOEX.ST**: Tunn omsattning (154,845 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **IMPC.ST**: Tunn omsattning (146,760 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
 - **CFISH.ST**: Tunn omsattning (212,822 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **IMPC.ST**: Tunn omsattning (145,003 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **BIOEX.ST**: Tunn omsattning (157,122 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **TENEO.ST**: Aktien ar ner 97% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
-- **IZAFE-B.ST**: Aktien ar ner 64% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar. Tunn omsattning (168,676 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **IZAFE-B.ST**: Aktien ar ner 62% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar. Tunn omsattning (167,305 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **DICOT.ST**: Aktien ar ner 53% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
 - **XMR.ST**: Tunn omsattning (103,741 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **AIRA.ST**: Tunn omsattning (293,373 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **DICOT.ST**: Aktien ar ner 52% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar.
+- **AIRA.ST**: Tunn omsattning (297,303 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **SUMMAS.ST**: Aktien ar ner 95% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar. Tunn omsattning (239,526 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
 
 ### 📊 Volymspikar (möjlig nyhetshändelse)
 
 Onormal volym kombinerat med stort prisfall — kan betyda att något hänt (nyheter, sektor-rörelse) snarare än normal oscillation. Kolla gärna manuellt innan du litar på fyndet.
 
-- **FREEM.ST**: 9.5x normal volym, -3.7 % samma dag
-- **IZAFE-B.ST**: 9.0x normal volym, -4.2 % samma dag
-- **INTEG-B.ST**: 4.4x normal volym, -1.0 % samma dag
-- **WYLD.ST**: 3.3x normal volym, -7.6 % samma dag
-- **DVYSR.ST**: 4.4x normal volym, -0.5 % samma dag
-- **UNIBAP.ST**: 3.7x normal volym, +3.6 % samma dag
-- **ALCA.ST**: 6.9x normal volym, +1.7 % samma dag
-- **ADTR.ST**: 4.3x normal volym, +1.5 % samma dag
-- **OSSD.ST**: 3.2x normal volym, +0.4 % samma dag
-- **IVACC.ST**: 6.0x normal volym, +6.7 % samma dag
+- **CFISH.ST**: 3.9x normal volym, +34.7 % samma dag
+- **ALCA.ST**: 33.4x normal volym, -0.6 % samma dag
+- **SNX.ST**: 3.1x normal volym, +3.6 % samma dag
+- **ARFA.ST**: 4.4x normal volym, -0.6 % samma dag
+- **ENZY.ST**: 5.7x normal volym, +17.7 % samma dag
+- **ZZ-B.ST**: 8.6x normal volym, -16.6 % samma dag
+- **AGROUP.ST**: 5.3x normal volym, -1.1 % samma dag
+- **ADTR.ST**: 14.7x normal volym, -3.4 % samma dag
+- **NANOFS.ST**: 3.6x normal volym, -6.6 % samma dag
+- **ORT-B.ST**: 3.6x normal volym, +1.6 % samma dag
 
 ---
 
