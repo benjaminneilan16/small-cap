@@ -148,11 +148,11 @@ def place_orders(candidates: list[dict], market: str = "se") -> list[dict]:
         from .data import usable_tickers
         up = tot = 0
         for t in usable_tickers(market):
-            bs = get_bars(t, 20, market)
-            if len(bs) < 20:
+            bs = get_bars(t, cfg.breadth_ma, market)
+            if len(bs) < cfg.breadth_ma:
                 continue
             tot += 1
-            if float(bs[-1]["close"]) > sum(float(b["close"]) for b in bs) / 20:
+            if float(bs[-1]["close"]) > sum(float(b["close"]) for b in bs) / cfg.breadth_ma:
                 up += 1
         if tot and up / tot * 100 < cfg.min_breadth_pct:
             logger.info("Bredd %.0f%% under %.0f%% -- inga nya ordrar",

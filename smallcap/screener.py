@@ -66,6 +66,52 @@ def find_levels(bars: list[dict], bins: int = 20) -> list[dict]:
     return levels
 
 
+def dip_history(bars, buy_below_pct, target_pct, stop_pct, ttl_days,
+                max_hold=20, step=3):
+    """
+    Hur har strategin gatt i JUST DEN HAR aktien historiskt? Simulerar
+    kopordrar buy_below_pct under stangningskursen (var step:e dag), fyll
+    nar lagsta kursen gar under limiten (tidigast dagen efter), exit pa
+    mal/stop (stop antas vid oklarhet), annars stangning efter max_hold
+    dagar. Anvander bara de staplar som skickas in, dvs. bara det som
+    var kant vid beslutet -- ingen framtidsdata.
+    Returnerar (antal affarer, snittresultat i %).
+    """
+    n = len(bars)
+    closes = [float(b["close"]) for b in bars]
+    highs = [float(b["high"]) for b in bars]
+    lows = [float(b["low"]) for b in bars]
+    pnls = []
+    for i in range(0, n - 2, step):
+        limit = closes[i] * (1 - buy_below_pct / 100)
+        fill = None
+        for j in range(i + 1, min(n, i + 1 + ttl_days)):
+            if lows[j] < limit:
+                fill = j
+                break
+        if fill is None:
+            continue
+        tgt = limit * (1 + target_pct / 100)
+        stp = limit * (1 + stop_pct / 100)
+        res = None
+        end = min(n, fill + 1 + max_hold)
+        for k in range(fill + 1, end):
+            if lows[k] < stp:
+                res = stop_pct
+                break
+            if highs[k] > tgt:
+                res = target_pct
+                break
+        if res is None:
+            if end - 1 <= fill:
+                continue
+            res = (closes[end - 1] / limit - 1) * 100
+        pnls.append(res)
+    if not pnls:
+        return 0, 0.0
+    return len(pnls), sum(pnls) / len(pnls)
+
+
 def analyze(ticker: str, lookback: int = 250, market: str = "se",
            skip_volume_spike: bool = False) -> dict:
     cfg = get_config(market)
@@ -128,6 +174,14 @@ def analyze(ticker: str, lookback: int = 250, market: str = "se",
         usable = False
         reasons.append(f"dagligt spann {median_range:.1f}% over "
                        f"{cfg.max_daily_range_pct}% (for vilt)")
+
+    # Egen historik: har strategin tjanat pengar i just den har aktien?
+    if cfg.min_hist_expectancy > -900 and usable:
+        nh, exp_h = dip_history(bars, cfg.buy_below_pct, cfg.target_profit_pct,
+                                cfg.stop_loss_pct, cfg.order_ttl_days)
+        if nh < cfg.min_hist_trades or exp_h < cfg.min_hist_expectancy:
+            usable = False
+            reasons.append(f"egen historik: {nh} affarer, snitt {exp_h:+.1f}%")
 
     # Kortsiktigt fall: har aktien tappat mycket de senaste 5 dagarna
     # ar det oftare en handelse an en studs i vantan.

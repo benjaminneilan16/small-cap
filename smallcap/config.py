@@ -66,6 +66,9 @@ MAX_DAILY_RANGE_PCT = float(os.getenv("MAX_DAILY_RANGE_PCT", "1000"))  # 1000 = 
 MAX_5D_DROP_PCT = float(os.getenv("MAX_5D_DROP_PCT", "100"))     # 100 = av
 COOLDOWN_DAYS = int(os.getenv("COOLDOWN_DAYS", "0"))             # 0 = av
 MIN_BREADTH_PCT = float(os.getenv("MIN_BREADTH_PCT", "0"))       # 0 = av
+BREADTH_MA = int(os.getenv("BREADTH_MA", "20"))
+MIN_HIST_EXPECTANCY = float(os.getenv("MIN_HIST_EXPECTANCY", "-999"))  # -999 = av
+MIN_HIST_TRADES = int(os.getenv("MIN_HIST_TRADES", "8"))
 PARAM_OVERRIDES: dict = {}
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
@@ -94,6 +97,12 @@ MARKETS = {
             # battre i BADA halvorna av perioden. Samma riktning for
             # 45/55/60 %. Fortfarande in-sample -- folj upp live.
             "min_breadth_pct": 50.0,
+            # Egen historik: ta bara bolag dar strategin simulerat hade
+            # gett >= 0 % snitt per affar over de senaste 250 dagarna
+            # (bara gammal data -- ingen framtidsblick). Backtest ihop
+            # med breddfiltret: +4,5 % (PF 1,23) mot +1,7 % bara bredd
+            # och -11 % utan filter. Samma riktning for -0,5/+0,5.
+            "min_hist_expectancy": 0.0,
         },
     },
     "us": {
@@ -196,6 +205,9 @@ class MarketConfig:
             "max_5d_drop_pct": MAX_5D_DROP_PCT,
             "cooldown_days": COOLDOWN_DAYS,
             "min_breadth_pct": MIN_BREADTH_PCT,
+            "breadth_ma": BREADTH_MA,
+            "min_hist_expectancy": MIN_HIST_EXPECTANCY,
+            "min_hist_trades": MIN_HIST_TRADES,
         }
         market_params = m.get("params", {})
         for key, default in defaults.items():
