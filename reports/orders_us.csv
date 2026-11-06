@@ -1,4 +1,8 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+195,BLK,buy,1125.12,1.0,2026-11-06,open,,,,,,0,
+194,UNH,buy,405.0662,4.0,2026-11-06,open,,,,,,0,
+193,GM,buy,88.7328,22.0,2026-11-06,open,,,,,,0,
+192,TSLA,buy,382.9962,5.0,2026-11-06,open,,,,,,0,
 191,MSFT,buy,500.1504,3.0,2026-11-05,open,,,,,,0,
 190,ELV,buy,402.3313,4.0,2026-11-05,open,,,,,,0,
 189,VRTX,buy,509.5296,3.0,2026-11-05,open,,,,,,0,
@@ -6,7 +10,7 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 187,TXN,buy,293.2375,6.0,2026-11-04,filled,2026-11-05,293.2375,3.83,,116,0,
 186,ABNB,buy,164.2656,12.0,2026-11-03,open,,,,,,0,
 185,PANW,buy,337.6512,5.0,2026-11-03,filled,2026-11-05,337.6512,7.56,,115,0,
-184,BLK,buy,1129.1904,1.0,2026-10-31,open,,,,,,0,
+184,BLK,buy,1129.1904,1.0,2026-10-31,cancelled,,,,inte fylld inom 5 dagar,,0,
 183,SBUX,buy,98.315,20.0,2026-10-20,filled,2026-10-21,98.315,0.4,,112,0,
 182,ADBE,buy,255.2125,7.0,2026-10-20,filled,2026-10-21,255.2125,1.06,,110,0,
 181,BRK-B,buy,510.7392,3.0,2026-10-20,cancelled,,,,inte fylld inom 5 dagar,,0,
