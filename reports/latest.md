@@ -1,6 +1,6 @@
 # Småbolagsrapport — Sverige
 
-*Genererad 2026-11-06 22:42 UTC*
+*Genererad 2026-11-10 01:10 UTC*
 
 ## Portfölj
 
@@ -12,7 +12,7 @@
 | Exponering | 0 % (tak 30 %) |
 | Kapital i vila | 100 % |
 | Öppna positioner | 0 |
-| Referens: äga alla bolag lika mycket | -12.79 % |
+| Referens: äga alla bolag lika mycket | -12.76 % |
 
 ## Dagens händelser
 
@@ -50,11 +50,11 @@ Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 |---|---|---|---|---|---|---|
 | BIOEX.ST | 5.88 | 8.7 % | 0.003 | 154,845 kr | 2.31 | |
 | IMPC.ST | 5.61 | 7.8 % | 0.001 | 146,760 kr | 2.89 | |
-| BRAVE.ST | 5.33 | 8.2 % | 0.06 | 425,500 kr | 2.22 | |
+| BRAVE.ST | 5.33 | 8.2 % | 0.06 | 421,758 kr | 2.22 | |
 | DICOT.ST | 5.27 | 7.0 % | 0.008 | 2,302,513 kr | 0.21 | |
 | XMR.ST | 5.15 | 12.1 % | 0.128 | 103,741 kr | 0.03 | |
 | CFISH.ST | 5.07 | 8.5 % | 0.117 | 213,605 kr | 2.16 | |
-| AIRA.ST | 5.02 | 10.6 % | 0.148 | 302,302 kr | 5.00 | |
+| AIRA.ST | 5.02 | 10.6 % | 0.148 | 297,761 kr | 5.00 | |
 | ARCT.ST | 4.86 | 6.1 % | 0.027 | 227,321 kr | 6.10 | |
 | BLINC-B.ST | 4.79 | 8.3 % | 0.146 | 703,863 kr | 0.08 | |
 | ENVAR.ST | 4.77 | 5.9 % | 0.027 | 164,002 kr | 49.00 | |
@@ -75,23 +75,23 @@ Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 - **IMPC.ST**: Tunn omsattning (146,760 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
 - **XMR.ST**: Tunn omsattning (103,741 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
 - **CFISH.ST**: Tunn omsattning (213,605 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **AIRA.ST**: Tunn omsattning (297,761 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
 - **ARCT.ST**: Tunn omsattning (227,321 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
 - **ENVAR.ST**: Tunn omsattning (164,002 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
 - **INIT.ST**: Tunn omsattning (218,214 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
 - **CLS-B.ST**: Aktien ar ner 80% over perioden. Lag efficiency ratio kan bero pa att den faller i etapper snarare an oscillerar. Tunn omsattning (206,125 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
 - **FLUO.ST**: Tunn omsattning (211,430 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **INTEG-B.ST**: Tunn omsattning (294,763 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
 
 ### 📊 Volymspikar (möjlig nyhetshändelse)
 
 Onormal volym kombinerat med stort prisfall — kan betyda att något hänt (nyheter, sektor-rörelse) snarare än normal oscillation. Kolla gärna manuellt innan du litar på fyndet.
 
-- **FERRO.ST**: 5.6x normal volym, +0.5 % samma dag
+- **FERRO.ST**: 5.7x normal volym, +0.5 % samma dag
 - **QAIR.ST**: 4.0x normal volym, +2.6 % samma dag
-- **SNX.ST**: 16.5x normal volym, -10.5 % samma dag
-- **OBSE.ST**: 24.3x normal volym, -5.8 % samma dag
+- **SNX.ST**: 16.3x normal volym, -10.5 % samma dag
+- **OBSE.ST**: 23.2x normal volym, -5.8 % samma dag
 - **CLBIO.ST**: 4.9x normal volym, +15.1 % samma dag
-- **RUG.ST**: 4.7x normal volym, +3.3 % samma dag
+- **RUG.ST**: 5.0x normal volym, +3.3 % samma dag
 - **NAVIGO-STAM.ST**: 5.6x normal volym, -6.6 % samma dag
 
 ---
