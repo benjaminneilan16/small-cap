@@ -1,4 +1,8 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+211,VRTX,buy,525.9744,3.0,2026-11-11,open,,,,,,0,
+210,WFC,buy,84.6455,23.0,2026-11-11,open,,,,,,0,
+209,GE,buy,324.3936,6.0,2026-11-11,open,,,,,,0,
+208,CVS,buy,85.4496,23.0,2026-11-11,open,,,,,,0,
 207,COST,buy,1023.5329,1.0,2026-11-10,open,,,,,,0,
 206,ABT,buy,108.2515,18.0,2026-11-10,open,,,,,,0,
 205,LMT,buy,564.6624,3.0,2026-11-10,open,,,,,,0,
@@ -15,9 +19,9 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 194,UNH,buy,380.24,4.0,2026-11-06,open,,,,,,1,405.0662
 193,GM,buy,88.7328,22.0,2026-11-06,filled,2026-11-09,88.7328,1.84,,117,0,
 192,TSLA,buy,382.9962,5.0,2026-11-06,cancelled,,,,intradagsfall 9.2% - drogs tillbaka,,0,
-191,MSFT,buy,500.1504,3.0,2026-11-05,open,,,,,,0,
-190,ELV,buy,402.3313,4.0,2026-11-05,open,,,,,,0,
-189,VRTX,buy,509.5296,3.0,2026-11-05,open,,,,,,0,
+191,MSFT,buy,500.1504,3.0,2026-11-05,cancelled,,,,inte fylld inom 5 dagar,,0,
+190,ELV,buy,402.3313,4.0,2026-11-05,cancelled,,,,inte fylld inom 5 dagar,,0,
+189,VRTX,buy,509.5296,3.0,2026-11-05,cancelled,,,,inte fylld inom 5 dagar,,0,
 188,IBM,buy,249.1662,8.0,2026-11-04,filled,2026-11-05,249.1662,1.38,,114,0,
 187,TXN,buy,293.2375,6.0,2026-11-04,filled,2026-11-05,293.2375,3.83,,116,0,
 186,ABNB,buy,164.2656,12.0,2026-11-03,cancelled,,,,inte fylld inom 5 dagar,,0,
