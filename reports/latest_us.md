@@ -1,6 +1,6 @@
 # Småbolagsrapport — USA Blue chips
 
-*Genererad 2026-11-11 00:59 UTC*
+*Genererad 2026-11-12 02:06 UTC*
 
 ## Portfölj
 
@@ -16,16 +16,17 @@
 
 ## Dagens händelser
 
-**4 nya köpordrar lagda**
+**5 nya köpordrar lagda**
 
 | Bolag | Limitpris | Antal |
 |---|---|---|
-| CVS | 85.45 | 23 |
-| GE | 324.39 | 6 |
-| WFC | 84.65 | 23 |
-| VRTX | 525.97 | 3 |
+| UNH | 405.07 | 4 |
+| XOM | 164.35 | 12 |
+| COP | 130.17 | 15 |
+| ELV | 412.46 | 4 |
+| BLK | 1173.26 | 1 |
 
-**3 ordrar togs bort** (inte fyllda i tid)
+**2 ordrar togs bort** (inte fyllda i tid)
 
 ## Resultat hittills
 
@@ -41,7 +42,7 @@
 
 ### Nyckeltal för strategin
 
-**Fyllnadsgrad: 44.1 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
+**Fyllnadsgrad: 42.6 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
 
 **Genomsnittlig maximal motgång: -10.9 %** — hur långt ner positionerna gick innan de stängdes. Detta är måttet på adverse selection: blir du systematiskt fylld precis innan det fortsätter ner?
 
