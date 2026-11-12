@@ -1,6 +1,6 @@
 # Småbolagsrapport — Sverige
 
-*Genererad 2026-11-10 22:49 UTC*
+*Genererad 2026-11-12 00:01 UTC*
 
 ## Portfölj
 
@@ -12,7 +12,7 @@
 | Exponering | 0 % (tak 30 %) |
 | Kapital i vila | 100 % |
 | Öppna positioner | 0 |
-| Referens: äga alla bolag lika mycket | -12.65 % |
+| Referens: äga alla bolag lika mycket | -12.67 % |
 
 ## Dagens händelser
 
@@ -86,14 +86,14 @@ Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 
 Onormal volym kombinerat med stort prisfall — kan betyda att något hänt (nyheter, sektor-rörelse) snarare än normal oscillation. Kolla gärna manuellt innan du litar på fyndet.
 
-- **CLAV.ST**: 3.2x normal volym, +5.3 % samma dag
-- **QAIR.ST**: 3.7x normal volym, +1.6 % samma dag
+- **CLAV.ST**: 3.3x normal volym, +5.3 % samma dag
+- **QAIR.ST**: 3.3x normal volym, +1.6 % samma dag
 - **TERNOR.ST**: 5.6x normal volym, -2.6 % samma dag
 - **ALCA.ST**: 8.7x normal volym, -2.6 % samma dag
-- **KAMBI.ST**: 18.8x normal volym, +17.2 % samma dag
+- **KAMBI.ST**: 19.0x normal volym, +17.2 % samma dag
 - **SNX.ST**: 5.7x normal volym, +0.8 % samma dag
-- **DONE.ST**: 6.5x normal volym, +7.9 % samma dag
-- **GENO.ST**: 7.1x normal volym, +6.5 % samma dag
+- **DONE.ST**: 6.6x normal volym, +7.9 % samma dag
+- **GENO.ST**: 7.3x normal volym, +6.5 % samma dag
 - **OBSE.ST**: 12.3x normal volym, -2.3 % samma dag
 - **CLBIO.ST**: 11.3x normal volym, +0.8 % samma dag
 
