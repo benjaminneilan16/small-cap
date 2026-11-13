@@ -1,4 +1,5 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+121,UNH,4.0,405.0662,2026-11-13,445.5728,2.4303972,open,,,,,,,1.13
 120,ABT,18.0,108.2515,2026-11-12,119.0767,2.9227904999999996,open,,,,,,,1.26
 119,ABNB,10.0,182.6784,2026-11-11,200.9462,2.740176,open,,,,,-1.843897494945358,,2.12
 118,SYK,6.0,325.1067,2026-11-09,357.6174,2.9259603,open,,,,,-2.9949259374883663,,0.14
