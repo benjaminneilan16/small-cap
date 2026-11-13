@@ -1,32 +1,29 @@
 # Småbolagsrapport — USA Blue chips
 
-*Genererad 2026-11-12 02:06 UTC*
+*Genererad 2026-11-13 01:38 UTC*
 
 ## Portfölj
 
 | | |
 |---|---|
-| Totalt värde | 49,945 $ |
-| Varav kontant | 28,373 $ |
-| Avkastning | -0.11 % |
-| Exponering | 43 % (tak 60 %) |
-| Kapital i vila | 57 % |
-| Öppna positioner | 13 |
-| Referens: äga alla bolag lika mycket | +1.56 % |
+| Totalt värde | 50,186 $ |
+| Varav kontant | 24,592 $ |
+| Avkastning | +0.37 % |
+| Exponering | 51 % (tak 60 %) |
+| Kapital i vila | 49 % |
+| Öppna positioner | 15 |
+| Referens: äga alla bolag lika mycket | +2.44 % |
 
 ## Dagens händelser
 
-**5 nya köpordrar lagda**
+**2 nya köpordrar lagda**
 
 | Bolag | Limitpris | Antal |
 |---|---|---|
-| UNH | 405.07 | 4 |
-| XOM | 164.35 | 12 |
-| COP | 130.17 | 15 |
-| ELV | 412.46 | 4 |
-| BLK | 1173.26 | 1 |
+| MU | 778.85 | 2 |
+| AMD | 561.89 | 3 |
 
-**2 ordrar togs bort** (inte fyllda i tid)
+**6 ordrar togs bort** (inte fyllda i tid)
 
 ## Resultat hittills
 
@@ -42,7 +39,7 @@
 
 ### Nyckeltal för strategin
 
-**Fyllnadsgrad: 42.6 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
+**Fyllnadsgrad: 40.6 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
 
 **Genomsnittlig maximal motgång: -10.9 %** — hur långt ner positionerna gick innan de stängdes. Detta är måttet på adverse selection: blir du systematiskt fylld precis innan det fortsätter ner?
 
@@ -58,26 +55,26 @@
 
 | Bolag | Poäng | Dagligt spann | Eff. ratio | Omsättning | Kurs | |
 |---|---|---|---|---|---|---|
-| AMD | 5.95 | 4.5 % | 0.009 | 10,885,616,284 $ | 515.21 | |
-| PANW | 5.57 | 3.9 % | 0.075 | 1,748,165,668 $ | 326.36 | |
-| QCOM | 5.46 | 3.3 % | 0.046 | 1,701,044,619 $ | 173.53 | |
-| CRM | 5.34 | 3.4 % | 0.079 | 2,232,442,024 $ | 213.48 | |
-| ADI | 5.28 | 2.8 % | 0.007 | 1,278,346,294 $ | 393.30 | |
-| ABNB | 5.10 | 2.8 % | 0.04 | 556,256,899 $ | 186.90 | |
-| TXN | 4.98 | 2.8 % | 0.06 | 1,618,333,115 $ | 300.52 | |
-| PYPL | 4.92 | 2.5 % | 0.033 | 705,097,723 $ | 58.78 | |
-| GM | 4.86 | 2.5 % | 0.044 | 595,520,848 $ | 88.69 | |
-| SBUX | 4.80 | 2.3 % | 0.026 | 715,403,201 $ | 109.95 | |
-| UNH | 4.78 | 2.4 % | 0.033 | 2,190,461,947 $ | 405.12 | |
-| SYK | 4.75 | 2.4 % | 0.023 | 731,718,998 $ | 324.29 | |
-| LMT | 4.75 | 2.2 % | 0.017 | 696,092,834 $ | 603.12 | |
-| AMZN | 4.72 | 2.4 % | 0.041 | 9,829,811,716 $ | 270.87 | |
-| TGT | 4.71 | 2.5 % | 0.071 | 618,848,284 $ | 161.78 | |
-| ABT | 4.66 | 2.0 % | 0.001 | 958,892,466 $ | 110.46 | |
-| META | 4.64 | 2.6 % | 0.09 | 9,772,025,757 $ | 641.39 | |
-| CVS | 4.61 | 2.4 % | 0.061 | 639,166,043 $ | 89.01 | |
-| BMY | 4.59 | 2.1 % | 0.035 | 645,264,542 $ | 62.80 | |
-| GE | 4.59 | 2.6 % | 0.099 | 1,482,874,315 $ | 337.91 | |
+| PANW | 5.66 | 3.9 % | 0.06 | 1,748,165,668 $ | 334.47 | |
+| MU | 5.59 | 5.2 % | 0.071 | 21,919,377,701 $ | 811.30 | |
+| AMD | 5.39 | 4.5 % | 0.107 | 10,885,616,284 $ | 585.30 | |
+| QCOM | 5.36 | 3.3 % | 0.066 | 1,709,267,827 $ | 176.57 | |
+| CRM | 5.35 | 3.4 % | 0.077 | 2,232,442,024 $ | 218.01 | |
+| ABNB | 5.20 | 2.8 % | 0.028 | 559,900,612 $ | 181.13 | |
+| TSLA | 5.12 | 3.3 % | 0.108 | 20,898,231,472 $ | 390.84 | |
+| PYPL | 5.02 | 2.5 % | 0.018 | 705,097,723 $ | 59.48 | |
+| AMZN | 4.92 | 2.4 % | 0.007 | 9,848,432,845 $ | 267.44 | |
+| ADI | 4.89 | 2.8 % | 0.076 | 1,279,248,867 $ | 409.08 | |
+| IBM | 4.82 | 2.7 % | 0.076 | 1,337,962,248 $ | 248.22 | |
+| VRTX | 4.82 | 2.3 % | 0.024 | 593,588,205 $ | 542.62 | |
+| GM | 4.81 | 2.5 % | 0.053 | 594,276,537 $ | 88.90 | |
+| SBUX | 4.79 | 2.4 % | 0.029 | 711,304,462 $ | 107.26 | |
+| TGT | 4.73 | 2.5 % | 0.067 | 618,848,284 $ | 162.70 | |
+| CVS | 4.68 | 2.4 % | 0.047 | 640,750,252 $ | 89.80 | |
+| GE | 4.68 | 2.6 % | 0.082 | 1,482,874,315 $ | 330.83 | |
+| WFC | 4.68 | 2.0 % | 0.003 | 1,209,132,100 $ | 85.79 | |
+| LMT | 4.68 | 2.2 % | 0.029 | 696,092,834 $ | 604.09 | |
+| HD | 4.66 | 2.1 % | 0.015 | 1,408,819,797 $ | 348.27 | |
 
 ---
 
