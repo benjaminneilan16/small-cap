@@ -1,5 +1,5 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
-218,AMD,buy,561.888,3.0,2026-11-13,open,,,,,,0,
+218,AMD,buy,509.6098,3.0,2026-11-13,open,,,,,,1,561.888
 217,MU,buy,778.848,2.0,2026-11-13,open,,,,,,0,
 216,BLK,buy,1173.264,1.0,2026-11-12,open,,,,,,0,
 215,ELV,buy,412.464,4.0,2026-11-12,open,,,,,,0,
