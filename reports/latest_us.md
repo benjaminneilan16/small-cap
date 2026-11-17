@@ -1,28 +1,24 @@
 # Småbolagsrapport — USA Blue chips
 
-*Genererad 2026-11-14 01:13 UTC*
+*Genererad 2026-11-17 03:21 UTC*
 
 ## Portfölj
 
 | | |
 |---|---|
-| Totalt värde | 49,985 $ |
-| Varav kontant | 22,969 $ |
-| Avkastning | -0.03 % |
-| Exponering | 54 % (tak 60 %) |
-| Kapital i vila | 46 % |
-| Öppna positioner | 16 |
-| Referens: äga alla bolag lika mycket | +1.73 % |
+| Totalt värde | 49,423 $ |
+| Varav kontant | 14,011 $ |
+| Avkastning | -1.15 % |
+| Exponering | 72 % (tak 60 %) |
+| Kapital i vila | 28 % |
+| Öppna positioner | 21 |
+| Referens: äga alla bolag lika mycket | +0.63 % |
 
-> ⚠️ Exponeringen (54 %) ligger nära taket (60 %). Få eller inga nya ordrar läggs förrän positioner stängs och frigör kapital.
+> ⚠️ Exponeringen (72 %) ligger nära taket (60 %). Få eller inga nya ordrar läggs förrän positioner stängs och frigör kapital.
 
 ## Dagens händelser
 
-**1 nya köpordrar lagda**
-
-| Bolag | Limitpris | Antal |
-|---|---|---|
-| TSLA | 393.07 | 5 |
+**2 ordrar togs bort** (inte fyllda i tid)
 
 ## Resultat hittills
 
@@ -38,11 +34,11 @@
 
 ### Nyckeltal för strategin
 
-**Fyllnadsgrad: 41.4 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
+**Fyllnadsgrad: 42.5 %** — andelen ordrar som blev affärer. Låg siffra är normalt: *"de flesta ordrar blir aldrig affärer"*.
 
 **Genomsnittlig maximal motgång: -10.9 %** — hur långt ner positionerna gick innan de stängdes. Detta är måttet på adverse selection: blir du systematiskt fylld precis innan det fortsätter ner?
 
-**Genomsnittligt gap vid fyllnad: 1.5 %** — 1 fyllnad(er) hade ett gap över 5 %. Stigande snitt över tid kan betyda att screenern allt oftare fångar fallande knivar snarare än sunda studsar.
+**Genomsnittligt gap vid fyllnad: 1.7 %** — 2 fyllnad(er) hade ett gap över 5 %. Stigande snitt över tid kan betyda att screenern allt oftare fångar fallande knivar snarare än sunda studsar.
 
 **Exit-orsaker:** STOP LOSS (5), MAL NATT (8)
 
@@ -50,30 +46,30 @@
 
 ## Screener
 
-66 av 103 bolag passar kriterierna.
+63 av 103 bolag passar kriterierna.
 
 | Bolag | Poäng | Dagligt spann | Eff. ratio | Omsättning | Kurs | |
 |---|---|---|---|---|---|---|
-| AMD | 5.70 | 4.5 % | 0.052 | 10,885,616,284 $ | 529.94 | |
-| PANW | 5.68 | 3.9 % | 0.056 | 1,755,725,824 $ | 322.66 | |
-| CRM | 5.55 | 3.4 % | 0.042 | 2,232,442,024 $ | 217.57 | |
-| QCOM | 5.39 | 3.3 % | 0.061 | 1,709,267,827 $ | 177.14 | |
-| MU | 5.36 | 5.1 % | 0.112 | 22,050,566,741 $ | 771.20 | |
-| ABNB | 5.20 | 2.8 % | 0.028 | 559,900,612 $ | 181.13 | |
-| TSLA | 5.20 | 3.3 % | 0.094 | 20,725,904,685 $ | 397.45 | |
-| GM | 5.05 | 2.5 % | 0.013 | 593,534,971 $ | 86.25 | |
-| TGT | 5.05 | 2.5 % | 0.013 | 618,848,284 $ | 160.90 | |
-| VRTX | 4.93 | 2.3 % | 0.003 | 593,588,205 $ | 539.10 | |
-| AMZN | 4.92 | 2.4 % | 0.007 | 9,848,432,845 $ | 267.44 | |
-| GE | 4.89 | 2.6 % | 0.045 | 1,485,330,246 $ | 331.30 | |
-| ADI | 4.84 | 2.8 % | 0.085 | 1,279,248,867 $ | 409.29 | |
-| SBUX | 4.79 | 2.4 % | 0.029 | 711,304,462 $ | 107.26 | |
-| PYPL | 4.79 | 2.5 % | 0.056 | 699,590,625 $ | 58.30 | |
-| HD | 4.66 | 2.1 % | 0.015 | 1,408,819,797 $ | 348.26 | |
-| MRK | 4.65 | 2.3 % | 0.042 | 1,222,471,576 $ | 146.95 | |
-| LOW | 4.60 | 2.2 % | 0.042 | 653,334,041 $ | 227.46 | |
-| ACN | 4.60 | 3.4 % | 0.214 | 1,093,268,390 $ | 249.95 | |
-| ELV | 4.59 | 2.6 % | 0.102 | 513,247,185 $ | 428.45 | |
+| AMD | 5.85 | 4.5 % | 0.026 | 10,991,962,695 $ | 504.28 | |
+| CRM | 5.67 | 3.4 % | 0.021 | 2,232,442,024 $ | 214.83 | |
+| PANW | 5.63 | 3.9 % | 0.065 | 1,755,725,824 $ | 316.09 | |
+| ABNB | 5.34 | 2.9 % | 0.006 | 560,080,762 $ | 186.19 | |
+| ADI | 5.20 | 2.8 % | 0.023 | 1,284,466,412 $ | 383.17 | |
+| DE | 5.03 | 2.5 % | 0.012 | 740,276,325 $ | 653.99 | |
+| AMZN | 4.93 | 2.3 % | 0.004 | 9,848,432,845 $ | 257.75 | |
+| TGT | 4.91 | 2.5 % | 0.036 | 618,848,284 $ | 160.32 | |
+| GM | 4.88 | 2.5 % | 0.043 | 593,534,971 $ | 83.67 | |
+| SBUX | 4.83 | 2.3 % | 0.021 | 708,056,712 $ | 108.72 | |
+| TXN | 4.80 | 2.8 % | 0.098 | 1,643,707,427 $ | 294.21 | |
+| VRTX | 4.80 | 2.4 % | 0.027 | 594,845,788 $ | 537.79 | |
+| PYPL | 4.78 | 2.5 % | 0.052 | 691,294,278 $ | 58.83 | |
+| GE | 4.71 | 2.6 % | 0.077 | 1,485,330,246 $ | 325.18 | |
+| ACN | 4.67 | 3.4 % | 0.202 | 1,093,268,390 $ | 247.70 | |
+| MMM | 4.62 | 2.1 % | 0.02 | 512,019,121 $ | 181.68 | |
+| LMT | 4.61 | 2.2 % | 0.042 | 695,800,449 $ | 585.21 | |
+| COP | 4.59 | 2.2 % | 0.047 | 816,739,492 $ | 140.52 | |
+| XOM | 4.59 | 2.0 % | 0.014 | 2,276,797,040 $ | 166.87 | |
+| WFC | 4.59 | 2.0 % | 0.017 | 1,208,071,254 $ | 84.84 | |
 
 ---
 
