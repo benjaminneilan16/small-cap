@@ -3,9 +3,9 @@ id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_
 218,AMD,buy,509.6098,3.0,2026-11-13,filled,2026-11-16,509.6098,1.63,,122,1,561.888
 217,MU,buy,778.848,2.0,2026-11-13,filled,2026-11-16,778.848,8.02,,124,0,
 216,BLK,buy,1173.264,1.0,2026-11-12,filled,2026-11-17,1173.264,0.06,,127,0,
-215,ELV,buy,412.464,4.0,2026-11-12,open,,,,,,0,
-214,COP,buy,130.1664,15.0,2026-11-12,open,,,,,,0,
-213,XOM,buy,164.3493,12.0,2026-11-12,open,,,,,,0,
+215,ELV,buy,412.464,4.0,2026-11-12,cancelled,,,,inte fylld inom 5 dagar,,0,
+214,COP,buy,130.1664,15.0,2026-11-12,cancelled,,,,inte fylld inom 5 dagar,,0,
+213,XOM,buy,164.3493,12.0,2026-11-12,cancelled,,,,inte fylld inom 5 dagar,,0,
 212,UNH,buy,405.0662,4.0,2026-11-12,filled,2026-11-13,405.0662,1.13,,121,0,
 211,VRTX,buy,525.9744,3.0,2026-11-11,cancelled,,,,inte fylld inom 5 dagar,,0,
 210,WFC,buy,84.6455,23.0,2026-11-11,filled,2026-11-16,84.6455,0.7,,126,0,
