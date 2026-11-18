@@ -1,6 +1,6 @@
 # Småbolagsrapport — Sverige
 
-*Genererad 2026-11-17 01:33 UTC*
+*Genererad 2026-11-18 00:30 UTC*
 
 ## Portfölj
 
@@ -12,7 +12,7 @@
 | Exponering | 0 % (tak 30 %) |
 | Kapital i vila | 100 % |
 | Öppna positioner | 0 |
-| Referens: äga alla bolag lika mycket | -13.19 % |
+| Referens: äga alla bolag lika mycket | -13.79 % |
 
 ## Dagens händelser
 
@@ -44,54 +44,51 @@ Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 
 ## Screener
 
-72 av 298 bolag passar kriterierna.
+71 av 298 bolag passar kriterierna.
 
 | Bolag | Poäng | Dagligt spann | Eff. ratio | Omsättning | Kurs | |
 |---|---|---|---|---|---|---|
-| XMR.ST | 5.90 | 12.1 % | 0.015 | 103,163 kr | 0.03 | |
-| VETT.ST | 5.75 | 10.2 % | 0.038 | 286,964 kr | 3.94 | |
-| BLINC-B.ST | 5.56 | 8.3 % | 0.033 | 723,886 kr | 0.09 | |
-| BRAVE.ST | 5.26 | 8.2 % | 0.069 | 430,398 kr | 2.29 | |
-| FREEM.ST | 5.19 | 7.6 % | 0.054 | 543,048 kr | 1.17 | |
-| CFISH.ST | 5.17 | 8.6 % | 0.106 | 213,605 kr | 1.80 | |
-| DICOT.ST | 5.14 | 6.9 % | 0.023 | 2,231,445 kr | 0.22 | |
-| ALZCUR.ST | 5.09 | 6.3 % | 0.002 | 283,737 kr | 6.40 | |
-| ARCT.ST | 4.80 | 6.1 % | 0.035 | 228,317 kr | 6.10 | |
-| CALVIK.ST | 4.77 | 5.4 % | 0.004 | 144,177 kr | 76.80 | 📊 |
-| INIT.ST | 4.74 | 6.6 % | 0.069 | 231,223 kr | 2.27 | |
-| ENVAR.ST | 4.74 | 5.9 % | 0.032 | 161,656 kr | 49.00 | 📊 |
-| AIRA.ST | 4.74 | 10.2 % | 0.19 | 303,372 kr | 5.54 | |
-| FLUO.ST | 4.59 | 5.7 % | 0.049 | 206,195 kr | 29.30 | |
-| BIOEX.ST | 4.55 | 8.7 % | 0.204 | 160,729 kr | 2.67 | |
-| SPRINT.ST | 4.49 | 7.0 % | 0.123 | 1,037,177 kr | 3.87 | |
-| MINEST.ST | 4.47 | 9.3 % | 0.229 | 808,888 kr | 0.77 | |
-| VUXEN.ST | 4.46 | 4.5 % | 0.005 | 191,638 kr | 26.40 | |
-| INTEG-B.ST | 4.36 | 4.5 % | 0.021 | 286,764 kr | 8.19 | |
-| BIM.ST | 4.19 | 4.9 % | 0.066 | 452,934 kr | 4.49 | |
+| XMR.ST | 5.96 | 12.2 % | 0.006 | 103,163 kr | 0.03 | |
+| BLINC-B.ST | 5.67 | 8.3 % | 0.016 | 738,569 kr | 0.09 | |
+| IMPC.ST | 5.45 | 7.8 % | 0.021 | 149,796 kr | 2.88 | |
+| FREEM.ST | 5.15 | 7.6 % | 0.059 | 543,048 kr | 1.15 | |
+| DICOT.ST | 5.12 | 6.8 % | 0.024 | 2,217,070 kr | 0.21 | |
+| INIT.ST | 4.97 | 6.7 % | 0.038 | 231,223 kr | 2.69 | |
+| CFISH.ST | 4.94 | 8.7 % | 0.145 | 213,605 kr | 1.69 | 📊 |
+| BIOEX.ST | 4.94 | 8.7 % | 0.146 | 159,414 kr | 2.57 | |
+| BRAVE.ST | 4.89 | 8.2 % | 0.124 | 432,721 kr | 2.20 | |
+| ENVAR.ST | 4.75 | 5.9 % | 0.03 | 161,656 kr | 48.50 | |
+| FLUO.ST | 4.74 | 5.7 % | 0.026 | 206,195 kr | 29.80 | |
+| ARCT.ST | 4.68 | 6.1 % | 0.052 | 228,317 kr | 6.12 | |
+| AIRA.ST | 4.67 | 10.2 % | 0.2 | 304,477 kr | 5.58 | |
+| UNIBAP.ST | 4.59 | 5.3 % | 0.027 | 820,802 kr | 10.14 | |
+| CALVIK.ST | 4.47 | 5.4 % | 0.05 | 144,177 kr | 77.60 | 📊 |
+| VUXEN.ST | 4.43 | 4.5 % | 0.011 | 193,664 kr | 26.10 | |
+| SPRINT.ST | 4.33 | 6.9 % | 0.145 | 1,043,089 kr | 3.99 | |
+| MIDS.ST | 4.33 | 6.0 % | 0.101 | 1,064,690 kr | 1.25 | |
+| INTEG-B.ST | 4.31 | 4.5 % | 0.026 | 285,943 kr | 8.24 | |
+| ADVE.ST | 4.29 | 4.5 % | 0.029 | 669,743 kr | 17.48 | |
 
 ### Varningar
 
 - **XMR.ST**: Tunn omsattning (103,163 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **VETT.ST**: Tunn omsattning (286,964 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **CFISH.ST**: Tunn omsattning (213,605 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **ALZCUR.ST**: Tunn omsattning (283,737 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **ARCT.ST**: Tunn omsattning (228,317 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **CALVIK.ST**: Tunn omsattning (144,177 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **IMPC.ST**: Tunn omsattning (149,796 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
 - **INIT.ST**: Tunn omsattning (231,223 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **CFISH.ST**: Tunn omsattning (213,605 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **BIOEX.ST**: Tunn omsattning (159,414 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
 - **ENVAR.ST**: Tunn omsattning (161,656 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
 - **FLUO.ST**: Tunn omsattning (206,195 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
-- **BIOEX.ST**: Tunn omsattning (160,729 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **ARCT.ST**: Tunn omsattning (228,317 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **CALVIK.ST**: Tunn omsattning (144,177 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
+- **VUXEN.ST**: Tunn omsattning (193,664 kr/dag) -- risk att bli fylld just nar nagon saljer av ett skal du inte kanner till.
 
 ### 📊 Volymspikar (möjlig nyhetshändelse)
 
 Onormal volym kombinerat med stort prisfall — kan betyda att något hänt (nyheter, sektor-rörelse) snarare än normal oscillation. Kolla gärna manuellt innan du litar på fyndet.
 
-- **CALVIK.ST**: 11.9x normal volym, +7.0 % samma dag
-- **ENVAR.ST**: 3.3x normal volym, -5.4 % samma dag
-- **NREST.ST**: 3.2x normal volym, +0.4 % samma dag
-- **SNX.ST**: 3.4x normal volym, +0.7 % samma dag
-- **OGUN-B.ST**: 6.6x normal volym, +6.0 % samma dag
-- **PAX.ST**: 4.4x normal volym, +8.0 % samma dag
+- **CFISH.ST**: 3.8x normal volym, -6.1 % samma dag
+- **CALVIK.ST**: 10.4x normal volym, +0.8 % samma dag
+- **FERRO.ST**: 6.0x normal volym, +7.6 % samma dag
 
 ---
 
