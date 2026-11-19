@@ -1,6 +1,6 @@
 # Småbolagsrapport — USA Blue chips
 
-*Genererad 2026-11-18 02:42 UTC*
+*Genererad 2026-11-19 02:12 UTC*
 
 ## Portfölj
 
@@ -18,13 +18,7 @@
 
 ## Dagens händelser
 
-**Stängda positioner**
-
-| Bolag | Anledning | Resultat | Dagar | Max motgång |
-|---|---|---|---|---|
-| CRM | STOP LOSS | -290 $ | 28 | -18.4 % |
-
-**3 ordrar togs bort** (inte fyllda i tid)
+Inget hände. Det är normalt — de flesta ordrar ligger och väntar.
 
 ## Resultat hittills
 
