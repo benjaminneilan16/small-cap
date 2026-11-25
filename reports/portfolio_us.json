@@ -1,6 +1,6 @@
 {
   "market": "us",
-  "generated_at": "2026-11-25 03:56 UTC",
+  "generated_at": "2026-11-25 22:46 UTC",
   "total_value": 48111.18,
   "cash": 21470.21,
   "market_value": 26640.97,
@@ -11,5 +11,5 @@
   "idle_capital_pct": 44.6,
   "open_positions": 16,
   "currency": "$",
-  "benchmark_pct": -2.18
+  "benchmark_pct": -2.15
 }
