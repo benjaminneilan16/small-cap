@@ -1,4 +1,6 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+223,VRTX,buy,541.5552,3.0,2026-11-26,open,,,,,,0,
+222,TXN,buy,264.7862,7.0,2026-11-26,open,,,,,,0,
 221,ACN,buy,223.0272,8.0,2026-11-25,open,,,,,,0,
 220,COST,buy,1053.9936,1.0,2026-11-24,open,,,,,,0,
 219,TSLA,buy,393.0687,5.0,2026-11-14,filled,2026-11-16,393.0687,4.44,,125,0,
