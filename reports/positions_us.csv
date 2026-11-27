@@ -1,4 +1,5 @@
 id,ticker,shares,entry_price,entry_date,target_price,commission_paid,status,exit_price,exit_date,exit_reason,realized_pnl,mae_pct,days_held,gap_pct
+128,VRTX,3.0,541.5552,2026-11-27,595.7107,2.4369984,open,,,,,,,7.14
 127,BLK,1.0,1173.264,2026-11-17,1290.5904,1.7598959999999997,open,,,,,-6.6629534512000195,,0.06
 126,WFC,23.0,84.6455,2026-11-16,93.1101,2.92026975,open,,,,,-7.614702555667828,,0.7
 125,TSLA,5.0,393.0687,2026-11-16,432.3756,2.9480152499999996,open,,,,,-12.399540698034302,,4.44
