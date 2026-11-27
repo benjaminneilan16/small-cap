@@ -1,6 +1,6 @@
 # Småbolagsrapport — USA Blue chips
 
-*Genererad 2026-11-26 03:21 UTC*
+*Genererad 2026-11-27 03:27 UTC*
 
 ## Portfölj
 
@@ -16,18 +16,12 @@
 
 ## Dagens händelser
 
-**Stängda positioner**
-
-| Bolag | Anledning | Resultat | Dagar | Max motgång |
-|---|---|---|---|---|
-| TXN | STOP LOSS | -269 $ | 20 | -16.5 % |
-
 **2 nya köpordrar lagda**
 
 | Bolag | Limitpris | Antal |
 |---|---|---|
-| TXN | 264.79 | 7 |
-| VRTX | 541.56 | 3 |
+| ELV | 384.75 | 5 |
+| ISRG | 418.05 | 4 |
 
 ## Resultat hittills
 
