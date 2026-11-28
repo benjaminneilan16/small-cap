@@ -1,4 +1,5 @@
 id,ticker,side,limit_price,shares,placed_date,status,filled_date,fill_price,gap_pct,cancel_reason,position_id,adjustments_count,original_limit_price
+226,AMZN,buy,253.0,7.0,2026-11-28,open,,,,,,0,
 225,ISRG,buy,418.0458,4.0,2026-11-27,open,,,,,,0,
 224,ELV,buy,384.7463,5.0,2026-11-27,open,,,,,,0,
 223,VRTX,buy,541.5552,3.0,2026-11-26,filled,2026-11-27,541.5552,7.14,,128,0,
